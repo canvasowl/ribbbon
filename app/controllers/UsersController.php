@@ -83,4 +83,12 @@ class UsersController extends \BaseController {
 		//
 	}
 
+	/**
+	 * Login the user and start a session
+	 */
+	public function login()
+	{
+		return "Login the user";
+	}	
+
 }
