@@ -87,8 +87,29 @@ class UsersController extends \BaseController {
 	 * Login the user and start a session
 	 */
 	public function login()
-	{
-		return "Login the user";
+	{	
+		
+		$email 		=	Input::get('email');
+		$password	=	Hash::make(Input::get('password'));	
+
+		return $password;
+	}	
+
+	/**
+	 * Register the user and start a session
+	 */
+	public function register()
+	{	
+		$fullName	=	Input::get('fullName');
+		$email 		=	Input::get('email');
+		$password	=	Hash::make(Input::get('password'));	
+			
+		$user 				=	new User;
+		$user->full_name 	=	$fullName;
+		$user->email 		=	$email;
+		$user->password 	=	$password;
+
+		$user->save();		
 	}	
 
 }

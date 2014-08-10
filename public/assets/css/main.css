@@ -2,3 +2,8 @@
   width: 100%;
   margin: 0;
   padding: 0; }
+
+.athenticate-form-wrap {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 auto; }
