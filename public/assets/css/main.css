@@ -41,6 +41,13 @@ input:focus {
   margin: 0;
   padding: 0; }
 
+.hug-homeHeader {
+  -webkit-box-shadow: 0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
+  -moz-box-shadow: 0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
+  -ms-box-shadow: 0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
+  box-shadow: 0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
+  margin-top: 15px; }
+
 .athenticate-form-wrap {
   width: 400px;
   max-width: 100%;

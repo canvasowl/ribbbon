@@ -1,8 +1,19 @@
+//-- VARIABLES 
 $color-default: #FF123B;
 $color-default-hover: #FF3658;
 $color-default-active: #D22C49;
+$color-light-gray: #eee;
 
 $main-font-famliy: 'Lato', sans-serif;
+
+// -- MIXINS
+@mixin rainbow-top() {
+  -webkit-box-shadow:0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
+  -moz-box-shadow:0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
+  -ms-box-shadow:0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;  
+  box-shadow:0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;  
+  margin-top: 15px;
+}
 
 //--- GLOBALS
 html,body{font-family: $main-font-famliy}
@@ -38,4 +49,6 @@ $text-link-color: red;
 $text-link-color-hover: red;
 
 //-- HOME
+.hug-homeHeader{ @include rainbow-top()}
+
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
