@@ -1,6 +1,32 @@
+$color-default: #FF123B;
+$color-default-hover: #FF3658;
+$color-default-active: #D22C49;
+
+$main-font-famliy: 'Lato', sans-serif;
+
 //--- GLOBALS
+html,body{font-family: $main-font-famliy}
 
+a{color: $color-default}
+a:hover{color: $color-default-hover}
+a:focus,a:active{color: $color-default-active}
 
+input:active,
+input:focus{outline: none !important;}
+.btn{
+	padding: 8px 23px;
+	color: white;
+	border: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;		
+}
+.btn:hover,
+.btn:active{color: white;}
+.btn-default{background-color: $color-default;}
+	.btn:hover{background-color: $color-default-hover }
+	.btn:active{background-color: $color-default-active; }
 
 //--- HELPERS
 .hug{ width: 100%; margin: 0; padding: 0; }

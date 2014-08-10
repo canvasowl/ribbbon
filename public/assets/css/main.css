@@ -1,3 +1,41 @@
+html, body {
+  font-family: "Lato", sans-serif; }
+
+a {
+  color: #ff123b; }
+
+a:hover {
+  color: #ff3658; }
+
+a:focus, a:active {
+  color: #d22c49; }
+
+input:active,
+input:focus {
+  outline: none !important; }
+
+.btn {
+  padding: 8px 23px;
+  color: white;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+
+.btn:hover,
+.btn:active {
+  color: white; }
+
+.btn-default {
+  background-color: #ff123b; }
+
+.btn:hover {
+  background-color: #ff3658; }
+
+.btn:active {
+  background-color: #d22c49; }
+
 .hug {
   width: 100%;
   margin: 0;

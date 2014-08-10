@@ -13,6 +13,13 @@
 
 		<!-- Tab panes -->
 		<div class="tab-content">
+
+		 <div>
+			@if (isset($errors))
+				{{ $errors->first(); }}
+			@endif		 	
+		 </div>	
+
 		  <div class="tab-pane active" id="login">
 		   	<p>Login into your account</p>
 			<div>	
@@ -26,14 +33,14 @@
 	    				{{ Form::password( 'password', array('class' => 'form-control' )) }}	
 	    			</div>
 	    			<div class="form-group">
-	    				{{ Form::submit( 'Login', array('class' => 'btn btn-default pull-right')) }}
+	    				{{ Form::submit( 'Login', array('class' => 'btn btn-default pull-right ')) }}
 	    			</div>	    			
 				{{ Form::close() }}
 			</div>		  	
 		  </div>
 		  <div class="tab-pane" id="signup">
 		   	<p>Register</p>
-			<div>	
+			<div>										
 				{{ Form::open(array('action' => 'UsersController@register')) }}
 					<div class="form-group">
 						<label for="fullName">Full Name</label>
@@ -44,11 +51,11 @@
 						{{ Form::text('email', null, array('class' => 'form-control' )) }}	
 					</div>
 	    			<div class="form-group">
-	    				<label for="email">Email</label>
+	    				<label for="email">Password</label>
 	    				{{ Form::password('password', array('class' => 'form-control' )) }}	
 	    			</div>
 	    			<div class="form-group">
-	    				{{ Form::submit('Signup', array('class' => 'btn btn-primary pull-right' )); }}
+	    				{{ Form::submit('Signup', array('class' => 'btn btn-default pull-right' )); }}
 	    			</div>	    			
 				{{ Form::close() }}
 			</div>		  	

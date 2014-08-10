@@ -90,9 +90,32 @@ class UsersController extends \BaseController {
 	{	
 		
 		$email 		=	Input::get('email');
-		$password	=	Hash::make(Input::get('password'));	
+		$password	=	Input::get('password');
 
-		return $password;
+		// lets validate the users input
+		$validator = Validator::make(
+			array(
+					'email' 	=>	$email,
+					'password' 	=> 	$password
+			),
+			array(
+					'email'		=> 	'required|email',
+					'password'	=>	'required'
+			)
+		);
+
+		if ($validator->fails())
+		{
+		    return Redirect::back()->withErrors($validator);
+		}else{
+			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){
+				return "you are now logged in";
+			}else{
+				return Redirect::back()->withErrors($validator);
+			}			
+		}
+
+
 	}	
 
 	/**
@@ -103,7 +126,26 @@ class UsersController extends \BaseController {
 		$fullName	=	Input::get('fullName');
 		$email 		=	Input::get('email');
 		$password	=	Hash::make(Input::get('password'));	
-			
+
+		// lets validate the users input
+		$validator = Validator::make(
+			array(
+					'fullName' 	=> 	$fullName,
+					'email' 	=>	$email,
+					'password' 	=> 	$password
+			),
+			array(
+					'fullName' 	=> 	'required',
+					'email'		=> 	'required|email|unique:users',
+					'password'	=>	'required|min:8'
+			)
+		);
+
+		if ($validator->fails())
+		{
+		    return Redirect::back()->withErrors($validator);
+		}
+
 		$user 				=	new User;
 		$user->full_name 	=	$fullName;
 		$user->email 		=	$email;
