@@ -18,6 +18,8 @@ $main-font-famliy: 'Lato', sans-serif;
 //--- GLOBALS
 html,body{font-family: $main-font-famliy}
 
+h1{color: $color-default}
+
 a{color: $color-default}
 a:hover{color: $color-default-hover}
 a:focus,a:active{color: $color-default-active}

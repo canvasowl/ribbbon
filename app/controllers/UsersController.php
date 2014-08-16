@@ -109,7 +109,7 @@ class UsersController extends \BaseController {
 		    return Redirect::back()->withErrors($validator);
 		}else{
 			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){
-				return "you are now logged in";
+				return View::make('hud_master')
 			}else{
 				return Redirect::back()->withErrors($validator);
 			}			
@@ -149,7 +149,13 @@ class UsersController extends \BaseController {
 		$user->email 		=	$email;
 		$user->password 	=	$password;
 
-		$user->save();		
+		$user->save();	
+
+		if ( Auth::attempt(array('email' => $email, 'password' => '$password')) ) {
+			return 'you created the user and you are now logged in';
+		}else{
+			return Redirect::back()->withErrors($validator);			
+		}
 	}	
 
 }

@@ -3,7 +3,7 @@
 <div class="hug hug-homeHeader">
 	<div class="row">
 		<div class="col-xs-12">
-			<center><h1>Rainbow</h1></center>		
+			<h1>Rainbow</h1>		
 		</div>
 	</div>	
 </div>
