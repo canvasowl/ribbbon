@@ -109,9 +109,10 @@ class UsersController extends \BaseController {
 		    return Redirect::back()->withErrors($validator);
 		}else{
 			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){
-				return View::make('hud_master')
+				return View::make('hud_master');
 			}else{
-				return Redirect::back()->withErrors($validator);
+				// return Redirect::back()->withErrors($validator);
+				return "hooray you are now signed in";
 			}			
 		}
 	}	
