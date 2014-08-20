@@ -104,15 +104,20 @@ class UsersController extends \BaseController {
 			)
 		);
 
-		if ($validator->fails())
-		{
+		if ($validator->fails()){
+
 		    return Redirect::back()->withErrors($validator);
+
 		}else{
 			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){
-				return View::make('hud_master');
+
+				return Redirect::to('hud');
+
 			}else{
-				// return Redirect::back()->withErrors($validator);
-				return "hooray you are now signed in";
+
+				return Redirect::back()->withErrors($validator);
+				// return "hooray you are now signed in";
+
 			}			
 		}
 	}	

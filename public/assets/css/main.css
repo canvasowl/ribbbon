@@ -1,5 +1,6 @@
 html, body {
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  background-color: #ededf1; }
 
 h1 {
   color: #ff123b; }
@@ -16,6 +17,14 @@ a:focus, a:active {
 input:active,
 input:focus {
   outline: none !important; }
+
+.hug {
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+.container {
+  width: 100%; }
 
 .btn {
   padding: 8px 23px;
@@ -38,11 +47,6 @@ input:focus {
 
 .btn:active {
   background-color: #d22c49; }
-
-.hug {
-  width: 100%;
-  margin: 0;
-  padding: 0; }
 
 .hug-homeHeader {
   -webkit-box-shadow: 0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
