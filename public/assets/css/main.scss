@@ -1,19 +1,18 @@
 //-- VARIABLES 
-$color-default: #FF123B;
-$color-default-hover: #FF3658;
+$color-default: #F95E5C;
+$color-default-hover: #FE8C88;
 $color-default-active: #D22C49;
 $color-light-gray: #eee;
 $main-bg-color: #EDEDF1;
+$card-bg-color: #E6E2D5;
+$darkest-color: #414141;
+$off-mid-color: #75514E;
 
 $main-font-famliy: 'Lato', sans-serif;
 
 // -- MIXINS
-@mixin rainbow-top() {
-  -webkit-box-shadow:0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
-  -moz-box-shadow:0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;
-  -ms-box-shadow:0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;  
-  box-shadow:0 -5px 0 #ff3658, 0 -10px 0 #FFE764, 0 -15px 0 #7CD679;  
-  margin-top: 15px;
+@mixin header-bar-top() {  
+  border-top: 25px solid $darkest-color;
 }
 
 //--- GLOBALS
@@ -49,8 +48,32 @@ input:focus{outline: none !important;}
 
 
 //-- HOME
-.hug-homeHeader{ @include rainbow-top()}
+.hug-homeHeader{ @include header-bar-top()}
 
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
 
 // INNER PAGES SHARED
+.card{
+	background-color: #FFFDEC; 
+	border-radius: 4px;
+	height: 210px;
+	-webkit-box-shadow: 0 0 6px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 6px rgba(0,0,0,.3);
+	-o-box-shadow: 0 0 6px rgba(0,0,0,.3);
+	box-shadow: 0 0 6px rgba(0,0,0,.3);
+}
+.card header h3{ 
+	background-color:$darkest-color; 
+	color: #fff; 
+	text-transform: capitalize; 
+	text-indent: 8px; 
+	padding: 4px;
+	font-size: 1.2em;
+}  
+.card .content-pad{padding: 10px;}
+.card footer a{margin-left: 8px;}
+
+
+
+
+

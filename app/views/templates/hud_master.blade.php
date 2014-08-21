@@ -35,7 +35,7 @@
 			        </li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="">Logout</a></li>			        
+			        <li><a href="/logout">Logout</a></li>			        
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->

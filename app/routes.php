@@ -2,12 +2,17 @@
 
 Route::get('/', function()
 {
-	return View::make('index');
+	if( Auth::check() ) {
+		return View::make('/hud');		
+	}else{
+		return View::make('index');	
+	}	
 });
 
-Route::resource('users', 'UsersController');
-	Route::post('login', 'UsersController@login');
-	Route::post('register', 'UsersController@register');
+Route::resource('/users', 'UsersController');
+	Route::post('/login', 'UsersController@login');
+	Route::get('/logout', 'UsersController@logout');
+	Route::post('/register', 'UsersController@register');
 
 Route::resource('clients', 'ClientsController');
 

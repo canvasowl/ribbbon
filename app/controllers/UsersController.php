@@ -84,6 +84,14 @@ class UsersController extends \BaseController {
 	}
 
 	/**
+	 * Logout the user from the application
+	 */	
+	public function logout(){
+		Auth::logout();
+		return Redirect::to('/');
+	}
+
+	/**
 	 * Login the user and start a session
 	 */
 	public function login()
