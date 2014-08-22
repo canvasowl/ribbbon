@@ -1,18 +1,19 @@
 html, body {
   font-family: "Lato", sans-serif;
-  background-color: #ededf1; }
+  background-color: whitesmoke; }
 
 h1 {
-  color: #f95e5c; }
+  color: #b9433f; }
 
 a {
-  color: #f95e5c; }
+  color: #b9433f; }
 
 a:hover {
-  color: #fe8c88; }
+  color: #e3524d;
+  text-decoration: none; }
 
 a:focus, a:active {
-  color: #d22c49; }
+  color: #e37975; }
 
 input:active,
 input:focus {
@@ -40,16 +41,16 @@ input:focus {
   color: white; }
 
 .btn-default {
-  background-color: #f95e5c; }
+  background-color: #b9433f; }
 
 .btn:hover {
-  background-color: #fe8c88; }
+  background-color: #e3524d; }
 
 .btn:active {
-  background-color: #d22c49; }
+  background-color: #e37975; }
 
 .hug-homeHeader {
-  border-top: 25px solid #414141; }
+  border-top: 25px solid #fff; }
 
 .athenticate-form-wrap {
   width: 400px;
@@ -57,13 +58,19 @@ input:focus {
   margin: 0 auto; }
 
 .card {
-  background-color: #FFFDEC;
+  background-color: #333333;
   border-radius: 4px;
   height: 210px;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); }
+
+.card a {
+  color: #cccccc; }
+
+.card a:hover {
+  color: #e3524d; }
 
 .card header h3 {
   background-color: #414141;
@@ -76,5 +83,20 @@ input:focus {
 .card .content-pad {
   padding: 10px; }
 
+.card ol {
+  padding-left: 15px; }
+
+.card ol li {
+  color: #e3524d; }
+
 .card footer a {
   margin-left: 8px; }
+
+.app-wrapper {
+  width: 700px;
+  max-width: 95%;
+  background-color: #fff;
+  border: 1px solid #eee;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px; }
