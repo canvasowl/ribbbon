@@ -1,10 +1,10 @@
-//-- VARIABLES 
+//-- VARIABLES
 $color-default: 		#B9433F;
 $color-default-hover: 	#E3524D;
 $color-default-active: 	#E37975;
 
-
 $main-bg-color: 		#f5f5f5;
+
 $dark-color: 			#333333;
 $darkest-color: 		#414141;
 
@@ -29,6 +29,13 @@ a:focus,a:active{color: $color-default-active}
 
 input:active,
 input:focus{outline: none !important;}
+
+.no-margin-top{margin-top: 0;}
+.no-margin-right{margin-right: 0;}
+.no-margin-bottom{margin-bottom: 0;}
+.no-margin-left{margin-left: 0;}
+
+
 
 .hug{ width: 100%; margin: 0; padding: 0; }
 
