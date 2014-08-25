@@ -10,6 +10,8 @@ $darkest-color: 		#414141;
 
 $text-on-dark:			#ccc;
 
+$color-danger: 			#F95E5C;
+$color-success: 		#6CCBAB;
 
 $main-font-famliy: 'Lato', sans-serif;
 
@@ -55,6 +57,14 @@ input:focus{outline: none !important;}
 	.btn:active{background-color: $color-default-active; }
 
 .navbar{margin-bottom: 0;}
+
+.alert{border: none; border-radius: 0;}
+.alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}
+.alert-main a{color: #fff !important}
+
+.alert-danger{background-color: $color-danger;}
+.alert-success{background-color: $color-success;}
+
 //-- HOME
 .hug-homeHeader{ @include header-bar-top()}
 

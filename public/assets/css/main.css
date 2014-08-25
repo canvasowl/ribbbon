@@ -64,6 +64,24 @@ input:focus {
 .navbar {
   margin-bottom: 0; }
 
+.alert {
+  border: none;
+  border-radius: 0; }
+
+.alert-main {
+  text-align: center;
+  font-size: 1.5em;
+  text-transform: uppercase; }
+
+.alert-main a {
+  color: #fff !important; }
+
+.alert-danger {
+  background-color: #f95e5c; }
+
+.alert-success {
+  background-color: #6ccbab; }
+
 .hug-homeHeader {
   border-top: 25px solid #fff; }
 

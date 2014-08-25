@@ -26,7 +26,7 @@ class ClientsController extends \BaseController {
         // Validation
         $validator = Validator::make(
             array('name' 	    =>	$name),
-            array('name'		=> 	'required|email|unique:clients')
+            array('name'		=> 	'required|unique:clients')
         );
 
         if ($validator->fails())
@@ -36,9 +36,9 @@ class ClientsController extends \BaseController {
 
         $client         = new Client;
         $client->name   = $name;
-        // $client->save();
-        return "Client created successfully";
+        $client->save();
 
+        return Redirect::back()->with('success', $name ." is now a new client.");
 	}
 
 
