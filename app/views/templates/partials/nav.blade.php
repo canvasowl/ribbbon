@@ -40,3 +40,14 @@
 		</div>
 	</div>	
 </div>
+
+
+@if ($errors->first())
+	<div class="hug">
+		<div class="alert alert-danger animated fadeInDown" role="alert">
+	  		<a href="#" class="alert-link">  			
+	  			{{ $errors->first() }}  			
+	  		</a>
+		</div>
+	</div>
+@endif

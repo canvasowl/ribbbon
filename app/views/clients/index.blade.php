@@ -8,16 +8,13 @@
 		<div class="app-wrapper">
             <div>
                 <h2 class="pull-left no-margin-top">Clients</h2>
-                <form class="pull-right" action="">
+                <form class="pull-right" action="/clients/create" method="get">
                     <div class="form-group">
-                        <ul class="list-inline">
-                            <li><input class="form-control" type="text" name="name" placeholder="Client Name"/></li>
-                            <li><input class="btn btn-default" type="submit" value="Create Client"/></li>
-                        </ul>
-
-
+                            <ul class="list-inline">
+                                <li><input class="form-control" type="text" name="name" placeholder="Client Name"/></li>
+                                <li><input class="btn btn-default" type="submit" value="Create Client"/></li>
+                            </ul>
                     </div>
-
                 </form>
             </div>
 
@@ -27,8 +24,8 @@
                         <td>
                             <a class="pull-left" href="">Name</a>
                             <ul class="pull-right list-inline">
-                                <li><a href="">edit</a></li>
-                                <li><a href="">view</a></li>
+                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
+                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
                             </ul>
                             <div class="clearfix"></div>
                         </td>
@@ -37,8 +34,8 @@
                         <td>
                             <a class="pull-left" href="">Name</a>
                             <ul class="pull-right list-inline">
-                                <li><a href="">edit</a></li>
-                                <li><a href="">view</a></li>
+                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
+                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
                             </ul>
                             <div class="clearfix"></div>
                         </td>
@@ -47,8 +44,8 @@
                         <td>
                             <a class="pull-left" href="">Name</a>
                             <ul class="pull-right list-inline">
-                                <li><a href="">edit</a></li>
-                                <li><a href="">view</a></li>
+                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
+                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
                             </ul>
                             <div class="clearfix"></div>
                         </td>
@@ -57,8 +54,8 @@
                         <td>
                             <a class="pull-left" href="">Name</a>
                             <ul class="pull-right list-inline">
-                                <li><a href="">edit</a></li>
-                                <li><a href="">view</a></li>
+                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
+                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
                             </ul>
                             <div class="clearfix"></div>
                         </td>
@@ -67,8 +64,8 @@
                         <td>
                             <a class="pull-left" href="">Name</a>
                             <ul class="pull-right list-inline">
-                                <li><a href="">edit</a></li>
-                                <li><a href="">view</a></li>
+                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
+                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
                             </ul>
                             <div class="clearfix"></div>
                         </td>

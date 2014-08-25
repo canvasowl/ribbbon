@@ -21,8 +21,26 @@ class ClientsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+        $name = Input::get('name');
+
+        // Validation
+        $validator = Validator::make(
+            array('name' 	    =>	$name),
+            array('name'		=> 	'required|email|unique:clients')
+        );
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator);
+        }
+
+        $client         = new Client;
+        $client->name   = $name;
+        // $client->save();
+        return "Client created successfully";
+
 	}
+
 
 	/**
 	 * Store a newly created resource in storage.

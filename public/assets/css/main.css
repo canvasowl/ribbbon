@@ -61,6 +61,9 @@ input:focus {
 .btn:active {
   background-color: #e37975; }
 
+.navbar {
+  margin-bottom: 0; }
+
 .hug-homeHeader {
   border-top: 25px solid #fff; }
 
@@ -110,5 +113,6 @@ input:focus {
   background-color: #fff;
   border: 1px solid #eee;
   margin: 0 auto;
+  margin-top: 20px;
   padding: 10px;
   border-radius: 5px; }

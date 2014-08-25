@@ -35,8 +35,6 @@ input:focus{outline: none !important;}
 .no-margin-bottom{margin-bottom: 0;}
 .no-margin-left{margin-left: 0;}
 
-
-
 .hug{ width: 100%; margin: 0; padding: 0; }
 
 .container{width: 100%;}
@@ -56,7 +54,7 @@ input:focus{outline: none !important;}
 	.btn:hover{background-color: $color-default-hover }
 	.btn:active{background-color: $color-default-active; }
 
-
+.navbar{margin-bottom: 0;}
 //-- HOME
 .hug-homeHeader{ @include header-bar-top()}
 
@@ -93,6 +91,7 @@ input:focus{outline: none !important;}
 	background-color: #fff; 
 	border: 1px solid #eee; 
 	margin: 0 auto;
+	margin-top: 20px;
 	padding: 10px;
 	border-radius: 5px;
 }
