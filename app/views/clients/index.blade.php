@@ -20,56 +20,20 @@
 
 			<table class="table">
 				<thead>
-					<tr>
-                        <td>
-                            <a class="pull-left" href="">Name</a>
-                            <ul class="pull-right list-inline">
-                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
-                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="pull-left" href="">Name</a>
-                            <ul class="pull-right list-inline">
-                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
-                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="pull-left" href="">Name</a>
-                            <ul class="pull-right list-inline">
-                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
-                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="pull-left" href="">Name</a>
-                            <ul class="pull-right list-inline">
-                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
-                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="pull-left" href="">Name</a>
-                            <ul class="pull-right list-inline">
-                                <li><a title="edit this client" href=""><i class="fa fa-magic"></i></a></li>
-                                <li><a title="view this client" href=""><i class="fa fa-eye"></i></a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </td>
-                    </tr>
+
+                    @foreach ($clients as $client)
+                        <tr>
+                            <td>
+                                <a class="pull-left" href="">{{ $client->name }}</a>
+                                <ul class="pull-right list-inline">
+                                    <li><a title="edit {{ $client->name }}" href="/clients/{{ $client->id }}/edit"><i class="fa fa-magic"></i></a></li>
+                                    <li><a title="view {{ $client->name }}" href="/clients/{{ $client->id }}"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </td>
+                        </tr>                        
+                    @endforeach                
+
 				</thead>
 			</table>
 	</div>

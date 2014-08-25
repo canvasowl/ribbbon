@@ -9,8 +9,10 @@ class ClientsController extends \BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
-		return View::make('clients.index');
+	{	
+		$clients = Client::all();
+
+		return View::make('clients.index')->with('clients', $clients);
 	}
 
 	/**

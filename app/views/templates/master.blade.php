@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<center><h1>Ribbbon</h1></center>
-			<center><h3>The project management system of artisans</h3></center>		
+			<center><h3>The Project Management System For Web Artisans.</h3></center>		
 		</div>
 	</div>	
 
