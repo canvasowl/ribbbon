@@ -13,13 +13,6 @@
 
 		<!-- Tab panes -->
 		<div class="tab-content">
-
-		 <div>
-			@if (isset($errors))
-				{{ $errors->first(); }}
-			@endif		 	
-		 </div>	
-
 		  <div class="tab-pane active" id="login">
 		   	<p>Login into your account</p>
 			<div>	
@@ -60,7 +53,9 @@
 				{{ Form::close() }}
 			</div>		  	
 		  </div>
+		</div>
 
+		</div>
 	</div>
 
 @stop
