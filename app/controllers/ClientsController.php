@@ -80,7 +80,9 @@ class ClientsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$client = Client::find($id);
+
+		return View::make('clients.edit')->with('client',$client);
 	}
 
 	/**
