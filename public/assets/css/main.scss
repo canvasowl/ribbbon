@@ -13,6 +13,9 @@ $text-on-dark:			#ccc;
 $color-danger: 			#F95E5C;
 $color-success: 		#6CCBAB;
 
+$info-bg-color:			#FFFFE7;
+$info-text-color:		#666;
+
 $main-font-famliy: helvetica, sans-serif;
 
 // -- MIXINS
@@ -65,6 +68,16 @@ input:focus{outline: none !important;}
 .alert-danger{background-color: $color-danger;}
 .alert-success{background-color: $color-success;}
 
+.numCount{
+	background-color: $dark-color;
+	color: #fff;
+	padding: 3px 7px;
+	border-radius: 100%;	
+}
+
+.list-style-none{ list-style: none; padding-left: 0 }
+
+.done{text-decoration: line-through}
 //-- HOME
 .hug-homeHeader{ @include header-bar-top()}
 
@@ -106,6 +119,15 @@ input:focus{outline: none !important;}
 	border-radius: 5px;
 }
 
+section.info{
+	background-color: $info-bg-color;
+	box-sizing: border-box;
+	padding: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	color: $info-text-color;
+}
 
 
 

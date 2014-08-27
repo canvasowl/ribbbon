@@ -11,8 +11,9 @@ class ClientsController extends \BaseController {
 	public function index()
 	{	
 		$clients = Client::all();
+		$counter = 0;
 
-		return View::make('clients.index')->with('clients', $clients);
+		return View::make('clients.index')->with('clients', $clients)->with('counter', $counter);
 	}
 
 	/**
@@ -27,8 +28,8 @@ class ClientsController extends \BaseController {
 
         // Validation
         $validator = Validator::make(
-            array('name' 	    =>	$name),
-            array('name'		=> 	'required|unique:clients')
+            array('name' =>	$name),
+            array('name' => 'required|unique:clients')
         );
 
         if ($validator->fails())
@@ -64,7 +65,10 @@ class ClientsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$client = Client::find($id);
+
+
+		return View::make('clients.show')->with('client', $client);
 	}
 
 	/**

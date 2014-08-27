@@ -19,12 +19,13 @@
             </div>
 
 			<table class="table">
-				<thead>
-
+				<thead>                    
                     @foreach ($clients as $client)
+                        <?php $counter++; ?>
                         <tr>
+                            <td><span class="numCount">{{ $counter }}</span></td>
                             <td>
-                                <a class="pull-left" href="">{{ $client->name }}</a>
+                                <a class="pull-left" title="view {{ $client->name }}" href="/clients/{{ $client->id }}">{{ $client->name }}</a>
                                 <ul class="pull-right list-inline">
                                     <li><a title="edit {{ $client->name }}" href="/clients/{{ $client->id }}/edit"><i class="fa fa-magic"></i></a></li>
                                     <li><a title="view {{ $client->name }}" href="/clients/{{ $client->id }}"><i class="fa fa-eye"></i></a></li>

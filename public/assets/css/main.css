@@ -82,6 +82,19 @@ input:focus {
 .alert-success {
   background-color: #6ccbab; }
 
+.numCount {
+  background-color: #333333;
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 100%; }
+
+.list-style-none {
+  list-style: none;
+  padding-left: 0; }
+
+.done {
+  text-decoration: line-through; }
+
 .hug-homeHeader {
   border-top: 25px solid #fff; }
 
@@ -134,3 +147,12 @@ input:focus {
   margin-top: 20px;
   padding: 10px;
   border-radius: 5px; }
+
+section.info {
+  background-color: #ffffe7;
+  box-sizing: border-box;
+  padding: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: #666666; }
