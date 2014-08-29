@@ -19,9 +19,9 @@
             <section class="info">
                 <h4>Contact</h4>
                 <ul class="list-style-none">
-                    <li><strong>Point of contact:</strong> Jon Doe</li>
-                    <li><strong>Phone number:</strong> 555-555-555</li>
-                    <li><strong>Email:</strong> test@test.com</li>
+                    <li><strong>Point of contact:</strong> {{ $client->point_of_contact }}</li>
+                    <li><strong>Phone number:</strong> {{ $client->phone_number}}</li>
+                    <li><strong>Email:</strong> {{ $client->email }}</li>
                 </ul>                
             </section>
             <hr>

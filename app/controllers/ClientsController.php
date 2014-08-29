@@ -94,7 +94,38 @@ class ClientsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+       $name 				= 	Input::get('name');
+       $point_of_contact	=	Input::get('point_of_contact');
+       $phone_number		=	Input::get('phone_number');
+       $email				=	Input::get('email');
+
+       // Validation
+        $validator = Validator::make(
+            array(
+            	'name' 				=>	$name,
+            	'email'				=>	$email
+            	),
+            array(
+            	'name' 				=> 'required',
+            	'email'				=> 'email'
+            	)
+        );
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator);
+        }
+
+        $client = Client::find($id);
+
+        $client->name 				= $name;
+        $client->point_of_contact 	= $point_of_contact;
+        $client->phone_number 		= $phone_number;
+        $client->email 				= $email;
+        $client->save();
+
+        return Redirect::back()->with('success', $name ." has been updated.");
+
 	}
 
 	/**

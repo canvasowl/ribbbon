@@ -124,7 +124,6 @@ class UsersController extends \BaseController {
 			}else{
 
 				return Redirect::back()->withErrors($validator);
-				// return "hooray you are now signed in";
 
 			}			
 		}

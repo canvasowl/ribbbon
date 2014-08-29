@@ -95,6 +95,19 @@ input:focus {
 .done {
   text-decoration: line-through; }
 
+.no-side-padding {
+  padding-left: 0;
+  padding-right: 0; }
+
+.small-padding-left {
+  padding-left: 10px; }
+
+.small-padding-right {
+  padding-right: 10px; }
+
+.app-wrapper-title {
+  color: #b9433f; }
+
 .hug-homeHeader {
   border-top: 25px solid #fff; }
 
