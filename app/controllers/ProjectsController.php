@@ -10,7 +10,11 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$projects 	= 	Project::all();
+		$counter 	=	0;
+
+		return View::make('projects.index')->with('projects', $projects)->with('counter', $counter);
+
 	}
 
 	/**

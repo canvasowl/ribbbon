@@ -1,20 +1,27 @@
 <?php
-
-// Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
 class ProjectsTableSeeder extends Seeder {
 
+
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
 	public function run()
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Project::create([
-				'name' => $faker->name
-			]);
+		Eloquent::unguard();
+		
+
+		for ($i=0; $i < 10 ; $i++) { 
+			$projects = [ ["name" => $faker->name] ];
 		}
+
+
+		DB::table('projects')->insert($projects);
 	}
 
 }

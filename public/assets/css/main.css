@@ -108,6 +108,9 @@ input:focus {
 .app-wrapper-title {
   color: #b9433f; }
 
+.tasks-complete {
+  color: #77d3aa; }
+
 .hug-homeHeader {
   border-top: 25px solid #fff; }
 

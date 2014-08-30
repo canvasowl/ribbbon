@@ -16,6 +16,8 @@ $color-success: 		#6CCBAB;
 $info-bg-color:			#FFFFE7;
 $info-text-color:		#666;
 
+$tasks-complete-color: 	#77D3AA;
+
 $main-font-famliy: helvetica, sans-serif;
 
 // -- MIXINS
@@ -86,6 +88,7 @@ input:focus{outline: none !important;}
 
 .app-wrapper-title{color: $color-default}
 
+.tasks-complete{color: $tasks-complete-color};
 //-- HOME
 .hug-homeHeader{ @include header-bar-top()}
 
