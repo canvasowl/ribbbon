@@ -100,6 +100,7 @@ class UsersController extends \BaseController {
 		$email 		=	Input::get('email');
 		$password	=	Input::get('password');
 
+
 		// lets validate the users input
 		$validator = Validator::make(
 			array(
@@ -118,12 +119,12 @@ class UsersController extends \BaseController {
 
 		}else{
 			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){
-
+				
 				return Redirect::to('hud');
 
 			}else{
 
-				return Redirect::back()->withErrors($validator);
+				// return Redirect::back()->withErrors($validator);
 
 			}			
 		}

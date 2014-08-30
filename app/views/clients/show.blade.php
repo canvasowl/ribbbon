@@ -26,7 +26,7 @@
             </section>
             <hr>
             <section class="info">
-                <h4>Projects</h4>
+                <h4 class="app-wrapper-title">Projects</h4>
                 <ul class="list-style-none">
                     <li><a href="/projects/id">Project name</a></li>
                     <li><a href="/projects/id">Project name</a></li>

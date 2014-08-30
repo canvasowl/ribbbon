@@ -15,6 +15,7 @@ Route::resource('/users', 'UsersController');
 	Route::post('/register', 'UsersController@register');
 
 Route::resource('clients', 'ClientsController');
+Route::resource('projects', 'ProjectsController');
 
 
 Route::get('/hud', array('as' => 'hud', function(){
