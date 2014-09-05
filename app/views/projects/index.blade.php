@@ -10,10 +10,10 @@
                 <h2 class="pull-left no-margin-top">Projects</h2>
                 <form class="pull-right" action="/projects/create" method="get">
                     <div class="form-group">
-                            <ul class="list-inline">
-                                <li><input class="form-control" type="text" name="name" placeholder="Project Name"/></li>
-                                <li><input class="btn btn-default" type="submit" value="Create Project"/></li>
-                            </ul>
+                        <ul class="list-inline">
+                            <li><input class="form-control" type="text" name="name" placeholder="Project Name"/></li>
+                            <li><input class="btn btn-default" type="submit" value="Create Project"/></li>
+                        </ul>
                     </div>
                 </form>
             </div>

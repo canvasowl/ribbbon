@@ -48,7 +48,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$project 	=	Project::find($id);
+
+		return  View::make('projects.show')->with('project', $project);
+		
 	}
 
 	/**
