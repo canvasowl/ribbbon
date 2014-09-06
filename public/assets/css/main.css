@@ -165,6 +165,9 @@ input:focus {
   display: block;
   margin: 10px; }
 
+.card:hover {
+  background-color: #ddd; }
+
 .card img {
   display: block;
   max-width: 100%;

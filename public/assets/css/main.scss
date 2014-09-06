@@ -135,6 +135,7 @@ input:focus{outline: none !important;}
 	display: block;
 	margin: 10px;
 }
+.card:hover{background-color: #ddd;}
 .card img{display: block; max-width: 100%; margin: 0 auto;}
 .card a{color: $text-on-dark}
 	.card a:hover{color: $color-default-hover;}

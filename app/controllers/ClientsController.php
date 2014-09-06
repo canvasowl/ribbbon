@@ -10,8 +10,11 @@ class ClientsController extends \BaseController {
 	 */
 	public function index()
 	{	
-		$clients = Client::all();
-		$counter = 0;
+		$id 		= Auth::id();
+		$user		= User::find($id);
+		$clients 	= $user->clients()->get();
+
+		$counter 	= 0;
 
 		return View::make('clients.index')->with('clients', $clients)->with('counter', $counter);
 	}
