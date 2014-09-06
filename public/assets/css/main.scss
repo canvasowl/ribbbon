@@ -129,14 +129,13 @@ input:focus{outline: none !important;}
 
 // INNER PAGES SHARED
 .card{
-	background-color: $dark-color; 
-	border-radius: 4px;
-	height: 210px;
-	-webkit-box-shadow: 0 0 6px rgba(0,0,0,.3);
-	-moz-box-shadow: 0 0 6px rgba(0,0,0,.3);
-	-o-box-shadow: 0 0 6px rgba(0,0,0,.3);
-	box-shadow: 0 0 6px rgba(0,0,0,.3);
+	background-color: $main-bg-color; 
+	border-radius: 4px; 
+	padding: 20px 0;
+	display: block;
+	margin: 10px;
 }
+.card img{display: block; max-width: 100%; margin: 0 auto;}
 .card a{color: $text-on-dark}
 	.card a:hover{color: $color-default-hover;}
 .card header h3{ 
@@ -148,9 +147,7 @@ input:focus{outline: none !important;}
 	font-size: 1.2em;
 }  
 .card .content-pad{padding: 10px;}
-.card ol{padding-left: 15px;}
-.card ol li{color: $color-default-hover;}
-.card footer a{margin-left: 8px;}
+.card center{color: $color-default}
 
 .app-wrapper{
 	width: 700px; 

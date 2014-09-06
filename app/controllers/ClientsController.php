@@ -65,10 +65,10 @@ class ClientsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$client = Client::find($id);
+		$client 	= 	Client::find($id);
+		$projects	=	$client->projects()->get();
 
-
-		return View::make('clients.show')->with('client', $client);
+		return View::make('clients.show')->with('client', $client)->with('projects', $projects);
 	}
 
 	/**

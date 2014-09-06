@@ -4,55 +4,49 @@
 @section('content')
 
 	<div class="row">
-		<!-- <div class="col-xs-12"> -->
-			
-		<div class="col-xs-4">
-			<div class="card">
-				<header><h3>New</h3></header>
-				<div class="content-pad">
-					<ol>
-						<li><a href="">Sample item</a></li>
-						<li><a href="">Sample item</a></li>
-						<li><a href="">Sample item</a></li>
-						<li><a href="">Sample item</a></li>
-						<li><a href="">Sample item</a></li>
-					</ol>
+		<div class="col-xs-12">
+			<div class="app-wrapper">
+				<div class="row animated fadeIn">
+					<div class="col-xs-4">						
+						<a href="/clients" class="card">
+							<img src="{{ asset('assets/img/heart.png') }}">
+							<center>Clients</center>
+						</a>
+					</div>
+					<div class="col-xs-4">
+						<a href="/projects" class="card">
+							<img src="{{ asset('assets/img/shield.png') }}">
+							<center>Projects</center>
+						</a>
+					</div>
+					<div class="col-xs-4">
+						<a href="/tasks" class="card">
+							<img src="{{ asset('assets/img/clipboard.png') }}">
+							<center>Tasks</center>
+						</a>
+					</div>
+
+					<div class="col-xs-4">
+						<a href="#" class="card">
+							<img src="{{ asset('assets/img/calendar.png') }}">
+							<center>Calendar</center>
+						</a>
+					</div>
+					<div class="col-xs-4">
+						<a href="/#" class="card">
+							<img src="{{ asset('assets/img/user.png') }}">
+							<center>Invite</center>
+						</a>
+					</div>
+					<div class="col-xs-4">
+						<a href="/clients" class="card">
+							<img src="{{ asset('assets/img/gear.png') }}">
+							<center>Account Settings</center>
+						</a>
+					</div>
 				</div>
-				<footer><a href="">See all</a></footer>
 			</div>
-		</div>
-
-
-		<div class="col-xs-4">
-			<div class="card">
-				<header><h3>Overdue</h3></header>
-				<div class="content-pad">
-					<ol>
-						<li><a href="">Sample item</a></li>
-						<li><a href="">Sample item</a></li>
-						<li><a href="">Sample item</a></li>
-						<li><a href="">Sample item</a></li>
-						<li><a href="">Sample item</a></li>
-					</ol>
-				</div>
-				<footer><a href="">See all</a></footer>				
-			</div>			
-		</div>
-
-		<div class="col-xs-4">
-			<div class="card">
-				<header><h3>Message</h3></header>
-				<div class="content-pad">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad headerinim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </p>				
-				</div>
-			</div>			
-		</div>
-
-		<!-- </div>	 -->
+		</div>	
 	</div>
 
 @stop()

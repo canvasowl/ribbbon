@@ -159,13 +159,16 @@ input:focus {
   margin: 0 auto; }
 
 .card {
-  background-color: #333333;
+  background-color: whitesmoke;
   border-radius: 4px;
-  height: 210px;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); }
+  padding: 20px 0;
+  display: block;
+  margin: 10px; }
+
+.card img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto; }
 
 .card a {
   color: #cccccc; }
@@ -184,14 +187,8 @@ input:focus {
 .card .content-pad {
   padding: 10px; }
 
-.card ol {
-  padding-left: 15px; }
-
-.card ol li {
-  color: #e3524d; }
-
-.card footer a {
-  margin-left: 8px; }
+.card center {
+  color: #b9433f; }
 
 .app-wrapper {
   width: 700px;

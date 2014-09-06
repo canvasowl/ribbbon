@@ -28,11 +28,9 @@
             <section class="info">
                 <h4 class="app-wrapper-title">Projects</h4>
                 <ul class="list-style-none">
-                    <li><a href="/projects/id">Project name</a></li>
-                    <li><a href="/projects/id">Project name</a></li>
-                    <li><a href="/projects/id">Project name</a></li>
-                    <li><a class="done" href="/projects/id">Project name</a></li>
-                    <li><a class="done" href="/projects/id">Project name</a></li>
+                    @foreach ($projects as $project)
+                        <li><a href="/projects/id">{{ $project->name }}</a></li>                    
+                    @endforeach                    
                 </ul>
             </section>
 
