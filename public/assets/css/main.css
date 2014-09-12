@@ -13,7 +13,8 @@ a:hover {
   text-decoration: none; }
 
 a:focus, a:active {
-  color: #e37975; }
+  color: #e37975;
+  outline: none !important; }
 
 input:active,
 input:focus {
@@ -63,6 +64,27 @@ input:focus {
 
 .btn:active {
   background-color: #e37975; }
+
+.navbar-default {
+  background-color: #ff5050;
+  border-color: #ff5050;
+  border-radius: 1px; }
+
+.navbar-default a,
+.navbar-default .navbar-nav > li > a {
+  color: #fff; }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #eee;
+  background-color: #b9433f; }
+
+.navbar-default .navbar-brand {
+  color: #fff; }
+
+.navbar-default .navbar-nav > .active > a {
+  color: #fff;
+  background-color: #b9433f; }
 
 .navbar {
   margin-bottom: 0; }
@@ -120,20 +142,14 @@ input:focus {
   height: 20px;
   border-radius: 100%; }
 
-.level-hot {
+.level-easy {
   background-color: #b5b5d0; }
-
-.level-common {
-  background-color: #87d0b6; }
 
 .level-medium {
   background-color: #5d80d0; }
 
 .level-hard {
   background-color: #d05b35; }
-
-.level-super {
-  background-color: #c09400; }
 
 .legend {
   margin-top: 20px; }
@@ -149,6 +165,15 @@ input:focus {
   border-radius: 4px;
   width: 10px;
   height: 10px; }
+
+.blanket {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 1000px;
+  z-index: 10000000000000; }
 
 .hug-homeHeader {
   border-top: 25px solid #fff; }

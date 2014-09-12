@@ -22,11 +22,10 @@ $color-paper-line:		#E7C6AB;
 
 $main-font-famliy: helvetica, sans-serif;
 
-$color-hot:				#B5B5D0;
-$color-common:			#87D0B6;
+$color-easy:			#B5B5D0;
 $color-medium:			#5D80D0;
 $color-hard:			#D05B35;
-$color-super:			#C09400;
+
 
 // -- MIXINS
 @mixin header-bar-top() {  
@@ -40,7 +39,7 @@ h1{color: $color-default}
 
 a{color: $color-default}
 a:hover{color: $color-default-hover; text-decoration: none}
-a:focus,a:active{color: $color-default-active}
+a:focus,a:active{color: $color-default-active; outline: none !important}
 
 input:active,
 input:focus{outline: none !important;}
@@ -71,6 +70,17 @@ input:focus{outline: none !important;}
 	.btn:hover{background-color: $color-default-hover }
 	.btn:active{background-color: $color-default-active; }
 
+.navbar-default{
+  background-color: #ff5050;
+  border-color: #ff5050;
+  border-radius: 1px;	
+}
+.navbar-default a,
+.navbar-default .navbar-nav>li>a{color: #fff;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{color: #eee; background-color: $color-default}
+.navbar-default .navbar-brand{color: #fff;}
+.navbar-default .navbar-nav>.active>a{color: #fff; background-color: $color-default}
 .navbar{margin-bottom: 0;}
 
 .alert{border: none; border-radius: 0;}
@@ -106,22 +116,25 @@ input:focus{outline: none !important;}
 	height: 20px; 
 	border-radius: 100%;
 }
-.level-hot{background-color: $color-hot;}
-.level-common{background-color: $color-common;}
+.level-easy{background-color: $color-easy;}
 .level-medium{background-color: $color-medium;}
 .level-hard{background-color: $color-hard;}
-.level-super{background-color: $color-super;}
 
 .legend{margin-top: 20px;}
 .legend ul li{display: inline; margin-left: 8px;}
 .legend ul li:first-child{margin-left: 0}
 
-.legend .level{
-	border-radius: 4px;
-	width: 10px;
-	height: 10px;
-}
+.legend .level{border-radius: 4px; width: 10px; height: 10px;}
 
+.blanket{
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	background-color: rgba(0,0,0,.8);
+	width: 100%;
+	height: 1000px;
+	z-index: 10000000000000;
+}
 //-- HOME
 .hug-homeHeader{ @include header-bar-top()}
 
