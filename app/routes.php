@@ -16,6 +16,7 @@ Route::resource('/users', 'UsersController');
 
 Route::resource('clients', 'ClientsController');
 Route::resource('projects', 'ProjectsController');
+Route::resource('tasks', 'TasksController');
 
 Route::get('/hud', array('as' => 'hud', function(){
 	return View::make('hud');

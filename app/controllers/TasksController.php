@@ -1,25 +1,21 @@
 <?php
 
-class ProjectsController extends \BaseController {
+class TasksController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /projects
+	 * GET /tasks
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$projects 	= 	Project::all();
-		$counter 	=	0;
-
-		return View::make('projects.index')->with('projects', $projects)->with('counter', $counter);
-
+		//
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /projects/create
+	 * GET /tasks/create
 	 *
 	 * @return Response
 	 */
@@ -30,7 +26,7 @@ class ProjectsController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /projects
+	 * POST /tasks
 	 *
 	 * @return Response
 	 */
@@ -41,24 +37,19 @@ class ProjectsController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /projects/{id}
+	 * GET /tasks/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
-		$project 		=	Project::find($id);
-		$tasks 			=	$project->tasks()->where('state','incomplete')->get();
-		$completedTasks	=	$project->tasks()->where('state','complete')->get();
-		$taskCount 	=	count($tasks);
-			
-		return  View::make('projects.show')->with('project', $project)->with('tasks', $tasks)->with('completedTasks', $completedTasks)->with('taskCount', $taskCount);
+		//
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /projects/{id}/edit
+	 * GET /tasks/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -70,19 +61,29 @@ class ProjectsController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /projects/{id}
+	 * PUT /tasks/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function update($id)
 	{
-		//
+			$task = Task::find(Input::get('task'));
+
+			if ($task->state == 'complete') {
+				$task->state = 'incomplete';
+				$task->save();
+			}else{
+				$task->state = 'complete';
+				$task->save();
+			}
+
+			return Redirect::back();
 	}
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /projects/{id}
+	 * DELETE /tasks/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

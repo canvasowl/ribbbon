@@ -29,7 +29,7 @@
                 <h4 class="app-wrapper-title">Projects</h4>
                 <ul class="list-style-none">
                     @foreach ($projects as $project)
-                        <li><a href="/projects/id">{{ $project->name }}</a></li>                    
+                        <li><a href="/projects/{{ $project->id }}">{{ $project->name }}</a></li> 
                     @endforeach                    
                 </ul>
             </section>

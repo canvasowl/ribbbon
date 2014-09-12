@@ -27,7 +27,8 @@ class ClientsController extends \BaseController {
 	 */
 	public function create()
 	{
-        $name = Input::get('name');
+        $name 		= Input::get('name');
+        $user_id 	= Auth::id();
 
         // Validation
         $validator = Validator::make(
@@ -40,9 +41,11 @@ class ClientsController extends \BaseController {
             return Redirect::back()->withErrors($validator);
         }
 
-        $client         = new Client;
-        $client->name   = $name;
+        $client         	= new Client;
+        $client->name   	= $name;
+        $client->user_id 	= $user_id;
         $client->save();
+
 
         return Redirect::back()->with('success', $name ." is now a new client.");
 	}
