@@ -26,7 +26,7 @@
             </section>
             <hr>
             <section class="info">
-                <h4 class="app-wrapper-title">Projects</h4>
+                <h4>Projects</h4>
                 <ul class="list-style-none">
                     @foreach ($projects as $project)
                         <li><a href="/projects/{{ $project->id }}">{{ $project->name }}</a></li> 

@@ -1,9 +1,25 @@
 html, body {
   font-family: helvetica, sans-serif;
-  background-color: whitesmoke; }
+  background-color: whitesmoke;
+  font-size: 16px; }
+
+p, a {
+  font-size: 1em; }
+
+h4 {
+  font-size: 1.3em; }
+
+h3 {
+  font-size: 1.4em; }
+
+h2 {
+  font-size: 1.5em; }
 
 h1 {
-  color: #b9433f; }
+  font-size: 1.6em; }
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: #777777; }
 
 a {
   color: #b9433f; }
@@ -57,7 +73,7 @@ input:focus {
   color: white; }
 
 .btn-default {
-  background-color: #b9433f; }
+  background-color: #ff5050; }
 
 .btn:hover {
   background-color: #e3524d; }
@@ -132,9 +148,6 @@ input:focus {
 
 .app-wrapper-title {
   color: #b9433f; }
-
-.tasks-complete {
-  color: #77d3aa; }
 
 .level {
   display: inline-block;
@@ -229,7 +242,8 @@ input:focus {
   border-radius: 5px; }
 
 .app-wrapper-wide {
-  width: 99%; }
+  width: 976px;
+  max-width: 100%; }
 
 section.info {
   background-color: #ffffe7;

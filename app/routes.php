@@ -9,15 +9,27 @@ Route::get('/', function()
 	}	
 });
 
-Route::resource('/users', 'UsersController');
+// Route::resource('/users', 'UsersController');
 	Route::post('/login', 'UsersController@login');
 	Route::get('/logout', 'UsersController@logout');
 	Route::post('/register', 'UsersController@register');
 
-Route::resource('clients', 'ClientsController');
-Route::resource('projects', 'ProjectsController');
-Route::resource('tasks', 'TasksController');
 
-Route::get('/hud', array('as' => 'hud', function(){
-	return View::make('hud');
-}));
+
+// Route::get('/hud', array('as' => 'hud', function(){
+// 	return View::make('hud');
+// }));
+
+
+Route::group(array('before' => 'auth'), function(){
+
+
+	Route::resource('/users', 'UsersController');
+	Route::resource('clients', 'ClientsController');
+	Route::resource('projects', 'ProjectsController');
+	Route::resource('tasks', 'TasksController');
+	Route::get('/hud', array('as' => 'hud', function(){
+		return View::make('hud');
+	}));
+
+});

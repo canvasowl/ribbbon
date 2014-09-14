@@ -1,30 +1,34 @@
-//-- VARIABLES
+// Basic colors
 $color-default: 		#B9433F;
 $color-default-hover: 	#E3524D;
 $color-default-active: 	#E37975;
-
+$color-text: 			#777;
 $main-bg-color: 		#f5f5f5;
+$color-laravel:			#ff5050;
 
+// Dark related
 $dark-color: 			#333333;
 $darkest-color: 		#414141;
-
 $text-on-dark:			#ccc;
 
+// Messages colors
 $color-danger: 			#F95E5C;
 $color-success: 		#6CCBAB;
 
+// Info sections
 $info-bg-color:			#FFFFE7;
 $info-text-color:		#666;
 
-$tasks-complete-color: 	#77D3AA;
-
+// Misc
 $color-paper-line:		#E7C6AB;
 
-$main-font-famliy: helvetica, sans-serif;
-
+// Weight Colors
 $color-easy:			#B5B5D0;
 $color-medium:			#5D80D0;
 $color-hard:			#D05B35;
+
+// Typography
+$main-font-famliy: helvetica, sans-serif;
 
 
 // -- MIXINS
@@ -33,9 +37,17 @@ $color-hard:			#D05B35;
 }
 
 //--- GLOBALS
-html,body{font-family: $main-font-famliy; background-color: $main-bg-color}
+html,body{font-family: $main-font-famliy; background-color: $main-bg-color; font-size: 16px;}
 
-h1{color: $color-default}
+
+p,a{font-size: 1em;}
+h4{font-size: 1.3em;}
+h3{font-size: 1.4em;}
+h2{font-size: 1.5em;}
+h1{font-size: 1.6em;}
+
+p,h1,h2,h3,h4,h5,h6{color: $color-text;}
+
 
 a{color: $color-default}
 a:hover{color: $color-default-hover; text-decoration: none}
@@ -66,7 +78,7 @@ input:focus{outline: none !important;}
 }
 .btn:hover,
 .btn:active{color: white;}
-.btn-default{background-color: $color-default;}
+.btn-default{background-color: $color-laravel;}
 	.btn:hover{background-color: $color-default-hover }
 	.btn:active{background-color: $color-default-active; }
 
@@ -107,8 +119,6 @@ input:focus{outline: none !important;}
 .small-padding-right{padding-right: 10px}
 
 .app-wrapper-title{color: $color-default}
-
-.tasks-complete{color: $tasks-complete-color};
 
 .level{
 	display: inline-block; 
@@ -173,7 +183,7 @@ input:focus{outline: none !important;}
 	padding: 10px;
 	border-radius: 5px;
 }
-.app-wrapper-wide{width: 99%;}
+.app-wrapper-wide{width: 976px; max-width: 100%;}
 
 section.info{
 	background-color: $info-bg-color;
