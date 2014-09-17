@@ -15,6 +15,9 @@ $text-on-dark:			#ccc;
 $color-danger: 			#F95E5C;
 $color-success: 		#6CCBAB;
 
+// Special colors
+$color-module:			rgba(255, 80, 80, .9);
+
 // Info sections
 $info-bg-color:			#FFFFE7;
 $info-text-color:		#666;
@@ -28,7 +31,9 @@ $color-medium:			#5D80D0;
 $color-hard:			#D05B35;
 
 // Typography
-$main-font-famliy: helvetica, sans-serif;
+$main-font-famliy: 'HelveticaNeueLT Com 35 Th', sans-serif;
+
+
 
 
 // -- MIXINS
@@ -56,6 +61,9 @@ a:focus,a:active{color: $color-default-active; outline: none !important}
 input:active,
 input:focus{outline: none !important;}
 
+.form-control{ border: 1px solid #eee; border-radius: 0px; height: 45px; font-size: 1.5em; color: #777 }
+.form-control:focus{box-sizing: border-box; border: 2px solid $color-laravel; box-shadow: none}
+
 .no-margin-top{margin-top: 0;}
 .no-margin-right{margin-right: 0;}
 .no-margin-bottom{margin-bottom: 0;}
@@ -71,10 +79,10 @@ input:focus{outline: none !important;}
 	padding: 8px 23px;
 	color: white;
 	border: none;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	border-radius: 3px;		
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	border-radius: 0px;		
 }
 .btn:hover,
 .btn:active{color: white;}
@@ -99,7 +107,7 @@ input:focus{outline: none !important;}
 .alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}
 .alert-main a{color: #fff !important}
 
-.alert-danger{background-color: $color-danger;}
+.alert-danger{background-color: $color-default;}
 .alert-success{background-color: $color-success;}
 
 .numCount{
@@ -145,12 +153,29 @@ input:focus{outline: none !important;}
 	height: 1000px;
 	z-index: 10000000000000;
 }
+
+.tab-pane{margin-top: 20px;}
+
+#module{
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	left: 0;	
+	width: 1000px;
+	height: 1000px;
+	background-color: $color-module;
+	display: none;
+}
+
 //-- HOME
 .hug-homeHeader{ @include header-bar-top()}
 
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
 
 // INNER PAGES SHARED
+.hug-hudHeader{background-color: $color-laravel}
+.hug-hudHeader .row{margin-left: 0; margin-right: 0;}
+
 .card{
 	background-color: $main-bg-color; 
 	border-radius: 4px; 

@@ -1,5 +1,5 @@
 html, body {
-  font-family: helvetica, sans-serif;
+  font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
   background-color: whitesmoke;
   font-size: 16px; }
 
@@ -36,6 +36,18 @@ input:active,
 input:focus {
   outline: none !important; }
 
+.form-control {
+  border: 1px solid #eee;
+  border-radius: 0px;
+  height: 45px;
+  font-size: 1.5em;
+  color: #777777; }
+
+.form-control:focus {
+  box-sizing: border-box;
+  border: 2px solid #ff5050;
+  box-shadow: none; }
+
 .no-margin-top {
   margin-top: 0; }
 
@@ -63,10 +75,10 @@ input:focus {
   padding: 8px 23px;
   color: white;
   border: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px; }
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px; }
 
 .btn:hover,
 .btn:active {
@@ -118,7 +130,7 @@ input:focus {
   color: #fff !important; }
 
 .alert-danger {
-  background-color: #f95e5c; }
+  background-color: #b9433f; }
 
 .alert-success {
   background-color: #6ccbab; }
@@ -188,6 +200,19 @@ input:focus {
   height: 1000px;
   z-index: 10000000000000; }
 
+.tab-pane {
+  margin-top: 20px; }
+
+#module {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: 1000px;
+  background-color: rgba(255, 80, 80, 0.9);
+  display: none; }
+
 .hug-homeHeader {
   border-top: 25px solid #fff; }
 
@@ -195,6 +220,13 @@ input:focus {
   width: 400px;
   max-width: 100%;
   margin: 0 auto; }
+
+.hug-hudHeader {
+  background-color: #ff5050; }
+
+.hug-hudHeader .row {
+  margin-left: 0;
+  margin-right: 0; }
 
 .card {
   background-color: whitesmoke;
