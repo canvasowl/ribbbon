@@ -20,8 +20,36 @@ class TasksController extends \BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{
-		//
+	{	
+		// Rules
+		$rules	= array(
+				'name' 		=> 'required|unique:tasks', 
+				'weight' 	=> 'required|integer|between:1,3'
+		);
+
+		// Custom messages
+		$messages = array(		
+		    	'between' => 'The :attribute must be between :min - :max.',
+		    	'integer' => ':attribute must be a number'		     
+		);
+
+		// Create validation 
+		$validator = Validator::make( Input::all(), $rules, $messages );
+
+		// Check validation
+		if ( $validator->fails() ) 
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		$task 				= new Task;
+		$task->project_id 	= Input::get('projectId');
+		$task->name 		= Input::get('name');
+		$task->weight		= Input::get('weight');
+		$task->state		="incomplete";
+		$task->save();
+
+		return Redirect::back()->with('success', Input::get('name') ." has been created.");
 	}
 
 	/**

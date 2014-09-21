@@ -13,8 +13,9 @@
 
 		<!-- Tab panes -->
 		<div class="tab-content">
+		
+		  <!-- LOGIN -->
 		  <div class="tab-pane active" id="login">
-		   	<p>Login into your account</p>
 			<div>	
 				{{ Form::open(array('action' => 'UsersController@login')) }}
 					<div class="form-group">
@@ -31,8 +32,10 @@
 				{{ Form::close() }}
 			</div>		  	
 		  </div>
+		  <!-- LOGIN -->
+
+		  <!-- REGISTER -->
 		  <div class="tab-pane" id="signup">
-		   	<p>Register</p>
 			<div>										
 				{{ Form::open(array('action' => 'UsersController@register')) }}
 					<div class="form-group">
@@ -53,6 +56,7 @@
 				{{ Form::close() }}
 			</div>		  	
 		  </div>
+		  <!-- REGISTER -->
 		</div>
 
 		</div>

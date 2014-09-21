@@ -21,6 +21,9 @@ h1 {
 p, h1, h2, h3, h4, h5, h6 {
   color: #777777; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HelveticaNeueLT Com 57 Cn", sans-serif; }
+
 a {
   color: #b9433f; }
 
@@ -35,6 +38,10 @@ a:focus, a:active {
 input:active,
 input:focus {
   outline: none !important; }
+
+.row {
+  margin-left: 0;
+  margin-right: 0; }
 
 .form-control {
   border: 1px solid #eee;
@@ -92,6 +99,10 @@ input:focus {
 
 .btn:active {
   background-color: #e37975; }
+
+.btn-wide {
+  width: 100%;
+  padding: 15px; }
 
 .navbar-default {
   background-color: #ff5050;
@@ -212,6 +223,14 @@ input:focus {
   height: 1000px;
   background-color: rgba(255, 80, 80, 0.9);
   display: none; }
+
+#module #close {
+  float: right;
+  margin: 10px 10px 0 0; }
+
+#module #close:hover {
+  cursor: pointer;
+  color: #fff; }
 
 .hug-homeHeader {
   border-top: 25px solid #fff; }

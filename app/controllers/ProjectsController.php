@@ -53,7 +53,7 @@ class ProjectsController extends \BaseController {
 		$completedTasks	=	$project->tasks()->where('state','complete')->get();
 		$taskCount 	=	count($tasks);
 			
-		return  View::make('projects.show')->with('project', $project)->with('tasks', $tasks)->with('completedTasks', $completedTasks)->with('taskCount', $taskCount);
+		return  View::make('projects.show')->with('project', $project)->with('tasks', $tasks)->with('completedTasks', $completedTasks)->with('taskCount', $taskCount)->with("id",$project);
 	}
 
 	/**

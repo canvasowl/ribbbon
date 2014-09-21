@@ -1,5 +1,5 @@
 // Basic colors
-$color-default: 		#B9433F;
+$color-default: #b9433f;
 $color-default-hover: 	#E3524D;
 $color-default-active: 	#E37975;
 $color-text: 			#777;
@@ -32,7 +32,7 @@ $color-hard:			#D05B35;
 
 // Typography
 $main-font-famliy: 'HelveticaNeueLT Com 35 Th', sans-serif;
-
+$main-title-font:  'HelveticaNeueLT Com 57 Cn', sans-serif;
 
 
 
@@ -53,6 +53,7 @@ h1{font-size: 1.6em;}
 
 p,h1,h2,h3,h4,h5,h6{color: $color-text;}
 
+h1,h2,h3,h4,h5,h6{font-family: $main-title-font;}
 
 a{color: $color-default}
 a:hover{color: $color-default-hover; text-decoration: none}
@@ -60,6 +61,8 @@ a:focus,a:active{color: $color-default-active; outline: none !important}
 
 input:active,
 input:focus{outline: none !important;}
+
+.row{margin-left: 0; margin-right: 0;}
 
 .form-control{ border: 1px solid #eee; border-radius: 0px; height: 45px; font-size: 1.5em; color: #777 }
 .form-control:focus{box-sizing: border-box; border: 2px solid $color-laravel; box-shadow: none}
@@ -89,6 +92,8 @@ input:focus{outline: none !important;}
 .btn-default{background-color: $color-laravel;}
 	.btn:hover{background-color: $color-default-hover }
 	.btn:active{background-color: $color-default-active; }
+
+.btn-wide{width: 100%; padding: 15px;}
 
 .navbar-default{
   background-color: #ff5050;
@@ -166,6 +171,8 @@ input:focus{outline: none !important;}
 	background-color: $color-module;
 	display: none;
 }
+#module #close{float: right; margin: 10px 10px 0 0;}
+#module #close:hover{cursor: pointer; color: #fff;}
 
 //-- HOME
 .hug-homeHeader{ @include header-bar-top()}
