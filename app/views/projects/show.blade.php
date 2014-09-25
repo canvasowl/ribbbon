@@ -51,7 +51,7 @@
 					  		@else
 						  		<table class="table">
 						  			<thead>
-						  				<tr><th>Task</th><th>Weight</th></tr>			  				
+						  				<tr><th>Task</th><th>Weight</th><th>Actions</th></tr>			  				
 						  				<tbody>
 						  					@foreach ($tasks as $task)
 				  							<?php
@@ -66,11 +66,13 @@
 						  					<tr>
 						  						<td>					  							
 						  							{{ Form::open(array('action' => 'TasksController@update', 'method' => 'put')) }}
-						  								<input type="checkbox" onClick="this.form.submit()" name="task" value="{{ $task->id }}" /> 						  			
-							  							{{ $task->name }}</td><td><span class="level {{ $weight }}"></span>
+						  								<input type="checkbox" onClick="this.form.submit()" name="task" value="{{ $task->id }}" />  			
+							  							{{ $task->name }}
 							  							<input type="hidden" name="task" value="{{ $task->id }}">
 						  							{{ Form::close() }}
 						  						</td>
+						  						<td><span class="level {{ $weight }}"></span></td>
+						  						<td><a href=""><i class="fa fa-pencil-square-o"></i></a></td>
 						  					</tr>
 						  					@endforeach				  		
 						  				</tbody>
@@ -85,7 +87,7 @@
 					  	<section class="info">
 					  		<table class="table">
 					  			<thead>
-					  				<tr><th>Task</th><th>Weight</th></tr>			  				
+					  				<tr><th>Task</th><th>Weight</th><th>Actions</th></tr>			  				
 					  				<tbody>
 					  					@foreach ($completedTasks as $task)
 			  							<?php
@@ -123,11 +125,11 @@
 		            	<div class="form-group">
 		            		<form action="/tasks/create" method="get">
 		            			<div class="row">		            				
-		            				<div class="col-xs-10">
+		            				<div class="col-xs-10 no-padding-left">
 				            			<label>Name</label>
 				            			<input type="text" name="name" class="form-control" value="{{ Input::old('name') }}">		            				
 			            			</div>
-			            			<div class="col-xs-2">
+			            			<div class="col-xs-2 no-padding-right">
 			            				<label>Weight</label>
 			            				<div>
 			            					<input placeholder="1" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">

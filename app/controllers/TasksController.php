@@ -46,7 +46,7 @@ class TasksController extends \BaseController {
 		$task->project_id 	= Input::get('projectId');
 		$task->name 		= Input::get('name');
 		$task->weight		= Input::get('weight');
-		$task->state		="incomplete";
+		$task->state		= "incomplete";
 		$task->save();
 
 		return Redirect::back()->with('success', Input::get('name') ." has been created.");

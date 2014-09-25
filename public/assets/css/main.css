@@ -39,6 +39,12 @@ input:active,
 input:focus {
   outline: none !important; }
 
+.no-padding-left {
+  padding-left: 0; }
+
+.no-padding-right {
+  padding-right: 0; }
+
 .row {
   margin-left: 0;
   margin-right: 0; }
