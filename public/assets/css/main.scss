@@ -126,6 +126,7 @@ input:focus{outline: none !important;}
 }
 
 .list-style-none{ list-style: none; padding-left: 0 }
+.inline-list li{float: left; margin-left: 4px;}
 
 .done{text-decoration: line-through}
 

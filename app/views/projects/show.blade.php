@@ -72,7 +72,17 @@
 						  							{{ Form::close() }}
 						  						</td>
 						  						<td><span class="level {{ $weight }}"></span></td>
-						  						<td><a href=""><i class="fa fa-pencil-square-o"></i></a></td>
+						  						<td>
+						  							<ul class="list-style-none inline-list">
+						  								<li><a href=""><i class="fa fa-pencil-square-o"></i></a></li>
+						  								<li>
+							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
+							  								<input type="hidden" name="id" value="{{ $task->id }}">
+							  								<input type="submit" value="delete">
+						  									{{ Form::close() }}					  									
+						  								</li>
+						  							</ul>						  							
+						  						</td>
 						  					</tr>
 						  					@endforeach				  		
 						  				</tbody>
@@ -100,13 +110,25 @@
 			  								}
 			  							?>					  					
 					  					<tr>
-					  						<td>
+					  						<td>					  							
 					  							{{ Form::open(array('action' => 'TasksController@update', 'method' => 'put')) }}
-						  							<input checked="checked" type="checkbox" onClick="this.form.submit()" name="task" value="{{ $task->id }}"/> 
-						  							{{ $task->name }}</td><td><span class="level {{ $weight }}"></span>
+					  								<input checked="checked" type="checkbox" onClick="this.form.submit()" name="task" value="{{ $task->id }}" /> 
+						  							{{ $task->name }}
 						  							<input type="hidden" name="task" value="{{ $task->id }}">
 					  							{{ Form::close() }}
 					  						</td>
+					  						<td><span class="level {{ $weight }}"></span></td>
+					  						<td>
+					  							<ul class="list-style-none inline-list">
+					  								<li><a href=""><i class="fa fa-pencil-square-o"></i></a></li>
+					  								<li>
+						  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
+						  								<input type="hidden" name="id" value="{{ $task->id }}">
+						  								<input type="submit" value="delete">
+					  									{{ Form::close() }}					  									
+					  								</li>
+					  							</ul>						  							
+					  						</td>					  						
 					  					</tr>
 					  					@endforeach				  		
 					  				</tbody>

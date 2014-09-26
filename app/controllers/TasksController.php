@@ -118,7 +118,10 @@ class TasksController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$task = Task::find(Input::get('id'));
+		$task->delete();
+
+		return Redirect::back();
 	}
 
 }
