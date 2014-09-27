@@ -4,19 +4,12 @@
 @section('content')
 
 
-<divs id="task-form" />
-    {{ Form::open() }}
-    	
-    {{ Form::close() }}
-</div>
-
-
 <div class="row">
 	<div class="col-xs-12">
 		<div class="app-wrapper app-wrapper-wide">        
             
             <div>
-                <h2 class="pull-left no-margin-top">{{ $project->name }}</h2>                                   
+                <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total">{{ $total_weight }}</span></h2>                                   
                 <ul class="list-inline pull-right">
                 	<li><!-- <button class="btn btn-success" onclick="openCreateNewTaskModule()">New Task <i class="fa fa-plus"></i></button> --></li>
                     <!-- <li><a class="btn btn-default" href="/projects/{{ $project->id }}/edit">Edit</a></li> -->
@@ -30,16 +23,7 @@
 					<ul class="nav nav-tabs" role="tablist">
 					  <li class="active"><a href="#tasks" role="tab" data-toggle="tab">Remaining Tasks</a></li>
 					  <li><a href="#manage" role="tab" data-toggle="tab">Completed Tasks</a></li>
-					</ul>
-			  		
-			  		<div class="legend">
-			  			<p>Task weights</p>
-			  			<ul class="list-style-none">
-			  				<li><span class="level level-easy"></span> easy</li>
-			  				<li><span class="level level-medium"></span> medium</li>
-			  				<li><span class="level level-hard"></span> hard</li>
-			  			</ul>
-			  		</div>
+					</ul>			  	
 
 					<!-- Tab panes -->
 					<div class="tab-content">
@@ -71,7 +55,7 @@
 							  							<input type="hidden" name="task" value="{{ $task->id }}">
 						  							{{ Form::close() }}
 						  						</td>
-						  						<td><span class="level {{ $weight }}"></span></td>
+						  						<td><span class="level {{ $weight }}">{{ $task->weight }}</span></td>
 						  						<td>
 						  							<ul class="list-style-none inline-list">
 						  								<li><a href=""><i class="fa fa-pencil-square-o"></i></a></li>
@@ -117,7 +101,7 @@
 						  							<input type="hidden" name="task" value="{{ $task->id }}">
 					  							{{ Form::close() }}
 					  						</td>
-					  						<td><span class="level {{ $weight }}"></span></td>
+					  						<td><span class="level {{ $weight }}">{{ $task->weight }}</span></td>
 					  						<td>
 					  							<ul class="list-style-none inline-list">
 					  								<li><a href=""><i class="fa fa-pencil-square-o"></i></a></li>

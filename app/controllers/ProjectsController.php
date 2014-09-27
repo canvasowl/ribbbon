@@ -48,12 +48,14 @@ class ProjectsController extends \BaseController {
 	 */
 	public function show($id)
 	{
+
 		$project 		=	Project::find($id);
 		$tasks 			=	$project->tasks()->where('state','incomplete')->get();
 		$completedTasks	=	$project->tasks()->where('state','complete')->get();
-		$taskCount 	=	count($tasks);
+		$taskCount 		=	count($tasks);
+		$total_weight	=	$project->tasks()->sum('weight');
 			
-		return  View::make('projects.show')->with('project', $project)->with('tasks', $tasks)->with('completedTasks', $completedTasks)->with('taskCount', $taskCount)->with("id",$project);
+		return  View::make('projects.show')->with('project', $project)->with('tasks', $tasks)->with('completedTasks', $completedTasks)->with('taskCount', $taskCount)->with("id",$project)->with('total_weight', $total_weight );
 	}
 
 	/**

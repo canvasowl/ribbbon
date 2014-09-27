@@ -4,7 +4,7 @@ $color-default-hover: 	#E3524D;
 $color-default-active: 	#E37975;
 $color-text: 			#777;
 $main-bg-color: 		#f5f5f5;
-$color-laravel:			#ff5050;
+$color-laravel:			#ff5050;	
 
 // Dark related
 $dark-color: 			#333333;
@@ -26,6 +26,7 @@ $info-text-color:		#666;
 $color-paper-line:		#E7C6AB;
 
 // Weight Colors
+$color-weight: 			#5db3b7;	
 $color-easy:			#B5B5D0;
 $color-medium:			#5D80D0;
 $color-hard:			#D05B35;
@@ -67,7 +68,7 @@ input:focus{outline: none !important;}
 
 .row{margin-left: 0; margin-right: 0;}
 
-.form-control{ border: 1px solid #eee; border-radius: 0px; height: 45px; font-size: 1.5em; color: #777 }
+.form-control{ border: 1px solid #eee; border-radius: 0px; height: 38px; font-size: 1.1em; color: #777 }
 .form-control:focus{box-sizing: border-box; border: 2px solid $color-laravel; box-shadow: none}
 
 .no-margin-top{margin-top: 0;}
@@ -126,7 +127,7 @@ input:focus{outline: none !important;}
 }
 
 .list-style-none{ list-style: none; padding-left: 0 }
-.inline-list li{float: left; margin-left: 4px;}
+.inline-list li{float: left; margin-left: 0}
 
 .done{text-decoration: line-through}
 
@@ -137,15 +138,25 @@ input:focus{outline: none !important;}
 
 .app-wrapper-title{color: $color-default}
 
+span.total{
+background-color: $color-weight;
+color: #fff;
+font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
+padding: 5px 05px 0px;
+line-height: 0;	
+}
+
 .level{
 	display: inline-block; 
 	width: 20px; 
 	height: 20px; 
-	border-radius: 100%;
+	padding: 2px 5px;
+	color: #fff;
 }
-.level-easy{background-color: $color-easy;}
-.level-medium{background-color: $color-medium;}
-.level-hard{background-color: $color-hard;}
+
+.level-easy{background-color: $color-weight;}
+.level-medium{background-color: $color-weight;}
+.level-hard{background-color: $color-weight;}
 
 .legend{margin-top: 20px;}
 .legend ul li{display: inline; margin-left: 8px;}

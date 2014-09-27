@@ -52,8 +52,8 @@ input:focus {
 .form-control {
   border: 1px solid #eee;
   border-radius: 0px;
-  height: 45px;
-  font-size: 1.5em;
+  height: 38px;
+  font-size: 1.1em;
   color: #777777; }
 
 .form-control:focus {
@@ -164,7 +164,7 @@ input:focus {
 
 .inline-list li {
   float: left;
-  margin-left: 4px; }
+  margin-left: 0; }
 
 .done {
   text-decoration: line-through; }
@@ -182,20 +182,28 @@ input:focus {
 .app-wrapper-title {
   color: #b9433f; }
 
+span.total {
+  background-color: #5db3b7;
+  color: #fff;
+  font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
+  padding: 5px 05px 0px;
+  line-height: 0; }
+
 .level {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border-radius: 100%; }
+  padding: 2px 5px;
+  color: #fff; }
 
 .level-easy {
-  background-color: #b5b5d0; }
+  background-color: #5db3b7; }
 
 .level-medium {
-  background-color: #5d80d0; }
+  background-color: #5db3b7; }
 
 .level-hard {
-  background-color: #d05b35; }
+  background-color: #5db3b7; }
 
 .legend {
   margin-top: 20px; }
