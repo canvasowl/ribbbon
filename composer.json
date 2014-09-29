@@ -1,7 +1,7 @@
 {	
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+	"name": "canvasowl/ribbbon",
+	"description": "A project management system for web artisans.",
+	"keywords": ["project", "management"],
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*"
