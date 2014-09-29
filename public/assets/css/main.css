@@ -155,8 +155,8 @@ input:focus {
 .numCount {
   background-color: #333333;
   color: #fff;
-  padding: 3px 7px;
-  border-radius: 100%; }
+  font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
+  padding: 5px 05px 0px; }
 
 .list-style-none {
   list-style: none;

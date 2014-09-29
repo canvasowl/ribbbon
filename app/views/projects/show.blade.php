@@ -28,6 +28,7 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 					  
+					  <!-- REMAINING TASKS -->
 					  <div class="tab-pane active" id="tasks">					  	
 					  	<section class="info">
 					  		@if ($taskCount == 0)
@@ -73,51 +74,55 @@
 						  			</thead>
 						  		</table>
 					  		@endif
-
 					  	</section>
 					  </div>
 
+					  <!-- COMEPLETED TASKS -->
 					  <div class="tab-pane" id="manage">
 					  	<section class="info">
-					  		<table class="table">
-					  			<thead>
-					  				<tr><th>Task</th><th>Weight</th><th>Actions</th></tr>			  				
-					  				<tbody>
-					  					@foreach ($completedTasks as $task)
-			  							<?php
-			  								if ($task->weight == 1) {
-			  									$weight = "level-easy";
-			  								}else if($task->weight == 2){
-			  									$weight = "level-medium";
-			  								}else if($task->weight == 3){
-			  									$weight = "level-hard";
-			  								}
-			  							?>					  					
-					  					<tr>
-					  						<td>					  							
-					  							{{ Form::open(array('action' => 'TasksController@update', 'method' => 'put')) }}
-					  								<input checked="checked" type="checkbox" onClick="this.form.submit()" name="task" value="{{ $task->id }}" /> 
-						  							{{ $task->name }}
-						  							<input type="hidden" name="task" value="{{ $task->id }}">
-					  							{{ Form::close() }}
-					  						</td>
-					  						<td><span class="level {{ $weight }}">{{ $task->weight }}</span></td>
-					  						<td>
-					  							<ul class="list-style-none inline-list">
-					  								<li><a href=""><i class="fa fa-pencil-square-o"></i></a></li>
-					  								<li>
-						  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
-						  								<input type="hidden" name="id" value="{{ $task->id }}">
-						  								<input type="submit" value="delete">
-					  									{{ Form::close() }}					  									
-					  								</li>
-					  							</ul>						  							
-					  						</td>					  						
-					  					</tr>
-					  					@endforeach				  		
-					  				</tbody>
-					  			</thead>
-					  		</table>
+					  		@if ($completedCount == 0)
+					  			<p>No tasks has been completed for this project.</p>
+					  		@else
+						  		<table class="table">
+						  			<thead>
+						  				<tr><th>Task</th><th>Weight</th><th>Actions</th></tr>			  				
+						  				<tbody>
+						  					@foreach ($completedTasks as $task)
+				  							<?php
+				  								if ($task->weight == 1) {
+				  									$weight = "level-easy";
+				  								}else if($task->weight == 2){
+				  									$weight = "level-medium";
+				  								}else if($task->weight == 3){
+				  									$weight = "level-hard";
+				  								}
+				  							?>					  					
+						  					<tr>
+						  						<td>					  							
+						  							{{ Form::open(array('action' => 'TasksController@update', 'method' => 'put')) }}
+						  								<input checked="checked" type="checkbox" onClick="this.form.submit()" name="task" value="{{ $task->id }}" /> 
+							  							{{ $task->name }}
+							  							<input type="hidden" name="task" value="{{ $task->id }}">
+						  							{{ Form::close() }}
+						  						</td>
+						  						<td><span class="level {{ $weight }}">{{ $task->weight }}</span></td>
+						  						<td>
+						  							<ul class="list-style-none inline-list">
+						  								<li><a href=""><i class="fa fa-pencil-square-o"></i></a></li>
+						  								<li>
+							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
+							  								<input type="hidden" name="id" value="{{ $task->id }}">
+							  								<input type="submit" value="delete">
+						  									{{ Form::close() }}					  									
+						  								</li>
+						  							</ul>						  							
+						  						</td>					  						
+						  					</tr>
+						  					@endforeach				  		
+						  				</tbody>
+						  			</thead>
+						  		</table>
+					  		@endif
 					  	</section>					  	
 					  </div>
 
