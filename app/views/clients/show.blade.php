@@ -24,7 +24,7 @@
                     <li><strong>Email:</strong> {{ $client->email }}</li>
                 </ul>                
             </section>
-            <hr>
+            
             <section class="info">
                 <h4>Projects</h4>
                 <ul class="list-style-none">
@@ -33,7 +33,14 @@
                     @endforeach                    
                 </ul>
             </section>
-
+            <section>
+                <hr>
+                <strong>Note:</strong>
+                <p>Deleting <i>{{ $client->name }}</i> will delete all projects and tasks associated with this client.</p>
+                {{ Form::open() }}
+                    <input type="submit" class="btn btn-danger" value="Delete {{ $client->name }}" />  
+                {{ Form::close()}}
+            </section>
 		</div>
 	</div>
 </div>

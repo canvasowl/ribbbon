@@ -59,7 +59,6 @@
 						  						<td><span class="level {{ $weight }}">{{ $task->weight }}</span></td>
 						  						<td>
 						  							<ul class="list-style-none inline-list">
-						  								<li><a href=""><i class="fa fa-pencil-square-o"></i></a></li>
 						  								<li>
 							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
 							  								<input type="hidden" name="id" value="{{ $task->id }}">
@@ -108,7 +107,6 @@
 						  						<td><span class="level {{ $weight }}">{{ $task->weight }}</span></td>
 						  						<td>
 						  							<ul class="list-style-none inline-list">
-						  								<li><a href=""><i class="fa fa-pencil-square-o"></i></a></li>
 						  								<li>
 							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
 							  								<input type="hidden" name="id" value="{{ $task->id }}">

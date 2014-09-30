@@ -45,7 +45,6 @@ $main-title-font:  'HelveticaNeueLT Com 57 Cn', sans-serif;
 //--- GLOBALS
 html,body{font-family: $main-font-famliy; background-color: $main-bg-color; font-size: 16px;}
 
-
 p,a{font-size: 1em;}
 h4{font-size: 1.3em;}
 h3{font-size: 1.4em;}
@@ -83,6 +82,7 @@ input:focus{outline: none !important;}
 .container{width: 100%;}
 
 .btn{
+	font-size: 1em;
 	padding: 8px 23px;
 	color: white;
 	border: none;

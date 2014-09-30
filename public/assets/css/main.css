@@ -85,6 +85,7 @@ input:focus {
   width: 100%; }
 
 .btn {
+  font-size: 1em;
   padding: 8px 23px;
   color: white;
   border: none;
