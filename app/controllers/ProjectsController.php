@@ -14,7 +14,6 @@ class ProjectsController extends \BaseController {
 		$counter 	=	0;
 
 		return View::make('projects.index')->with('projects', $projects)->with('counter', $counter);
-
 	}
 
 	/**
@@ -24,13 +23,25 @@ class ProjectsController extends \BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{		
+	{	
+		// Rules
+		$rules	= array('name' => 'required',);
+
+		// Create validation 
+		$validator = Validator::make( Input::all(), $rules);
+
+		if ( $validator->fails() ) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		
+
 		$project 			=	new Project;
 		$project->name 		=	Input::get('name');
 		$project->client_id =	Input::get('client_id');
 		$project->save();
 
-		return Redirect::back();
+		return Redirect::back()->with('success', Input::get('name') ." has been created.");;
 	}
 
 	/**
