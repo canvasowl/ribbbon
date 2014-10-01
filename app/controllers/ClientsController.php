@@ -131,7 +131,6 @@ class ClientsController extends \BaseController {
         $client->save();
 
         return Redirect::back()->with('success', $name ." has been updated.");
-
 	}
 
 	/**
@@ -142,8 +141,22 @@ class ClientsController extends \BaseController {
 	 * @return Response
 	 */
 	public function destroy($id)
-	{
-		//
+	{	
+
+		$c_id 		= 	Input::get('id');
+		$client 	= 	Client::find($c_id);
+
+		$client->delete();
+		Project::where("client_id", $c_id)->delete();
+		
+		
+		// ----------------------------------------------------
+		$id 		= Auth::id();
+		$user		= User::find($id);
+		$clients 	= $user->clients()->get();
+		$counter 	= 0;
+
+		return View::make('clients.index')->with('clients', $clients)->with('counter', $counter);
 	}
 
 }

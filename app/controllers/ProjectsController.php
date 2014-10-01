@@ -92,7 +92,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+			
 	}
 
 }

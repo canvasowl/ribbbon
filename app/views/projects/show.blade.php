@@ -128,8 +128,9 @@
 	            </div>
 
 	            <div class="col-xs-12 col-md-6">
-		            <section>
-		            	<strong><p>Create a new task</p></strong>
+					<div class="panel panel-default">
+					  <div class="panel-heading">Create new task</div>
+					  <div class="panel-body">					    
 		            	<i>For the weight, enter a number from 1-3, the higher the number the harder the task.</i>
 		            	<div class="form-group">
 		            		<form action="/tasks/create" method="get">
@@ -152,22 +153,11 @@
 		            			</div>		            					            			
 		            		</form>
 		            	</div>
-		            	
-		            </section>
-
-		          <!--   <section class="info info-dark">
-		            	<p>Project Progresss:</p>
-			            <div class="progress">
-						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-						    60%
-						  </div>
-						</div>            	
-		            </section>   -->          	
-
-
+					  </div>
+					</div>	         	
 	            </div>
-            </div>
-			                             
+	            
+            </div>			                             
 		</div>
 	</div>
 </div>
