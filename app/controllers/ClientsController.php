@@ -74,7 +74,7 @@ class ClientsController extends \BaseController {
 		$client 	= 	Client::find($id);
 		$projects	=	$client->projects()->get();
 
-		return View::make('clients.show')->with('client', $client)->with('projects', $projects);
+		return View::make('clients.show')->with('client', $client)->with('projects', $projects)->with('client_id', $id);
 	}
 
 	/**

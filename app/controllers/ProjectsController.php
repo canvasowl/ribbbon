@@ -24,8 +24,13 @@ class ProjectsController extends \BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{
-		//
+	{		
+		$project 			=	new Project;
+		$project->name 		=	Input::get('name');
+		$project->client_id =	Input::get('client_id');
+		$project->save();
+
+		return Redirect::back();
 	}
 
 	/**
