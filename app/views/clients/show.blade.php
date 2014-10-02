@@ -39,7 +39,7 @@
                     <section>
                         <hr>
                         <strong>Note:</strong>
-                        <p>Deleting <i>{{ $client->name }}</i> will delete all projects and tasks associated with this client.</p>
+                        <p class="dimmed">Deleting <i>{{ $client->name }}</i> will delete all projects and tasks associated with this client.</p>
                         {{ Form::open(array('action' => 'ClientsController@destroy', 'method' => 'delete')) }}
                             <input type="hidden" name="id" value="{{ $client->id }}">
                             <input type="submit" class="btn btn-danger" value="Delete Client" />  

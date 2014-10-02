@@ -142,14 +142,20 @@ class ClientsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{	
-
 		$c_id 		= 	Input::get('id');
 		$client 	= 	Client::find($c_id);
 
+		// delete all related tasks
+		foreach ($client->projects as $p) {
+					Task::where('project_id', $p->id)->delete();
+				}		
+		
+		// delete related projects
+		Project::where("client_id", $c_id)->delete(); 
+		
+		// delete client
 		$client->delete();
-		Project::where("client_id", $c_id)->delete();
-		
-		
+			
 		// ----------------------------------------------------
 		$id 		= Auth::id();
 		$user		= User::find($id);
