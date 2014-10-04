@@ -199,7 +199,14 @@ span.total{
 #module #close:hover{cursor: pointer; color: #fff;}
 
 //-- HOME
-.hug-homeHeader{ @include header-bar-top()}
+.homepage-msg{
+	position: fixed;
+	top: 30%;
+	left: 0;
+	width: 100%;	
+	text-align: center;
+	color: #fff;
+}
 
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
 

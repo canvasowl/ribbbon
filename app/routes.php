@@ -9,9 +9,15 @@ Route::get('/', function()
 	}	
 });
 
-Route::post('/login', 'UsersController@login');
+Route::get('/register', function(){
+	return View::make('register');
+});
+
+Route::get('/login', function(){
+	return View::make('login');
+});
+
 Route::get('/logout', 'UsersController@logout');
-Route::post('/register', 'UsersController@register');
 Route::resource('/users', 'UsersController');
 
 // The user needs to be logged in for these routes to work

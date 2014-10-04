@@ -240,8 +240,13 @@ span.total {
   cursor: pointer;
   color: #fff; }
 
-.hug-homeHeader {
-  border-top: 25px solid #fff; }
+.homepage-msg {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff; }
 
 .athenticate-form-wrap {
   width: 400px;

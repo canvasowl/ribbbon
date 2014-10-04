@@ -1,6 +1,8 @@
 @include('templates/partials/head')
 
 <div class="hug hug-homeHeader">
+	
+	@include('templates/partials/unauth_nav')
 
 	@if ($errors->first())
 		<div class="alert alert-danger alert-main animated fadeInDown" role="alert">
@@ -17,13 +19,6 @@
 	  		</a>
 		</div>		
 	@endif
-
-	<div class="row">
-		<div class="col-xs-12">
-			<center><h1>Ribbbon</h1></center>
-			<center><h3>The Project Management System For Web Artisans.</h3></center>		
-		</div>
-	</div>	
 
 </div>
 
