@@ -9,26 +9,18 @@
             <div>
                 <h2 class="pull-left no-margin-top">Projects</h2>
             </div>
+            <div class="clearfix"></div>
+            <ul class="list-style-none">
+                @foreach ($projects as $project)
+                    <?php $counter++; ?>
+                    <a class="list-link"href="/projects/{{ $project->id }}">
+                        <li>
+                            <span class="numCount">{{ $counter }}</span> {{ $project->name}} 
+                        </li>
+                    </a>
+                @endforeach
+            </ul>
 
-			<table class="table">
-				<thead>                    
-                    @foreach ($projects as $project)
-                        <?php $counter++; ?>
-                        <tr>
-                            <td><span class="numCount">{{ $counter }}</span></td>
-                            <td>
-                                <a class="pull-left" title="view {{ $project->name }}" href="/projects/{{ $project->id }}">{{ $project->name }}</a>
-                                <ul class="pull-right list-inline">
-                                    <li><a title="edit {{ $project->name }}" href="/projects/{{ $project->id }}/edit"><i class="fa fa-magic"></i></a></li>
-                                    <li><a title="view {{ $project->name }}" href="/projects/{{ $project->id }}"><i class="fa fa-eye"></i></a></li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </td>
-                        </tr>                        
-                    @endforeach                
-
-				</thead>
-			</table>
 	</div>
 </div>
 

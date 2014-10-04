@@ -41,7 +41,8 @@ label {
   font-weight: 500; }
 
 .dimmed {
-  opacity: .5; }
+  opacity: .5;
+  font-size: .8em; }
 
 .no-padding-left {
   padding-left: 0; }
@@ -136,6 +137,13 @@ label {
   color: #586e6e;
   padding: 2px 05px 2px; }
 
+.numCount {
+  padding: 14px 0px;
+  display: inline-block;
+  height: 50px;
+  width: 60px;
+  text-align: center; }
+
 .list-style-none {
   list-style: none;
   padding-left: 0; }
@@ -143,6 +151,15 @@ label {
 .inline-list li {
   float: left;
   margin-left: 0; }
+
+.list-link {
+  height: 50px;
+  display: block;
+  color: #586e6e; }
+
+.list-link:hover {
+  background-color: #69b4b8;
+  color: #fff; }
 
 .done {
   text-decoration: line-through; }

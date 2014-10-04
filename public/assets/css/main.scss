@@ -13,6 +13,7 @@ $color-module:			rgba(255, 80, 80, .9);
 // Info sections
 $info-bg-color:			#FFFFE7;
 $info-text-color:		#666;
+$color-info-dark:       #d4d4c0;
 
 // Misc
 $color-paper-line:		#E7C6AB;
@@ -56,7 +57,7 @@ input:focus{outline: none !important;}
 
 label{font-weight: 500}
 
-.dimmed{opacity: .5}
+.dimmed{opacity: .5; font-size: .8em;}
 
 .no-padding-left{padding-left: 0;}
 .no-padding-right{padding-right: 0;}
@@ -119,8 +120,23 @@ label{font-weight: 500}
 	padding: 2px 05px 2px;
 }
 
+.numCount{
+	padding: 14px 0px; 
+	display: inline-block; 
+	height: 50px;
+	width: 60px;
+	text-align: center;
+}
+
 .list-style-none{ list-style: none; padding-left: 0 }
 .inline-list li{float: left; margin-left: 0}
+
+.list-link{
+	height: 50px;
+	display: block;	
+	color: $color-font;	
+}
+.list-link:hover{background-color: $color-primary; color: #fff;}
 
 .done{text-decoration: line-through}
 

@@ -17,26 +17,18 @@
                     </div>
                 </form>
             </div>
-
-			<table class="table">
-				<thead>                    
-                    @foreach ($clients as $client)
-                        <?php $counter++; ?>
-                        <tr>
-                            <td><span class="numCount">{{ $counter }}</span></td>
-                            <td>
-                                <a class="pull-left" title="view {{ $client->name }}" href="/clients/{{ $client->id }}">{{ $client->name }}</a>
-                                <ul class="pull-right list-inline">
-                                    <li><a title="edit {{ $client->name }}" href="/clients/{{ $client->id }}/edit"><i class="fa fa-magic"></i></a></li>
-                                    <li><a title="view {{ $client->name }}" href="/clients/{{ $client->id }}"><i class="fa fa-eye"></i></a></li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </td>
-                        </tr>                        
-                    @endforeach                
-
-				</thead>
-			</table>
+            <div class="clearfix"></div>
+            
+            <ul class="list-style-none">
+                @foreach ($clients as $client)
+                    <?php $counter++; ?>
+                    <a class="list-link"href="/clients/{{ $client->id }}">
+                        <li>
+                            <span class="numCount">{{ $counter }}</span> {{ $client->name}} 
+                        </li>
+                    </a>
+                @endforeach
+            </ul>
 	</div>
 </div>
 
