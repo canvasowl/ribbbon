@@ -4,6 +4,8 @@ $color-primary: #69b4b8;
 $color-primary-accent: #419094;
 $color-bg: #e9eaed;
 $color-font: #586E6E;
+$color-weight: #D4D4C0;
+$color-main-weigth: tomato;
 
 // Special colors
 $color-module:			rgba(255, 80, 80, .9);
@@ -15,8 +17,7 @@ $info-text-color:		#666;
 // Misc
 $color-paper-line:		#E7C6AB;
 
-// Weight Colors
-$color-weight: 			#5db3b7;	
+	
 
 // Typography
 $main-font-famliy: verdana, arial, serif;
@@ -128,21 +129,11 @@ label{font-weight: 500}
 .small-padding-left{padding-left: 10px}
 .small-padding-right{padding-right: 10px}
 
-// .app-wrapper-title{color: $color-default}
-
-span.total{
-background-color: $color-weight;
-color: #fff;
-font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
-padding: 5px 05px 0px;
-line-height: 0;	
-}
-
 .level{
 	display: inline-block; 
 	width: 20px; 
 	height: 20px; 
-	padding: 2px 5px;
+	padding: 0 0 0 5px;
 	color: #fff;
 }
 
@@ -155,6 +146,16 @@ line-height: 0;
 .legend ul li:first-child{margin-left: 0}
 
 .legend .level{border-radius: 4px; width: 10px; height: 10px;}
+
+span.total{
+	background-color: $color-weight;
+	color: #fff;
+	font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
+	padding: 5px 08px 0px;
+	line-height: 0;
+	border-radius: 100%;
+	background-color: $color-main-weigth;	
+}
 
 .blanket{
 	position: absolute; 
@@ -228,7 +229,7 @@ section.info{
 
 .table a{color: $color-font}
 .table a:hover{color: $color-primary}
-.table i {color: $color-bg}
+.table i {color: #96967A}
 .table i:hover {color: $color-primary}
 
 section.info-dark p{color: #fff} 

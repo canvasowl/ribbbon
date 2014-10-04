@@ -32,7 +32,7 @@
 			        </li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="/logout">Logout</a></li>			        
+			        <li><a href="/logout">Logout <i class="fa fa-sign-out"></i></a></li>			        
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			 </div><!-- /.container-fluid -->

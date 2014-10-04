@@ -157,24 +157,17 @@ label {
 .small-padding-right {
   padding-right: 10px; }
 
-span.total {
-  background-color: #5db3b7;
-  color: #fff;
-  font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
-  padding: 5px 05px 0px;
-  line-height: 0; }
-
 .level {
   display: inline-block;
   width: 20px;
   height: 20px;
-  padding: 2px 5px;
+  padding: 0 0 0 5px;
   color: #fff; }
 
 .level-easy,
 .level-medium,
 .level-hard {
-  background-color: #5db3b7; }
+  background-color: #d4d4c0; }
 
 .legend {
   margin-top: 20px; }
@@ -190,6 +183,15 @@ span.total {
   border-radius: 4px;
   width: 10px;
   height: 10px; }
+
+span.total {
+  background-color: #d4d4c0;
+  color: #fff;
+  font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
+  padding: 5px 08px 0px;
+  line-height: 0;
+  border-radius: 100%;
+  background-color: tomato; }
 
 .blanket {
   position: absolute;
@@ -290,7 +292,7 @@ section.info {
   color: #69b4b8; }
 
 .table i {
-  color: #e9eaed; }
+  color: #96967A; }
 
 .table i:hover {
   color: #69b4b8; }
