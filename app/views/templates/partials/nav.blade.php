@@ -1,7 +1,7 @@
 <div class="hug hug-hudHeader">
 	<div class="row">
 		<div class="col-xs-12">
-			@include('partials/unauth_nav.php');		
+			
 		</div>
 	</div>	
 </div>

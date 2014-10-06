@@ -13,10 +13,11 @@ Route::get('/register', function(){
 	return View::make('register');
 });
 
-Route::get('/login', function(){
-	return View::make('login');
+Route::get('/signin', function(){
+	return View::make('signin');
 });
 
+Route::post('/login', 'UsersController@login');
 Route::get('/logout', 'UsersController@logout');
 Route::resource('/users', 'UsersController');
 
