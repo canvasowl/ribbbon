@@ -18,6 +18,7 @@ Route::get('/signin', function(){
 });
 
 Route::post('/login', 'UsersController@login');
+Route::post('/make', 'UsersController@register');
 Route::get('/logout', 'UsersController@logout');
 Route::resource('/users', 'UsersController');
 

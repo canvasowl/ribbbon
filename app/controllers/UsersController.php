@@ -135,7 +135,7 @@ class UsersController extends \BaseController {
 	{	
 		$fullName	=	Input::get('fullName');
 		$email 		=	Input::get('email');
-		$password	=	Hash::make(Input::get('password'));	
+		$password	=	Input::get('password');	
 
 		// lets validate the users input
 		$validator = Validator::make(
@@ -159,12 +159,12 @@ class UsersController extends \BaseController {
 		$user 				=	new User;
 		$user->full_name 	=	$fullName;
 		$user->email 		=	$email;
-		$user->password 	=	$password;
+		$user->password 	=	Hash::make($password);
 
 		$user->save();	
 
-		if ( Auth::attempt(array('email' => $email, 'password' => '$password')) ) {
-			return 'you created the user and you are now logged in';
+		if ( Auth::attempt(array('email' => $email, 'password' => $password)) ) {
+			return Redirect::to('hud');
 		}else{
 			return Redirect::back()->withErrors($validator);			
 		}

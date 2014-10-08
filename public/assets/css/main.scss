@@ -2,7 +2,7 @@
 
 $color-primary: #69b4b8;
 $color-primary-accent: #419094;
-$color-bg: #e9eaed;
+$color-bg: #FDFDFD;
 $color-font: #586E6E;
 $color-weight: #D4D4C0;
 $color-main-weigth: tomato;
@@ -57,6 +57,11 @@ input:focus{outline: none !important;}
 
 label{font-weight: 500}
 
+*::-webkit-input-placeholder{opacity: .3}
+*:-moz-placeholder{opacity: .3}
+*::-moz-placeholder{opacity: .3}
+*:-ms-input-placeholder{opacity: .3}
+
 .dimmed{opacity: .5; font-size: .8em;}
 
 .no-padding-left{padding-left: 0;}
@@ -64,8 +69,8 @@ label{font-weight: 500}
 
 .row{margin-left: 0; margin-right: 0;}
 
-.form-control{ border: 1px solid #eee; border-radius: 0px; height: 38px; font-size: 1em; color: #777 }
-.form-control:focus{box-sizing: border-box; border: 2px solid $color-primary-accent; box-shadow: none}
+.form-control{ border: 1px solid #eee; border-radius: 0px; height: auto; font-size: 1em; color: #777 }
+.form-control:focus{box-sizing: border-box; border: 1px solid $color-primary-accent; box-shadow: none}
 
 .no-margin-top{margin-top: 0;}
 .no-margin-right{margin-right: 0;}
@@ -199,6 +204,17 @@ span.total{
 #module #close:hover{cursor: pointer; color: #fff;}
 
 //-- HOME
+.home-form{
+	max-width: 400px;
+	width: 100%;
+	margin: 100px auto;
+}
+
+.home-form input[type="text"],
+.home-form input[type="password"]{
+	font-size: 1.5em;
+}
+
 .homepage-msg{
 	position: fixed;
 	top: 30%;

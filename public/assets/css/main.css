@@ -1,6 +1,6 @@
 html, body {
   font-family: verdana, arial, serif;
-  background-color: #e9eaed;
+  background-color: #fdfdfd;
   font-size: 16px;
   color: #586e6e; }
 
@@ -40,6 +40,18 @@ input:focus {
 label {
   font-weight: 500; }
 
+*::-webkit-input-placeholder {
+  opacity: .3; }
+
+*:-moz-placeholder {
+  opacity: .3; }
+
+*::-moz-placeholder {
+  opacity: .3; }
+
+*:-ms-input-placeholder {
+  opacity: .3; }
+
 .dimmed {
   opacity: .5;
   font-size: .8em; }
@@ -57,13 +69,13 @@ label {
 .form-control {
   border: 1px solid #eee;
   border-radius: 0px;
-  height: 38px;
+  height: auto;
   font-size: 1em;
   color: #777777; }
 
 .form-control:focus {
   box-sizing: border-box;
-  border: 2px solid #419094;
+  border: 1px solid #419094;
   box-shadow: none; }
 
 .no-margin-top {
@@ -133,7 +145,7 @@ label {
   color: #fff !important; }
 
 .numCount {
-  background-color: #e9eaed;
+  background-color: #fdfdfd;
   color: #586e6e;
   padding: 2px 05px 2px; }
 
@@ -240,6 +252,15 @@ span.total {
   cursor: pointer;
   color: #fff; }
 
+.home-form {
+  max-width: 400px;
+  width: 100%;
+  margin: 100px auto; }
+
+.home-form input[type="text"],
+.home-form input[type="password"] {
+  font-size: 1.5em; }
+
 .homepage-msg {
   position: fixed;
   top: 30%;
@@ -261,7 +282,7 @@ span.total {
   margin-right: 0; }
 
 .card {
-  background-color: #e9eaed;
+  background-color: #fdfdfd;
   border-radius: 4px;
   padding: 20px 0;
   display: block;
