@@ -267,7 +267,8 @@ span.total {
   left: 0;
   width: 100%;
   text-align: center;
-  color: #fff; }
+  color: #fff;
+  font-size: 2em; }
 
 .athenticate-form-wrap {
   width: 400px;

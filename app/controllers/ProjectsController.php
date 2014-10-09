@@ -70,7 +70,7 @@ class ProjectsController extends \BaseController {
 		$completedTasks	=	$project->tasks()->where('state','complete')->get();
 		$taskCount 		=	count($tasks);
 		$completedCount =	count($completedTasks);		
-		$total_weight	=	$project->tasks()->sum('weight');
+		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 			
 		return  View::make('projects.show')->with('project', $project)->with('tasks', $tasks)->with('completedTasks', $completedTasks)->with('taskCount', $taskCount)->with("id",$project)->with('total_weight', $total_weight )->with("completedCount", $completedCount);
 	}

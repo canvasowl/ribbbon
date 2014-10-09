@@ -9,7 +9,7 @@
 		<div class="app-wrapper app-wrapper-wide">        
             
             <div>
-                <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total">{{ $total_weight }}</span></h2>                                   
+                <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total animated tada">{{ $total_weight }}</span></h2>                                   
                 <ul class="list-inline pull-right">
                 	<li><!-- <button class="btn btn-success" onclick="openCreateNewTaskModule()">New Task <i class="fa fa-plus"></i></button> --></li>
                     <!-- <li><a class="btn btn-default" href="/projects/{{ $project->id }}/edit">Edit</a></li> -->
@@ -131,7 +131,7 @@
 					<div class="panel panel-default">
 					  <div class="panel-heading">Create new task</div>
 					  <div class="panel-body">					    
-		            	<i>For the weight, enter a number from 1-3, the higher the number the harder the task.</i>
+		            	<i class="dimmed">For the weight, enter a number from 1-3, the higher the number the harder the task.</i>
 		            	<div class="form-group">
 		            		<form action="/tasks/create" method="get">
 		            			<div class="row">		            				

@@ -17,17 +17,21 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="/hud"><span class="glyphicon glyphicon-th"></span> Hud</a></li>
-			        <li class="dropdown">
+
+			        <li class="<?php echo ( Request::is('hud') ) ? 'active' : 'false'; ?>"><a href="/hud"><span class="glyphicon glyphicon-th"></span> Hud</a></li>
+			        <li class="dropdown 
+			        	<?php echo ( Request::is('clients') || Request::is('projects') || Request::is('tasks') || Request::is('clients/*') || Request::is('projects/*') || 
+			        	Request::is('tasks/*') ) ? 'active' : 'false'; ?>" 
+			        >
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
 			          <ul class="dropdown-menu" role="menu">
-			            <li><a href="/clients">Clients</a></li>
-			            <li><a href="/projects">Projects</a></li>
-			            <li><a href="/tasks">Tasks</a></li>
-			            <li class="divider"></li>
+			            <li class="<?php echo ( Request::is('clients') || Request::is('clients/*') ) ? 'active' : 'false'; ?>"><a href="/clients">Clients</a></li>
+			            <li class="<?php echo ( Request::is('projects') || Request::is('projects/*') ) ? 'active' : 'false'; ?>"><a href="/projects">Projects</a></li>
+			            <li class="<?php echo ( Request::is('tasks') || Request::is('tasks/*') ) ? 'active' : 'false'; ?>"><a href="/tasks">Tasks</a></li>
+			            <!-- <li class="divider"></li>
 			            <li><a href="#">Separated link</a></li>
 			            <li class="divider"></li>
-			            <li><a href="#">One more separated link</a></li>
+			            <li><a href="#">One more separated link</a></li> -->
 			          </ul>
 			        </li>
 			      </ul>
