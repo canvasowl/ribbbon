@@ -66,7 +66,7 @@ class ProjectsController extends \BaseController {
 	{
 
 		$project 		=	Project::find($id);
-		$tasks 			=	$project->tasks()->where('state','incomplete')->get();
+		$tasks 			=	$project->tasks()->where('state','incomplete')->orderBy("updated_at", "desc")->get();
 		$completedTasks	=	$project->tasks()->where('state','complete')->get();
 		$taskCount 		=	count($tasks);
 		$completedCount =	count($completedTasks);		
@@ -84,7 +84,9 @@ class ProjectsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$project = Project::find($id);
+
+		return View::make('projects.edit')->with('project', $project);
 	}
 
 	/**
@@ -96,7 +98,29 @@ class ProjectsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$project 	= Project::find($id);
+		$name		= Input::get("name");
+
+       // Validation
+        $validator = Validator::make(
+            array(
+            	'name' 				=>	$name
+            	),
+            array(
+            	'name' 				=> 'required'
+            	)
+        );
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator);
+        }
+
+		$project->name = $name;
+		$project->save();
+
+		return Redirect::back()->with('success', "The project " .$name. " has been updated.");
+
 	}
 
 	/**

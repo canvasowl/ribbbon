@@ -316,6 +316,9 @@ span.total {
   padding: 10px;
   border-radius: 5px; }
 
+.app-wrapper h2 {
+  margin-bottom: 40px; }
+
 .app-wrapper-wide {
   width: 1290px;
   max-width: 100%; }

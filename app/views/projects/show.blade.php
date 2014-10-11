@@ -11,8 +11,8 @@
             <div>
                 <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total animated tada">{{ $total_weight }}</span></h2>
                 <ul class="list-inline pull-right">
-                	<li><!-- <button class="btn btn-success" onclick="openCreateNewTaskModule()">New Task <i class="fa fa-plus"></i></button> --></li>
-                    <!-- <li><a class="btn btn-default" href="/projects/{{ $project->id }}/edit">Edit</a></li> -->
+                	<!-- <li><button class="btn btn-default" onclick="openCreateNewTaskModule()">New Task <i class="fa fa-plus"></i></button></li> -->
+                    <li><a class="btn btn-default" href="/projects/{{ $project->id }}/edit">Edit</a></li>
                 </ul>
                 <div class="clearfix"></div>   
             </div>
@@ -63,7 +63,7 @@
 						  								<li>
 							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
 							  								<input type="hidden" name="id" value="{{ $task->id }}">
-							  								<input type="submit" value="delete">
+							  								<input type="submit" class="btn btn-default" value="delete">
 						  									{{ Form::close() }}					  									
 						  								</li>
 						  							</ul>						  							
