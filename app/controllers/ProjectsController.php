@@ -132,7 +132,20 @@ class ProjectsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-			
+		$project = Project::find(Input::get("id"));
+
+		// delete all associated tasks
+		foreach ($project->tasks as $task) {
+					$task->delete();
+				}
+
+		// delete the project
+		$project->delete();
+
+
+		$projects 	= 	Project::all();
+		$counter 	=	0;
+		return View::make('projects.index')->with('projects', $projects)->with('counter', $counter);		
 	}
 
 }
