@@ -9,7 +9,7 @@
 		<div class="app-wrapper app-wrapper-wide">        
             
             <div>
-                <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total animated tada">{{ $total_weight }}</span></h2>                                   
+                <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total animated tada">{{ $total_weight }}</span></h2>
                 <ul class="list-inline pull-right">
                 	<li><!-- <button class="btn btn-success" onclick="openCreateNewTaskModule()">New Task <i class="fa fa-plus"></i></button> --></li>
                     <!-- <li><a class="btn btn-default" href="/projects/{{ $project->id }}/edit">Edit</a></li> -->
@@ -18,11 +18,12 @@
             </div>
 
             <div class="row">            	            
-	            <div class="col-xs-12 col-md-6">
+	            <div class="col-xs-12 col-md-8">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-					  <li class="active"><a href="#tasks" role="tab" data-toggle="tab">Remaining Tasks</a></li>
-					  <li><a href="#manage" role="tab" data-toggle="tab">Completed Tasks</a></li>
+					  <li class="active"><a href="#tasks" role="tab" data-toggle="tab">Remaining Tasks <i class="fa fa-tasks"></i></a></li>
+					  <li><a href="#manage" role="tab" data-toggle="tab">Completed Tasks <i class="fa fa-check"></i></a></li>
+					  <li><a href="#credentials" role="tab" data-toggle="tab">Credentials <i class="fa fa-lock"></i></a></li>
 					</ul>			  	
 
 					<!-- Tab panes -->
@@ -127,7 +128,7 @@
 					</div>
 	            </div>
 
-	            <div class="col-xs-12 col-md-6">
+	            <div class="col-xs-12 col-md-4">
 					<div class="panel panel-default">
 					  <div class="panel-heading">Create new task</div>
 					  <div class="panel-body">					    
