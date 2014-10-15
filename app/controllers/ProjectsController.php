@@ -10,8 +10,13 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$projects 	= 	Project::all();
+		// $projects 	= 	Project::all();
 		$counter 	=	0;
+
+		$user 		=	User::find(Auth::id());
+		$projects 	=	$user->projects()->get();
+			
+		
 
 		return View::make('projects.index')->with('projects', $projects)->with('counter', $counter);
 	}
