@@ -44,6 +44,7 @@ class ProjectsController extends \BaseController {
 		$project 			=	new Project;
 		$project->name 		=	Input::get('name');
 		$project->client_id =	Input::get('client_id');
+		$project->user_id	=	Auth::id();
 		$project->save();
 
 		return Redirect::back()->with('success', Input::get('name') ." has been created.");
