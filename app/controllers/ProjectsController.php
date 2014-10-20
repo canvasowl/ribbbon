@@ -10,14 +10,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-		// $projects 	= 	Project::all();
 		$counter 	=	0;
-
 		$user 		=	User::find(Auth::id());
 		$projects 	=	$user->projects()->get();
 			
-		
-
 		return View::make('projects.index')->with('projects', $projects)->with('counter', $counter);
 	}
 
@@ -38,9 +34,7 @@ class ProjectsController extends \BaseController {
 		if ( $validator->fails() ) {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
 		
-
 		$project 			=	new Project;
 		$project->name 		=	Input::get('name');
 		$project->client_id =	Input::get('client_id');
@@ -70,7 +64,6 @@ class ProjectsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-
 		$project 		=	Project::find($id);
 		$tasks 			=	$project->tasks()->where('state','incomplete')->orderBy("updated_at", "desc")->get();
 		$completedTasks	=	$project->tasks()->where('state','complete')->get();

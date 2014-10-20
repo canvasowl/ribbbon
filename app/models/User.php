@@ -37,4 +37,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function projects(){
 		return $this->hasMany('Project','user_id');
 	}	
+
+	/**
+	 * Return the related tasks for a given user
+	 */
+	public function tasks(){
+		return $this->hasMany('Task','user_id');
+	}		
 }
