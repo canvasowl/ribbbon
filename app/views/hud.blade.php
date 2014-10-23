@@ -19,25 +19,30 @@
 							<center>Projects</center>
 						</a>
 					</div>
-					<div class="col-xs-4">
-						<a href="/tasks" class="card">
-							<img src="{{ asset('assets/img/clipboard.png') }}">
-							<center>Tasks</center>
-						</a>
-					</div>
-
-					<div class="col-xs-4">
-						<a href="#" class="card">
-							<img src="{{ asset('assets/img/calendar.png') }}">
-							<center>Calendar</center>
-						</a>
-					</div>
-					<div class="col-xs-4">
-						<a href="/#" class="card">
-							<img src="{{ asset('assets/img/user.png') }}">
-							<center>Invite</center>
-						</a>
-					</div>
+					<?php  
+					// <div class="col-xs-4">
+					// 	<a href="/tasks" class="card">
+					// 		<img src="{{ asset('assets/img/clipboard.png') }}">
+					// 		<center>Tasks</center>
+					// 	</a>
+					// </div>
+					?>
+					<?php
+					// <div class="col-xs-4">
+					// 	<a href="#" class="card">
+					// 		<img src="{{ asset('assets/img/calendar.png') }}">
+					// 		<center>Calendar</center>
+					// 	</a>
+					// </div>
+					?>
+					<?php
+					// <div class="col-xs-4">
+					// 	<a href="/#" class="card">
+					// 		<img src="{{ asset('assets/img/user.png') }}">
+					// 		<center>Invite</center>
+					// 	</a>
+					// </div>
+					?>
 					<div class="col-xs-4">
 						<a href="/clients" class="card">
 							<img src="{{ asset('assets/img/gear.png') }}">

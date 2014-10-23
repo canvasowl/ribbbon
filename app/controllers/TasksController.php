@@ -10,9 +10,11 @@ class TasksController extends \BaseController {
 	 */
 	public function index()
 	{
-		$user = User::find(Auth::id());		
-		$tasks = $user->tasks()->get();
-			dd($tasks);
+		$user 		= 	User::find(Auth::id());		
+		$tasks 		= 	$user->tasks()->get();
+		$counter	=	0;
+
+		return View::make('tasks.index')->with('tasks', $tasks)->with('counter', $counter);
 	}
 
 	/**
