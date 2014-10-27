@@ -36,6 +36,7 @@
 			        </li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
+			      	<li><a class="profile-link" href="/profile"><img class="circle" src="{{ asset('assets/img/guy.jpg') }}"></a></li>
 			        <li><a href="/logout">Logout <i class="fa fa-sign-out"></i></a></li>			        
 			      </ul>
 			    </div><!-- /.navbar-collapse -->

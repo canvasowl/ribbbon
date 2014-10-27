@@ -81,6 +81,8 @@ label{font-weight: 500}
 
 .container{width: 100%;}
 
+.circle{border-radius: 100%;}
+
 // .btn{
 // 	font-size: 1em;
 // 	padding: 8px 23px;
@@ -112,6 +114,12 @@ label{font-weight: 500}
 .navbar-default .navbar-brand{color: #fff;}
 .navbar-default .navbar-nav>.active>a{color: #fff; background-color: $color-primary-accent}
 .navbar{margin-bottom: 0;}
+.navbar .profile-link{padding: 5px;}
+.navbar img.circle{
+	width: 40px;
+	height: 40px;
+	border: 2px solid rgba(100,100,100,.3);	
+}
 
 .alert{border: none; border-radius: 0;}
 .alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}

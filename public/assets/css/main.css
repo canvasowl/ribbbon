@@ -101,6 +101,9 @@ label {
 .container {
   width: 100%; }
 
+.circle {
+  border-radius: 100%; }
+
 .btn {
   text-transform: capitalize; }
 
@@ -131,6 +134,14 @@ label {
 
 .navbar {
   margin-bottom: 0; }
+
+.navbar .profile-link {
+  padding: 5px; }
+
+.navbar img.circle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(100, 100, 100, 0.3); }
 
 .alert {
   border: none;

@@ -48,6 +48,13 @@ class UsersController extends \BaseController {
 	}
 
 	/**
+	 * Show the profile of teh logged in user
+	 */
+	public function profile(){
+		return Auth::id();
+	}
+
+	/**
 	 * Show the form for editing the specified resource.
 	 * GET /users/{id}/edit
 	 *
