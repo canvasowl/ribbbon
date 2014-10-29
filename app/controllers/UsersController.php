@@ -10,7 +10,18 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$user = User::find(Auth::id());
+		$created = $user->tasks_created;
+		$completed = $user->tasks_completed;
+
+		if ($created == "") {
+			$created = 0;
+		}
+
+		if ($completed == "") {
+			$completed = 0;
+		}
+		return View::make('users.index')->with('user', $user)->with('created', $created)->with('completed', $completed);			
 	}
 
 	/**
@@ -45,14 +56,7 @@ class UsersController extends \BaseController {
 	public function show($id)
 	{
 		//
-	}
-
-	/**
-	 * Show the profile of teh logged in user
-	 */
-	public function profile(){
-		return Auth::id();
-	}
+	}	
 
 	/**
 	 * Show the form for editing the specified resource.

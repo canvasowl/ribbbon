@@ -46,12 +46,18 @@ class TasksController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		// Insert the task to database
 		$task 				= new Task;
 		$task->project_id 	= Input::get('projectId');
 		$task->name 		= Input::get('name');
 		$task->weight		= Input::get('weight');
 		$task->state		= "incomplete";
 		$task->save();
+
+		// Give user a task count
+		$user = User::find(Auth::id());
+		$user->tasks_created = $user->tasks_created + 1;
+		$user->save(); 
 
 		return Redirect::back()->with('success', Input::get('name') ." has been created.");
 	}
@@ -101,13 +107,20 @@ class TasksController extends \BaseController {
 	public function update($id)
 	{
 			$task = Task::find(Input::get('task'));
+			$user = User::find(Auth::id());
 
 			if ($task->state == 'complete') {
 				$task->state = 'incomplete';
 				$task->save();
+
+				$user->tasks_completed = $user->tasks_completed - 1;
+				$user->save();				
 			}else{
 				$task->state = 'complete';
 				$task->save();
+
+				$user->tasks_completed = $user->tasks_completed + 1;
+				$user->save();								
 			}
 
 			return Redirect::back();

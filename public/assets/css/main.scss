@@ -11,7 +11,7 @@ $color-main-weigth: tomato;
 $color-module:			rgba(255, 80, 80, .9);
 
 // Info sections
-$info-bg-color:			#FFFFE7;
+$info-bg-color:			#F9F4EB;
 $info-text-color:		#666;
 $color-info-dark:       #d4d4c0;
 
@@ -291,3 +291,8 @@ section.info .table>tfoot>tr>th,
 section.info .table>thead>tr>td, 
 section.info .table>tbody>tr>td, 
 section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
+
+.main-user-wrap{background-color: tomato; color: #fff;}
+.main-user-wrap img{width: 200px; padding: 10px;}
+.main-user-wrap h1{font-size: 4em;}
+

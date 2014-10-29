@@ -32,6 +32,6 @@ Route::group(array('before' => 'auth'), function(){
 		return View::make('hud');
 	}));
 
-	Route::get('/profile', 'UsersController@profile');
+	Route::get('/profile', 'UsersController@index');
 
 });

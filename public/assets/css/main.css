@@ -335,7 +335,7 @@ span.total {
   max-width: 100%; }
 
 section.info {
-  background-color: #ffffe7;
+  background-color: #f9f4eb;
   box-sizing: border-box;
   padding: 4px;
   -moz-border-radius: 4px;
@@ -368,3 +368,14 @@ section.info .table > thead > tr > td,
 section.info .table > tbody > tr > td,
 section.info .table > tfoot > tr > td {
   border-top: 1px solid #e7c6ab; }
+
+.main-user-wrap {
+  background-color: tomato;
+  color: #fff; }
+
+.main-user-wrap img {
+  width: 200px;
+  padding: 10px; }
+
+.main-user-wrap h1 {
+  font-size: 4em; }
