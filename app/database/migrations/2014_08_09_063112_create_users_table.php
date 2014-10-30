@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration {
 			$table->string('email');
 			$table->string('password');
 			$table->string('avitar');
+			$table->integer('tasks_created');
+			$table->integer('tasks_completed');
 			$table->timestamps();
 		});
 	}
