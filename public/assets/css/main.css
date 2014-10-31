@@ -1,5 +1,5 @@
 html, body {
-  font-family: verdana, arial, serif;
+  font-family: "Source Sans Pro", sans-serif;
   background-color: #fdfdfd;
   font-size: 16px;
   color: #586e6e; }
@@ -20,7 +20,7 @@ h1 {
   font-size: 1.6em; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: verdana, arial, serif; }
+  font-family: "Source Sans Pro", sans-serif; }
 
 a {
   color: #419094; }
@@ -67,15 +67,16 @@ label {
   margin-right: 0; }
 
 .form-control {
-  border: 1px solid #eee;
-  border-radius: 0px;
+  border: 2px solid #C0C0C0;
+  border-radius: 3px;
   height: auto;
   font-size: 1em;
-  color: #777777; }
+  color: #777;
+  box-shadow: none; }
 
 .form-control:focus {
-  box-sizing: border-box;
-  border: 1px solid #419094;
+  border-color: #419094;
+  outline: none;
   box-shadow: none; }
 
 .no-margin-top {

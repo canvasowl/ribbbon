@@ -41,10 +41,30 @@
 			    <h3 class="panel-title">Settings</h3>
 			  </div>
 			  <div class="panel-body">
-		    	<p>Change Password</p>
+			  	<div class="col-xs-12 col-sm-7 no-padding-left">
+			    	<p>Change Password</p>
+					{{ Form::open(array('action' => array('UsersController@resetPassword', Auth::id() ))) }}
+						<div class="form-group">
+							{{ Form::password( 'current_pwd', array('class' => 'form-control', "placeholder" => "Current Password" )) }}
+						</div>
+						<div class="form-group">
+							{{ Form::password( 'new_pwd', array('class' => 'form-control', "placeholder" => "New Password" )) }}	
+						</div>
+						<div class="form-group">
+							{{ Form::submit( 'Update Password', array('class' => 'btn btn-primary pull-right')) }}
+							<div class="clearfix"></div>
+						</div>	    			
+					{{ Form::close() }}				  		
+			  	</div>
+			  	<div class="col-sm-5 no-padding-right">
+			  		<br><br>
+			  		<p class="dimmed">To update your password type your current password, then your new password below.</p>
+			  	</div>	    		
 		    	<hr>
-		    	<p>Delete account</p>
-		    	<p class="dimmed">Deleting yoru account will delete all, clients, projects and tasks created under this account</p>		    
+		    	<div class="col-xs-12 no-padding-left">
+			    	<p>Delete account</p>
+			    	<p class="dimmed">Deleting your account will delete <b>ALL</b>, clients, projects and tasks created under this account</p>	    	
+		    	</div>
 			  </div>
 			</div> 			            		
           

@@ -35,3 +35,9 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/profile', 'UsersController@index');
 
 });
+
+
+
+
+// User routes
+Route::post('/resetPassword/{id}','UsersController@resetPassword');

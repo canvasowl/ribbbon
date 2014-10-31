@@ -106,8 +106,7 @@ class UsersController extends \BaseController {
 	 * Login the user and start a session
 	 */
 	public function login()
-	{	
-		
+	{				
 		$email 		=	Input::get('email');
 		$password	=	Input::get('password');
 
@@ -134,6 +133,7 @@ class UsersController extends \BaseController {
 				return Redirect::to('hud');
 
 			}else{				
+				$validator->getMessageBag()->add('input', 'Incorrect email or password');
 				return Redirect::back()->withErrors($validator);
 			}			
 		}
@@ -180,5 +180,58 @@ class UsersController extends \BaseController {
 			return Redirect::back()->withErrors($validator);			
 		}
 	}	
+
+	public function resetPassword($id)
+	{		
+		// ----------------------------------------
+		$user = User::find(Auth::id());
+		$created = $user->tasks_created;
+		$completed = $user->tasks_completed;
+
+		if ($created == "") {
+			$created = 0;
+		}
+
+		if ($completed == "") {
+			$completed = 0;
+		}
+		// ----------------------------------------
+
+
+		$current_pwd	=	Input::get('current_pwd');
+		$new_pwd		=	Input::get('new_pwd');
+
+
+		// lets validate the users input
+		$validator = Validator::make(
+			array(
+					'current_pwd' 	=>	$current_pwd,
+					'new_pwd' 		=> 	$new_pwd
+			),
+			array(
+					'current_pwd'	=> 	'required',
+					'new_pwd'		=>	'required'
+			)
+		);
+
+		if ($validator->fails()){
+		    return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);
+		}
+
+		if ( !Auth::validate(array('email' => $user->email, 'password' => $current_pwd)) ) {
+			$validator->getMessageBag()->add('password', 'That password is incorrect');
+			return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);	
+		}
+
+		// Store the new password and redirect;
+		$user->password = Hash::make($new_pwd);
+		$user->save();
+
+		return Redirect::back()
+								->with('user', $user)
+								->with('created', $created)->with('completed', $completed)
+								->with('success', "Your password has been updated!");
+
+	}
 
 }
