@@ -2,6 +2,8 @@
 
 $color-primary: #69b4b8;
 $color-primary-accent: #419094;
+$color-primary-rival: #D86850;
+$color-primary-rival-hover: #ED7258;
 $color-bg: #FDFDFD;
 $color-font: #586E6E;
 $color-weight: #D4D4C0;
@@ -19,8 +21,8 @@ $color-info-dark:       #d4d4c0;
 $color-paper-line:		#E7C6AB;
 
 // Typography
-$main-font-famliy: 'Source Sans Pro', sans-serif;;
-$main-title-font:  'Source Sans Pro', sans-serif;;
+$main-font-famliy: 'Gotham Rounded Book', sans-serif;
+$main-title-font:  'Source Sans Pro', sans-serif;
 
 // -- MIXINS
 @mixin header-bar-top() {  
@@ -67,7 +69,7 @@ label{font-weight: 500}
 
 .row{margin-left: 0; margin-right: 0;}
 
-.form-control{ border: 2px solid #C0C0C0; border-radius: 3px; height: auto; font-size: 1em; color: #777; box-shadow: none;}
+.form-control{ border: 2px solid #ECECEC; border-radius: 3px; height: auto; font-size: 1em; color: #777; box-shadow: none; background-color: #ECECEC}
 .form-control:focus{border-color: $color-primary-accent; outline: none; box-shadow: none;}
 
 .no-margin-top{margin-top: 0;}
@@ -83,24 +85,19 @@ label{font-weight: 500}
 
 .circle{border-radius: 100%;}
 
-// .btn{
-// 	font-size: 1em;
-// 	padding: 8px 23px;
-// 	color: white;
-// 	border: none;
-// 	-webkit-border-radius: 0px;
-// 	-moz-border-radius: 0px;
-// 	-ms-border-radius: 0px;
-// 	border-radius: 0px;		
-// }
-// .btn:hover,
-// .btn:active{color: white;}
-// .btn-default{background-color: $color-primary;}
-// 	.btn:hover{background-color: $color-primary-accent }
-// 	.btn:active{background-color: $color-primary-accent; }
+.badge{background-color: #E4E4E4; color: $color-primary}
 
+
+// Buttons
 .btn{text-transform: capitalize}
 .btn-wide{width: 100%; padding: 15px;}
+.btn-cta{font-size: .5em; padding: 20px 60px}
+
+.btn-holo{color: #fff; background: rgba(250,250,250,.2);}
+.btn-holo:hover{color: $color-primary; background-color: #fff;}
+
+.btn-rival{background-color: $color-primary-rival; border-color: $color-primary-rival; color: #fff}
+.btn-rival:hover{background-color: $color-primary-rival-hover; border-color: $color-primary-rival-hover; color: #fff;}
 
 .navbar-default{
   background-color: $color-primary;
@@ -210,6 +207,8 @@ span.total{
 #module #close:hover{cursor: pointer; color: #fff;}
 
 //-- HOME
+.hug-homeBody .container{height: 0;}
+
 .home-form{
 	max-width: 400px;
 	width: 100%;

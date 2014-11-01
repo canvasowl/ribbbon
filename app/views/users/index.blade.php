@@ -41,7 +41,11 @@
 			    <h3 class="panel-title">Settings</h3>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="col-xs-12 col-sm-7 no-padding-left">
+			  	<div class="col-sm-5 no-padding-left">
+			  		<br><br>
+			  		<p class="dimmed">To update your password type your current password, then your new password below.</p>			  		
+			  	</div>
+			  	<div class="col-xs-12 col-sm-7 no-padding-right">
 			    	<p>Change Password</p>
 					{{ Form::open(array('action' => array('UsersController@resetPassword', Auth::id() ))) }}
 						<div class="form-group">
@@ -54,11 +58,7 @@
 							{{ Form::submit( 'Update Password', array('class' => 'btn btn-primary pull-right')) }}
 							<div class="clearfix"></div>
 						</div>	    			
-					{{ Form::close() }}				  		
-			  	</div>
-			  	<div class="col-sm-5 no-padding-right">
-			  		<br><br>
-			  		<p class="dimmed">To update your password type your current password, then your new password below.</p>
+					{{ Form::close() }}	
 			  	</div>	    		
 		    	<hr>
 		    	<div class="col-xs-12 no-padding-left">

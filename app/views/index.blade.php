@@ -20,7 +20,8 @@
 			<h1>Introducing Ribbbon</h1>
 			<h4>A project management system for artisans.</h4>
 			<div class="clearfix">
-				<a href="/register" class="btn btn-primary">Sign me up.</a>
+				<a href="/register" class="btn btn-holo btn-cta">Learn More <i class="fa fa-lightbulb-o"></i></a>
+				<a href="/register" class="btn btn-rival btn-cta">Sign me up <i class="fa fa-check-circle-o"></i></a>
 			</div>
 		</div>
 
