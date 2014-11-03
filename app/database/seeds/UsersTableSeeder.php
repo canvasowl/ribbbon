@@ -9,12 +9,14 @@ class UsersTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			User::create([
-
-			]);
-		}
+		DB::table('users')->truncate();		
+		DB::table('users')->insert(
+		    array(
+		    	'full_name' 		=>	$faker->name,
+		    	'email' 			=> 	'test@ribbbon.com', 
+		    	'password'			=>	Hash::make('secret'),
+		    	'tasks_created' 	=> 	1,
+		    	)
+		);
 	}
-
 }

@@ -144,6 +144,9 @@ label {
   border-color: #69b4b8;
   border-radius: 1px; }
 
+.panel-default > .panel-heading {
+  background-color: #fff; }
+
 .navbar-default a,
 .navbar-default .navbar-nav > li > a {
   color: #fff; }

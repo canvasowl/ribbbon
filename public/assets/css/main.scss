@@ -36,25 +36,17 @@ html,body{
 	font-size: 16px; 
 	color: $color-font
 }
-
 p,a{font-size: 1em;}
 h4{font-size: 1.3em;}
 h3{font-size: 1.4em;}
 h2{font-size: 1.5em;}
 h1{font-size: 1.6em;}
-
-
 h1,h2,h3,h4,h5,h6{font-family: $main-title-font;}
-
-
-
 a{color: $color-primary-accent}
 a:hover{color: $color-primary; text-decoration: none}
 a:focus,a:active{color: $color-primary-accent; outline: none !important}
-
 input:active,
 input:focus{outline: none !important;}
-
 label{font-weight: 500}
 
 *::-webkit-input-placeholder{opacity: .3}
@@ -104,6 +96,11 @@ label{font-weight: 500}
   border-color: $color-primary;
   border-radius: 1px;	
 }
+
+// Panels 
+.panel-default>.panel-heading{background-color: #fff}
+
+// Navigaton
 .navbar-default a,
 .navbar-default .navbar-nav>li>a{color: #fff;}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus,

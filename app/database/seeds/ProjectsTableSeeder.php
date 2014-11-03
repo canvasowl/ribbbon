@@ -13,15 +13,15 @@ class ProjectsTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		Eloquent::unguard();
+		DB::table('projects')->truncate();
 		
-
-		for ($i=0; $i < 10 ; $i++) { 
-			$projects = [ ["name" => $faker->name] ];
-		}
-
-
-		DB::table('projects')->insert($projects);
+		DB::table('projects')->insert(
+		    array(
+		    	'name' 				=>	"First Project",
+		    	'user_id' 			=> 	1, 
+		    	'client_id'			=>	1,
+		    	)
+		);
 	}
 
 }
