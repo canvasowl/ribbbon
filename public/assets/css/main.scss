@@ -91,6 +91,9 @@ label{font-weight: 500}
 .btn-rival{background-color: $color-primary-rival; border-color: $color-primary-rival; color: #fff}
 .btn-rival:hover{background-color: $color-primary-rival-hover; border-color: $color-primary-rival-hover; color: #fff;}
 
+.btn-primary{background-color: $color-primary; border: 1px solid $color-primary}
+.btn-primary:hover{background-color: $color-primary-accent; border: 1px solid $color-primary-accent}
+
 .navbar-default{
   background-color: $color-primary;
   border-color: $color-primary;

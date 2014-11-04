@@ -139,6 +139,14 @@ label {
   border-color: #ed7258;
   color: #fff; }
 
+.btn-primary {
+  background-color: #69b4b8;
+  border: 1px solid #69b4b8; }
+
+.btn-primary:hover {
+  background-color: #419094;
+  border: 1px solid #419094; }
+
 .navbar-default {
   background-color: #69b4b8;
   border-color: #69b4b8;

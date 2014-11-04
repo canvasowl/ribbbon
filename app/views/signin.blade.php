@@ -9,13 +9,13 @@
 	<div>	
 		{{ Form::open(array('action' => 'UsersController@login')) }}
 			<div class="form-group">
-				{{ Form::text( 'email', null, array('class' => 'form-control', "placeholder" => "email" )) }}	
+				{{ Form::text( 'email', null, array('class' => 'form-control', "placeholder" => "email","autofocus" => "true" )) }}	
 			</div>
 			<div class="form-group">
 				{{ Form::password( 'password', array('class' => 'form-control', "placeholder" => "placeholder" )) }}	
 			</div>
 			<div class="form-group">
-				{{ Form::submit( 'Login', array('class' => 'btn btn-default pull-right')) }}
+				{{ Form::submit( 'Login', array('class' => 'btn btn-rival pull-right')) }}
 			</div>	    			
 		{{ Form::close() }}
 	</div>		  	

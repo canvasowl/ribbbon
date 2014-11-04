@@ -9,11 +9,11 @@
 
 			<!-- Main user area -->
             <div class="main-user-wrap row">
-            	<div class="col-xs-12 col-sm-4">
+            	<!-- <div class="col-xs-12 col-sm-4">
             		<img class="circle" src="{{ asset('assets/img/guy.jpg') }}">
-            	</div>
-            	<div class="col-xs-12 col-sm-8">
-            		<h1>{{ $user->full_name }}</h1>
+            	</div> -->
+            	<div class="col-xs-12 col-sm-12">
+            		<center><h1>{{ $user->full_name }}</h1></center>
             	</div>            	
             </div> 
 

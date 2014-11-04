@@ -9,7 +9,7 @@
 	<div>										
 		{{ Form::open(array('action' => 'UsersController@register')) }}
 			<div class="form-group">				
-				{{ Form::text('fullName', null, array('class' => 'form-control', "placeholder" => "full name" )) }}	
+				{{ Form::text('fullName', null, array('class' => 'form-control', "placeholder" => "full name", "autofocus" => "true" )) }}	
 			</div>				
 			<div class="form-group">
 				{{ Form::text('email', null, array('class' => 'form-control', "placeholder" => "email" )) }}	
@@ -18,7 +18,7 @@
 				{{ Form::password('password', array('class' => 'form-control', "placeholder" => "password" )) }}	
 			</div>
 			<div class="form-group">
-				{{ Form::submit('Signup', array('class' => 'btn btn-default pull-right' )); }}
+				{{ Form::submit('Signup', array('class' => 'btn btn-rival pull-right' )); }}
 			</div>	    			
 		{{ Form::close() }}
 	</div>		  	
