@@ -3,6 +3,14 @@
 
 @section('content')
 
+<!-- MODULE -->
+	<div class="module-form" id="delete-account-module">
+		<head><h2>Delete Account?</h2></head>
+		<center><button data-id="{{ AUth::id() }}" id="btn-yes" class="btn btn-default">yes</button>
+		<button id="btn-no" class="btn btn-rival">Not yet</button></center>
+	</div>
+<!-- MODULE -->
+
 <div class="row">
 	<div class="col-xs-12">
 		<div class="app-wrapper">
@@ -64,6 +72,7 @@
 		    	<div class="col-xs-12 no-padding-left">
 			    	<p>Delete account</p>
 			    	<p class="dimmed">Deleting your account will delete <b>ALL</b>, clients, projects and tasks created under this account</p>	    	
+			    	<button id="delete-account" class="btn btn-danger">Delete my account</button>
 		    	</div>
 			  </div>
 			</div> 			            		

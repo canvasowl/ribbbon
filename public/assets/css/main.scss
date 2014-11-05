@@ -10,7 +10,7 @@ $color-weight: #D4D4C0;
 $color-main-weigth: tomato;
 
 // Special colors
-$color-module:			rgba(255, 80, 80, .9);
+$color-module:			rgba(00, 00, 00, .5);
 
 // Info sections
 $info-bg-color:			#F9F4EB;
@@ -205,6 +205,30 @@ span.total{
 }
 #module #close{float: right; margin: 10px 10px 0 0;}
 #module #close:hover{cursor: pointer; color: #fff;}
+
+.module-form{
+	display: none;	
+	width: 400px; 
+	max-width: 90%;
+	padding-bottom: 30px; 		
+	background-color: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,.2); 	
+	position: absolute;
+	z-index: 2000;	
+	top: 30%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;	
+}
+.module-form h2{
+	text-align: center; 
+	color: #fff; 
+	background-color: $color-primary; 
+	margin: 0 0 20px 0; 
+	padding: 20px 0;
+
+}
+.module-form{width: 300px; max-width: 90%;}
 
 //-- HOME
 .hug-homeBody .container{height: 0;}

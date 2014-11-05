@@ -291,7 +291,7 @@ span.total {
   left: 0;
   width: 1000px;
   height: 1000px;
-  background-color: rgba(255, 80, 80, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
   display: none; }
 
 #module #close {
@@ -301,6 +301,31 @@ span.total {
 #module #close:hover {
   cursor: pointer;
   color: #fff; }
+
+.module-form {
+  display: none;
+  width: 400px;
+  max-width: 90%;
+  padding-bottom: 30px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 2000;
+  top: 30%;
+  margin: 0 auto;
+  left: 0;
+  right: 0; }
+
+.module-form h2 {
+  text-align: center;
+  color: #fff;
+  background-color: #69b4b8;
+  margin: 0 0 20px 0;
+  padding: 20px 0; }
+
+.module-form {
+  width: 300px;
+  max-width: 90%; }
 
 .hug-homeBody .container {
   height: 0; }
