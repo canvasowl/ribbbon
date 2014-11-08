@@ -9,13 +9,8 @@ Route::get('/', function()
 	}	
 });
 
-Route::get('/register', function(){
-	return View::make('register');
-});
-
-Route::get('/signin', function(){
-	return View::make('signin');
-});
+Route::get('/register', function(){ return View::make('register'); });
+Route::get('/signin', function(){ return View::make('signin'); });
 
 Route::post('/login', 'UsersController@login');
 Route::post('/make', 'UsersController@register');
