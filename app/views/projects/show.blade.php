@@ -112,7 +112,7 @@
 							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
 							  								<input type="hidden" name="id" value="{{ $task->id }}">
 							  								<input type="submit" value="delete">
-						  									{{ Form::close() }}					  									
+						  									{{ Form::close() }}					  							
 						  								</li>
 						  							</ul>						  							
 						  						</td>					  						

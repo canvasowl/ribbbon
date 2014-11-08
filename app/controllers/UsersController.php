@@ -91,7 +91,15 @@ class UsersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// Delete everything related to the user
+		Task::where('user_id', Auth::id())->delete(); 
+		Project::where('user_id', Auth::id())->delete();
+		Client::where('user_id', Auth::id())->delete();		
+		User::where('id', Auth::id())->delete();
+
+		// Logout and redirect back to home page
+		Auth::logout();
+		return Redirect::to('/');
 	}
 
 	/**
@@ -124,14 +132,10 @@ class UsersController extends \BaseController {
 		);
 
 		if ($validator->fails()){
-
-		    return Redirect::back()->withErrors($validator);
-
+		    return Redirect::back()->withErrors($validator)->withInput();
 		}else{
-			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){
-				
+			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){				
 				return Redirect::to('hud');
-
 			}else{				
 				$validator->getMessageBag()->add('input', 'Incorrect email or password');
 				return Redirect::back()->withErrors($validator);
@@ -162,9 +166,8 @@ class UsersController extends \BaseController {
 			)
 		);
 
-		if ($validator->fails())
-		{
-		    return Redirect::back()->withErrors($validator);
+		if ($validator->fails()){
+		    return Redirect::back()->withErrors($validator)->withInput();
 		}
 
 		$user 				=	new User;

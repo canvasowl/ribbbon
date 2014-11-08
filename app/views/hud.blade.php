@@ -44,9 +44,9 @@
 					// </div>
 					?>
 					<div class="col-xs-4">
-						<a href="/clients" class="card">
+						<a href="/profile" class="card">
 							<img src="{{ asset('assets/img/gear.png') }}">
-							<center>Account Settings</center>
+							<center>Account</center>
 						</a>
 					</div>
 				</div>

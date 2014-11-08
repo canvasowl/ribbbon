@@ -36,8 +36,5 @@ Route::group(array('before' => 'auth'), function(){
 
 });
 
-
-
-
 // User routes
 Route::post('/resetPassword/{id}','UsersController@resetPassword');

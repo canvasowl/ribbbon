@@ -3,17 +3,30 @@
 
 @section('content')
 
+<!-- MODULE -->
+	<div class="module-form" id="delete-account-module">
+		<head><h2>Delete Account?</h2></head>
+		<div class="form-container">
+			{{ Form::open(array('action' => 'UsersController@destroy', 'method' => 'delete')) }}
+			<input type="hidden" name="id" value="{{ Auth::id() }}">
+			<input type="submit" value="yes" class="btn btn-default">		
+			{{ Form::close() }}					
+			<button id="btn-no" class="btn btn-rival">Not yet</button></center>
+		</div>			
+	</div>
+<!-- MODULE -->
+
 <div class="row">
 	<div class="col-xs-12">
 		<div class="app-wrapper">
 
 			<!-- Main user area -->
             <div class="main-user-wrap row">
-            	<div class="col-xs-12 col-sm-4">
+            	<!-- <div class="col-xs-12 col-sm-4">
             		<img class="circle" src="{{ asset('assets/img/guy.jpg') }}">
-            	</div>
-            	<div class="col-xs-12 col-sm-8">
-            		<h1>{{ $user->full_name }}</h1>
+            	</div> -->
+            	<div class="col-xs-12 col-sm-12">
+            		<center><h1>{{ $user->full_name }}</h1></center>
             	</div>            	
             </div> 
 
@@ -64,6 +77,7 @@
 		    	<div class="col-xs-12 no-padding-left">
 			    	<p>Delete account</p>
 			    	<p class="dimmed">Deleting your account will delete <b>ALL</b>, clients, projects and tasks created under this account</p>	    	
+			    	<button id="delete-account" class="btn btn-danger">Delete my account</button>
 		    	</div>
 			  </div>
 			</div> 			            		

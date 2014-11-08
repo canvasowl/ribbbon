@@ -10,7 +10,7 @@ $color-weight: #D4D4C0;
 $color-main-weigth: tomato;
 
 // Special colors
-$color-module:			rgba(255, 80, 80, .9);
+$color-module:			rgba(00, 00, 00, .5);
 
 // Info sections
 $info-bg-color:			#F9F4EB;
@@ -82,6 +82,7 @@ label{font-weight: 500}
 
 // Buttons
 .btn{text-transform: capitalize}
+.btn:focus{outline: none;}
 .btn-wide{width: 100%; padding: 15px;}
 .btn-cta{font-size: .5em; padding: 20px 60px}
 
@@ -90,6 +91,9 @@ label{font-weight: 500}
 
 .btn-rival{background-color: $color-primary-rival; border-color: $color-primary-rival; color: #fff}
 .btn-rival:hover{background-color: $color-primary-rival-hover; border-color: $color-primary-rival-hover; color: #fff;}
+
+.btn-primary{background-color: $color-primary; border: 1px solid $color-primary}
+.btn-primary:hover{background-color: $color-primary-accent; border: 1px solid $color-primary-accent}
 
 .navbar-default{
   background-color: $color-primary;
@@ -202,6 +206,31 @@ span.total{
 }
 #module #close{float: right; margin: 10px 10px 0 0;}
 #module #close:hover{cursor: pointer; color: #fff;}
+
+.module-form{
+	display: none;	
+	width: 400px; 
+	max-width: 90%;
+	padding-bottom: 30px; 		
+	background-color: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,.2); 	
+	position: absolute;
+	z-index: 2000;	
+	top: 30%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;	
+}
+.module-form h2{
+	text-align: center; 
+	color: #fff; 
+	background-color: $color-primary; 
+	margin: 0 0 20px 0; 
+	padding: 20px 0;
+}
+.module-form{width: 300px; max-width: 90%;}
+.module-form .form-container{text-align: center}
+.module-form form{display: inline;;}
 
 //-- HOME
 .hug-homeBody .container{height: 0;}
