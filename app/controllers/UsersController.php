@@ -125,7 +125,7 @@ class UsersController extends \BaseController {
 
 		if ($validator->fails()){
 
-		    return Redirect::back()->withErrors($validator);
+		    return Redirect::back()->withErrors($validator)->withInput();
 
 		}else{
 			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){
@@ -164,7 +164,7 @@ class UsersController extends \BaseController {
 
 		if ($validator->fails())
 		{
-		    return Redirect::back()->withErrors($validator);
+		    return Redirect::back()->withErrors($validator)->withInput();
 		}
 
 		$user 				=	new User;
