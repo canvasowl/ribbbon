@@ -113,6 +113,9 @@ label {
 .btn {
   text-transform: capitalize; }
 
+.btn:focus {
+  outline: none; }
+
 .btn-wide {
   width: 100%;
   padding: 15px; }
@@ -326,6 +329,12 @@ span.total {
 .module-form {
   width: 300px;
   max-width: 90%; }
+
+.module-form .form-container {
+  text-align: center; }
+
+.module-form form {
+  display: inline; }
 
 .hug-homeBody .container {
   height: 0; }
