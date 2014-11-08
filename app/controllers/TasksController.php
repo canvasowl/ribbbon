@@ -49,6 +49,7 @@ class TasksController extends \BaseController {
 		// Insert the task to database
 		$task 				= new Task;
 		$task->project_id 	= Input::get('projectId');
+		$task->user_id 		= Auth::id();
 		$task->name 		= Input::get('name');
 		$task->weight		= Input::get('weight');
 		$task->state		= "incomplete";
