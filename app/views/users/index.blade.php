@@ -6,8 +6,13 @@
 <!-- MODULE -->
 	<div class="module-form" id="delete-account-module">
 		<head><h2>Delete Account?</h2></head>
-		<center><button data-id="{{ AUth::id() }}" id="btn-yes" class="btn btn-default">yes</button>
-		<button id="btn-no" class="btn btn-rival">Not yet</button></center>
+		<div class="form-container">
+			{{ Form::open(array('action' => 'UsersController@destroy', 'method' => 'delete')) }}
+			<input type="hidden" name="id" value="{{ Auth::id() }}">
+			<input type="submit" value="yes" class="btn btn-default">		
+			{{ Form::close() }}					
+			<button id="btn-no" class="btn btn-rival">Not yet</button></center>
+		</div>			
 	</div>
 <!-- MODULE -->
 
