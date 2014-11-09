@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.postmarkapp.com',
+	'host' => 'smtp.mandrillapp.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'jefry@punyweblab.com', 'name' => 'Ribbbon'),
+	'from' => array('address' => 'team@ribbbon.com', 'name' => 'Ribbbon'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'canvasowl',
+	'username' => 'jefrycruz88@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'warhammer88',
+	'password' => 'w3-onjLmxEdpZm5BFtJRUQ',
 
 	/*
 	|--------------------------------------------------------------------------
