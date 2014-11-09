@@ -34,10 +34,6 @@ Route::group(array('before' => 'auth'), function(){
 // User routes
 Route::post('/resetPassword/{id}','UsersController@resetPassword');
 
-Route::get('mail',function(){
-	Mail::send('emails.welcome', array('key' => 'value'), function($message){
-    	$message->to('jefrycruz88@gmail.com', 'Jefry Cruz')->subject('Welcome!');
-	});	
-
-	return "email sent";
-});
+// Route::get('mail',function(){	
+// 	return "email sent";
+// });
