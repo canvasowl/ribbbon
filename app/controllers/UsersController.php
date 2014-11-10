@@ -238,4 +238,26 @@ class UsersController extends \BaseController {
 
 	}
 
+	/**
+	 * Request for a beta invite
+	 */
+	public function request(){
+		// lets validate the email
+		$validator = Validator::make(
+			array( 'email' 		=>	Input::get('email'), ),
+			array( 'email'	=> 	'required|email|unique:beta' )
+		);		
+
+		if ($validator->fails()){
+		    return Redirect::back()->withErrors($validator)->withInput();
+		}		
+
+		$beta_user 			= new Beta;
+		$beta_user->email 	= Input::get('email');
+		$beta_user->status 	= false;
+		$beta_user->save(); 
+
+		return Redirect::back()->with('success', "Your all set, your invitation will arive soon.");
+	}
+
 }

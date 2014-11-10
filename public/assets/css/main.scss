@@ -121,7 +121,7 @@ label{font-weight: 500}
 
 .alert{border: none; border-radius: 0;}
 .alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}
-.alert-main a{color: #fff !important}
+.alert-link{color: rgab(0,0,0,.5)}
 
 .numCount{
 	background-color: $color-bg;
@@ -248,13 +248,16 @@ span.total{
 
 .homepage-msg{
 	position: fixed;
-	top: 30%;
+	top: 10%;
 	left: 0;
 	width: 100%;	
 	text-align: center;
 	color: #fff;
 	font-size: 2em;
 }
+.homepage-msg form{margin-top: 15px}
+.homepage-msg input[type="text"]{width: 450px; max-width: 90%; margin: 0 auto; background-color: rgba(250,250,250,.5)}
+
 
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
 

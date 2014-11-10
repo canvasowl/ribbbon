@@ -16,6 +16,8 @@ Route::post('/login', 'UsersController@login');
 Route::post('/make', 'UsersController@register');
 Route::get('/logout', 'UsersController@logout');
 Route::resource('/users', 'UsersController');
+Route::post('/request', 'UsersController@request');
+Route::get('/learn', function(){ return View::make('learn'); });
 
 // The user needs to be logged in for these routes to work
 Route::group(array('before' => 'auth'), function(){	
