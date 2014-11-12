@@ -1,13 +1,11 @@
 @extends('templates.master')
 
-
 @section('content')
-
 	
   <div class="tab-pane active home-form" id="login">
   	<center><h1>Login</h1></center>
 	<div>	
-		{{ Form::open(array('action' => 'UsersController@lrequest')) }}
+		{{ Form::open(array('action' => 'UsersController@login')) }}
 			<div class="form-group">
 				{{ Form::text( 'email', null, array('class' => 'form-control', "placeholder" => "email","autofocus" => "true" )) }}	
 			</div>
@@ -20,6 +18,5 @@
 		{{ Form::close() }}
 	</div>		  	
   </div>
-
 
 @stop

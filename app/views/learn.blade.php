@@ -1,8 +1,6 @@
 @extends('templates.master')
 
-
 @section('content')
-
 	
   <div class="tab-pane active home-form" id="login">
   	<center><h1>Request An Invite <i class="fa fa-envelope-o"></i></h1></center>
@@ -18,6 +16,5 @@
 		{{ Form::close() }}
 	</div>		  	
   </div>
-
 
 @stop

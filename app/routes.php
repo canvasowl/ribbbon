@@ -12,15 +12,16 @@ Route::get('/', function()
 Route::get('/register', function(){ return View::make('register'); });
 Route::get('/signin', function(){ return View::make('signin'); });
 
+Route::resource('/users', 'UsersController');
 Route::post('/login', 'UsersController@login');
 Route::post('/make', 'UsersController@register');
 Route::get('/logout', 'UsersController@logout');
-Route::resource('/users', 'UsersController');
 Route::post('/request', 'UsersController@request');
 Route::get('/learn', function(){ return View::make('learn'); });
 
 // The user needs to be logged in for these routes to work
-Route::group(array('before' => 'auth'), function(){	
+Route::group(array('before' => 'auth'), function()
+{	
 	Route::resource('clients', 'ClientsController');
 	Route::resource('projects', 'ProjectsController');
 	Route::resource('tasks', 'TasksController');
@@ -30,7 +31,6 @@ Route::group(array('before' => 'auth'), function(){
 	}));
 
 	Route::get('/profile', 'UsersController@index');
-
 });
 
 // User routes

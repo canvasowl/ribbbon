@@ -257,7 +257,7 @@ class UsersController extends \BaseController {
 		$beta_user->status 	= false;
 		$beta_user->save(); 
 
-		return Redirect::back()->with('success', "Your all set, your invitation will arive soon.");
+		return Redirect::back()->with('success', "Your all set, your invitation will will arive soon.");
 	}
 
 }
