@@ -48,7 +48,6 @@ Route::filter('auth', function()
 	}
 });
 
-
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
@@ -86,5 +85,27 @@ Route::filter('csrf', function()
 	if (Session::token() != Input::get('_token'))
 	{
 		throw new Illuminate\Session\TokenMismatchException;
+	}
+});
+
+/*
+|--------------------------------------------------------------------------
+| Admin Filter
+|--------------------------------------------------------------------------
+|
+| The 'admin' filter not only checks if a users is logged in, 
+| but also if the users email is considered an admin
+|
+*/
+Route::filter('admin', function()
+{		
+	if (Auth::check()) 
+	{
+		if (Auth::user()->email != "jefrycruz88@gmail.com")
+		{
+			return Redirect::to('/');		
+		}		
+	}else{
+		return Redirect::to('/');
 	}
 });
