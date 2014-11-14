@@ -54,6 +54,7 @@ label{font-weight: 500}
 *::-moz-placeholder{opacity: .3}
 *:-ms-input-placeholder{opacity: .3}
 
+// Helpers
 .dimmed{opacity: .5; font-size: .8em;}
 
 .no-padding-left{padding-left: 0;}
@@ -77,8 +78,14 @@ label{font-weight: 500}
 
 .circle{border-radius: 100%;}
 
+// Badges
 .badge{background-color: #E4E4E4; color: $color-primary}
 
+// Pills
+.pill{padding: 5px 30px; border-radius: 90px; color: #eee; background-color: #999; font-size: .9em}
+.pill:hover{color: #fff;}
+.pill-primary{background-color: $color-primary}
+.pill-dark{background-color: #555;}
 
 // Buttons
 .btn{text-transform: capitalize}
@@ -121,7 +128,7 @@ label{font-weight: 500}
 
 .alert{border: none; border-radius: 0;}
 .alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}
-.alert-main a{color: #fff !important}
+.alert-link{color: rgab(0,0,0,.5)}
 
 .numCount{
 	background-color: $color-bg;
@@ -176,7 +183,7 @@ span.total{
 	background-color: $color-weight;
 	color: #fff;
 	font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
-	padding: 5px 08px 0px;
+	padding: 1px 08px 0px;
 	line-height: 0;
 	border-radius: 100%;
 	background-color: $color-main-weigth;	
@@ -248,13 +255,16 @@ span.total{
 
 .homepage-msg{
 	position: fixed;
-	top: 30%;
+	top: 10%;
 	left: 0;
 	width: 100%;	
 	text-align: center;
 	color: #fff;
 	font-size: 2em;
 }
+.homepage-msg form{margin-top: 15px}
+.homepage-msg input[type="text"]{width: 450px; max-width: 90%; margin: 0 auto; background-color: rgba(250,250,250,.5)}
+
 
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
 
