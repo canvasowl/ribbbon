@@ -98,27 +98,38 @@ class ProjectsController extends \BaseController {
 	public function update($id)
 	{
 		$project 	= Project::find($id);
-		$name		= Input::get("name");
 
        // Validation
         $validator = Validator::make(
             array(
-            	'name' 				=>	$name
+            	'name' 				=>	Input::get("name"),
+            	'github'			=>	Input::get("github"),
+            	'production'		=>	Input::get("production"),
+            	'stage'				=>	Input::get("stage"),
+            	'dev'				=>	Input::get("dev")
             	),
             array(
-            	'name' 				=> 'required'
+            	'name' 				=> 'required',
+            	'github'			=> 'url',
+            	'production'		=> 'url',
+            	'stage'				=> 'url',
+            	'dev'				=> 'url'
             	)
         );
 
         if ($validator->fails())
         {
-            return Redirect::back()->withErrors($validator);
+            return Redirect::back()->withErrors($validator)->withInput();
         }
 
-		$project->name = $name;
+		$project->name 			= Input::get('name');
+		$project->github 		= Input::get('github');
+		$project->production 	= Input::get('production');
+		$project->stage 		= Input::get('stage');
+		$project->dev 			= Input::get('dev');
 		$project->save();
 
-		return Redirect::back()->with('success', "The project " .$name. " has been updated.");
+		return Redirect::back()->with('success', "The project " .Input::get('name'). " has been updated.");
 
 	}
 

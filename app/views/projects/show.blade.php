@@ -26,13 +26,13 @@
 				  			<li><a class="pill pill-primary" target="_blank" href="{{ $project->production }}">Production</a></li>
 				  		@endif
 				  		@if ($project->stage)
-				  			<li><a class="pill pill-primary" target="_blank" href="{{ $production->stage">Staging</a></li>
+				  			<li><a class="pill pill-primary" target="_blank" href="{{ $project->stage }}">Staging</a></li>
 				  		@endif
 				  		@if ($project->dev)
-				  			<li><a class="pill pill-primary" target="_blank" href="{{ $production->dev">Development</a></li>
+				  			<li><a class="pill pill-primary" target="_blank" href="{{ $project->dev }}">Development</a></li>
 				  		@endif
 				  		@if ($project->github)
-				  			<li><a class="pill pill-dark" target="_blank" href="{{ $project->github"><i class="fa fa-github fa-lg"> Github</a></li>
+				  			<li><a class="pill pill-dark" target="_blank" href="{{ $project->github }}">Github</a></li>
 				  		@endif
 				  	</ul><br>
 				  	<!-- info pills -->
