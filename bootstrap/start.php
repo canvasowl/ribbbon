@@ -27,6 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('Jefrys-MacBook-Air.local','Jefrys-Air'),
+	'ironpaperweight' => array('homestead')
 
 ));
 
