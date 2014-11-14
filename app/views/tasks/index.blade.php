@@ -13,7 +13,7 @@
             <ul class="list-style-none">
                 @foreach ($tasks as $task)
                     <?php $counter++; ?>
-                    <a class="list-link"href="/tasks/{{ $task->id }}">
+                    <a class="list-link"href="/projects/{{ $task->project_id }}">
                         <li>
                             <span class="numCount">{{ $counter }}</span> {{ $task->name}} 
                         </li>
