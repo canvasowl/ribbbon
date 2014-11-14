@@ -54,6 +54,7 @@ label{font-weight: 500}
 *::-moz-placeholder{opacity: .3}
 *:-ms-input-placeholder{opacity: .3}
 
+// Helpers
 .dimmed{opacity: .5; font-size: .8em;}
 
 .no-padding-left{padding-left: 0;}
@@ -77,8 +78,14 @@ label{font-weight: 500}
 
 .circle{border-radius: 100%;}
 
+// Badges
 .badge{background-color: #E4E4E4; color: $color-primary}
 
+// Pills
+.pill{padding: 5px 30px; border-radius: 90px; color: #eee; background-color: #999; font-size: .9em}
+.pill:hover{color: #fff;}
+.pill-primary{background-color: $color-primary}
+.pill-dark{background-color: #555;}
 
 // Buttons
 .btn{text-transform: capitalize}
