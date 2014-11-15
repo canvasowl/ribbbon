@@ -172,7 +172,10 @@ label {
   border-radius: 1px; }
 
 .panel-default > .panel-heading {
-  background-color: #fff; }
+  background-color: #69b4b8; }
+
+.panel-default > .panel-heading {
+  color: #fff; }
 
 .navbar-default a,
 .navbar-default .navbar-nav > li > a {
@@ -265,7 +268,7 @@ label {
 .level-easy,
 .level-medium,
 .level-hard {
-  background-color: #d4d4c0; }
+  background-color: #5cb85c; }
 
 .legend {
   margin-top: 20px; }
@@ -283,13 +286,12 @@ label {
   height: 10px; }
 
 span.total {
-  background-color: #d4d4c0;
+  background-color: #5cb85c;
   color: #fff;
   font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
-  padding: 1px 08px 0px;
+  padding: 2px 4px;
   line-height: 0;
-  border-radius: 100%;
-  background-color: tomato; }
+  font-size: .8em; }
 
 .blanket {
   position: absolute;
@@ -484,6 +486,6 @@ section.info .table > tfoot > tr > td {
 .dynamic-form input[type="text"] {
   margin-top: 10px; }
 
-.dynamic-form input[type="submit"] {
+.dynamic-form button {
   margin-top: 13px;
   width: 100%; }

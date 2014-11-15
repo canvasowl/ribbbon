@@ -6,7 +6,7 @@ $color-primary-rival: #D86850;
 $color-primary-rival-hover: #ED7258;
 $color-bg: #FDFDFD;
 $color-font: #586E6E;
-$color-weight: #D4D4C0;
+$color-weight: #5cb85c;
 $color-main-weigth: tomato;
 
 // Special colors
@@ -109,7 +109,9 @@ label{font-weight: 500}
 }
 
 // Panels 
-.panel-default>.panel-heading{background-color: #fff}
+.panel-default>.panel-heading{background-color: $color-primary}
+.panel-default>.panel-heading{color: #fff;}
+
 
 // Navigaton
 .navbar-default a,
@@ -183,10 +185,9 @@ span.total{
 	background-color: $color-weight;
 	color: #fff;
 	font-family: "HelveticaNeueLT Com 35 Th", sans-serif;
-	padding: 1px 08px 0px;
+	padding: 2px 4px;
 	line-height: 0;
-	border-radius: 100%;
-	background-color: $color-main-weigth;	
+	font-size: .8em;	
 }
 
 .blanket{
@@ -328,4 +329,4 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .main-user-wrap h1{font-size: 4em;}
 
 .dynamic-form input[type="text"]{margin-top: 10px;}
-.dynamic-form input[type="submit"]{margin-top: 13px; width: 100%}
+.dynamic-form button{margin-top: 13px; width: 100%}

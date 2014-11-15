@@ -152,6 +152,7 @@
 						<div class="panel panel-default">
 						  <div class="panel-heading">FTP & SSH Accounts</div>
 						  <div class="panel-body ftp-panel-body">					    			            	
+							
 							<div class="col-xs-12 col-md-4 no-padding-left no-padding-right dynamic-form">
   								{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'get')) }}
 					         		<input class="form-control" type="text" name="name" placeholder="Name" autofocus>					            		
@@ -164,14 +165,16 @@
 					         		<div class="col-xs-4 no-padding-left">
 					         			<input class="form-control" type="text" name="port" placeholder="Port">
 					         		</div>
-					         		<div class="col-xs-8 no-padding-right">					         			
-					         			<input class="btn btn-primary" type="submit" value="Save">	
+					         		<div class="col-xs-8 no-padding-right">
+						         		<button type="submit" class="btn btn-default">
+							                <i class="fa fa-plus-square-o fa-lg"></i> Save
+							            </button>
+					         			<!-- <input class="btn btn-primary" type="submit" value="Save">	 -->
 					         		</div>					         		
 					         		
 					         		<div class="clearfix"></div>
 								{{ Form::close() }}					         	
-					     	</div>			            	
-			            	<div class="clearfix"></div>			            				            	
+					     	</div>				            				            				            	
 						  </div>	         	
 			            </div>
 
