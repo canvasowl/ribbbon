@@ -151,16 +151,27 @@
 					  	<!-- server panel -->
 						<div class="panel panel-default">
 						  <div class="panel-heading">FTP & SSH Accounts</div>
-						  <div class="panel-body">					    
-			            	<p class="dimmed">For the weight, enter a number from 1-3, the higher the number the harder the task.</p>
+						  <div class="panel-body ftp-panel-body">					    			            	
+							<div class="col-xs-12 col-md-4 no-padding-left no-padding-right dynamic-form">
+  								{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'post')) }}
+					         		<!-- <input class="form-control" type="text" name="name" placeholder="Name" autofocus>					            		
+					         		<input class="form-control" type="text" name="hostname" placeholder="Hostname">
+					         		<input class="form-control" type="text" name="username" placeholder="Username">
+					         		<input class="form-control" type="text" name="password" placeholder="Password">
+					         		<br>
+					         		<input class="btn btn-primary pull-right" type="submit" value="Save">
+					         		<div class="clearfix"></div> -->
+								{{ Form::close() }}					         	
+					     	</div>			            	
+			            	<div class="clearfix"></div>			            				            	
 						  </div>	         	
 			            </div>
 
 					  	<!-- other panel -->
 						<div class="panel panel-default">
 						  <div class="panel-heading">Other Credentials</div>
-						  <div class="panel-body">					    
-			            	<p class="dimmed">For the weight, enter a number from 1-3, the higher the number the harder the task.</p>
+						  <div class="panel-body other--panel-body">					    
+			            	<button id="other" class="btn btn-default"><i class="fa fa-plus-square-o fa-lg"></i> new</button>
 						  </div>	         	
 			            </div>
 

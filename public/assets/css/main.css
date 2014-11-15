@@ -480,3 +480,6 @@ section.info .table > tfoot > tr > td {
 
 .main-user-wrap h1 {
   font-size: 4em; }
+
+.dynamic-form input[type="text"] {
+  margin-top: 10px; }

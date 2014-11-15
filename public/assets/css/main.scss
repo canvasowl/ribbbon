@@ -301,8 +301,6 @@ span.total{
 
 .app-wrapper-wide{width: 1290px; max-width: 100%;}
 
-
-
 section.info{
 	background-color: $info-bg-color;
 	box-sizing: border-box;
@@ -331,3 +329,4 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .main-user-wrap img{width: 200px; padding: 10px;}
 .main-user-wrap h1{font-size: 4em;}
 
+.dynamic-form input[type="text"]{margin-top: 10px;}
