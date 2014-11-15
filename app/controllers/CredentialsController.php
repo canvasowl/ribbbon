@@ -20,8 +20,34 @@ class CredentialsController extends \BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{
-		//
+	{	
+		$rules = array(
+				'name' 		=> 'required',
+				'username' 	=> 'required',
+				'password' 	=> 'required'
+			);
+
+		$validator = Validator::make($data = Input::all(), $rules);
+
+		if ($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		$credential = new Credential;
+
+		if (Input::get('type') == "server") {
+			$credential->user_id 		= Auth::id();
+			$credential->project_id 	= Input::get('project_id');
+			$credential->type 			= true;
+			$credential->name 			= Input::get('name');
+			$credential->hostname 		= Input::get('hostname');
+			$credential->username 		= Input::get('username');
+			$credential->password 		= Input::get('password');
+			$credential->port 	= Input::get('port');			
+			$credential->save();
+		}else{
+
+		}
 	}
 
 	/**

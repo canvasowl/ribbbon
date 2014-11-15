@@ -483,3 +483,7 @@ section.info .table > tfoot > tr > td {
 
 .dynamic-form input[type="text"] {
   margin-top: 10px; }
+
+.dynamic-form input[type="submit"] {
+  margin-top: 13px;
+  width: 100%; }

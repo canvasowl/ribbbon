@@ -153,13 +153,21 @@
 						  <div class="panel-heading">FTP & SSH Accounts</div>
 						  <div class="panel-body ftp-panel-body">					    			            	
 							<div class="col-xs-12 col-md-4 no-padding-left no-padding-right dynamic-form">
-  								{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'post')) }}
+  								{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'get')) }}
 					         		<input class="form-control" type="text" name="name" placeholder="Name" autofocus>					            		
 					         		<input class="form-control" type="text" name="hostname" placeholder="Hostname">
 					         		<input class="form-control" type="text" name="username" placeholder="Username">
 					         		<input class="form-control" type="text" name="password" placeholder="Password">
+					         		<input type="hidden" name="project_id" value="{{ $project->id }}">
+					         		<input type="hidden" name="type" value="server"
 					         		<br>
-					         		<input class="btn btn-primary pull-right" type="submit" value="Save">
+					         		<div class="col-xs-4 no-padding-left">
+					         			<input class="form-control" type="text" name="port" placeholder="Port">
+					         		</div>
+					         		<div class="col-xs-8 no-padding-right">					         			
+					         			<input class="btn btn-primary" type="submit" value="Save">	
+					         		</div>					         		
+					         		
 					         		<div class="clearfix"></div>
 								{{ Form::close() }}					         	
 					     	</div>			            	

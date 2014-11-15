@@ -296,9 +296,7 @@ span.total{
 	padding: 10px;
 	border-radius: 5px;
 }
-
 .app-wrapper h2{margin-bottom: 40px}
-
 .app-wrapper-wide{width: 1290px; max-width: 100%;}
 
 section.info{
@@ -330,3 +328,4 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .main-user-wrap h1{font-size: 4em;}
 
 .dynamic-form input[type="text"]{margin-top: 10px;}
+.dynamic-form input[type="submit"]{margin-top: 13px; width: 100%}
