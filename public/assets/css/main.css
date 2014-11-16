@@ -473,8 +473,8 @@ section.info .table > tfoot > tr > td {
   border-top: 1px solid #e7c6ab; }
 
 .main-user-wrap {
-  background-color: tomato;
-  color: #fff; }
+  background-color: #ececec;
+  color: #777; }
 
 .main-user-wrap img {
   width: 200px;
@@ -482,6 +482,9 @@ section.info .table > tfoot > tr > td {
 
 .main-user-wrap h1 {
   font-size: 4em; }
+
+.stat-card .badge {
+  font-size: 2em; }
 
 .dynamic-form input[type="text"] {
   margin-top: 10px; }

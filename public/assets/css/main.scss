@@ -324,9 +324,11 @@ section.info .table>thead>tr>td,
 section.info .table>tbody>tr>td, 
 section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 
-.main-user-wrap{background-color: tomato; color: #fff;}
+.main-user-wrap{background-color: #ececec; color: #777}
 .main-user-wrap img{width: 200px; padding: 10px;}
 .main-user-wrap h1{font-size: 4em;}
+
+.stat-card .badge{font-size: 2em;}
 
 .dynamic-form input[type="text"]{margin-top: 10px;}
 .dynamic-form button{margin-top: 13px; width: 100%}
