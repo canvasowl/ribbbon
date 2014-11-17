@@ -492,3 +492,10 @@ section.info .table > tfoot > tr > td {
 .dynamic-form button {
   margin-top: 13px;
   width: 100%; }
+
+.credential-wrap {
+  margin-bottom: 2px; }
+
+.credential-wrap p {
+  margin-bottom: 0;
+  opacity: .6; }
