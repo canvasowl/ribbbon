@@ -6,4 +6,8 @@ class Project extends \Eloquent {
 	public function tasks(){
 		return $this->hasMany('Task', 'project_id');
 	}
+
+	public function credentials(){
+		return $this->hasMany('Credential', 'project_id');
+	}
 }

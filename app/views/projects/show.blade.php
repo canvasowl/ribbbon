@@ -153,28 +153,52 @@
 						  <div class="panel-heading">FTP & SSH Accounts</div>
 						  <div class="panel-body ftp-panel-body">					    			            	
 							
-							<div class="col-xs-12 col-md-4 no-padding-left no-padding-right dynamic-form">
-  								{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'get')) }}
-					         		<input class="form-control" type="text" name="name" placeholder="Name" autofocus>					            		
-					         		<input class="form-control" type="text" name="hostname" placeholder="Hostname">
-					         		<input class="form-control" type="text" name="username" placeholder="Username">
-					         		<input class="form-control" type="text" name="password" placeholder="Password">
-					         		<input type="hidden" name="project_id" value="{{ $project->id }}">
-					         		<input type="hidden" name="type" value="server"
-					         		<br>
-					         		<div class="col-xs-4 no-padding-left">
-					         			<input class="form-control" type="text" name="port" placeholder="Port">
-					         		</div>
-					         		<div class="col-xs-8 no-padding-right">
-						         		<button type="submit" class="btn btn-default">
-							                <i class="fa fa-plus-square-o fa-lg"></i> Save
-							            </button>
-					         			<!-- <input class="btn btn-primary" type="submit" value="Save">	 -->
-					         		</div>					         		
-					         		
-					         		<div class="clearfix"></div>
-								{{ Form::close() }}					         	
-					     	</div>				            				            				            	
+							<div class="row">
+								<div class="col-xs-12 col-md-4 no-padding-left no-padding-right dynamic-form">
+	  								{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'get')) }}
+						         		<input class="form-control" type="text" name="name" placeholder="Name" autofocus>					            		
+						         		<input class="form-control" type="text" name="hostname" placeholder="Hostname">
+						         		<input class="form-control" type="text" name="username" placeholder="Username">
+						         		<input class="form-control" type="text" name="password" placeholder="Password">
+						         		<input type="hidden" name="project_id" value="{{ $project->id }}">
+						         		<input type="hidden" name="type" value="server"
+						         		<br>
+						         		<div class="col-xs-4 no-padding-left">
+						         			<input class="form-control" type="text" name="port" placeholder="Port">
+						         		</div>
+						         		<div class="col-xs-8 no-padding-right">
+							         		<button type="submit" class="btn btn-default">
+								                <i class="fa fa-plus-square-o fa-lg"></i> Save
+								            </button>
+						         			<!-- <input class="btn btn-primary" type="submit" value="Save">	 -->
+						         		</div>					         		
+						         		
+						         		<div class="clearfix"></div>
+									{{ Form::close() }}					         	
+						     	</div>	
+					     	</div>
+
+					     	<div class="row">
+					     		<hr>
+						     	@foreach ($credentials as $credential)
+						     		@if ($credential->type == true)
+							     		<div class="col-xs-12 col-md-4 credential-wrap" id="credential-wrap-{{ $credential->id }}">
+							     			<h4>{{ $credential->name }}</h4	>
+							     			<p><strong>Hostname:</strong> {{ $credential->hostname }}</p>
+							     			<p><strong>Username:</strong> {{ $credential->username }}</p>
+							     			<p><strong>Password:</strong> {{ $credential->password }}</p>
+							     			<p><strong>Port:</strong> {{ $credential->port }}</p>
+							     			<div class="actions">
+							     				{{ Form::open(array('action' => 'CredentialsController@destroy', 'method' => 'delete')) }}
+							     					<input type="hidden" name="id" value="{{ $credential->id }}">
+							     					<button id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
+							     				{{ Form::close() }}
+							     			</div>
+							     		</div>
+						     		@endif
+						     	@endforeach
+					     	</div>
+					     	
 						  </div>	         	
 			            </div>
 

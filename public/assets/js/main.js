@@ -43,6 +43,27 @@ $('#delete-account').click(function(){
 // 	console.log(data);
 // });
 
+/**
+ * Delete a credential
+ */
+$('.credential-wrap .btn-delete').click(function(){
+	event.preventDefault();
+	var id 		= $(this).attr('id');
+	var data	= {_method: 'delete' };
+	
+	$.ajax({
+	    url:  '/credentials/'+id,
+	    type: 'DELETE',
+	    data:data,
+	    success: function(result) {
+	        $('#credential-wrap-'+id).fadeOut(300)	        
+	    }
+	  });	
+})
+
+
+
+
 
 
 

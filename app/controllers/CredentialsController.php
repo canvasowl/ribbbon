@@ -106,7 +106,7 @@ class CredentialsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+			Credential::find($id)->delete();
 	}
 
 }
