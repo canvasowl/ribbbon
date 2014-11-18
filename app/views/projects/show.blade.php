@@ -189,10 +189,18 @@
 							     			<p><strong>Password:</strong> {{ $credential->password }}</p>
 							     			<p><strong>Port:</strong> {{ $credential->port }}</p>
 							     			<div class="actions">
-							     				{{ Form::open(array('action' => 'CredentialsController@destroy', 'method' => 'delete')) }}
-							     					<input type="hidden" name="id" value="{{ $credential->id }}">
-							     					<button id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
-							     				{{ Form::close() }}
+							     				<ul class="inline-list list-style-none">
+							     					<li>
+								     				{{ Form::open(array('action' => 'CredentialsController@destroy', 'method' => 'delete')) }}
+								     					<input type="hidden" name="id" value="{{ $credential->id }}">
+								     					<button title="delete" id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
+								     				{{ Form::close() }}							     						
+							     					</li>
+							     					<li>
+							     						<button title="edit" class="btn btn-default"><a href=""><i class="fa fa-pencil"></i></a></button>				
+							     					</li>
+							     					<div class="clearfix"></div>
+							     				</ul>
 							     			</div>
 							     		</div>
 						     		@endif

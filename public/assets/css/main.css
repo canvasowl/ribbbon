@@ -499,3 +499,23 @@ section.info .table > tfoot > tr > td {
 .credential-wrap p {
   margin-bottom: 0;
   opacity: .6; }
+
+.credential-wrap .actions {
+  max-height: 45px; }
+
+.credential-wrap .actions {
+  background-color: #fdfdfd;
+  padding: 5px; }
+
+.credential-wrap .actions i.fa-trash {
+  color: #D24453; }
+
+.credential-wrap .actions i.fa-pencil {
+  color: #69b4b8; }
+
+.credential-wrap .actions ul li {
+  margin-left: 2%; }
+
+.credential-wrap .actions .btn {
+  background-color: transparent;
+  border: none; }
