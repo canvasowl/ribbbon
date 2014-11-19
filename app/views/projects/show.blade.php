@@ -156,7 +156,6 @@
 						  <div class="panel-body ftp-panel-body">					    			            	
 						
 					     	<div class="row">
-					     		<hr>
 						     	@foreach ($credentials as $credential)
 						     		@if ($credential->type == true)
 							     		<div class="col-xs-12 col-md-4 credential-wrap" id="credential-wrap-{{ $credential->id }}">
@@ -191,7 +190,31 @@
 						<div class="panel panel-default">
 						  <div class="panel-heading">Other Credentials</div>
 						  <div class="panel-body other--panel-body">					    
-			            	<button id="other" class="btn btn-default"><i class="fa fa-plus-square-o fa-lg"></i> new</button>
+					     	<div class="row">
+						     	@foreach ($credentials as $credential)
+						     		@if ($credential->type == false)
+							     		<div class="col-xs-12 col-md-4 credential-wrap" id="credential-wrap-{{ $credential->id }}">
+							     			<h4>{{ $credential->name }}</h4	>
+							     			<p><strong>Username:</strong> {{ $credential->username }}</p>
+							     			<p><strong>Password:</strong> {{ $credential->password }}</p>
+							     			<div class="actions">
+							     				<ul class="inline-list list-style-none">
+							     					<li>
+								     				{{ Form::open(array('action' => 'CredentialsController@destroy', 'method' => 'delete')) }}
+								     					<input type="hidden" name="id" value="{{ $credential->id }}">
+								     					<button title="delete" id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
+								     				{{ Form::close() }}							     						
+							     					</li>
+							     					<li>
+							     						<button title="edit" class="btn btn-default"><a href=""><i class="fa fa-pencil"></i></a></button>				
+							     					</li>
+							     					<div class="clearfix"></div>
+							     				</ul>
+							     			</div>
+							     		</div>
+						     		@endif
+						     	@endforeach
+					     	</div>
 						  </div>	         	
 			            </div>
 
@@ -205,9 +228,7 @@
 					@include('projects.partials.sidebar')	
 	            </div>
 	            <!-- SIDEBAR -->
-
-	                        
-
+	                       
             <div class="row">
             	<div class="col-xs-12">
                     <section>

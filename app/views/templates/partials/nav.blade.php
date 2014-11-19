@@ -21,8 +21,7 @@
 			        <li class="<?php echo ( Request::is('hud') ) ? 'active' : 'false'; ?>"><a href="/hud"><span class="glyphicon glyphicon-th"></span> Hud</a></li>
 			        <li class="dropdown 
 			        	<?php echo ( Request::is('clients') || Request::is('projects') || Request::is('tasks') || Request::is('clients/*') || Request::is('projects/*') || 
-			        	Request::is('tasks/*') ) ? 'active' : 'false'; ?>" 
-			        >
+			        	Request::is('tasks/*') ) ? 'active' : 'false'; ?>">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
 			          <ul class="dropdown-menu" role="menu">
 			            <li class="<?php echo ( Request::is('clients') || Request::is('clients/*') ) ? 'active' : 'false'; ?>"><a href="/clients">Clients</a></li>
@@ -36,7 +35,7 @@
 			        </li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
-			      	<li><a class="profile-link" href="/profile"><img class="circle" src="{{ asset('assets/img/guy.jpg') }}"></a></li>
+			      	<?php //<li><a class="profile-link" href="/profile"><img class="circle" src="{{ asset('assets/img/guy.jpg') }}"></a></li> ?>
 			        <li><a href="/logout">Logout <i class="fa fa-sign-out"></i></a></li>			        
 			      </ul>
 			    </div><!-- /.navbar-collapse -->

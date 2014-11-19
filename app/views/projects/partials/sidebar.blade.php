@@ -8,7 +8,7 @@
 		            			<div class="row">		            				
 		            				<div class="col-xs-10 no-padding-left">
 				            			<label>Name</label>
-				            			<input type="text" name="name" class="form-control" value="{{ Input::old('name') }}">		            				
+				            			<input type="text" name="name" class="form-control" value="{{ Input::old('name') }}" autofocus>		            				
 			            			</div>
 			            			<div class="col-xs-2 no-padding-right">
 			            				<label>Weight</label>
@@ -34,12 +34,13 @@
 						  <div class="panel-heading">Create new credentials</div>
 						  	<div class="panel-body">					    
 							{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'get')) }}
-				         		<input class="form-control" type="text" name="name" placeholder="Name" autofocus>					            		
+								<label>FTP/SSH</label> <input type="radio" name="type" value="server" checked> 
+								<label>Other</label> <input type="radio" name="type" value="other">							
+								<input class="form-control" type="text" name="name" placeholder="Name">
 				         		<input class="form-control" type="text" name="hostname" placeholder="Hostname">
 				         		<input class="form-control" type="text" name="username" placeholder="Username">
 				         		<input class="form-control" type="text" name="password" placeholder="Password">
 				         		<input type="hidden" name="project_id" value="{{ $project->id }}">
-				         		<input type="hidden" name="type" value="server"
 				         		<br>
 				         		<div class="col-xs-4 no-padding-left">
 				         			<input class="form-control" type="text" name="port" placeholder="Port">
