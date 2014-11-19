@@ -81,7 +81,7 @@
 						  								<li>
 							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
 							  								<input type="hidden" name="id" value="{{ $task->id }}">
-							  								<input type="submit" class="btn btn-default" value="delete">
+							  								<button title="delete" type="submit" class="btn btn-default"><i class="fa fa-trash"></i></button>
 						  									{{ Form::close() }}					  									
 						  								</li>
 						  							</ul>						  							
@@ -130,7 +130,7 @@
 						  								<li>
 							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
 							  								<input type="hidden" name="id" value="{{ $task->id }}">
-							  								<input type="submit" value="delete">
+							  								<button title="delete" type="submit" class="btn btn-default"><i class="fa fa-trash"></i></button>
 						  									{{ Form::close() }}					  							
 						  								</li>
 						  							</ul>						  							
@@ -172,9 +172,9 @@
 								     					<button title="delete" id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
 								     				{{ Form::close() }}							     						
 							     					</li>
-							     					<li>
+							     					<?php /*<li>
 							     						<button title="edit" class="btn btn-default"><a href=""><i class="fa fa-pencil"></i></a></button>				
-							     					</li>
+							     					</li>*/ ?>
 							     					<div class="clearfix"></div>
 							     				</ul>
 							     			</div>
@@ -205,9 +205,9 @@
 								     					<button title="delete" id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
 								     				{{ Form::close() }}							     						
 							     					</li>
-							     					<li>
+							     					<?php /*<li>
 							     						<button title="edit" class="btn btn-default"><a href=""><i class="fa fa-pencil"></i></a></button>				
-							     					</li>
+							     					</li>*/?>
 							     					<div class="clearfix"></div>
 							     				</ul>
 							     			</div>

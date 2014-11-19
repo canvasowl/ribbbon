@@ -172,10 +172,13 @@ label {
   border-radius: 1px; }
 
 .panel-default > .panel-heading {
-  background-color: #69b4b8; }
+  background-color: #ececec; }
 
 .panel-default > .panel-heading {
-  color: #fff; }
+  color: #333; }
+
+.nav-tabs > li > a {
+  color: #aaa; }
 
 .navbar-default a,
 .navbar-default .navbar-nav > li > a {
@@ -206,7 +209,12 @@ label {
 
 .alert {
   border: none;
-  border-radius: 0; }
+  border-radius: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 52px;
+  padding: 10px; }
 
 .alert-main {
   text-align: center;
@@ -214,7 +222,8 @@ label {
   text-transform: uppercase; }
 
 .alert-link {
-  color: rgab(0, 0, 0, 0.5); }
+  color: rgab(0, 0, 0, 0.5);
+  font-size: .8em; }
 
 .numCount {
   background-color: #fdfdfd;
@@ -390,7 +399,9 @@ span.total {
   margin: 0 auto; }
 
 .hug-hudHeader {
-  background-color: #69b4b8; }
+  background-color: #69b4b8;
+  position: fixed;
+  z-index: 1; }
 
 .hug-hudHeader .row {
   margin-left: 0;
@@ -428,14 +439,13 @@ span.total {
   margin: 0 auto;
   margin-top: 20px;
   padding: 10px;
-  border-radius: 5px; }
-
-.app-wrapper h2 {
-  margin-bottom: 40px; }
+  border-radius: 5px;
+  margin-top: 100px; }
 
 .app-wrapper-wide {
   width: 1290px;
-  max-width: 100%; }
+  max-width: 100%;
+  margin-top: 100px; }
 
 section.info {
   background-color: #f9f4eb;

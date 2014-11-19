@@ -109,8 +109,11 @@ label{font-weight: 500}
 }
 
 // Panels 
-.panel-default>.panel-heading{background-color: $color-primary}
-.panel-default>.panel-heading{color: #fff;}
+.panel-default>.panel-heading{background-color: #ececec}
+.panel-default>.panel-heading{color: #333;}
+
+// Nav Tabs
+.nav-tabs>li>a{color: #aaa;}
 
 
 // Navigaton
@@ -128,9 +131,17 @@ label{font-weight: 500}
 	border: 2px solid rgba(100,100,100,.3);	
 }
 
-.alert{border: none; border-radius: 0;}
+.alert{
+	border: none; 
+	border-radius: 0;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	top: 52px;
+	padding: 10px	
+}
 .alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}
-.alert-link{color: rgab(0,0,0,.5)}
+.alert-link{color: rgab(0,0,0,.5); font-size: .8em}
 
 .numCount{
 	background-color: $color-bg;
@@ -270,7 +281,7 @@ span.total{
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
 
 // INNER PAGES SHARED
-.hug-hudHeader{background-color: $color-primary}
+.hug-hudHeader{background-color: $color-primary; position: fixed; z-index: 1;}
 .hug-hudHeader .row{margin-left: 0; margin-right: 0;}
 
 .card{
@@ -296,9 +307,9 @@ span.total{
 	margin-top: 20px;
 	padding: 10px;
 	border-radius: 5px;
+	margin-top: 100px;
 }
-.app-wrapper h2{margin-bottom: 40px}
-.app-wrapper-wide{width: 1290px; max-width: 100%;}
+.app-wrapper-wide{width: 1290px; max-width: 100%; margin-top: 100px}
 
 section.info{
 	background-color: $info-bg-color;
