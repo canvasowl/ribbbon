@@ -11,21 +11,21 @@
 	  -o-background-size: cover;
 	  background-size: cover;
 	}
-</style>
-	
-<div class="row">
-	<div class="col-xs-12">
-		
-		<div class="homepage-msg animated bounceInUp">
-			<h1>Introducing Ribbbon</h1>
-			<h4>A project management system for artisans.</h4>
-			<div class="clearfix">
-				<a href="/learn" class="btn btn-rival btn-cta">Learn More <i class="fa fa-lightbulb-o"></i></a>
-				<a href="/register" class="btn btn-holo btn-cta">Sign me up <i class="fa fa-check-circle-o"></i></a>
-			</div>
-		</div>
 
-	</div>		
+	.row{width: 900px; max-width: 100%; margin: 0 auto;}
+</style>
+
+<div class="container">
+	<div class="row homepage-msg">
+		<div class="col-xs-12 col-md-6">
+			<h1>Ribbbon<br>
+			A project management system for artisans.</h1>
+		</div>
+		<div class=" col-xs-12 col-md-6 animated bounceInRight">
+			<center><h2>Request A Beta Invitation</h2></center>	
+			<center><a href="/learn" class="btn btn-rival btn-cta">Sign up for beta <i class="fa fa-lightbulb-o"></i></a></center>			
+		</div>			
+	</div>	
 </div>
 
 
