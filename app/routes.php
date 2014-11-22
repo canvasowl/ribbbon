@@ -3,7 +3,7 @@
 Route::get('/', function()
 {
 	if( Auth::check() ) {
-		return View::make('/hud');		
+		return View::make('/hud');	
 	}else{
 		return View::make('index');	
 	}	
@@ -11,7 +11,9 @@ Route::get('/', function()
 
 Route::get('register', function(){ return View::make('register'); });
 Route::get('signin', function(){ return View::make('signin'); });
-Route::get('learn', function(){ return View::make('learn'); });
+Route::get('beta', function(){ return View::make('beta'); });
+Route::get('about', function(){ return View::make('about'); });
+Route::get('faq', function(){ return View::make('faq'); });
 
 //----------------- User routes
 Route::resource('users', 'UsersController');

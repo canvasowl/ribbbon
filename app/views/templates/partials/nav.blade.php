@@ -11,7 +11,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </button>
-			      <a class="navbar-brand" href="/hud">Brand</a>
+			      <a class="navbar-brand site-name" href="/">Ribbbon "beta"</a>
 			    </div>
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->

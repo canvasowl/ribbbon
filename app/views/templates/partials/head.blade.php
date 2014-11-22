@@ -11,7 +11,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
 
-	@if ( Request::is('/') )
+	@if ( Request::is('index') )
 		<style type="text/css">
 			html { 
 			  background: url(/assets/img/big_bg.jpg) no-repeat center center fixed; 
@@ -23,9 +23,15 @@
 		</style>
 	@endif
 
-	@if ( Request::is('/') || Request::is('learn') || Request::is('register') || Request::is('signin')  )
+	@if ( Request::is('index') || Request::is('beta') || Request::is('register') || Request::is('signin') || Request::is('about')  )
 		<style type="text/css">
 			.row{width: 900px; max-width: 100%; margin: 0 auto;}		
+		</style>
+	@endif	
+
+	@if ( Request::is('about')  )
+		<style type="text/css">
+			.container{padding-left: 0; padding-right: 0;}		
 		</style>
 	@endif	
 

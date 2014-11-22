@@ -1,27 +1,20 @@
-// Basic colors
-
+// COLORS
 $color-primary: #69b4b8;
 $color-primary-accent: #419094;
 $color-primary-rival: #D86850;
 $color-primary-rival-hover: #ED7258;
 $color-bg: #FDFDFD;
-$color-font: #586E6E;
+$color-font: #767676;
 $color-weight: #5cb85c;
 $color-main-weigth: tomato;
 $color-homeFooter: #333;
-
-// Special colors
 $color-module:			rgba(00, 00, 00, .5);
-
-// Info sections
 $info-bg-color:			#F9F4EB;
 $info-text-color:		#666;
 $color-info-dark:       #d4d4c0;
-
-// Misc
 $color-paper-line:		#E7C6AB;
 
-// Typography
+// TYPOGRAPHY
 $logo-font-family: 'Pacifico', cursive;
 $main-font-famliy: 'Gotham Rounded Book', sans-serif;
 $main-title-font:  'Source Sans Pro', sans-serif;
@@ -51,12 +44,16 @@ input:active,
 input:focus{outline: none !important;}
 label{font-weight: 500}
 
+img{max-width: 100%;}
+
 *::-webkit-input-placeholder{opacity: .3}
 *:-moz-placeholder{opacity: .3}
 *::-moz-placeholder{opacity: .3}
 *:-ms-input-placeholder{opacity: .3}
 
 // Helpers
+.site-name{font-family: $logo-font-family; letter-spacing: 2px;}
+
 .dimmed{opacity: .5; font-size: .8em;}
 
 .no-padding-left{padding-left: 0;}
@@ -80,6 +77,10 @@ label{font-weight: 500}
 
 .circle{border-radius: 100%;}
 
+.list-style-none{ list-style: none; padding-left: 0 }
+
+.inline-list li{float: left; margin-left: 0}
+
 // Badges
 .badge{background-color: #E4E4E4; color: $color-primary}
 
@@ -94,21 +95,12 @@ label{font-weight: 500}
 .btn:focus{outline: none;}
 .btn-wide{width: 100%; padding: 15px;}
 .btn-cta{font-size: .5em; padding: 20px 60px}
-
 .btn-holo{color: #fff; background: rgba(250,250,250,.2);}
 .btn-holo:hover{color: $color-primary; background-color: #fff;}
-
 .btn-rival{background-color: $color-primary-rival; border-color: $color-primary-rival; color: #fff}
 .btn-rival:hover{background-color: $color-primary-rival-hover; border-color: $color-primary-rival-hover; color: #fff;}
-
 .btn-primary{background-color: $color-primary; border: 1px solid $color-primary}
 .btn-primary:hover{background-color: $color-primary-accent; border: 1px solid $color-primary-accent}
-
-.navbar-default{
-  background-color: $color-primary;
-  border-color: $color-primary;
-  border-radius: 1px;	
-}
 
 // Panels 
 .panel-default>.panel-heading{background-color: #ececec}
@@ -119,6 +111,11 @@ label{font-weight: 500}
 
 
 // Navigaton
+.navbar-default{
+  background-color: $color-primary;
+  border-color: $color-primary;
+  border-radius: 1px;	
+}
 .navbar-default a,
 .navbar-default .navbar-nav>li>a{color: #fff;}
 .navbar-default .navbar-brand{font-family: $logo-font-family; letter-spacing: 2px; opacity: .5}
@@ -135,6 +132,7 @@ label{font-weight: 500}
 	border: 2px solid rgba(100,100,100,.3);	
 }
 
+// ALerts
 .alert{
 	border: none; 
 	border-radius: 0;
@@ -161,20 +159,12 @@ label{font-weight: 500}
 	text-align: center;
 }
 
-.list-style-none{ list-style: none; padding-left: 0 }
-.inline-list li{float: left; margin-left: 0}
-
-.list-link{
-	height: 50px;
-	display: block;	
-	color: $color-font;	
-}
+.list-link{height: 50px;display: block;	color: $color-font;	}
 .list-link:hover{background-color: $color-primary; color: #fff;}
 
 .done{text-decoration: line-through}
 
 .no-side-padding{padding-left: 0; padding-right: 0;}
-
 .small-padding-left{padding-left: 10px}
 .small-padding-right{padding-right: 10px}
 
@@ -185,7 +175,6 @@ label{font-weight: 500}
 	padding: 0 0 0 5px;
 	color: #fff;
 }
-
 .level-easy,
 .level-medium,
 .level-hard{background-color: $color-weight;}
@@ -287,8 +276,8 @@ span.total{
 .hug-footerOut .row{padding: 30px 0;}
 .hug-footerOut ul li{margin-left: 10px;}
 .hug-footerOut a,
-.hug-footerOut p{color: #fff; font-size: .8em;}
-.hug-footerOut a:hover{text-shadow: 0 0 2px rgba(255,255,255,.6)}
+.hug-footerOut p{color: #fff; font-size: .8em; opacity: .5}
+.hug-footerOut a:hover{text-shadow: 0 0 2px rgba(255,255,255,.6); opacity: 1}
 
 // INNER PAGES SHARED
 .hug-hudHeader{background-color: $color-primary; position: fixed; z-index: 1;}
@@ -318,8 +307,9 @@ span.total{
 	padding: 10px;
 	border-radius: 5px;
 	margin-top: 100px;
+	margin-bottom: 50px;
 }
-.app-wrapper-wide{width: 1290px; max-width: 100%; margin-top: 100px}
+.app-wrapper-wide{width: 1290px; max-width: 100%; margin-top: 100px; margin-bottom: 50px}
 
 section.info{
 	background-color: $info-bg-color;
@@ -362,3 +352,25 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .credential-wrap .actions i.fa-pencil{color: $color-primary}
 .credential-wrap .actions ul li{margin-left: 2%;}
 .credential-wrap .actions .btn{background-color: transparent; border: none;}
+
+// ABOUT PAGE
+.hug-about-intro,
+.hug-about-ui,
+.hug-about-shield,
+.hug-about-tasks{padding: 50px 0; color: #000 !important; }
+
+.hug-about-intro h1, .hug-about-intro h2, .hug-about-intro p, .hug-about-intro i,
+.hug-about-ui h1, .hug-about-ui h2, .hug-about-ui p, .hug-about-ui i,
+.hug-about-shield h1, .hug-about-shield h2, .hug-about-shield p, .hug-about-shield i,
+.hug-about-tasks h1, .hug-about-tasks h2, .hug-about-tasks p, .hug-about-tasks i{opacity: .35}
+
+.hug-about-intro p,
+.hug-about-ui p,
+.hug-about-shield,
+.hug-about-tasks{ line-height: 2;}
+
+.hug-about-intro{background-color: $color-primary;}
+.hug-about-shield{background-color: $color-primary-rival}
+.hug-about-tasks{background-color: #CBDBD8; margin-bottom: 75px;}
+.hug-about-tasks .btn-cta{font-size: 2em;}
+
