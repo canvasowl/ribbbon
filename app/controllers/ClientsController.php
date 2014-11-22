@@ -10,13 +10,16 @@ class ClientsController extends \BaseController {
 	 */
 	public function index()
 	{	
+		$pTitle		= "Clients";
+
 		$id 		= Auth::id();
 		$user		= User::find($id);
 		$clients 	= $user->clients()->get();
 
-		$counter 	= 0;
 
-		return View::make('clients.index')->with('clients', $clients)->with('counter', $counter);
+		$counter 	= 0;		
+		return View::make('clients.index', compact([ 'clients', 'counter', 'pTitle']));
+
 	}
 
 	/**
@@ -27,6 +30,8 @@ class ClientsController extends \BaseController {
 	 */
 	public function create()
 	{
+		$pTitle		= "Clients";
+
         $name 		= Input::get('name');
         $user_id 	= Auth::id();
 
@@ -70,11 +75,14 @@ class ClientsController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id)
-	{
+	{		
+		$client_id  =   $id;
 		$client 	= 	Client::find($id);
 		$projects	=	$client->projects()->get();
 
-		return View::make('clients.show')->with('client', $client)->with('projects', $projects)->with('client_id', $id);
+		$pTitle		=   $client->name;
+
+		return View::make('clients.show', compact([ 'client', 'projects', 'client_id', 'pTitle' ]));
 	}
 
 	/**
@@ -86,9 +94,10 @@ class ClientsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$client = Client::find($id);
+		$client 	= 	Client::find($id);
+		$pTitle		=   "Edit " . $client->name;
 
-		return View::make('clients.edit')->with('client',$client);
+		return View::make('clients.edit', compact([ 'client', 'pTitle' ]));
 	}
 
 	/**
@@ -142,6 +151,8 @@ class ClientsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{	
+		$pTitle		= "Clients";
+
 		$c_id 		= 	Input::get('id');
 		$client 	= 	Client::find($c_id);
 
@@ -162,7 +173,7 @@ class ClientsController extends \BaseController {
 		$clients 	= $user->clients()->get();
 		$counter 	= 0;
 
-		return View::make('clients.index')->with('clients', $clients)->with('counter', $counter);
+		return View::make('clients.index', compact([ 'clients','counter','pTitle' ]));
 	}
 
 }

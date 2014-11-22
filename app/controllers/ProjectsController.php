@@ -10,11 +10,13 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
+		$pTitle		= "Projects";
+
 		$counter 	=	0;
 		$user 		=	User::find(Auth::id());
 		$projects 	=	$user->projects()->get();
 			
-		return View::make('projects.index')->with('projects', $projects)->with('counter', $counter);
+		return View::make('projects.index', compact(['projects','counter','pTitle']));
 	}
 
 	/**
@@ -63,10 +65,7 @@ class ProjectsController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id)
-	{   
-
-
-
+	{   	
 		$project 		=	Project::find($id);
 		$tasks 			=	$project->tasks()->where('state','incomplete')->orderBy("updated_at", "desc")->get();
 		$completedTasks	=	$project->tasks()->where('state','complete')->get();
@@ -75,17 +74,19 @@ class ProjectsController extends \BaseController {
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 		$credentials   	=	$project->credentials;
 
-
+		$pTitle 		=	$project->name; 
 			
-		return  View::make('projects.show')
-											->with('project', $project)
-											->with('tasks', $tasks)
-											->with('completedTasks', $completedTasks)
-											->with('taskCount', $taskCount)
-											->with("id",$project)
-											->with('total_weight', $total_weight )
-											->with("completedCount", $completedCount)
-											->with('credentials', $credentials);
+		return  View::make('projects.show', compact(
+											[
+												'project',
+												'tasks',
+												'completedTasks',
+												'taskCount',
+												'total_weight',
+												'completedCount',
+												'credentials',
+												'pTitle'
+											]));
 	}
 
 	/**
@@ -97,9 +98,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$project = Project::find($id);
+		$project 	= 	Project::find($id);
+		$pTitle 	=	"Edit " . $project->name;
 
-		return View::make('projects.edit')->with('project', $project);
+		return View::make('projects.edit', compact(['project','pTitle']));
 	}
 
 	/**
@@ -156,7 +158,9 @@ class ProjectsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$project = Project::find(Input::get("id"));
+		$pTitle		=	"Projects";
+
+		$project 	= 	Project::find(Input::get("id"));
 
 		// delete all associated tasks
 		foreach ($project->tasks as $task) {
@@ -166,10 +170,9 @@ class ProjectsController extends \BaseController {
 		// delete the project
 		$project->delete();
 
-
 		$projects 	= 	Project::all();
 		$counter 	=	0;
-		return View::make('projects.index')->with('projects', $projects)->with('counter', $counter);		
+		return View::make('projects.index',compact(['projects','counter','pTitle']));		
 	}
 
 }

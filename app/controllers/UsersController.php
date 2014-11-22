@@ -9,10 +9,12 @@ class UsersController extends \BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
-		$user = User::find(Auth::id());
-		$created = $user->tasks_created;
-		$completed = $user->tasks_completed;
+	{		
+		$user 		= 	Auth::user();
+		$created 	= 	$user->tasks_created;
+		$completed 	= 	$user->tasks_completed;
+
+		$pTitle		=	Auth::user()->full_name;
 
 		if ($created == "") {
 			$created = 0;
@@ -21,7 +23,7 @@ class UsersController extends \BaseController {
 		if ($completed == "") {
 			$completed = 0;
 		}
-		return View::make('users.index')->with('user', $user)->with('created', $created)->with('completed', $completed);			
+		return View::make('users.index',compact(['user','created','completed','pTitle']));			
 	}
 
 	/**
@@ -93,6 +95,7 @@ class UsersController extends \BaseController {
 	{
 		// Delete everything related to the user
 		Task::where('user_id', Auth::id())->delete(); 
+		Credential::where('user_id', Auth::id())->delete();
 		Project::where('user_id', Auth::id())->delete();
 		Client::where('user_id', Auth::id())->delete();		
 		User::where('id', Auth::id())->delete();
@@ -201,10 +204,8 @@ class UsersController extends \BaseController {
 		}
 		// ----------------------------------------
 
-
 		$current_pwd	=	Input::get('current_pwd');
 		$new_pwd		=	Input::get('new_pwd');
-
 
 		// lets validate the users input
 		$validator = Validator::make(
@@ -245,7 +246,7 @@ class UsersController extends \BaseController {
 		// lets validate the email
 		$validator = Validator::make(
 			array( 'email' 		=>	Input::get('email'), ),
-			array( 'email'	=> 	'required|email|unique:beta' )
+			array( 'email'		=> 	'required|email|unique:beta' )
 		);		
 
 		if ($validator->fails()){

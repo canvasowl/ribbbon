@@ -51,8 +51,8 @@ class CredentialsController extends \BaseController {
 			$credential->hostname 	= "";
 			$credential->port 		= "";
 		}
-
 		$credential->save();
+		return  Redirect::back();						
 	}
 
 	/**
