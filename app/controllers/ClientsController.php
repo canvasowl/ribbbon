@@ -78,6 +78,12 @@ class ClientsController extends \BaseController {
 	{		
 		$client_id  =   $id;
 		$client 	= 	Client::find($id);
+
+		// Bust be refactored as a filter
+		if ( $client->user_id != Auth::id() ) {
+			return Redirect::to('/hud');
+		}
+
 		$projects	=	$client->projects()->get();
 
 		$pTitle		=   $client->name;

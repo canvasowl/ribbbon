@@ -67,6 +67,12 @@ class ProjectsController extends \BaseController {
 	public function show($id)
 	{   	
 		$project 		=	Project::find($id);
+
+		// Bust be refactored as a filter
+		if ( $project->user_id != Auth::id() ) {
+			return Redirect::to('/hud');
+		}
+
 		$tasks 			=	$project->tasks()->where('state','incomplete')->orderBy("updated_at", "desc")->get();
 		$completedTasks	=	$project->tasks()->where('state','complete')->get();
 		$taskCount 		=	count($tasks);
