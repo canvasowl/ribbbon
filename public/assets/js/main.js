@@ -1,13 +1,19 @@
 
-// Home page tab-nav
+/*************************************************
+ *
+ * NAV TABS
+ * 
+ *************************************************/
 $('#myTab a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
 })
 
-/**
- * Popup Modules
- */
+/*************************************************
+ *
+ * PROMPT
+ * 
+ *************************************************/
 var openModule = function(){
 	var module = $('div#module'); 	
 	module.height( $(document).height() );
@@ -26,26 +32,19 @@ $('#btn-no').click(function(){
 	closeModule();
 });
 
+/*************************************************
+ *
+ * DELETIIONS
+ * 
+ *************************************************/
 
-/**
- * Open the popup module to delete the 
- * useres account
- */
+// Delete user account prompt
 $('#delete-account').click(function(){	
 	openModule();
 	$('#delete-account-module').fadeIn();
 });
 
-/**
- * Delete the users account via ajax
- */
-// $.get('/ajax', function(data){
-// 	console.log(data);
-// });
-
-/**
- * Delete a credential
- */
+// Delete credential
 $('.credential-wrap .btn-delete').click(function(){
 	event.preventDefault();
 	var id 		= $(this).attr('id');
@@ -62,7 +61,12 @@ $('.credential-wrap .btn-delete').click(function(){
 })
 
 
-
+/**
+ * Delete the users account via ajax
+ */
+// $.get('/ajax', function(data){
+// 	console.log(data);
+// });
 
 
 

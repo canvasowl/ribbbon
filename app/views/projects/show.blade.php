@@ -81,7 +81,7 @@
 						  								<li>
 							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
 							  								<input type="hidden" name="id" value="{{ $task->id }}">
-							  								<input type="submit" class="btn btn-default" value="delete">
+							  								<button title="delete" type="submit" class="btn btn-default"><i class="fa fa-trash"></i></button>
 						  									{{ Form::close() }}					  									
 						  								</li>
 						  							</ul>						  							
@@ -94,6 +94,7 @@
 					  		@endif
 					  	</section>
 					  </div>
+
 
 					  <!-- COMEPLETED TASKS -->
 					  <div class="tab-pane" id="manage">
@@ -129,7 +130,7 @@
 						  								<li>
 							  								{{ Form::open(array('action' => 'TasksController@destroy', 'method' => 'delete')) }}
 							  								<input type="hidden" name="id" value="{{ $task->id }}">
-							  								<input type="submit" value="delete">
+							  								<button title="delete" type="submit" class="btn btn-default"><i class="fa fa-trash"></i></button>
 						  									{{ Form::close() }}					  							
 						  								</li>
 						  							</ul>						  							
@@ -143,43 +144,18 @@
 					  	</section>					  	
 					  </div>
 
+
 					  <!-- CREDENTIALS -->
 					  <div class="tab-pane" id="credentials">
 					  	<p class="pull-right"></p>
 					  	<div class="clearfix"></div>
-
+					  	
 					  	<!-- server panel -->
 						<div class="panel panel-default">
 						  <div class="panel-heading">FTP & SSH Accounts</div>
 						  <div class="panel-body ftp-panel-body">					    			            	
-							
-							<div class="row">
-								<div class="col-xs-12 col-md-4 no-padding-left no-padding-right dynamic-form">
-	  								{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'get')) }}
-						         		<input class="form-control" type="text" name="name" placeholder="Name" autofocus>					            		
-						         		<input class="form-control" type="text" name="hostname" placeholder="Hostname">
-						         		<input class="form-control" type="text" name="username" placeholder="Username">
-						         		<input class="form-control" type="text" name="password" placeholder="Password">
-						         		<input type="hidden" name="project_id" value="{{ $project->id }}">
-						         		<input type="hidden" name="type" value="server"
-						         		<br>
-						         		<div class="col-xs-4 no-padding-left">
-						         			<input class="form-control" type="text" name="port" placeholder="Port">
-						         		</div>
-						         		<div class="col-xs-8 no-padding-right">
-							         		<button type="submit" class="btn btn-default">
-								                <i class="fa fa-plus-square-o fa-lg"></i> Save
-								            </button>
-						         			<!-- <input class="btn btn-primary" type="submit" value="Save">	 -->
-						         		</div>					         		
-						         		
-						         		<div class="clearfix"></div>
-									{{ Form::close() }}					         	
-						     	</div>	
-					     	</div>
-
+						
 					     	<div class="row">
-					     		<hr>
 						     	@foreach ($credentials as $credential)
 						     		@if ($credential->type == true)
 							     		<div class="col-xs-12 col-md-4 credential-wrap" id="credential-wrap-{{ $credential->id }}">
@@ -189,10 +165,18 @@
 							     			<p><strong>Password:</strong> {{ $credential->password }}</p>
 							     			<p><strong>Port:</strong> {{ $credential->port }}</p>
 							     			<div class="actions">
-							     				{{ Form::open(array('action' => 'CredentialsController@destroy', 'method' => 'delete')) }}
-							     					<input type="hidden" name="id" value="{{ $credential->id }}">
-							     					<button id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
-							     				{{ Form::close() }}
+							     				<ul class="inline-list list-style-none">
+							     					<li>
+								     				{{ Form::open(array('action' => 'CredentialsController@destroy', 'method' => 'delete')) }}
+								     					<input type="hidden" name="id" value="{{ $credential->id }}">
+								     					<button title="delete" id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
+								     				{{ Form::close() }}							     						
+							     					</li>
+							     					<?php /*<li>
+							     						<button title="edit" class="btn btn-default"><a href=""><i class="fa fa-pencil"></i></a></button>				
+							     					</li>*/ ?>
+							     					<div class="clearfix"></div>
+							     				</ul>
 							     			</div>
 							     		</div>
 						     		@endif
@@ -206,7 +190,31 @@
 						<div class="panel panel-default">
 						  <div class="panel-heading">Other Credentials</div>
 						  <div class="panel-body other--panel-body">					    
-			            	<button id="other" class="btn btn-default"><i class="fa fa-plus-square-o fa-lg"></i> new</button>
+					     	<div class="row">
+						     	@foreach ($credentials as $credential)
+						     		@if ($credential->type == false)
+							     		<div class="col-xs-12 col-md-4 credential-wrap" id="credential-wrap-{{ $credential->id }}">
+							     			<h4>{{ $credential->name }}</h4	>
+							     			<p><strong>Username:</strong> {{ $credential->username }}</p>
+							     			<p><strong>Password:</strong> {{ $credential->password }}</p>
+							     			<div class="actions">
+							     				<ul class="inline-list list-style-none">
+							     					<li>
+								     				{{ Form::open(array('action' => 'CredentialsController@destroy', 'method' => 'delete')) }}
+								     					<input type="hidden" name="id" value="{{ $credential->id }}">
+								     					<button title="delete" id="{{ $credential->id }}" type="submit" class="btn btn-default btn-delete"><i class="fa fa-trash"></i></button>
+								     				{{ Form::close() }}							     						
+							     					</li>
+							     					<?php /*<li>
+							     						<button title="edit" class="btn btn-default"><a href=""><i class="fa fa-pencil"></i></a></button>				
+							     					</li>*/?>
+							     					<div class="clearfix"></div>
+							     				</ul>
+							     			</div>
+							     		</div>
+						     		@endif
+						     	@endforeach
+					     	</div>
 						  </div>	         	
 			            </div>
 
@@ -215,38 +223,12 @@
 					</div>
 	            </div>
 
+	            <!-- SIDEBAR -->
 	            <div class="col-xs-12 col-md-4">
-					<div class="panel panel-default">
-					  <div class="panel-heading">Create new task</div>
-					  <div class="panel-body">					    
-		            	<i class="dimmed">For the weight, enter a number from 1-3, the higher the number the harder the task.</i>
-		            	<div class="form-group">
-		            		<form action="/tasks/create" method="get">
-		            			<div class="row">		            				
-		            				<div class="col-xs-10 no-padding-left">
-				            			<label>Name</label>
-				            			<input type="text" name="name" class="form-control" value="{{ Input::old('name') }}">		            				
-			            			</div>
-			            			<div class="col-xs-2 no-padding-right">
-			            				<label>Weight</label>
-			            				<div>
-			            					<input placeholder="1" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
-			            				</div>
-			            			</div>
-			            			<input type="hidden" name="projectId" value="{{ $project->id }}">
-			            		</div>
-		            			<div class="form-group">
-		            				<br>
-		            				<input type="submit" class="pull-right btn btn-success btn-wide" value="add task">	
-		            			</div>		            					            			
-		            		</form>
-		            	</div>
-					  </div>
-					</div>	         	
+					@include('projects.partials.sidebar')	
 	            </div>
-	            
-            </div>
-
+	            <!-- SIDEBAR -->
+	                       
             <div class="row">
             	<div class="col-xs-12">
                     <section>

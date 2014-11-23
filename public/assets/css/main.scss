@@ -1,26 +1,21 @@
-// Basic colors
-
+// COLORS
 $color-primary: #69b4b8;
 $color-primary-accent: #419094;
 $color-primary-rival: #D86850;
 $color-primary-rival-hover: #ED7258;
 $color-bg: #FDFDFD;
-$color-font: #586E6E;
+$color-font: #767676;
 $color-weight: #5cb85c;
 $color-main-weigth: tomato;
-
-// Special colors
+$color-homeFooter: #333;
 $color-module:			rgba(00, 00, 00, .5);
-
-// Info sections
 $info-bg-color:			#F9F4EB;
 $info-text-color:		#666;
 $color-info-dark:       #d4d4c0;
-
-// Misc
 $color-paper-line:		#E7C6AB;
 
-// Typography
+// TYPOGRAPHY
+$logo-font-family: 'Pacifico', cursive;
 $main-font-famliy: 'Gotham Rounded Book', sans-serif;
 $main-title-font:  'Source Sans Pro', sans-serif;
 
@@ -49,12 +44,16 @@ input:active,
 input:focus{outline: none !important;}
 label{font-weight: 500}
 
+img{max-width: 100%;}
+
 *::-webkit-input-placeholder{opacity: .3}
 *:-moz-placeholder{opacity: .3}
 *::-moz-placeholder{opacity: .3}
 *:-ms-input-placeholder{opacity: .3}
 
 // Helpers
+.site-name{font-family: $logo-font-family; letter-spacing: 2px;}
+
 .dimmed{opacity: .5; font-size: .8em;}
 
 .no-padding-left{padding-left: 0;}
@@ -78,6 +77,10 @@ label{font-weight: 500}
 
 .circle{border-radius: 100%;}
 
+.list-style-none{ list-style: none; padding-left: 0 }
+
+.inline-list li{float: left; margin-left: 0}
+
 // Badges
 .badge{background-color: #E4E4E4; color: $color-primary}
 
@@ -92,30 +95,31 @@ label{font-weight: 500}
 .btn:focus{outline: none;}
 .btn-wide{width: 100%; padding: 15px;}
 .btn-cta{font-size: .5em; padding: 20px 60px}
-
 .btn-holo{color: #fff; background: rgba(250,250,250,.2);}
 .btn-holo:hover{color: $color-primary; background-color: #fff;}
-
 .btn-rival{background-color: $color-primary-rival; border-color: $color-primary-rival; color: #fff}
 .btn-rival:hover{background-color: $color-primary-rival-hover; border-color: $color-primary-rival-hover; color: #fff;}
-
 .btn-primary{background-color: $color-primary; border: 1px solid $color-primary}
 .btn-primary:hover{background-color: $color-primary-accent; border: 1px solid $color-primary-accent}
 
+// Panels 
+.panel-default>.panel-heading{background-color: #ececec}
+.panel-default>.panel-heading{color: #333;}
+
+// Nav Tabs
+.nav-tabs>li>a{color: #aaa;}
+
+
+// Navigaton
 .navbar-default{
   background-color: $color-primary;
   border-color: $color-primary;
   border-radius: 1px;	
 }
-
-// Panels 
-.panel-default>.panel-heading{background-color: $color-primary}
-.panel-default>.panel-heading{color: #fff;}
-
-
-// Navigaton
 .navbar-default a,
 .navbar-default .navbar-nav>li>a{color: #fff;}
+.navbar-default .navbar-brand{font-family: $logo-font-family; letter-spacing: 2px; opacity: .5}
+.navbar-default .navbar-brand:hover{opacity: 1; color: #fff;}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{color: #eee; background-color: $color-primary-accent}
 .navbar-default .navbar-brand{color: #fff;}
@@ -128,9 +132,18 @@ label{font-weight: 500}
 	border: 2px solid rgba(100,100,100,.3);	
 }
 
-.alert{border: none; border-radius: 0;}
+// ALerts
+.alert{
+	border: none; 
+	border-radius: 0;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	top: 52px;
+	padding: 10px	
+}
 .alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}
-.alert-link{color: rgab(0,0,0,.5)}
+.alert-link{color: rgab(0,0,0,.5); font-size: .8em}
 
 .numCount{
 	background-color: $color-bg;
@@ -146,20 +159,12 @@ label{font-weight: 500}
 	text-align: center;
 }
 
-.list-style-none{ list-style: none; padding-left: 0 }
-.inline-list li{float: left; margin-left: 0}
-
-.list-link{
-	height: 50px;
-	display: block;	
-	color: $color-font;	
-}
+.list-link{height: 50px;display: block;	color: $color-font;	}
 .list-link:hover{background-color: $color-primary; color: #fff;}
 
 .done{text-decoration: line-through}
 
 .no-side-padding{padding-left: 0; padding-right: 0;}
-
 .small-padding-left{padding-left: 10px}
 .small-padding-right{padding-right: 10px}
 
@@ -170,7 +175,6 @@ label{font-weight: 500}
 	padding: 0 0 0 5px;
 	color: #fff;
 }
-
 .level-easy,
 .level-medium,
 .level-hard{background-color: $color-weight;}
@@ -254,23 +258,29 @@ span.total{
 	font-size: 1.5em;
 }
 
-.homepage-msg{
-	position: fixed;
-	top: 10%;
-	left: 0;
-	width: 100%;	
-	text-align: center;
-	color: #fff;
-	font-size: 2em;
-}
-.homepage-msg form{margin-top: 15px}
-.homepage-msg input[type="text"]{width: 450px; max-width: 90%; margin: 0 auto; background-color: rgba(250,250,250,.5)}
-
+.homepage-msg{color: #fff; font-size: 2em; margin-top: 100px !important;}
+.homepage-msg h1{ text-transform: uppercase; font-size: 2em; font-weight: bold;}
+// .homepage-msg form{margin-top: 15px}
+// .homepage-msg input[type="text"]{width: 450px; max-width: 90%; margin: 0 auto; background-color: rgba(250,250,250,.5)}
 
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
 
+.hug-footerOut{
+	background-color: $color-homeFooter;
+	position: fixed;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+	height: 75px;
+}
+.hug-footerOut .row{padding: 30px 0;}
+.hug-footerOut ul li{margin-left: 10px;}
+.hug-footerOut a,
+.hug-footerOut p{color: #fff; font-size: .8em; opacity: .5}
+.hug-footerOut a:hover{text-shadow: 0 0 2px rgba(255,255,255,.6); opacity: 1}
+
 // INNER PAGES SHARED
-.hug-hudHeader{background-color: $color-primary}
+.hug-hudHeader{background-color: $color-primary; position: fixed; z-index: 1;}
 .hug-hudHeader .row{margin-left: 0; margin-right: 0;}
 
 .card{
@@ -296,9 +306,10 @@ span.total{
 	margin-top: 20px;
 	padding: 10px;
 	border-radius: 5px;
+	margin-top: 100px;
+	margin-bottom: 50px;
 }
-.app-wrapper h2{margin-bottom: 40px}
-.app-wrapper-wide{width: 1290px; max-width: 100%;}
+.app-wrapper-wide{width: 1290px; max-width: 100%; margin-top: 100px; margin-bottom: 50px}
 
 section.info{
 	background-color: $info-bg-color;
@@ -335,3 +346,31 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 
 .credential-wrap{margin-bottom: 2px;}
 .credential-wrap p{margin-bottom: 0; opacity: .6}
+.credential-wrap .actions{max-height: 45px;}
+.credential-wrap .actions{background-color: $color-bg; padding: 5px;}
+.credential-wrap .actions i.fa-trash{color: #D24453;}
+.credential-wrap .actions i.fa-pencil{color: $color-primary}
+.credential-wrap .actions ul li{margin-left: 2%;}
+.credential-wrap .actions .btn{background-color: transparent; border: none;}
+
+// ABOUT PAGE
+.hug-about-intro,
+.hug-about-ui,
+.hug-about-shield,
+.hug-about-tasks{padding: 50px 0; color: #000 !important; }
+
+.hug-about-intro h1, .hug-about-intro h2, .hug-about-intro p, .hug-about-intro i,
+.hug-about-ui h1, .hug-about-ui h2, .hug-about-ui p, .hug-about-ui i,
+.hug-about-shield h1, .hug-about-shield h2, .hug-about-shield p, .hug-about-shield i,
+.hug-about-tasks h1, .hug-about-tasks h2, .hug-about-tasks p, .hug-about-tasks i{opacity: .35}
+
+.hug-about-intro p,
+.hug-about-ui p,
+.hug-about-shield,
+.hug-about-tasks{ line-height: 2;}
+
+.hug-about-intro{background-color: $color-primary;}
+.hug-about-shield{background-color: $color-primary-rival}
+.hug-about-tasks{background-color: #CBDBD8; margin-bottom: 75px;}
+.hug-about-tasks .btn-cta{font-size: 2em;}
+

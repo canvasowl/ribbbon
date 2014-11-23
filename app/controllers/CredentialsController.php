@@ -24,7 +24,8 @@ class CredentialsController extends \BaseController {
 		$rules = array(
 				'name' 		=> 'required',
 				'username' 	=> 'required',
-				'password' 	=> 'required'
+				'password' 	=> 'required',
+				'type'		=> 'required'
 			);
 
 		$validator = Validator::make($data = Input::all(), $rules);
@@ -33,21 +34,25 @@ class CredentialsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$credential = new Credential;
+		$credential 				= new Credential;
+		$credential->user_id 		= Auth::id();
+		$credential->project_id 	= Input::get('project_id');
+		$credential->name 			= Input::get('name');
+		$credential->username 		= Input::get('username');
+		$credential->password 		= Input::get('password');		
 
-		if (Input::get('type') == "server") {
-			$credential->user_id 		= Auth::id();
-			$credential->project_id 	= Input::get('project_id');
-			$credential->type 			= true;
-			$credential->name 			= Input::get('name');
-			$credential->hostname 		= Input::get('hostname');
-			$credential->username 		= Input::get('username');
-			$credential->password 		= Input::get('password');
-			$credential->port 	= Input::get('port');			
-			$credential->save();
+		if (Input::get('type') == "server") {						
+			$credential->type 		= true;			
+			$credential->hostname 	= Input::get('hostname');
+			$credential->port 		= Input::get('port');			
+			
 		}else{
-
+			$credential->type 		= false;	
+			$credential->hostname 	= "";
+			$credential->port 		= "";
 		}
+		$credential->save();
+		return  Redirect::back();						
 	}
 
 	/**

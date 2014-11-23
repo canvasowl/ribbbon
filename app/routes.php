@@ -3,15 +3,17 @@
 Route::get('/', function()
 {
 	if( Auth::check() ) {
-		return View::make('/hud');		
+		return View::make('/hud')->with('pTitle', "Your Hud");	
 	}else{
-		return View::make('index');	
+		return View::make('index')->with('pTitle', "Project Management For System Artisans");
 	}	
 });
 
-Route::get('register', function(){ return View::make('register'); });
-Route::get('signin', function(){ return View::make('signin'); });
-Route::get('learn', function(){ return View::make('learn'); });
+Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); });
+Route::get('signin', function(){ return View::make('signin')->with('pTitle', "Login"); });
+Route::get('beta', function(){ return View::make('beta')->with('pTitle', "Beta email request"); });
+Route::get('about', function(){ return View::make('about')->with('pTitle', "About Ribbbon"); });
+Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); });
 
 //----------------- User routes
 Route::resource('users', 'UsersController');
@@ -37,7 +39,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::resource('tasks', 'TasksController');
 	
 	Route::get('hud', array('as' => 'hud', function(){
-		return View::make('hud');
+		return View::make('hud')->with('pTitle', "Your Hud");
 	}));
 
 	Route::get('profile', 'UsersController@index');

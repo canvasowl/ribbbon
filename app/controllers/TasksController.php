@@ -10,11 +10,13 @@ class TasksController extends \BaseController {
 	 */
 	public function index()
 	{
+		$pTitle		=	"Tasks";
+
 		$user 		= 	User::find(Auth::id());		
 		$tasks 		= 	$user->tasks()->get();
 		$counter	=	0;
 
-		return View::make('tasks.index')->with('tasks', $tasks)->with('counter', $counter);
+		return View::make('tasks.index', compact(['tasks','counter','pTitle']));
 	}
 
 	/**
@@ -55,7 +57,7 @@ class TasksController extends \BaseController {
 		$task->state		= "incomplete";
 		$task->save();
 
-		// Give user a task count
+		// Increase the users overall task count
 		$user = User::find(Auth::id());
 		$user->tasks_created = $user->tasks_created + 1;
 		$user->save(); 
