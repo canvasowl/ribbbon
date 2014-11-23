@@ -40,7 +40,7 @@
 		<div class="col-xs-12">
 			<center><i class="fa fa-shield fa-5x"></i></center>
 			<center><h2>Keep credentials in place.</h2></center>
-			<img src="https://api.fnkr.net/testimg/900x300/00CED1/FFF/?text=img+placeholder">
+			<img src="{{ asset('assets/img/credentials.png') }}">
 			<center>
 				<p>Sometimes one project may have multiple servers, social accounts, 
 				or any other type of modern online accounts, this makes for numerous 
