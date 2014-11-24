@@ -17,14 +17,11 @@ function sendBetaFollowUpMail($email){
 }
 
 /** Sends beta invitation **/
-function sendBetaInviteEmail($email, $name){
-	$data = array( 
-			'to' 	=> $email,
-			'name' 	=> $name
-			);
+function sendBetaInviteEmail($email){
+	$data = array( 'to' 	=> $email );
 	
-	Mail::send('emails.beta.invite', array('name' => $name), function($message) use ($data){
-    	$message->to($data['to'], $data['name'] )->subject('Ribbbon invitation');
+	Mail::send('emails.beta.invite', array(), function($message) use ($data){
+    	$message->to($data['to'], '' )->subject('Ribbbon Invitation');
 	});		
 }
 
