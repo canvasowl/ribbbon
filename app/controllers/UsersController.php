@@ -169,6 +169,13 @@ class UsersController extends \BaseController {
 			)
 		);
 
+		// Make sure the email used has been invited to beta
+		if ( !DB::table('beta')->whereEmail($email)->whereStatus(1)->get() ) {
+			$validator->getMessageBag()->add('used', 'The email used has not been invited.');	
+			return Redirect::back()->withErrors($validator)->withInput();		
+		}
+		// Make sure the email used has been invited to beta		
+
 		if ($validator->fails()){
 		    return Redirect::back()->withErrors($validator)->withInput();
 		}
@@ -255,9 +262,12 @@ class UsersController extends \BaseController {
 
 		$beta_user 			= new Beta;
 		$beta_user->email 	= Input::get('email');
-		$beta_user->status 	= false;
+		$beta_user->status 	= 0;
 		$beta_user->save(); 
 
+		// Send the beta confirmation email
+		sendBetaFollowUpMail(Input::get('email'));
+		
 		return Redirect::back()->with('success', "Your all set, your invitation will will arive soon.");
 	}
 
