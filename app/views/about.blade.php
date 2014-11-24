@@ -59,7 +59,7 @@
 			<center><h2>Teke it for a spin.</h2></center>
 			<center>
 				<p>Give Ribbbon a try today, it’s free. To get started just click on<br> the button below and start enjoying a
-				bettery way to manage projects.</p>
+				better way to manage projects.</p>
 				<center><a href="/beta" class="btn btn-primary btn-cta">Try Ribbbon</a></center>
 			</center>
 		</div>
