@@ -162,9 +162,10 @@ class ClientsController extends \BaseController {
 		$c_id 		= 	Input::get('id');
 		$client 	= 	Client::find($c_id);
 
-		// delete all related tasks
+		// delete all related tasks and credentials
 		foreach ($client->projects as $p) {
 					Task::where('project_id', $p->id)->delete();
+					Credential::where('project_id', $p->id)->delete();
 				}		
 		
 		// delete related projects
