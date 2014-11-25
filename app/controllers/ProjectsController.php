@@ -168,10 +168,9 @@ class ProjectsController extends \BaseController {
 
 		$project 	= 	Project::find(Input::get("id"));
 
-		// delete all associated tasks
-		foreach ($project->tasks as $task) {
-					$task->delete();
-				}
+		// delete everything associated with project
+		Task::where('project_id',Input::get("id"))->delete();		
+		Credential::where('project_id',Input::get("id"))->delete();
 
 		// delete the project
 		$project->delete();
