@@ -26,7 +26,6 @@ Route::post('resetPassword/{id}','UsersController@resetPassword');
 //----------------- Admin routes
 Route::group(array('before' => 'admin'), function()
 {	
-	Route::get('confirm','AdminController@confirm');
 	Route::get('invite','AdminController@invite');
 });
 

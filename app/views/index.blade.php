@@ -24,8 +24,7 @@
 			A project management system for artisans.</h1>
 		</div>
 		<div class=" col-xs-12 col-md-6 animated bounceInRight">
-			<center><h2>Request A Beta Invitation</h2></center>	
-			<center><a href="/beta" class="btn btn-rival btn-cta">Sign up for beta</a></center>			
+			<center><a href="/beta" class="btn btn-rival btn-cta">Request Invite</a></center>			
 		</div>			
 	</div>	
 </div>
