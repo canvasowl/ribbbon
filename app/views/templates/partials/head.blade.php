@@ -33,6 +33,12 @@
 		</style>
 	@endif	
 
+	@if ( Auth::check() )
+		<style type="text/css">
+			.hug-homeHeader .auth-header .row{width: 100% !important} 
+		</style>		
+	@endif
+
 </head>
 <body>
 

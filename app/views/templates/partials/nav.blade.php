@@ -1,4 +1,4 @@
-<div class="hug hug-hudHeader">
+<div class="hug hug-hudHeader auth-header">
 	<div class="row">
 		<div class="col-xs-12">
 			<nav class="navbar navbar-default" role="navigation">

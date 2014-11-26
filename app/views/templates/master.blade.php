@@ -1,9 +1,15 @@
 @include('templates/partials/head')
 
 <div class="hug hug-homeHeader">
-	
-	@include('templates/partials/unauth_nav')
 
+	@if (Auth::check())
+		@include('templates/partials/nav')	
+	@endif
+
+	@if (!Auth::check())
+		@include('templates/partials/unauth_nav')	
+	@endif	
+	
 	@if ($errors->first())
 		<div class="alert alert-danger alert-main animated fadeInDown" role="alert">
 	  		<a href="#" class="alert-link">  			

@@ -48,3 +48,11 @@ Route::group(array('before' => 'auth'), function()
 // 	sendBetaFollowUpMail("jefrycruz88@gmail.com");
 // 	return "mail sent";
 // });
+
+Route::get('/test',function(){
+	if (Auth::check() == true ) {
+		return "true";
+	}
+
+	return "false";
+});
