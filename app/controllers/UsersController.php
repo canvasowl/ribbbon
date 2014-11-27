@@ -173,8 +173,7 @@ class UsersController extends \BaseController {
 		if ( !DB::table('beta')->whereEmail($email)->whereStatus(1)->get() ) {
 			$validator->getMessageBag()->add('used', 'The email used has not been invited.');	
 			return Redirect::back()->withErrors($validator)->withInput();		
-		}
-		// Make sure the email used has been invited to beta		
+		}		
 
 		if ($validator->fails()){
 		    return Redirect::back()->withErrors($validator)->withInput();
@@ -190,9 +189,9 @@ class UsersController extends \BaseController {
 		if ( Auth::attempt(array('email' => $email, 'password' => $password)) ) {
 			sendWelcomeMail();
 			return Redirect::to('hud');
-		}else{
-			return Redirect::back()->withErrors($validator);			
 		}
+
+		return Redirect::back()->withErrors($validator);
 	}	
 
 	public function resetPassword($id)
