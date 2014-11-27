@@ -614,6 +614,13 @@ section.info .table > tfoot > tr > td {
   opacity: .5;
   line-height: .8; }
 
+@media (max-width: 400px) {
+  .homepage-msg {
+    margin-top: 0 !important;
+    font-size: 1.5em; }
+
+  .homepage-msg .btn-cta {
+    font-size: 1em; } }
 @media (max-width: 540px) {
   .homepage-msg h1 {
     font-size: 1.5em; }
