@@ -8,7 +8,7 @@
 						<li><a href="/about">About <span class="site-name">Ribbbon</span></a></li>
 						<li><a href="/faq">FAQ</a></li>
 					</ul>	
-					<p>COPYRIGHT {{ date('Y') }} &copy; JEFRY CRUZ</p>			
+					<ul class="list-inline list-style-none"> <li>COPYRIGHT {{ date('Y') }} &copy; JEFRY CRUZ</li> </ul>					
 				</div>
 				<div class="col-xs-6 col-md-6">
 					<ul class="list-inline list-style-none pull-right">					
