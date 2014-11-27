@@ -609,6 +609,11 @@ section.info .table > tfoot > tr > td {
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
   opacity: 1; }
 
+.hug-footerIn {
+  font-size: .8em;
+  opacity: .5;
+  line-height: .8; }
+
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #FFF; } }
