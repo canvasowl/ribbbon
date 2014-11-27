@@ -7,7 +7,8 @@
 					<ul class="list-inline list-style-none">
 						<li><a href="/about">About <span class="site-name">Ribbbon</span></a></li>
 						<li><a href="/faq">FAQ</a></li>
-					</ul>				
+					</ul>	
+					<p>COPYRIGHT {{ date('Y') }} &copy; JEFRY CRUZ</p>			
 				</div>
 				<div class="col-xs-6 col-md-6">
 					<ul class="list-inline list-style-none pull-right">					
@@ -30,6 +31,7 @@
 						<ul class="list-inline">
 							<li>Developed with<a target="_blank" href="http://laravel.com/"> Laravel</a> by <a target="_blank" href="http://www.punyweblab.com/"> Jefry Cruz.</a></li>
 						</ul>
+						<p>COPYRIGHT {{ date('Y') }} &copy; JEFRY CRUZ</p>
 					</center>				
 				</div>
 			</div>
