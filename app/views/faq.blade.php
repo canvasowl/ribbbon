@@ -18,7 +18,7 @@
 			<h2>How much does Ribbbon cost?</h2>
 			<p>Ribbbon is free and will always have a free to use plan.</p>
 
-			<h2>Is there a paid verion with pro featires?</h2>
+			<h2>Is there a paid verion with pro features?</h2>
 			<p>At the moment no, the focus is to create a solid experience and then 
 			work on a premium plan for Ribbbon.</p>
 
