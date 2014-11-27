@@ -27,7 +27,7 @@
 			development for team collaboration has already started so excepct that down the road.</p>
 
 			<h2>Are there any mobile apps for Ribbbon?</h2>
-			<p>Currently there are apps for Ribbbon for any mobile platforms.</p>
+			<p>Currently there are no mobile apps for Ribbbon for any mobile platforms.</p>
 									
 		</div>
 	</div>		
