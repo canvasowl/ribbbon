@@ -614,6 +614,19 @@ section.info .table > tfoot > tr > td {
   opacity: .5;
   line-height: .8; }
 
+@media (max-width: 540px) {
+  .homepage-msg h1 {
+    font-size: 1.5em; }
+
+  .homepage-msg .btn-cta {
+    font-size: 1em; } }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #FFF; } }
+@media (max-width: 991px) {
+  .homepage-msg h1 {
+    text-align: center; }
+
+  .homepage-msg .btn-cta {
+    text-align: center;
+    margin-top: 5%; } }
