@@ -391,6 +391,10 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 	.homepage-msg .btn-cta{font-size: 1em;}
 }
 
+@media (max-width: 741px){
+	.homepage-msg{margin-top: 0 !important;}
+}
+
 @media (max-width: 767px){
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a { color: #FFF; }
 }
@@ -398,4 +402,6 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 @media (max-width: 991px){
 	.homepage-msg h1{text-align: center;}
 	.homepage-msg .btn-cta{text-align: center; margin-top: 5%;}
+
+	.hug-footerOut .pull-right{float: left !important}
 }
