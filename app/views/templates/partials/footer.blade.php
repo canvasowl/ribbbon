@@ -3,16 +3,18 @@
 	<div class="hug hug-footerOut">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-6 col-md-6">
+				<div class="col-xs-12 col-md-6">
 					<ul class="list-inline list-style-none">
 						<li><a href="/about">About <span class="site-name">Ribbbon</span></a></li>
 						<li><a href="/faq">FAQ</a></li>
 					</ul>	
-					<p>COPYRIGHT {{ date('Y') }} &copy; JEFRY CRUZ</p>			
+					<ul class="list-inline list-style-none">						
+						<li>Developed with<a target="_blank" href="http://laravel.com/"> Laravel</a> by <a target="_blank" href="http://www.punyweblab.com/"> Jefry Cruz.</a></li>						
+					</ul>					
 				</div>
-				<div class="col-xs-6 col-md-6">
+				<div class="col-xs-12 col-md-6">
 					<ul class="list-inline list-style-none pull-right">					
-						<li>Developed with<a target="_blank" href="http://laravel.com/"> Laravel</a> by <a target="_blank" href="http://www.punyweblab.com/"> Jefry Cruz.</a></li>
+						<li>Copyright {{ date('Y') }} &copy; Jefry Cruz</li>
 					</ul>				
 				</div>
 			</div>

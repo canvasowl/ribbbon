@@ -15,6 +15,10 @@
 	.row{width: 900px; max-width: 100%; margin: 0 auto;}
 
 	body,html{font-size: 16px}
+
+	@media (max-width: 450px){
+		html{background: #7bb1b6;}
+	}
 </style>
 
 <div class="container">

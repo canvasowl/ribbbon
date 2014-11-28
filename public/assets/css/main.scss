@@ -345,7 +345,7 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .hug-about-intro,
 .hug-about-ui,
 .hug-about-shield,
-.hug-about-tasks{padding: 50px 0; color: #000 !important; }
+.hug-about-tasks{padding: 126px 0; color: #000 !important; }
 
 .hug-about-intro h1, .hug-about-intro h2, .hug-about-intro p, .hug-about-intro i,
 .hug-about-ui h1, .hug-about-ui h2, .hug-about-ui p, .hug-about-ui i,
@@ -370,7 +370,6 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 	z-index: 100;
 	bottom: 0;
 	left: 0;
-	height: 75px;
 }
 .hug-footerOut .row{padding: 15px 0;}
 .hug-footerOut ul li{margin-left: 10px;}
@@ -382,6 +381,27 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 
 
 // MEDIA QUERIES
+@media (max-width: 400px){
+	.homepage-msg{margin-top: 0 !important; font-size: 1.5em;}	
+	.homepage-msg .btn-cta{font-size: 1em;}
+}
+
+@media (max-width: 540px){
+	.homepage-msg h1{font-size: 1.5em;}
+	.homepage-msg .btn-cta{font-size: 1em;}
+}
+
+@media (max-width: 741px){
+	.homepage-msg{margin-top: 0 !important;}
+}
+
 @media (max-width: 767px){
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a { color: #FFF; }
+}
+
+@media (max-width: 991px){
+	.homepage-msg h1{text-align: center;}
+	.homepage-msg .btn-cta{text-align: center; margin-top: 5%;}
+
+	.hug-footerOut .pull-right{float: left !important}
 }
