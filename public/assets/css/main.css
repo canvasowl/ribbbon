@@ -590,8 +590,7 @@ section.info .table > tfoot > tr > td {
   position: fixed;
   z-index: 100;
   bottom: 0;
-  left: 0;
-  height: 75px; }
+  left: 0; }
 
 .hug-footerOut .row {
   padding: 15px 0; }
