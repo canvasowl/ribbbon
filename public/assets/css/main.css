@@ -576,8 +576,7 @@ section.info .table > tfoot > tr > td {
   background-color: #d86850; }
 
 .hug-about-tasks {
-  background-color: #CBDBD8;
-  margin-bottom: 75px; }
+  background-color: #CBDBD8; }
 
 .hug-about-tasks .btn-cta {
   font-size: 2em; }
@@ -637,10 +636,7 @@ section.info .table > tfoot > tr > td {
     height: auto; }
 
   .hug-footerOut {
-    position: static; }
-
-  .hug-about-tasks {
-    margin-bottom: 0; } }
+    position: static; } }
 @media (max-width: 991px) {
   .homepage-msg h1 {
     text-align: center; }

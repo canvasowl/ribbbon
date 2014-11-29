@@ -359,7 +359,7 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 
 .hug-about-intro{background-color: $color-primary;}
 .hug-about-shield{background-color: $color-primary-rival}
-.hug-about-tasks{background-color: #CBDBD8; margin-bottom: 75px;}
+.hug-about-tasks{background-color: #CBDBD8;}
 .hug-about-tasks .btn-cta{font-size: 2em;}
 
 // FAQ
@@ -398,8 +398,6 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 	.hug-homeBody .container{height: auto;}
 
 	.hug-footerOut{position: static;}
-
-	.hug-about-tasks{margin-bottom: 0;}
 }
 
 @media (max-width: 991px){
