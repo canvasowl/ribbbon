@@ -385,9 +385,6 @@ span.total {
 .module-form form {
   display: inline; }
 
-.hug-homeBody .container {
-  height: 0; }
-
 .home-form {
   max-width: 400px;
   width: 100%;

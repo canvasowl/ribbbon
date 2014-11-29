@@ -23,6 +23,8 @@
 			}
 
 			body,html{font-size: 16px}
+			
+			.hug-homeBody .container{height: 0;}
 
 			@media (max-width: 767px){
 				html,
