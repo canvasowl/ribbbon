@@ -21,6 +21,8 @@
 			  -o-background-size: cover;
 			  background-size: cover;
 			}
+			
+			.hug-footerOut{position: absolute; z-index: 100; bottom: 0; left: 0; }
 
 			body,html{font-size: 16px}
 			
@@ -29,14 +31,6 @@
 			@media (max-width: 767px){
 				html,
 				.hug-homeBody .container{background: #69b4b8;}				
-				.hug-footerOut{position: absolute;}
-			}
-		</style>
-	@endif
-
-	@if (Request::is('/') || Request::is('beta') || Request::is('register') || Request::is('signin'))
-		<style type="text/css">
-			@media (max-width: 767px){
 				.hug-footerOut{position: absolute;}
 			}
 		</style>

@@ -582,12 +582,15 @@ section.info .table > tfoot > tr > td {
 .hug-about-tasks .btn-cta {
   font-size: 2em; }
 
+.question {
+  padding: 10px 0; }
+
+.question h2 {
+  color: #454545;
+  font-weight: 600; }
+
 .hug-footerOut {
-  background-color: #333333;
-  position: fixed;
-  z-index: 100;
-  bottom: 0;
-  left: 0; }
+  background-color: #333333; }
 
 .hug-footerOut .row {
   padding: 15px 0; }

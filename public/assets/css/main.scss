@@ -1,4 +1,5 @@
 // COLORS
+$color-dark: #454545;
 $color-primary: #69b4b8;
 $color-primary-accent: #419094;
 $color-primary-rival: #D86850;
@@ -361,15 +362,12 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .hug-about-tasks{background-color: #CBDBD8; margin-bottom: 75px;}
 .hug-about-tasks .btn-cta{font-size: 2em;}
 
+// FAQ
+.question{padding: 10px 0;}
+.question h2{ color: $color-dark; font-weight: 600}
 
 // FOOTER 
-.hug-footerOut{
-	background-color: $color-homeFooter;
-	position: fixed;
-	z-index: 100;
-	bottom: 0;
-	left: 0;
-}
+.hug-footerOut{ background-color: $color-homeFooter; }
 .hug-footerOut .row{padding: 15px 0;}
 .hug-footerOut ul li{margin-left: 10px;}
 .hug-footerOut a,
