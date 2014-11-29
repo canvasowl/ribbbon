@@ -42,7 +42,7 @@
 		</style>
 	@endif
 
-	@if ( Request::is('/') || Request::is('beta') || Request::is('register') || Request::is('signin') || Request::is('about') || Request::is('faq')  )
+	@if ( !Auth::check() && Request::is('/') || Request::is('beta') || Request::is('register') || Request::is('signin') || Request::is('about') || Request::is('faq') )
 		<style type="text/css">
 			.row{width: 900px; max-width: 100%; margin: 0 auto;}		
 		</style>
