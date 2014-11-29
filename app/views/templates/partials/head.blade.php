@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
 
 
-	@if ( Request::is('/') )
+	@if ( Request::is('/') && !Auth::check() )
 		<style type="text/css">
 			html { 
 			  background: url(/assets/img/big_bg.jpg) no-repeat center center fixed; 
