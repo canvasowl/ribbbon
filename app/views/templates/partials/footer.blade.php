@@ -1,5 +1,5 @@
 
-@if ( !Auth::check() && Request::is('/') || Request::is('beta') || Request::is('register') || Request::is('signin') || Request::is('about') || Request::is('faq')  )
+@if ( !Auth::check() && Request::is('/')  || Request::is('about') || Request::is('faq')  )
 	<div class="hug hug-footerOut">
 		<div class="container">
 			<div class="row">

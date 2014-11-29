@@ -1,4 +1,5 @@
 // COLORS
+$color-dark: #454545;
 $color-primary: #69b4b8;
 $color-primary-accent: #419094;
 $color-primary-rival: #D86850;
@@ -249,7 +250,6 @@ span.total{
 .module-form form{display: inline;;}
 
 //-- HOME
-.hug-homeBody .container{height: 0;}
 
 .home-form{ max-width: 400px; width: 100%; margin: 100px auto;}
 .home-form input[type="text"], .home-form input[type="password"]{ font-size: 1.5em; }
@@ -359,18 +359,15 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 
 .hug-about-intro{background-color: $color-primary;}
 .hug-about-shield{background-color: $color-primary-rival}
-.hug-about-tasks{background-color: #CBDBD8; margin-bottom: 75px;}
+.hug-about-tasks{background-color: #CBDBD8;}
 .hug-about-tasks .btn-cta{font-size: 2em;}
 
+// FAQ
+.question{padding: 10px 0;}
+.question h2{ color: $color-dark; font-weight: 600}
 
 // FOOTER 
-.hug-footerOut{
-	background-color: $color-homeFooter;
-	position: fixed;
-	z-index: 100;
-	bottom: 0;
-	left: 0;
-}
+.hug-footerOut{ background-color: $color-homeFooter; }
 .hug-footerOut .row{padding: 15px 0;}
 .hug-footerOut ul li{margin-left: 10px;}
 .hug-footerOut a,
@@ -397,6 +394,10 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 
 @media (max-width: 767px){
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a { color: #FFF; }
+
+	.hug-homeBody .container{height: auto;}
+
+	.hug-footerOut{position: static;}
 }
 
 @media (max-width: 991px){

@@ -2,6 +2,7 @@
 
 Route::get('/', function()
 {
+	
 	if( Auth::check() ) {
 		return View::make('/hud')->with('pTitle', "Your Hud");	
 	}else{
