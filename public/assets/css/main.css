@@ -631,7 +631,16 @@ section.info .table > tfoot > tr > td {
     margin-top: 0 !important; } }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #FFF; } }
+    color: #FFF; }
+
+  .hug-homeBody .container {
+    height: auto; }
+
+  .hug-footerOut {
+    position: static; }
+
+  .hug-about-tasks {
+    margin-bottom: 0; } }
 @media (max-width: 991px) {
   .homepage-msg h1 {
     text-align: center; }

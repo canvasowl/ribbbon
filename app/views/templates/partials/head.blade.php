@@ -11,7 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
 
-	@if ( Request::is('index') )
+
+	@if ( Request::is('/') )
 		<style type="text/css">
 			html { 
 			  background: url(/assets/img/big_bg.jpg) no-repeat center center fixed; 
@@ -19,11 +20,20 @@
 			  -moz-background-size: cover;
 			  -o-background-size: cover;
 			  background-size: cover;
-			}			
+			}
+
+			body,html{font-size: 16px}
+
+			@media (max-width: 767px){
+				html,
+				.hug-homeBody .container{background: #69b4b8;}
+				
+				.hug-footerOut{position: absolute;}
+			}
 		</style>
 	@endif
 
-	@if ( Request::is('index') || Request::is('beta') || Request::is('register') || Request::is('signin') || Request::is('about') || Request::is('faq')  )
+	@if ( Request::is('/') || Request::is('beta') || Request::is('register') || Request::is('signin') || Request::is('about') || Request::is('faq')  )
 		<style type="text/css">
 			.row{width: 900px; max-width: 100%; margin: 0 auto;}		
 		</style>
