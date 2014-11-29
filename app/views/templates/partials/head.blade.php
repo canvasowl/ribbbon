@@ -52,6 +52,12 @@
 		</style>
 	@endif	
 
+	@if ( Request::is('beta') || Request::is('register') || Request::is('signin') )
+		<style type="text/css">
+			.hug-homeBody .container{height: auto;}
+		</style>		
+	@endif
+
 	@if ( Auth::check() )
 		<style type="text/css">
 			.hug-homeHeader .auth-header .row{width: 100% !important} 
