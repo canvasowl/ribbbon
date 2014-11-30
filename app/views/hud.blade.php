@@ -1,4 +1,4 @@
-@extends('templates/hud_master')
+@extends('emails.templates.main')
 
 
 @section('content')

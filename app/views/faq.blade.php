@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- CTA -->
-<div class="hug hug-about-tasks">
+<div class="hug hug-about-tasks faq-container">
 	<div class="row">
 		<div class="col-xs-12">
 			<h1>FAQ</h1>
