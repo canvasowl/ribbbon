@@ -45,15 +45,20 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('profile', 'UsersController@index');
 });
 
-// Route::get('mail',function(){			
-// 	sendBetaFollowUpMail("jefrycruz88@gmail.com");
-// 	return "mail sent";
-// });
 
-Route::get('/test',function(){
-	if (Auth::check() == true ) {
-		return "true";
-	}
+//-----------------
+//-----------------
+//-----------------
+//----------------- TEST routes
+Route::group(array('before' => 'admin'), function()
+{	
+	// Send test emails
+	Route::get('/testEmails',function(){
+		sendBetaFollowUpMail('jefrycruz88@gmail.com');
+		sendBetaInviteEmail('jefrycruz88@gmail.com');
+		sendWelcomeMail();
 
-	return "false";
+		return "All test emails sent";
+	});	
+	
 });
