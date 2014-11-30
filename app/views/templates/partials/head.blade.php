@@ -4,7 +4,7 @@
 	<title>{{ $pTitle }}</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-	<link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
 	<link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
 
 	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
