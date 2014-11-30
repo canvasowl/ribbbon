@@ -65,6 +65,7 @@
 
 </head>
 <body>
+@include('analyticstracking')
 
 <div id="module">
 	<a id="close" onclick="closeModule()" title="Close">X</a>
