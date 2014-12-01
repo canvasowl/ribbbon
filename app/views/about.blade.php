@@ -45,7 +45,7 @@
 				<p>Sometimes one project may have multiple servers, social accounts, 
 				or any other type of modern online accounts, this makes for numerous 
 				credentials needing to be remembered. Ribbbon helps you by having 
-				one place where all of you credentials per project should live, period.</p>
+				one place where all of your credentials per project should live, period.</p>
 			</center>
 		</div>
 	</div>		
