@@ -11,8 +11,8 @@
             <div>
                 <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total animated tada">{{ $total_weight }}</span></h2>
                 <ul class="list-inline pull-right">
-                	<!-- <li><button class="btn btn-default" onclick="openCreateNewTaskModule()">New Task <i class="fa fa-plus"></i></button></li> -->
-                    <li><a class="btn btn-default" href="/projects/{{ $project->id }}/edit">Edit</a></li>
+                	<li><a title="Go back" class="btn " href="/clients/{{ $project->client_id}}"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
+                    <li><a title="Edit project" class="btn" href="/projects/{{ $project->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>                    
                 </ul>
                 <div class="clearfix"></div>   
             </div>
