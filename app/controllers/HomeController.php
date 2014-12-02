@@ -2,22 +2,30 @@
 
 class HomeController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
-	public function showWelcome()
+	// Depending if the user is signed in or not, return the home page 
+	public function index()
 	{
-		return View::make('hello');
+		if( Auth::check() ) {
+			$pTitle			=	"Hud";
+
+			$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->take(5)->get();
+			$latestProjects	=	Project::where('user_id', Auth::id())->take(5)->get();
+
+			return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks'));
+		}else{
+			return View::make('index')->with('pTitle', "Project Management For System Artisans");
+		}
+	}
+
+	// Return the Hud view
+	public function hud()
+	{	
+		$pTitle			=	"Hud";
+
+		$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->take(5)->get();
+		$latestProjects	=	Project::where('user_id', Auth::id())->take(5)->get();
+
+		return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks'));		
 	}
 
 }

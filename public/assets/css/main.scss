@@ -4,6 +4,8 @@ $color-primary: #69b4b8;
 $color-primary-accent: #419094;
 $color-primary-rival: #D86850;
 $color-primary-rival-hover: #ED7258;
+$color-purple: #9F7CD4;
+$color-gum: #E46683;
 $color-bg: #FDFDFD;
 $color-font: #767676;
 $color-weight: #5cb85c;
@@ -104,8 +106,9 @@ img{max-width: 100%;}
 .btn-primary:hover{background-color: $color-primary-accent; border: 1px solid $color-primary-accent}
 
 // Panels 
-.panel-default>.panel-heading{background-color: #ececec}
-.panel-default>.panel-heading{color: #333;}
+.panel-default>.panel-heading{background-color: #ececec; color: #333;}
+.panel-tasks>.panel-heading{background-color: $color-purple; color: #fff}
+.panel-projects>.panel-heading{background-color: $color-gum; color: #fff}
 
 // Nav Tabs
 .nav-tabs>li>a{color: #aaa;}
