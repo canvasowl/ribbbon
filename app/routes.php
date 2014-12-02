@@ -1,14 +1,16 @@
 <?php
 
-Route::get('/', function()
-{
+Route::get('/', 'HomeController@index');
+
+// Route::get('/', function()
+// {
 	
-	if( Auth::check() ) {
-		return View::make('/hud')->with('pTitle', "Your Hud");	
-	}else{
-		return View::make('index')->with('pTitle', "Project Management For System Artisans");
-	}	
-});
+// 	if( Auth::check() ) {
+// 		return View::make('/hud')->with('pTitle', "Your Hud");	
+// 	}else{
+// 		return View::make('index')->with('pTitle', "Project Management For System Artisans");
+// 	}	
+// });
 
 Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); });
 Route::get('signin', function(){ return View::make('signin')->with('pTitle', "Login"); });
