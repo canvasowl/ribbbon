@@ -267,7 +267,7 @@ class UsersController extends \BaseController {
 		// Send the beta confirmation email
 		sendBetaFollowUpMail(Input::get('email'));
 		
-		return Redirect::back()->with('success', "Your all set, your invitation will will arive soon.");
+		return Redirect::back()->with('success', "Your all set, your invitation will will arrive soon.");
 	}
 
 }
