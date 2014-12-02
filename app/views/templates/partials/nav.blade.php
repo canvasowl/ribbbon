@@ -18,8 +18,8 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
 			        <li class="<?php echo ( Request::is('hud') ) ? 'active' : 'false'; ?>"><a href="/hud"><span class="glyphicon glyphicon-th"></span> Hud</a></li>
-		            <li class="<?php echo ( Request::is('clients') || Request::is('clients/*') ) ? 'active' : 'false'; ?>"><a href="/clients"><span class="glyphicon glyphicon-briefcase"></span> Clients</a></li>
-		            <li class="<?php echo ( Request::is('projects') || Request::is('projects/*') ) ? 'active' : 'false'; ?>"><a href="/projects"><span class="glyphicon glyphicon-gift"></span> Projects</a></li>
+		            <li class="<?php echo ( Request::is('clients') || Request::is('clients/*') ) ? 'active' : 'false'; ?>"><a href="/clients"><i class="fa fa-book fa-1x"></i> Clients</a></li>
+		            <li class="<?php echo ( Request::is('projects') || Request::is('projects/*') ) ? 'active' : 'false'; ?>"><a href="/projects"><i class="fa fa-hdd-o fa-1x"></i> Projects</a></li>
 		            <li class="<?php echo ( Request::is('tasks') || Request::is('tasks/*') ) ? 'active' : 'false'; ?>"><a href="/tasks"><span class="glyphicon glyphicon-tasks"></span> Tasks</a></li>			        
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">

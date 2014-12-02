@@ -9,7 +9,6 @@
 				<div class="row animated fadeIn">
 					<div class="col-xs-4">						
 						<a href="/clients" class="card">
-							<!-- <img src="{{ asset('assets/img/heart.png') }}"> -->
 							<center><i class="fa fa-book fa-3x"></i></center>
 							<center>Clients</center>
 						</a>
