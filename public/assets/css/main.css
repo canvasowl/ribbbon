@@ -182,10 +182,16 @@ img {
   border: 1px solid #419094; }
 
 .panel-default > .panel-heading {
-  background-color: #ececec; }
-
-.panel-default > .panel-heading {
+  background-color: #ececec;
   color: #333; }
+
+.panel-tasks > .panel-heading {
+  background-color: #9f7cd4;
+  color: #fff; }
+
+.panel-projects > .panel-heading {
+  background-color: #e46683;
+  color: #fff; }
 
 .nav-tabs > li > a {
   color: #aaa; }
