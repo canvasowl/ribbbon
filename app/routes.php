@@ -1,17 +1,6 @@
 <?php
 
 Route::get('/', 'HomeController@index');
-
-// Route::get('/', function()
-// {
-	
-// 	if( Auth::check() ) {
-// 		return View::make('/hud')->with('pTitle', "Your Hud");	
-// 	}else{
-// 		return View::make('index')->with('pTitle', "Project Management For System Artisans");
-// 	}	
-// });
-
 Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); });
 Route::get('signin', function(){ return View::make('signin')->with('pTitle', "Login"); });
 Route::get('beta', function(){ return View::make('beta')->with('pTitle', "Beta email request"); });
@@ -40,9 +29,11 @@ Route::group(array('before' => 'auth'), function()
 	Route::resource('credentials', 'CredentialsController');
 	Route::resource('tasks', 'TasksController');
 	
-	Route::get('hud', array('as' => 'hud', function(){
-		return View::make('hud')->with('pTitle', "Your Hud");
-	}));
+	// Route::get('hud', array('as' => 'hud', function(){
+	// 	return View::make('hud')->with('pTitle', "Your Hud");
+	// }));
+
+	Route::get('hud', 'HomeController@hud');
 
 	Route::get('profile', 'UsersController@index');
 });
