@@ -10,7 +10,8 @@
              <div>
                 <h2 class="pull-left no-margin-top">{{ $client->name }}</h2>                                   
                 <ul class="list-inline pull-right">
-                    <li><a class="btn btn-default" href="/clients/{{ $client->id }}/edit">Edit</a></li>
+                    <li><a title="Go back" class="btn " href="/clients"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
+                    <li><a title="Edit client" class="btn " href="/clients/{{ $client->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
                 </ul>
                 <div class="clearfix"></div>   
                 <hr>                 

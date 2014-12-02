@@ -1,4 +1,4 @@
-@extends('templates/hud_master')
+@extends('templates.master')
 
 
 @section('content')

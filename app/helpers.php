@@ -9,7 +9,7 @@ function sendBetaFollowUpMail($email){
 	$data = array('to' => $email);
 	
 	Mail::send('emails.beta.follow', array(), function($message) use ($data) {
-		$message->to($data['to'], '')->subject('Inviation Request Confirmation');
+		$message->to($data['to'], '')->subject('Invitation request confirmation');
 	});
 }
 
@@ -18,7 +18,7 @@ function sendBetaInviteEmail($email){
 	$data = array( 'to' 	=> $email );
 	
 	Mail::send('emails.beta.invite', array(), function($message) use ($data){
-    	$message->to($data['to'], '' )->subject('Ribbbon Invitation');
+    	$message->to($data['to'], '' )->subject('Ribbbon invitation');
 	});		
 }
 
