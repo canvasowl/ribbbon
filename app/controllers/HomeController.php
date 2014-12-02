@@ -15,9 +15,12 @@ class HomeController extends BaseController {
 	// Return the Hud view
 	public function hud()
 	{	
-		$pTitle	=	"Hud";
+		$pTitle			=	"Hud";
 
-		return View::make('hud', compact('pTitle'));		
+		$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->take(5)->get();
+		$latestProjects	=	Project::where('user_id', Auth::id())->take(5)->get();
+
+		return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks'));		
 	}
 
 }

@@ -28,13 +28,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::resource('projects', 'ProjectsController');
 	Route::resource('credentials', 'CredentialsController');
 	Route::resource('tasks', 'TasksController');
-	
-	// Route::get('hud', array('as' => 'hud', function(){
-	// 	return View::make('hud')->with('pTitle', "Your Hud");
-	// }));
-
 	Route::get('hud', 'HomeController@hud');
-
 	Route::get('profile', 'UsersController@index');
 });
 
