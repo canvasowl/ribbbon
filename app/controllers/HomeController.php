@@ -6,7 +6,12 @@ class HomeController extends BaseController {
 	public function index()
 	{
 		if( Auth::check() ) {
-			return View::make('/hud')->with('pTitle', "Your Hud");	
+			$pTitle			=	"Hud";
+
+			$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->take(5)->get();
+			$latestProjects	=	Project::where('user_id', Auth::id())->take(5)->get();
+
+			return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks'));
 		}else{
 			return View::make('index')->with('pTitle', "Project Management For System Artisans");
 		}
