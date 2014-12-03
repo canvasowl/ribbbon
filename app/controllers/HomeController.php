@@ -8,8 +8,8 @@ class HomeController extends BaseController {
 		if( Auth::check() ) {
 			$pTitle			=	"Hud";
 
-			$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->take(5)->get();
-			$latestProjects	=	Project::where('user_id', Auth::id())->take(5)->get();
+			$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->orderBy('created_at', 'desc')->take(5)->take(5)->get();
+			$latestProjects	=	Project::where('user_id', Auth::id())->orderBy('created_at', 'desc')->take(5)->take(5)->get();
 
 			return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks'));
 		}else{
@@ -22,8 +22,8 @@ class HomeController extends BaseController {
 	{	
 		$pTitle			=	"Hud";
 
-		$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->take(5)->get();
-		$latestProjects	=	Project::where('user_id', Auth::id())->take(5)->get();
+		$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->orderBy('created_at', 'desc')->take(5)->get();
+		$latestProjects	=	Project::where('user_id', Auth::id())->orderBy('created_at', 'desc')->take(5)->get();
 
 		return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks'));		
 	}
