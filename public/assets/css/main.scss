@@ -4,8 +4,8 @@ $color-primary: #69b4b8;
 $color-primary-accent: #419094;
 $color-primary-rival: #D86850;
 $color-primary-rival-hover: #ED7258;
-$color-purple: #9F7CD4;
-$color-gum: #E46683;
+
+$color-panel-head: #556C6C;
 $color-bg: #FDFDFD;
 $color-font: #767676;
 $color-weight: #5cb85c;
@@ -59,8 +59,8 @@ img{max-width: 100%;}
 
 .dimmed{opacity: .5; font-size: .8em;}
 
-.no-padding-left{padding-left: 0;}
-.no-padding-right{padding-right: 0;}
+.no-padding-left{padding-left: 0 !important;}
+.no-padding-right{padding-right: 0 !important;}
 
 .row{margin-left: 0; margin-right: 0;}
 
@@ -106,9 +106,7 @@ img{max-width: 100%;}
 .btn-primary:hover{background-color: $color-primary-accent; border: 1px solid $color-primary-accent}
 
 // Panels 
-.panel-default>.panel-heading{background-color: #ececec; color: #333;}
-.panel-tasks>.panel-heading{background-color: $color-purple; color: #fff}
-.panel-projects>.panel-heading{background-color: $color-gum; color: #fff}
+.panel-default>.panel-heading{background-color: $color-panel-head; color: #eee;}
 
 // Nav Tabs
 .nav-tabs>li>a{color: #aaa;}
@@ -253,7 +251,6 @@ span.total{
 .module-form form{display: inline;;}
 
 //-- HOME
-
 .home-form{ max-width: 400px; width: 100%; margin: 100px auto;}
 .home-form input[type="text"], .home-form input[type="password"]{ font-size: 1.5em; }
 
@@ -301,6 +298,8 @@ span.total{
 	margin-bottom: 50px;
 }
 .app-wrapper-wide{width: 1290px; max-width: 100%; margin-top: 100px; margin-bottom: 50px}
+
+.latest-wrapper{background: none; border: none; margin-top: 0}
 
 section.info{
 	background-color: $info-bg-color;

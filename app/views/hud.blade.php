@@ -30,10 +30,10 @@
 		</div>	
 	</div>
 
-	<div class="row">
+	<div class="app-wrapper latest-wrapper no-padding-left no-padding-right">
 		<!-- Latest tasks -->
-		<div class="col-xs-12 col-md-6">
-			<div class="panel panel-tasks">
+		<div class="col-xs-12 col-md-6 no-padding-left">
+			<div class="panel panel-default">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Tasks</h3>
 			  </div>
@@ -55,8 +55,8 @@
 		</div>
 
 		<!-- Latest projects -->
-		<div class="col-xs-12 col-md-6">
-			<div class="panel panel-projects">
+		<div class="col-xs-12 col-md-6 no-padding-right">
+			<div class="panel panel-default">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Projects</h3>
 			  </div>
