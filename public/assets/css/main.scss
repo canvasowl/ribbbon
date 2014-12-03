@@ -76,7 +76,7 @@ img{max-width: 100%;}
 
 .hug{ width: 100%; margin: 0; padding: 0; }
 
-.container{width: 100%;}
+// .container{width: 100%;}
 
 .circle{border-radius: 100%;}
 
@@ -152,8 +152,8 @@ img{max-width: 100%;}
 .alert-link{color: rgab(0,0,0,.5); font-size: .8em}
 
 .numCount{
-	background-color: $color-bg;
-	color: $color-font;
+	background-color: $color-panel-head;
+	color: #eee;
 	padding: 2px 05px 2px;
 }
 
@@ -166,7 +166,8 @@ img{max-width: 100%;}
 }
 
 .list-link{height: 50px;display: block;	color: $color-font;	}
-.list-link:hover{background-color: $color-primary; color: #fff;}
+.list-link:nth-child(even){background-color: #ECECEC}
+.list-link:hover{background-color: #D6D6D6; color: $color-panel-head;}
 
 .done{text-decoration: line-through}
 
@@ -286,8 +287,8 @@ span.total{
 .card center{color: $color-font}
 
 .app-wrapper{
-	width: 700px; 
-	max-width: 95%; 
+	// width: 700px; 
+	// max-width: 95%; 
 	background-color: #fff; 
 	border: 1px solid #eee; 
 	margin: 0 auto;

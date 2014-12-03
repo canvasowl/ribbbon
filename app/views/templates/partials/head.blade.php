@@ -57,6 +57,12 @@
 		</style>		
 	@endif
 
+	@if ( Request::is('about') )
+		<style type="text/css">
+			.container{width: 100%;}
+		</style>		
+	@endif	
+
 	@if ( Auth::check() )
 		<style type="text/css">
 			.hug-homeHeader .auth-header .row{width: 100% !important} 

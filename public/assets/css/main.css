@@ -107,9 +107,6 @@ img {
   margin: 0;
   padding: 0; }
 
-.container {
-  width: 100%; }
-
 .circle {
   border-radius: 100%; }
 
@@ -254,8 +251,8 @@ img {
   font-size: .8em; }
 
 .numCount {
-  background-color: #fdfdfd;
-  color: #767676;
+  background-color: #556c6c;
+  color: #eee;
   padding: 2px 05px 2px; }
 
 .numCount {
@@ -270,9 +267,12 @@ img {
   display: block;
   color: #767676; }
 
+.list-link:nth-child(even) {
+  background-color: #ECECEC; }
+
 .list-link:hover {
-  background-color: #69b4b8;
-  color: #fff; }
+  background-color: #D6D6D6;
+  color: #556c6c; }
 
 .done {
   text-decoration: line-through; }
@@ -448,8 +448,6 @@ span.total {
   color: #767676; }
 
 .app-wrapper {
-  width: 700px;
-  max-width: 95%;
   background-color: #fff;
   border: 1px solid #eee;
   margin: 0 auto;
