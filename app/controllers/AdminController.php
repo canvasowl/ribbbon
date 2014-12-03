@@ -7,11 +7,9 @@ class AdminController extends \BaseController {
 	 */
 	public function invite(){
 
-		$users = array(
-				// array( 'email' => 'l.d.berzak@gmail.com'),
-				// array( 'email' => 'ferrasmel@gmail.com'),
-				// array( 'email' => 'Goldpitmusic@gmail.com'),
-				// array( 'email' => 'maringigiadrian@gmail.com'),				
+		$users = array(				
+				array( 'email' => 'mwvanmeurs@gmail.com')
+				array( 'email' => 'alex.hon@icloud.com'),				
 				array( 'email' => 'jefrycruz88@gmail.com') // do not delete
 			);
 
