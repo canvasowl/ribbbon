@@ -14,7 +14,7 @@ class ClientsController extends \BaseController {
 
 		$id 		= Auth::id();
 		$user		= User::find($id);
-		$clients 	= $user->clients()->get();
+		$clients 	= $user->clients()->orderBy('created_at', 'desc')->take(5)->get();
 
 
 		$counter 	= 0;		
