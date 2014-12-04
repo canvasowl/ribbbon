@@ -503,16 +503,16 @@ section.info .table > tbody > tr > td,
 section.info .table > tfoot > tr > td {
   border-top: 1px solid #e7c6ab; }
 
-.main-user-wrap {
-  background-color: #ececec;
-  color: #777; }
-
 .main-user-wrap img {
   width: 200px;
-  padding: 10px; }
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
 
 .main-user-wrap h1 {
   font-size: 4em; }
+
+.profile-wrapper {
+  max-width: 700px; }
 
 .stat-card .badge {
   font-size: 2em; }

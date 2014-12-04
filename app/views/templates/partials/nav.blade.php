@@ -23,7 +23,7 @@
 		            <li class="<?php echo ( Request::is('tasks') || Request::is('tasks/*') ) ? 'active' : 'false'; ?>"><a href="/tasks"><span class="glyphicon glyphicon-tasks"></span> Tasks</a></li>			        
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
-			      	<?php //<li><a class="profile-link" href="/profile"><img class="circle" src="{{ asset('assets/img/guy.jpg') }}"></a></li> ?>
+			      	<li><a class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li> 
 			        <li><a href="/logout">Logout <i class="fa fa-sign-out"></i></a></li>			        
 			      </ul>
 			    </div><!-- /.navbar-collapse -->

@@ -18,15 +18,19 @@
 
 <div class="row">
 	<div class="col-xs-12">
-		<div class="app-wrapper">
+		<div class="app-wrapper profile-wrapper">
 
 			<!-- Main user area -->
-            <div class="main-user-wrap row">
-            	<!-- <div class="col-xs-12 col-sm-4">
-            		<img class="circle" src="{{ asset('assets/img/guy.jpg') }}">
-            	</div> -->
-            	<div class="col-xs-12 col-sm-12">
-            		<center><h1>{{ $user->full_name }}</h1></center>
+            <div class="main-user-wrap row">            		
+            	<div class="col-xs-12 col-sm-12">            		
+            		<center>
+            			<img class="circle" src="{{ User::get_gravatar(Auth::user()->email, 200) }}">
+            			<h3>{{ $user->full_name }}</h3>
+            			<div class="dimmed">
+            				<p>{{ Auth::user()->email }}</p>
+            				<p>Profile picture managed by <a target="_blank" href="https://en.gravatar.com/">Gravatar</a></p>
+            			</div>
+            		</center>
             	</div>            	
             </div> 
 
