@@ -40,7 +40,6 @@
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
 					  <li class="active"><a href="#tasks" role="tab" data-toggle="tab">Remaining Tasks <i class="fa fa-tasks"></i></a></li>
-					  <li><a href="#manage" role="tab" data-toggle="tab">Completed Tasks <i class="fa fa-check"></i></a></li>
 					  <li><a href="#credentials" role="tab" data-toggle="tab">Credentials <i class="fa fa-lock"></i></a></li>
 					</ul>			  	
 
@@ -55,18 +54,9 @@
 					  		@else
 						  		<table class="table">
 						  			<thead>
-						  				<tr><th>Task</th><th>Weight</th><th>Actions</th></tr>			  				
+						  				<tr><th>Name</th><th>Weight</th><th>Actions</th></tr>			  				
 						  				<tbody>
-						  					@foreach ($tasks as $task)
-				  							<?php
-				  								if ($task->weight == 1) {
-				  									$weight = "level-easy";
-				  								}else if($task->weight == 2){
-				  									$weight = "level-medium";
-				  								}else if($task->weight == 3){
-				  									$weight = "level-hard";
-				  								}
-				  							?>					  					
+						  					@foreach ($tasks as $task)					  					
 						  					<tr>
 						  						<td>					  							
 						  							{{ Form::open(array('action' => 'TasksController@update', 'method' => 'put')) }}
@@ -75,7 +65,7 @@
 							  							<input type="hidden" name="task" value="{{ $task->id }}">
 						  							{{ Form::close() }}
 						  						</td>
-						  						<td><span class="level {{ $weight }}">{{ $task->weight }}</span></td>
+						  						<td><span class="level level-medium">{{ $task->weight }}</span></td>
 						  						<td>
 						  							<ul class="list-style-none inline-list">
 						  								<li>
@@ -93,29 +83,18 @@
 						  		</table>
 					  		@endif
 					  	</section>
-					  </div>
 
+					  	<hr>
 
-					  <!-- COMEPLETED TASKS -->
-					  <div class="tab-pane" id="manage">
 					  	<section class="info">
 					  		@if ($completedCount == 0)
 					  			<p>No tasks has been completed for this project.</p>
 					  		@else
 						  		<table class="table">
 						  			<thead>
-						  				<tr><th>Task</th><th>Weight</th><th>Actions</th></tr>			  				
+						  				<tr><th>Name</th><th>Weight</th><th>Actions</th></tr>			  				
 						  				<tbody>
-						  					@foreach ($completedTasks as $task)
-				  							<?php
-				  								if ($task->weight == 1) {
-				  									$weight = "level-easy";
-				  								}else if($task->weight == 2){
-				  									$weight = "level-medium";
-				  								}else if($task->weight == 3){
-				  									$weight = "level-hard";
-				  								}
-				  							?>					  					
+						  					@foreach ($completedTasks as $task)				  					
 						  					<tr>
 						  						<td>					  							
 						  							{{ Form::open(array('action' => 'TasksController@update', 'method' => 'put')) }}
@@ -124,7 +103,7 @@
 							  							<input type="hidden" name="task" value="{{ $task->id }}">
 						  							{{ Form::close() }}
 						  						</td>
-						  						<td><span class="level {{ $weight }}">{{ $task->weight }}</span></td>
+						  						<td><span class="level level-medium">{{ $task->weight }}</span></td>
 						  						<td>
 						  							<ul class="list-style-none inline-list">
 						  								<li>
@@ -141,8 +120,12 @@
 						  			</thead>
 						  		</table>
 					  		@endif
-					  	</section>					  	
+					  	</section>	
+
 					  </div>
+
+
+					  
 
 
 					  <!-- CREDENTIALS -->
