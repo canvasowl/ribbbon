@@ -30,7 +30,7 @@ class TasksController extends \BaseController {
 		// Rules
 		$rules	= array(
 				'name' 		=> 'required|unique:tasks', 
-				'weight' 	=> 'required|integer|between:1,3'
+				'weight' 	=> 'integer|between:1,3'
 		);
 
 		// Custom messages
@@ -48,12 +48,17 @@ class TasksController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+
+
 		// Insert the task to database
 		$task 				= new Task;
 		$task->project_id 	= Input::get('projectId');
 		$task->user_id 		= Auth::id();
 		$task->name 		= Input::get('name');
 		$task->weight		= Input::get('weight');
+		if (!Input::get('weight')) {
+			$task->weight		= 1;
+		}		
 		$task->state		= "incomplete";
 		$task->save();
 
