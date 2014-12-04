@@ -47,5 +47,10 @@ Route::group(array('before' => 'admin'), function()
 
 		return "All test emails sent";
 	});	
+
+
+	Route::get('pivot', function(){
+		return Project::find(1)->users;
+	});
 	
 });
