@@ -177,6 +177,10 @@ img {
 .btn {
   border: none; }
 
+.panel {
+  border: none !important;
+  box-shadow: none !important; }
+
 .panel-default > .panel-heading {
   background-color: #eeeeee;
   color: #777;
@@ -411,6 +415,9 @@ span.total {
   max-width: 100%;
   margin: 0 auto; }
 
+.main-row {
+  margin-top: 100px; }
+
 .hug-hudHeader {
   background-color: #294256;
   position: fixed;
@@ -450,15 +457,7 @@ span.total {
   margin: 0 auto;
   margin-top: 20px;
   padding: 10px;
-  border-radius: 5px;
-  margin-top: 100px;
-  margin-bottom: 50px; }
-
-.app-wrapper-wide {
-  width: 1290px;
-  max-width: 100%;
-  margin-top: 100px;
-  margin-bottom: 50px; }
+  border-radius: 5px; }
 
 .latest-wrapper {
   background: none;
@@ -611,7 +610,8 @@ section.info .table > tfoot > tr > td {
 .hug-footerIn {
   font-size: .8em;
   opacity: .5;
-  line-height: .8; }
+  line-height: .8;
+  margin-top: 50px; }
 
 @media (max-width: 400px) {
   .homepage-msg {

@@ -4,21 +4,20 @@
 @section('content')
 
 
-<div class="row">
-	<div class="col-xs-12">
-		<div class="app-wrapper app-wrapper-wide">        
-            
-            <div>
-                <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total level animated tada">{{ $total_weight }}</span></h2>
-                <ul class="list-inline pull-right">
-                	<li><a title="Go back" class="btn " href="/clients/{{ $project->client_id}}"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
-                    <li><a title="Edit project" class="btn" href="/projects/{{ $project->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>                    
-                </ul>
-                <div class="clearfix"></div>   
-            </div>
+<div class="row main-row">
 
-            <div class="row">            	            
-	            <div class="col-xs-12 col-md-8">
+	<!-- ACTIONS -->
+	<div class="col-xs-12">
+        <h2>{{ $project->name }} <span class="total level animated tada">{{ $total_weight }}</span></h2>
+        <ul class="list-inline pull-right">
+        	<li><a title="Go back" class="btn " href="/clients/{{ $project->client_id}}"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
+            <li><a title="Edit project" class="btn" href="/projects/{{ $project->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>                    
+        </ul>
+	</div>
+
+	<div class="col-xs-12 col-md-8">
+		<div class="app-wrapper">                   
+
 				  	
 				  	<!-- info pills -->
 				  	<ul class="list-inline">
@@ -123,11 +122,7 @@
 					  	</section>	
 
 					  </div>
-
-
 					  
-
-
 					  <!-- CREDENTIALS -->
 					  <div class="tab-pane" id="credentials">
 					  	<p class="pull-right"></p>
@@ -136,8 +131,7 @@
 					  	<!-- server panel -->
 						<div class="panel panel-default">
 						  <div class="panel-heading">FTP & SSH Accounts</div>
-						  <div class="panel-body ftp-panel-body">					    			            	
-						
+						  <div class="panel-body ftp-panel-body">					    			            							
 					     	<div class="row">
 						     	@foreach ($credentials as $credential)
 						     		@if ($credential->type == true)
@@ -164,8 +158,7 @@
 							     		</div>
 						     		@endif
 						     	@endforeach
-					     	</div>
-					     	
+					     	</div>					     	
 						  </div>	         	
 			            </div>
 
@@ -200,21 +193,10 @@
 					     	</div>
 						  </div>	         	
 			            </div>
-
 					  </div>
-
 					</div>
-	            </div>
-
-	            <!-- SIDEBAR -->
-	            <div class="col-xs-12 col-md-4">
-					@include('projects.partials.sidebar')	
-	            </div>
-	            <!-- SIDEBAR -->
-	                       
-            <div class="row">
-            	<div class="col-xs-12">
-                    <section>
+	
+                  	<section>
                         <hr>
                         <strong>Note:</strong>
                         <p class="dimmed">Deleting <i>{{ $project->name }}</i> will delete all tasks associated with this project.</p>
@@ -222,14 +204,25 @@
                             <input type="hidden" name="id" value="{{ $project->id }}">
                             <input type="submit" class="btn btn-danger" value="Delete Project" />  
                         {{ Form::close() }}
-                    </section>              		
-            	</div>
-            </div>
+                    </section>
 
 		</div>
 	</div>
-</div>
+	<!-- end of col 8 -->
 
+	<div class="col-xs-12 col-md-4">
+		<div class="app-wrapper">
+            <!-- SIDEBAR -->
+				@include('projects.partials.sidebar')	
+            <!-- SIDEBAR -->
+		</div>
+	</div>
+
+
+
+
+</div>
+<!-- end of main row -->
 @stop()
 
 

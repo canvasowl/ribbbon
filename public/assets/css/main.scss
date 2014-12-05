@@ -107,6 +107,7 @@ img{max-width: 100%;}
 .btn{border: none}
 
 // Panels 
+.panel{border: none !important; box-shadow: none !important}
 .panel-default>.panel-heading{background-color: $color-panel-head; color: #777; border: none}
 
 // Nav Tabs
@@ -270,6 +271,8 @@ span.total{
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
 
 // INNER PAGES SHARED
+.main-row{margin-top: 100px}
+
 .hug-hudHeader{background-color: $color-primary; position: fixed; z-index: 1;}
 .hug-hudHeader .row{margin-left: 0; margin-right: 0;}
 
@@ -288,18 +291,16 @@ span.total{
 .card center{color: $color-font}
 
 .app-wrapper{
-	// width: 700px; 
-	// max-width: 95%; 
 	background-color: #fff; 
 	border: 1px solid #eee; 
 	margin: 0 auto;
 	margin-top: 20px;
 	padding: 10px;
 	border-radius: 5px;
-	margin-top: 100px;
-	margin-bottom: 50px;
+	// margin-top: 100px;
+	// margin-bottom: 50px;
 }
-.app-wrapper-wide{width: 1290px; max-width: 100%; margin-top: 100px; margin-bottom: 50px}
+// .app-wrapper-wide{max-width: 100%; margin-top: 100px; margin-bottom: 50px}
 
 .latest-wrapper{background: none; border: none; margin-top: 0}
 
@@ -381,7 +382,7 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .hug-footerOut p{color: #fff; font-size: .8em; opacity: .5}
 .hug-footerOut a:hover{text-shadow: 0 0 2px rgba(255,255,255,.6); opacity: 1}
 
-.hug-footerIn{ font-size: .8em; opacity: .5; line-height: .8;}
+.hug-footerIn{ font-size: .8em; opacity: .5; line-height: .8; margin-top:50px}
 
 
 // MEDIA QUERIES

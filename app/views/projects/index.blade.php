@@ -3,12 +3,15 @@
 
 @section('content')
 
-<div class="row">
+<div class="row main-row">
+    <div class="col-xs-12">
+        <div>
+            <h2>Projects</h2>
+        </div>        
+    </div>
+
 	<div class="col-xs-12">
 		<div class="app-wrapper">
-            <div>
-                <h2 class="pull-left no-margin-top">Projects</h2>
-            </div>
             <div class="clearfix"></div>
             <ul class="list-style-none">
                 @foreach ($projects as $project)
@@ -20,8 +23,8 @@
                     </a>
                 @endforeach
             </ul>
-
-	</div>
+	   </div>
+    </div>
 </div>
 
 @stop()
