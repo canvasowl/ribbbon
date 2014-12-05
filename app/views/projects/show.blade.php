@@ -9,7 +9,7 @@
 		<div class="app-wrapper app-wrapper-wide">        
             
             <div>
-                <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total animated tada">{{ $total_weight }}</span></h2>
+                <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total level animated tada">{{ $total_weight }}</span></h2>
                 <ul class="list-inline pull-right">
                 	<li><a title="Go back" class="btn " href="/clients/{{ $project->client_id}}"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
                     <li><a title="Edit project" class="btn" href="/projects/{{ $project->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>                    
@@ -65,7 +65,7 @@
 							  							<input type="hidden" name="task" value="{{ $task->id }}">
 						  							{{ Form::close() }}
 						  						</td>
-						  						<td><span class="level level-medium">{{ $task->weight }}</span></td>
+						  						<td><span class="level">{{ $task->weight }}</span></td>
 						  						<td>
 						  							<ul class="list-style-none inline-list">
 						  								<li>
@@ -103,7 +103,7 @@
 							  							<input type="hidden" name="task" value="{{ $task->id }}">
 						  							{{ Form::close() }}
 						  						</td>
-						  						<td><span class="level level-medium">{{ $task->weight }}</span></td>
+						  						<td><span class="level">{{ $task->weight }}</span></td>
 						  						<td>
 						  							<ul class="list-style-none inline-list">
 						  								<li>

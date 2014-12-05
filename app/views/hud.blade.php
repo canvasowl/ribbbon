@@ -42,7 +42,7 @@
 				  	@foreach ($latestTasks as $task)
 				  		<p>
 				  			<a href="/projects/{{ $task->project_id }}">{{ $task->name }}</a> 
-				  			<span class="level level-medium pull-right">{{ $task->weight}}</span>
+				  			<span class="level pull-right">{{ $task->weight}}</span>
 				  		</p>
 				  	@endforeach			  			  	
 				@else
