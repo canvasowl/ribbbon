@@ -590,6 +590,13 @@ section.info .table > tfoot > tr > td {
 .hug-about-tasks .btn-cta {
   font-size: 2em; }
 
+.hug-about-intro,
+.hug-about-intro i,
+.hug-about-intro p,
+.hug-about-intro h1 {
+  color: #fff !important;
+  opacity: 1; }
+
 .faq-container {
   padding: 50px 0; }
 
