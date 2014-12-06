@@ -124,19 +124,17 @@ img {
 
 .pill {
   padding: 5px 30px;
+  border: 1px solid;
   border-radius: 90px;
-  color: #eee;
-  background-color: #999;
+  color: #777;
+  background-color: transparent;
   font-size: .9em; }
 
 .pill:hover {
-  color: #fff; }
+  color: #294256; }
 
 .pill-primary {
-  background-color: #294256; }
-
-.pill-dark {
-  background-color: #555; }
+  background-color: transparent; }
 
 .btn {
   text-transform: capitalize; }
@@ -190,9 +188,8 @@ img {
   color: #aaa; }
 
 .navbar-default {
-  background-color: #294256;
-  border-color: #294256;
-  border-radius: 1px;
+  background-color: transparent;
+  border: none;
   padding: 10px 0; }
 
 .navbar-default a,
@@ -427,6 +424,9 @@ span.total {
   margin-left: 0;
   margin-right: 0; }
 
+.hud-margin {
+  margin-top: 50px; }
+
 .card {
   background-color: #fdfdfd;
   border-radius: 4px;
@@ -453,7 +453,6 @@ span.total {
 
 .app-wrapper {
   background-color: #fff;
-  border: 1px solid #eee;
   margin: 0 auto;
   margin-top: 20px;
   padding: 10px;
@@ -463,6 +462,9 @@ span.total {
   background: none;
   border: none;
   margin-top: 0; }
+
+.total-weight {
+  background-color: #294256; }
 
 section.info {
   background-color: #f9f4eb;

@@ -76,8 +76,6 @@ img{max-width: 100%;}
 
 .hug{ width: 100%; margin: 0; padding: 0; }
 
-// .container{width: 100%;}
-
 .circle{border-radius: 100%;}
 
 .list-style-none{ list-style: none; padding-left: 0 }
@@ -88,10 +86,9 @@ img{max-width: 100%;}
 .badge{background-color: #E4E4E4; color: $color-primary}
 
 // Pills
-.pill{padding: 5px 30px; border-radius: 90px; color: #eee; background-color: #999; font-size: .9em}
-.pill:hover{color: #fff;}
-.pill-primary{background-color: $color-primary}
-.pill-dark{background-color: #555;}
+.pill{padding: 5px 30px; border: 1px solid;  border-radius: 90px; color: #777; background-color: transparent; font-size: .9em}
+.pill:hover{color: $color-primary-accent;}
+.pill-primary{background-color: transparent}
 
 // Buttons
 .btn{text-transform: capitalize}
@@ -117,9 +114,8 @@ img{max-width: 100%;}
 // Navigaton
 
 .navbar-default{
-  background-color: $color-primary;
-  border-color: $color-primary;
-  border-radius: 1px;
+  background-color: transparent;
+  border: none;
   padding:10px 0;	
 }
 .navbar-default a,
@@ -276,6 +272,8 @@ span.total{
 .hug-hudHeader{background-color: $color-primary; position: fixed; z-index: 1;}
 .hug-hudHeader .row{margin-left: 0; margin-right: 0;}
 
+.hud-margin{margin-top: 50px; }
+
 .card{
 	background-color: $color-bg; 
 	border-radius: 4px; 
@@ -292,17 +290,18 @@ span.total{
 
 .app-wrapper{
 	background-color: #fff; 
-	border: 1px solid #eee; 
+	// border: 1px solid #eee; 
 	margin: 0 auto;
 	margin-top: 20px;
 	padding: 10px;
 	border-radius: 5px;
-	// margin-top: 100px;
-	// margin-bottom: 50px;
 }
-// .app-wrapper-wide{max-width: 100%; margin-top: 100px; margin-bottom: 50px}
 
 .latest-wrapper{background: none; border: none; margin-top: 0}
+
+.total-weight{
+	background-color: $color-primary-accent;
+}
 
 section.info{
 	background-color: $info-bg-color;
