@@ -43,6 +43,7 @@
 				  		<p>
 				  			<a href="/projects/{{ $task->project_id }}">{{ $task->name }}</a> 
 				  			<span class="level pull-right">{{ $task->weight}}</span>
+				  			<span class="pull-right dimmed">{{ $task->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
 				  		</p>
 				  	@endforeach			  			  	
 				@else
@@ -63,7 +64,10 @@
 			  <div class="panel-body">
 			  	@if ($latestProjects)
 				  	@foreach ($latestProjects as $project)
-				  		<p><a href="/projects/{{ $project->id }}">{{ $project->name }}</a></p>
+				  		<p>
+							<a href="/projects/{{ $project->id }}">{{ $project->name }}</a>
+				  			<span class="pull-right dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>				  			
+				  		</p>				  		
 				  	@endforeach			  			  	
 				@else
 				 	<div class="info">

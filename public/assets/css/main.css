@@ -184,6 +184,9 @@ img {
   color: #777;
   border: none; }
 
+.panel-body .dimmed {
+  margin: 5px; }
+
 .nav-tabs > li > a {
   color: #aaa; }
 
@@ -231,7 +234,7 @@ img {
 .navbar img.circle {
   width: 40px;
   height: 40px;
-  border: 2px solid #fff; }
+  border: 2px solid rgba(255, 255, 255, 0.3); }
 
 .navbar-toggle {
   background-color: #fff; }
@@ -293,9 +296,7 @@ img {
 
 .level {
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  padding: 0 0 0 5px;
+  padding: 0 4px;
   color: #fff;
   background-color: #74cd9e; }
 

@@ -107,6 +107,8 @@ img{max-width: 100%;}
 .panel{border: none !important; box-shadow: none !important}
 .panel-default>.panel-heading{background-color: $color-panel-head; color: #777; border: none}
 
+.panel-body .dimmed{margin: 5px;}
+
 // Nav Tabs
 .nav-tabs>li>a{color: #aaa;}
 
@@ -134,7 +136,7 @@ img{max-width: 100%;}
 .navbar img.circle{
 	width: 40px;
 	height: 40px;
-	border: 2px solid #fff;	
+	border: 2px solid rgba(255,255,255,.3);	
 }
 
 .navbar-toggle{background-color: #fff;}
@@ -178,9 +180,7 @@ img{max-width: 100%;}
 
 .level{
 	display: inline-block; 
-	width: 20px; 
-	height: 20px; 
-	padding: 0 0 0 5px;
+	padding: 0 4px;
 	color: #fff;
 	background-color: $color-primary-rival
 }
