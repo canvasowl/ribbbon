@@ -26,7 +26,7 @@ a {
   color: #294256; }
 
 a:hover {
-  color: #294256;
+  color: #3f5378;
   text-decoration: none; }
 
 a:focus, a:active {
@@ -120,7 +120,7 @@ img {
 
 .badge {
   background-color: #E4E4E4;
-  color: #294256; }
+  color: #3f5378; }
 
 .pill {
   padding: 5px 30px;
@@ -155,7 +155,7 @@ img {
   background: rgba(250, 250, 250, 0.2); }
 
 .btn-holo:hover {
-  color: #294256;
+  color: #3f5378;
   background-color: #fff; }
 
 .btn-rival {
@@ -191,8 +191,8 @@ img {
   color: #aaa; }
 
 .navbar-default {
-  background-color: #294256;
-  border: 1px solid #294256;
+  background-color: #3f5378;
+  border: 1px solid #3f5378;
   padding: 10px 0; }
 
 .navbar-default a,
@@ -240,7 +240,7 @@ img {
   background-color: #fff; }
 
 .navbar-collapse {
-  border-top: #294256; }
+  border-top: #3f5378; }
 
 .alert {
   border: none;
@@ -368,7 +368,7 @@ span.total {
 .module-form h2 {
   text-align: center;
   color: #fff;
-  background-color: #294256;
+  background-color: #3f5378;
   margin: 0 0 20px 0;
   padding: 20px 0; }
 
@@ -383,7 +383,7 @@ span.total {
   display: inline; }
 
 .hug-homeHeader {
-  background: #294256; }
+  background: #3f5378; }
 
 .home-form {
   max-width: 400px;
@@ -420,7 +420,7 @@ span.total {
   margin-top: 100px; }
 
 .hug-hudHeader {
-  background-color: #294256;
+  background-color: #3f5378;
   position: fixed;
   z-index: 1; }
 
@@ -489,13 +489,13 @@ section.info {
   color: #777777; }
 
 .table a:hover {
-  color: #294256; }
+  color: #3f5378; }
 
 .table i {
   color: #96967A; }
 
 .table i:hover {
-  color: #294256; }
+  color: #3f5378; }
 
 section.info-dark p {
   color: #fff; }
@@ -550,7 +550,7 @@ section.info .table > tfoot > tr > td {
   color: #D24453; }
 
 .credential-wrap .actions i.fa-pencil {
-  color: #294256; }
+  color: #3f5378; }
 
 .credential-wrap .actions ul li {
   margin-left: 2%; }
@@ -579,10 +579,10 @@ section.info .table > tfoot > tr > td {
   line-height: 2; }
 
 .hug-about-intro {
-  background-color: #294256; }
+  background-color: #3f5378; }
 
 .hug-about-shield {
-  background-color: #74cd9e; }
+  background-color: #DA734E; }
 
 .hug-about-tasks {
   background-color: #CBDBD8; }
