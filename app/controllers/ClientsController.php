@@ -174,10 +174,9 @@ class ClientsController extends \BaseController {
 		// delete client
 		$client->delete();
 			
-		// ----------------------------------------------------
-		$id 		= Auth::id();
-		$user		= User::find($id);
-		$clients 	= $user->clients()->get();
+		// ----------------------------------------------------	
+		$user		= User::find(Auth::id());
+		$clients 	= $user->clients()->orderBy('created_at', 'desc')->get();
 		$counter 	= 0;
 
 		return View::make('clients.index', compact([ 'clients','counter','pTitle' ]));
