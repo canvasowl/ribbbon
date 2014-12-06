@@ -166,6 +166,7 @@ class ProjectsController extends \BaseController {
 	{
 		$pTitle		=	"Projects";
 
+
 		$project 	= 	Project::find(Input::get("id"));
 
 		// delete everything associated with project
@@ -174,9 +175,11 @@ class ProjectsController extends \BaseController {
 
 		// delete the project
 		$project->delete();
-
-		$projects 	= 	Project::all();
+		
 		$counter 	=	0;
+		$user 		=	User::find(Auth::id());
+		$projects 	=	$user->projects()->get();
+		
 		return View::make('projects.index',compact(['projects','counter','pTitle']));		
 	}
 
