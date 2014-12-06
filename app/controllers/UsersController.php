@@ -141,7 +141,7 @@ class UsersController extends \BaseController {
 				return Redirect::to('hud');
 			}else{				
 				$validator->getMessageBag()->add('input', 'Incorrect email or password');
-				return Redirect::back()->withErrors($validator);
+				return Redirect::back()->withErrors($validator)->withInput();;
 			}			
 		}
 	}	
