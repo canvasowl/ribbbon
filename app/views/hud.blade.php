@@ -35,7 +35,7 @@
 		<div class="col-xs-12 col-md-6">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
-			    <h3 class="panel-title">Latest Tasks</h3>
+			    <h3 class="panel-title">Latest Tasks <span class="dot pull-right"></span></h3>
 			  </div>
 			  <div class="panel-body">	
 			  	@if ($latestTasks)
@@ -59,7 +59,7 @@
 		<div class="col-xs-12 col-md-6">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
-			    <h3 class="panel-title">Latest Projects</h3>
+			    <h3 class="panel-title">Latest Projects <span class="dot pull-right"></span></h3>
 			  </div>
 			  <div class="panel-body">
 			  	@if ($latestProjects)

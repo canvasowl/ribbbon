@@ -455,6 +455,12 @@ span.total {
 .card center {
   color: #777777; }
 
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.1); }
+
 .app-wrapper {
   background-color: #fff;
   margin: 0 auto;
