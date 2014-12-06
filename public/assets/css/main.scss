@@ -114,8 +114,8 @@ img{max-width: 100%;}
 // Navigaton
 
 .navbar-default{
-  background-color: transparent;
-  border: none;
+  background-color: $color-primary;
+  border:1px solid $color-primary;
   padding:10px 0;	
 }
 .navbar-default a,
@@ -250,6 +250,8 @@ span.total{
 .module-form form{display: inline;;}
 
 //-- HOME
+.hug-homeHeader{background: $color-primary}
+
 .home-form{ max-width: 400px; width: 100%; margin: 100px auto;}
 .home-form input[type="text"], .home-form input[type="password"]{ font-size: 1.5em; }
 

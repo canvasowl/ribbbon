@@ -188,8 +188,8 @@ img {
   color: #aaa; }
 
 .navbar-default {
-  background-color: transparent;
-  border: none;
+  background-color: #294256;
+  border: 1px solid #294256;
   padding: 10px 0; }
 
 .navbar-default a,
@@ -380,6 +380,9 @@ span.total {
 
 .module-form form {
   display: inline; }
+
+.hug-homeHeader {
+  background: #294256; }
 
 .home-form {
   max-width: 400px;
