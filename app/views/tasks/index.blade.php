@@ -3,13 +3,15 @@
 
 @section('content')
 
-<div class="row">
+<div class="row main-row">
+    <div class="col-xs-12">
+        <div>
+            <h2>All Tasks</h2>
+        </div>        
+    </div>
+
 	<div class="col-xs-12">
 		<div class="app-wrapper">
-            <div>
-                <h2 class="pull-left no-margin-top">All Tasks</h2>
-            </div>
-            <div class="clearfix"></div>
             <ul class="list-style-none">
                 @foreach ($tasks as $task)
                     <?php $counter++; ?>
@@ -20,7 +22,7 @@
                     </a>
                 @endforeach
             </ul>
-
+        </div>
 	</div>
 </div>
 

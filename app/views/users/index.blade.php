@@ -16,7 +16,7 @@
 	</div>
 <!-- MODULE -->
 
-<div class="row">
+<div class="row main-row">
 	<div class="col-xs-12">
 		<div class="app-wrapper profile-wrapper">
 
