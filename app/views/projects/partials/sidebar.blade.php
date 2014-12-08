@@ -20,7 +20,7 @@
     		</div>
 			<div class="form-group">
 				<br>
-				<input type="submit" class="pull-right btn btn-success btn-wide" value="add task">	
+				<input type="submit" class="pull-right btn btn-primary btn-wide" value="add task">	
 			</div>		            					            			
 		</form>
 	</div>

@@ -23,7 +23,7 @@
 			</div>
 
 			<div class="question">
-				<h2>Is there a paid verion with pro features?</h2>
+				<h2>Is there a paid version with pro features?</h2>
 				<p>At the moment no, the focus is to create a solid experience and then 
 				work on a premium plan for Ribbbon.</p>
 			</div>
