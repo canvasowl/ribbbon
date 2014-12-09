@@ -410,6 +410,8 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 }
 
 @media (max-width: 767px){
+	.homepage-msg h1{font-size: 1.5em}
+
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a { color: #FFF; }
 
 	.hug-homeBody .container{height: auto;}
