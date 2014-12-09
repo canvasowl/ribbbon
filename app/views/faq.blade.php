@@ -31,7 +31,7 @@
 			<div class="question">
 				<h2>Can I work on the same project with other users?</h2>
 				<p>Right now Ribbbon only handles single managed projects, however the 
-				development for team collaboration has already started so excepct that down the road.</p>
+				development for team collaboration has already started so expect that down the road.</p>
 			</div>
 
 			<div class="question">
