@@ -248,7 +248,7 @@ img {
   position: fixed;
   z-index: 1;
   width: 100%;
-  top: 52px;
+  top: 72px;
   padding: 10px; }
 
 .alert-main {
@@ -400,7 +400,7 @@ span.total {
 
 .homepage-msg h1 {
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: bold; }
 
 .homepage-msg .btn-cta {
@@ -649,6 +649,9 @@ section.info .table > tfoot > tr > td {
   .homepage-msg {
     margin-top: 0 !important; } }
 @media (max-width: 767px) {
+  .homepage-msg h1 {
+    font-size: 1.5em; }
+
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #FFF; }
 

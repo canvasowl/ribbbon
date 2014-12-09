@@ -9,6 +9,10 @@ $('#myTab a').click(function (e) {
   $(this).tab('show')
 })
 
+$('.navbar-toggle').click(function(){
+	$('.alert').addClass('animated fadeOutDown');
+})
+
 /*************************************************
  *
  * PROMPT
