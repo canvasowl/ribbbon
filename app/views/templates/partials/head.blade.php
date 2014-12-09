@@ -33,8 +33,9 @@
 
 			@media (max-width: 767px){
 				html,
-				.hug-homeBody .container{background: #69b4b8;}				
+				.hug-homeBody .container{background: #3f5378;}				
 				.hug-footerOut{position: absolute;}
+				.homepage-msg{margin-top: 0 !important}
 			}
 		</style>
 	@endif
