@@ -74,7 +74,7 @@
 				@else
 					<div class="alert alert-info" role="alert">
 						<i class="fa fa-lightbulb-o"></i> 
-						Your latest projects will show up here. You will need to create a <a href="/clients">client</a> to get strated.
+						Your latest projects will show up here, you will need to create <a href="/clients">clients</a> in order to create projects.
 					</div> 
 			  	@endif
 			  </div>
