@@ -37,8 +37,9 @@
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Tasks <span class="dot pull-right"></span></h3>
 			  </div>
-			  <div class="panel-body">	
-			  	@if ($latestTasks)
+			  <div class="panel-body">
+
+			  	@if (count($latestTasks) > 0)
 				  	@foreach ($latestTasks as $task)
 				  		<p>
 				  			<a href="/projects/{{ $task->project_id }}">{{ $task->name }}</a> 
@@ -47,9 +48,10 @@
 				  		</p>
 				  	@endforeach			  			  	
 				@else
-				 	<div class="info">
-				 		<p>You seem to have no tasks!</p>
-				 	</div>
+					<div class="alert alert-info" role="alert">
+						<i class="fa fa-lightbulb-o"></i> 
+						Once you start creating tasks for projects, your latest ones will show up here.
+					</div> 
 			  	@endif		  
 			  </div>
 			</div>			
@@ -62,17 +64,18 @@
 			    <h3 class="panel-title">Latest Projects <span class="dot pull-right"></span></h3>
 			  </div>
 			  <div class="panel-body">
-			  	@if ($latestProjects)
+			  	@if ( count($latestProjects) > 0)
 				  	@foreach ($latestProjects as $project)
 				  		<p>
 							<a href="/projects/{{ $project->id }}">{{ $project->name }}</a>
-				  			<span class="pull-right dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>				  			
+				  			<span class="pull-right dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>		  			
 				  		</p>				  		
 				  	@endforeach			  			  	
 				@else
-				 	<div class="info">
-				 		<p>You seem to have no projects!</p>
-				 	</div>
+					<div class="alert alert-info" role="alert">
+						<i class="fa fa-lightbulb-o"></i> 
+						Your latest projects will show up here. You will need to create a <a href="/clients">client</a> to get strated.
+					</div> 
 			  	@endif
 			  </div>
 			</div>			
