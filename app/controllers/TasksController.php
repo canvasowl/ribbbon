@@ -13,7 +13,7 @@ class TasksController extends \BaseController {
 		$pTitle		=	"Tasks";
 
 		$user 		= 	User::find(Auth::id());		
-		$tasks 		= 	$user->tasks()->get();
+		$tasks 		= 	$user->tasks()->whereState("incomplete")->get();
 		$counter	=	0;
 
 		return View::make('tasks.index', compact(['tasks','counter','pTitle']));
