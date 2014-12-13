@@ -38,7 +38,7 @@
 
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-					  <li class="active"><a href="#tasks" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>Tasks</a></li>
+					  <li class="active"><a href="#tasks" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i> Tasks</a></li>
 					  <li><a href="#credentials" role="tab" data-toggle="tab"><i class="fa fa-key"></i> Credentials</a></li>
 					</ul>			  	
 
