@@ -242,6 +242,9 @@ img {
 .navbar-collapse {
   border-top: #3f5378; }
 
+.navbar-right .level {
+  margin: 13px 0 0; }
+
 .alert-success,
 .alert-danger {
   border: none;
