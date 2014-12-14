@@ -242,7 +242,8 @@ img {
 .navbar-collapse {
   border-top: #3f5378; }
 
-.alert {
+.alert-success,
+.alert-danger {
   border: none;
   border-radius: 0;
   position: fixed;

@@ -143,7 +143,8 @@ img{max-width: 100%;}
 .navbar-collapse{border-top: $color-primary}
 
 // ALerts
-.alert{
+.alert-success,
+.alert-danger{
 	border: none; 
 	border-radius: 0;
 	position: fixed;

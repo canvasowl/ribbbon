@@ -38,8 +38,8 @@
 
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-					  <li class="active"><a href="#tasks" role="tab" data-toggle="tab">Remaining Tasks <i class="fa fa-tasks"></i></a></li>
-					  <li><a href="#credentials" role="tab" data-toggle="tab">Credentials <i class="fa fa-lock"></i></a></li>
+					  <li class="active"><a href="#tasks" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i> Tasks</a></li>
+					  <li><a href="#credentials" role="tab" data-toggle="tab"><i class="fa fa-key"></i> Credentials</a></li>
 					</ul>			  	
 
 					<!-- Tab panes -->
