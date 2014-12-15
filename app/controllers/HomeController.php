@@ -13,7 +13,7 @@ class HomeController extends BaseController {
 
 			return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks'));
 		}else{
-			return View::make('index')->with('pTitle', "Project Management For System Artisans");
+			return View::make('index')->with('pTitle', "A project management system for artisans");
 		}
 	}
 
