@@ -1,7 +1,4 @@
-	<p class="pull-right"></p>
-	<div class="clearfix"></div>
-	
-	<!-- server panel -->
+<!-- server panel -->
 <div class="panel panel-default">
   <div class="panel-heading">FTP & SSH Accounts</div>
   <div class="panel-body ftp-panel-body">					    			            							
