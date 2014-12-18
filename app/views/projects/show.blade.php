@@ -46,7 +46,7 @@
 			  
 			  <!-- REMAINING TASKS -->
 			  <div class="tab-pane active" id="tasks">					  	
-				@include('projects/partials/tasks');	
+				@include('projects/partials/tasks')	
 			  </div>					  
 			  
 			  <!-- CREDENTIALS -->
