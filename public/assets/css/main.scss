@@ -142,14 +142,17 @@ img{max-width: 100%;}
 .navbar-toggle{background-color: #fff;}
 .navbar-collapse{border-top: $color-primary}
 
+.navbar-right .level{margin: 13px 0 0}
+
 // ALerts
-.alert{
+.alert-success,
+.alert-danger{
 	border: none; 
 	border-radius: 0;
 	position: fixed;
 	z-index: 1;
 	width: 100%;
-	top: 52px;
+	top: 72px;
 	padding: 10px	
 }
 .alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}
@@ -256,7 +259,7 @@ span.total{
 .home-form input[type="text"], .home-form input[type="password"]{ font-size: 1.5em; }
 
 .homepage-msg{color: #fff; font-size: 2em; margin-top: 100px !important;}
-.homepage-msg h1{ text-transform: uppercase; font-size: 2em; font-weight: bold;}
+.homepage-msg h1{ text-transform: uppercase; font-size: 1.8em; font-weight: bold;}
 .homepage-msg .btn-cta{
 	font-size: 1.3em;
 	margin-top: 20%;
@@ -410,6 +413,8 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 }
 
 @media (max-width: 767px){
+	.homepage-msg h1{font-size: 1.5em}
+
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a { color: #FFF; }
 
 	.hug-homeBody .container{height: auto;}

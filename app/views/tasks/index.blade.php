@@ -13,14 +13,22 @@
 	<div class="col-xs-12">
 		<div class="app-wrapper">
             <ul class="list-style-none">
-                @foreach ($tasks as $task)
-                    <?php $counter++; ?>
-                    <a class="list-link"href="/projects/{{ $task->project_id }}">
-                        <li>
-                            <span class="numCount">{{ $counter }}</span> {{ $task->name}} 
-                        </li>
-                    </a>
-                @endforeach
+                @if (count($tasks) == 0)
+                    <div class="alert alert-info" role="alert">
+                    <i class="fa fa-lightbulb-o"></i> 
+                        Once you start creating tasks for projects, you will see all your incompleted tasks here. 
+                    </div>
+                @else
+                   @foreach ($tasks as $task)
+                        <?php $counter++; ?>
+                        <a class="list-link"href="/projects/{{ $task->project_id }}">
+                            <li>
+                                <span class="numCount">{{ $counter }}</span> {{ $task->name}} 
+                            </li>
+                        </a>
+                    @endforeach
+                @endif
+ 
             </ul>
         </div>
 	</div>

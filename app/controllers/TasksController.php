@@ -13,7 +13,7 @@ class TasksController extends \BaseController {
 		$pTitle		=	"Tasks";
 
 		$user 		= 	User::find(Auth::id());		
-		$tasks 		= 	$user->tasks()->get();
+		$tasks 		= 	$user->tasks()->whereState("incomplete")->get();
 		$counter	=	0;
 
 		return View::make('tasks.index', compact(['tasks','counter','pTitle']));
@@ -28,10 +28,7 @@ class TasksController extends \BaseController {
 	public function create()
 	{	
 		// Rules
-		$rules	= array(
-				'name' 		=> 'required|unique:tasks', 
-				'weight' 	=> 'integer|between:1,3'
-		);
+		$rules	= array('weight' 	=> 'integer|between:1,3');
 
 		// Custom messages
 		$messages = array(		
@@ -47,8 +44,6 @@ class TasksController extends \BaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
-
 
 		// Insert the task to database
 		$task 				= new Task;

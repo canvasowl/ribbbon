@@ -45,6 +45,20 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Task','user_id');
 	}	
 
+	/**
+	 * Get the total weight of a user
+	 * @param  [int] $id [the id of the user]
+	 * @return [int]     [the total weight of all the incomplete tasks a user has]
+	 */
+	public static function weight($id = null){
+		if ($id == null) {
+			$result = DB::table('tasks')->whereUserID(Auth::id())->whereState('incomplete')->sum('weight');
+		}else{
+			$result = DB::table('tasks')->whereUserID($id)->whereState('incomplete')->sum('weight');
+		}
+
+		return $result;
+	}
 
 	/**
 	 * Get either a Gravatar URL or complete image tag for a specified email address.
