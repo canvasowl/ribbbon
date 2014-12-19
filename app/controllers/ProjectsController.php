@@ -79,11 +79,13 @@ class ProjectsController extends \BaseController {
 		$completedCount =	count($completedTasks);		
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 		$credentials   	=	$project->credentials;
+		$owner_id		=	$project->user_id;
 
 		$pTitle 		=	$project->name; 
 			
 		return  View::make('projects.show', compact(
 											[
+												'owner_id',
 												'project',
 												'tasks',
 												'completedTasks',

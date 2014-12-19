@@ -11,7 +11,9 @@
 	     <div>
 	        <h2 class="pull-left no-margin-top">{{ $project->name }} <span class="total level animated tada">{{ $total_weight }}</span></h2>                                 
 	        <ul class="list-inline pull-right">
-	            <li><a title="Go back" class="btn " href="/clients/{{ $project->client_id}}"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
+				@if($owner_id == Auth::id())
+	            	<li><a title="Go back" class="btn " href="/clients/{{ $project->client_id}}"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
+				@endif
 	        </ul>
 	        <div class="clearfix"></div>   
 	    </div>	
