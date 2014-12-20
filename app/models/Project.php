@@ -10,4 +10,9 @@ class Project extends \Eloquent {
 	public function credentials(){
 		return $this->hasMany('Credential', 'project_id');
 	}
+
+	public function users(){
+		return $this->belongsToMany('User');
+	}
+
 }
