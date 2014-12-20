@@ -175,6 +175,16 @@ img {
 .btn {
   border: none; }
 
+.btn-default {
+  background: transparent;
+  color: #74cd9e;
+  border: 1px solid #74cd9e; }
+
+.btn-default:hover {
+  background: #63b087;
+  color: #fff;
+  border: 1px solid #63b087; }
+
 .panel {
   border: none !important;
   box-shadow: none !important; }
@@ -600,6 +610,10 @@ section.info .table > tfoot > tr > td {
 .hug-about-intro h1 {
   color: #fff !important;
   opacity: 1; }
+
+#manage .circle {
+  width: 30px;
+  max-width: 100%; }
 
 .faq-container {
   padding: 50px 0; }

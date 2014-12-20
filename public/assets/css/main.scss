@@ -1,4 +1,4 @@
-// COLORS
+//--- COLORS
 $color-dark: #454545;
 $color-primary: #3F5378;
 $color-primary-accent: #294256;
@@ -17,12 +17,12 @@ $info-text-color:		#666;
 $color-info-dark:       #d4d4c0;
 $color-paper-line:		#E7C6AB;
 
-// TYPOGRAPHY
+//--- TYPOGRAPHY
 $logo-font-family: 'Pacifico', cursive;
 $main-font-famliy: 'Gotham Rounded Book', sans-serif;
 $main-title-font:  'Source Sans Pro', sans-serif;
 
-// -- MIXINS
+// --- MIXINS
 @mixin header-bar-top() {  
   border-top: 25px solid #fff;
 }
@@ -102,11 +102,12 @@ img{max-width: 100%;}
 .btn-primary{background-color: $color-primary-rival;}
 .btn-primary:hover{background-color: $color-primary-rival-hover; }
 .btn{border: none}
+.btn-default{background: transparent; color: $color-primary-rival; border: 1px solid $color-primary-rival}
+.btn-default:hover{background: $color-primary-rival-hover; color: #fff; border: 1px solid $color-primary-rival-hover}
 
 // Panels 
 .panel{border: none !important; box-shadow: none !important}
 .panel-default>.panel-heading{background-color: $color-panel-head; color: #777; border: none}
-
 .panel-body .dimmed{margin: 5px;}
 
 // Nav Tabs
@@ -114,7 +115,6 @@ img{max-width: 100%;}
 
 
 // Navigaton
-
 .navbar-default{
   background-color: $color-primary;
   border:1px solid $color-primary;
@@ -144,7 +144,7 @@ img{max-width: 100%;}
 
 .navbar-right .level{margin: 13px 0 0}
 
-// ALerts
+// Alerts
 .alert-success,
 .alert-danger{
 	border: none; 
@@ -380,6 +380,8 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .hug-about-intro p,
 .hug-about-intro h1 {color: #fff !important; opacity: 1}
 
+// PROJECTS
+#manage .circle{width: 30px; max-width: 100%}
 
 // FAQ
 .faq-container{padding: 50px 0;}
