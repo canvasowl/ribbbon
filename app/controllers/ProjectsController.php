@@ -168,7 +168,6 @@ class ProjectsController extends \BaseController {
 	{
 		$pTitle		=	"Projects";
 
-
 		$project 	= 	Project::find(Input::get("id"));
 
 		// delete everything associated with project
@@ -184,5 +183,14 @@ class ProjectsController extends \BaseController {
 		
 		return View::make('projects.index',compact(['projects','counter','pTitle']));		
 	}
+
+	/**
+	 * Invites a user to the given project.
+	 * @return Redirect
+	 */
+	public function invite($id){
+		return $id;
+	}
+
 
 }

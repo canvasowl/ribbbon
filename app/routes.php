@@ -26,6 +26,7 @@ Route::group(array('before' => 'auth'), function()
 {	
 	Route::resource('clients', 'ClientsController');
 	Route::resource('projects', 'ProjectsController');
+	Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
 	Route::resource('credentials', 'CredentialsController');
 	Route::resource('tasks', 'TasksController');
 	Route::get('hud', 'HomeController@hud');
