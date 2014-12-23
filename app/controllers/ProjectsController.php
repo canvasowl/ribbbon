@@ -189,7 +189,35 @@ class ProjectsController extends \BaseController {
 	 * @return Redirect
 	 */
 	public function invite($id){
-		return $id;
+
+		// Validation
+		$rules = ['email' => 'required|email|exists:users,email'];
+		$messages = [ 'exists' => 'That email is not currently associated with a user.',];
+
+		$validator = Validator::make(Input::all(), $rules, $messages);
+
+        if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		// Get the id of the user being sent the invite
+		$user_id = DB::table('users')->whereEmail(Input::get('email'))->pluck('id');
+
+		if(Projectuser::whereUserId($user_id)->whereProjectId($id)->get())
+		{
+			$validator->getMessageBag()->add('user', 'A user with that email has already been invited.');
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		$pu				= new Projectuser;
+		$pu->project_id	=	$id;
+		$pu->user_id	=	$user_id;
+		$pu->save();
+
+		return "Relationship has been created";
+
+
 	}
 
 
