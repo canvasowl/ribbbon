@@ -8,7 +8,7 @@
 			<div class="panel-body">
 				{{ Form::open(array('method' => 'POST', 'route' => array('projects.invite', $project->id))) }}
 					<div class="form-group">
-						{{ Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'email'))}}
+						{{ Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'email'))}}
 					</div>
 					<div class="form-group">
 						{{ Form::submit('Invite', array('class' => 'btn btn-default pull-right' )); }}
