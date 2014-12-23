@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateProjectUserTable extends Migration {
+class CreateProjectUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateProjectUserTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('project_user', function(Blueprint $table)
+		Schema::create('projectusers', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('project_id')->unsigned()->index();
@@ -31,7 +31,7 @@ class CreateProjectUserTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('project_user');
+		Schema::drop('projectusers');
 	}
 
 }
