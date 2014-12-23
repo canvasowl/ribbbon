@@ -56,7 +56,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<center><i class="fa fa-check-circle-o fa-5x"></i></center>
-			<center><h2>Take it for a spin.</h2></center>
+			<center><h2>Take it for a spin twice.</h2></center>
 			<center>
 				<p>Give Ribbbon a try today, it’s free. To get started just click on<br> the button below and start enjoying a
 				better way to manage projects.</p>
