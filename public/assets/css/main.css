@@ -621,6 +621,9 @@ section.info .table > tfoot > tr > td {
 #manage .members-list li {
   margin-left: 5px; }
 
+.form-w-label label {
+  margin-top: 15px; }
+
 .faq-container {
   padding: 50px 0; }
 

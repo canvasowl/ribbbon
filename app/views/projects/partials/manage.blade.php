@@ -1,10 +1,8 @@
-{{--<div class="alert alert-info" role="alert">Manage your project settings here</div>--}}
-
 {{--PROJECT INVITE FORM--}}
 <div class="col-xs-12 col-md-6">
 	<div class="dynamic-form">
-		<div class="panel panel-default">
-			<div class="panel-heading">Manage Project Members</div>
+		<div class="panel panel-holo">
+			<div class="panel-heading"><strong>Manage Project Members</strong></div>
 			<div class="panel-body">
 				{{ Form::open(array('method' => 'POST', 'route' => array('projects.invite', $project->id))) }}
 					<div class="form-group">
@@ -33,38 +31,31 @@
 {{-- EDIT PROJECT FORM --}}
 <div class="col-xs-12">
 	<div class="dynamic-form">
-		<div class="panel panel-default">
-		  <div class="panel-heading">Project information</div>
+		<div class="panel panel-holo">
+		  <div class="panel-heading"><strong>Project information</strong></div>
+			<hr>
 			<div class="panel-body">
-				{{ Form::model($project, array('method' => 'PATCH', 'route' => array('projects.update', $project->id))) }}
-					<div class="col-xs-12 col-md-6">
-						<div class="form-group">
-							<label>Name</label>{{ Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Name'))}}
-						</div>
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="form-group">
-							<label>Github</label>{{ Form::text('github', null, array('class' => 'form-control', 'placeholder' => 'https://github.com/canvasowl/hex'))}}
-						</div>
-					</div>
+				<div class="form-w-label">
+					{{ Form::model($project, array('method' => 'PATCH', 'route' => array('projects.update', $project->id))) }}
+						<div class="col-xs-2"><label>Name</label></div>
+						<div class="col-xs-10">{{ Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Name'))}}</div>
 
-					<div class="col-xs-12 col-md-4">
-						<label>Production</label>{{ Form::text('production', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}
-					</div>
-					<div class="col-xs-12 col-md-4">
-						<label>Staging</label>{{ Form::text('stage', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}
-					</div>
-					<div class="col-xs-12 col-md-4">
-						<label>Development</label>{{ Form::text('dev', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}
-					</div>
-					<div class="col-xs-12">
-						<br>
-						<div class="form-group">
-							{{ Form::submit('Save', array('class' => 'btn btn-default pull-right' )); }}
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				{{ Form::close() }}
+						<div class="col-xs-2"><label>Github</label></div>
+						<div class="col-xs-10">{{ Form::text('github', null, array('class' => 'form-control', 'placeholder' => 'https://github.com/canvasowl/hex'))}}</div>
+
+						<div class="col-xs-2"><label>Production</label></div>
+						<div class="col-xs-10">{{ Form::text('production', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
+
+						<div class="col-xs-2"><label>Staging</label></div>
+						<div class="col-xs-10">{{ Form::text('stage', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
+
+						<div class="col-xs-2"><label>Development</label></div>
+						<div class="col-xs-10">{{ Form::text('dev', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
+
+						<div class="col-xs-2"></div>
+						<div class="col-xs-10"><br>{{ Form::submit('Save', array('class' => 'btn btn-default pull-right' )); }}</div>
+					{{ Form::close() }}
+				</div>
 			</div>
 		</div>
 	</div>
