@@ -29,6 +29,10 @@ $main-title-font:  'Source Sans Pro', sans-serif;
 }
 
 //--- GLOBALS
+a,input{
+  transition: 0.25s !important;
+}
+
 html,body{
 	font-family: $main-font-famliy; 
 	background-color: $color-bg; 
@@ -66,7 +70,7 @@ img{max-width: 100%;}
 .row{margin-left: 0; margin-right: 0;}
 
 .form-control{ border: 2px solid #ECECEC; border-radius: 3px; height: auto; font-size: 1em; color: #777; box-shadow: none; background-color: #ECECEC}
-.form-control:focus{border-color: $color-primary-accent; outline: none; box-shadow: none;}
+.form-control:focus{border-color: #ECECEC; background-color: #fff; outline: none; box-shadow: none;}
 
 .no-margin-top{margin-top: 0;}
 .no-margin-right{margin-right: 0;}

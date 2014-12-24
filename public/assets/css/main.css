@@ -1,3 +1,6 @@
+a, input {
+  transition: 0.25s !important; }
+
 html, body {
   font-family: "Gotham Rounded Book", sans-serif;
   background-color: #edf0ee;
@@ -83,7 +86,8 @@ img {
   background-color: #ECECEC; }
 
 .form-control:focus {
-  border-color: #294256;
+  border-color: #ECECEC;
+  background-color: #fff;
   outline: none;
   box-shadow: none; }
 
