@@ -89,6 +89,8 @@ img{max-width: 100%;}
 
 // Badges
 .badge{background-color: #E4E4E4; color: $color-primary}
+.badge-weight{background-color: $color-primary-rival; color: #fff;}
+.list-group-item .badge{margin-right: 5px; margin-top: 1px;}
 
 // Pills
 .pill{padding: 5px 30px; border: 1px solid;  border-radius: 90px; color: #777; background-color: transparent; font-size: .9em}
@@ -109,6 +111,8 @@ img{max-width: 100%;}
 .btn{border: none}
 .btn-default{background: transparent; color: $color-primary-rival; border: 1px solid $color-primary-rival}
 .btn-default:hover{background: $color-primary-rival-hover; color: #fff; border: 1px solid $color-primary-rival-hover}
+.btn-trash{padding: 0; border: none; background: none; color: #aaa;}
+.btn-trash:hover{color: #D24453;}
 
 // Panels 
 .panel{border: none !important; box-shadow: none !important}

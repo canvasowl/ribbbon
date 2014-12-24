@@ -126,6 +126,14 @@ img {
   background-color: #E4E4E4;
   color: #3f5378; }
 
+.badge-weight {
+  background-color: #74cd9e;
+  color: #fff; }
+
+.list-group-item .badge {
+  margin-right: 5px;
+  margin-top: 1px; }
+
 .pill {
   padding: 5px 30px;
   border: 1px solid;
@@ -188,6 +196,15 @@ img {
   background: #63b087;
   color: #fff;
   border: 1px solid #63b087; }
+
+.btn-trash {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #aaa; }
+
+.btn-trash:hover {
+  color: #D24453; }
 
 .panel {
   border: none !important;
