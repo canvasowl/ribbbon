@@ -68,9 +68,16 @@ class ProjectsController extends \BaseController {
 	{   	
 		$project 		=	Project::find($id);
 
-		// Bust be refactored as a filter
+		// Must be refactored as a filter
 		if ( $project->user_id != Auth::id() ) {
 			return Redirect::to('/hud');
+		}
+
+		// If project has members, lets get them
+		if( Projectuser::whereProjectId($id) ){
+			$members = $project->members()->get();
+		}else{
+			$members = false;
 		}
 
 		$tasks 			=	$project->tasks()->where('state','incomplete')->orderBy("updated_at", "desc")->get();
@@ -93,6 +100,7 @@ class ProjectsController extends \BaseController {
 												'total_weight',
 												'completedCount',
 												'credentials',
+												'members',
 												'pTitle'
 											]));
 	}

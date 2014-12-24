@@ -21,11 +21,15 @@
 
 {{--PROJECT MEMBERS--}}
 <div class="col-xs-12 col-md-6">
-	<ul class="inline-list list-style-none">
+	<ul class="inline-list list-style-none members-list">
 		<li><a title="{{ Auth::user()->full_name }}" class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li>
+		@foreach($members as $member)
+			<li><img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}"></li>
+		@endforeach
 	</ul>
 </div>
 <div class="clearfix"></div>
+
 {{-- EDIT PROJECT FORM --}}
 <div class="col-xs-12">
 	<div class="dynamic-form">

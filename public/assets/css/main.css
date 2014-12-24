@@ -618,6 +618,9 @@ section.info .table > tfoot > tr > td {
   width: 30px;
   max-width: 100%; }
 
+#manage .members-list li {
+  margin-left: 5px; }
+
 .faq-container {
   padding: 50px 0; }
 
