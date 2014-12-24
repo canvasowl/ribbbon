@@ -28,7 +28,10 @@ class TasksController extends \BaseController {
 	public function create()
 	{	
 		// Rules
-		$rules	= array('weight' 	=> 'integer|between:1,3');
+		$rules	= array(
+				'weight' 	=> 'integer|between:1,3',
+				'name' => 'required'
+		);
 
 		// Custom messages
 		$messages = array(		
