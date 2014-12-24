@@ -19,13 +19,13 @@
 	</div>
 </div>
 
-{{--PROJEC MEMBERS--}}
+{{--PROJECT MEMBERS--}}
 <div class="col-xs-12 col-md-6">
 	<ul class="inline-list list-style-none">
 		<li><a title="{{ Auth::user()->full_name }}" class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li>
 	</ul>
 </div>
-
+<div class="clearfix"></div>
 {{-- EDIT PROJECT FORM --}}
 <div class="col-xs-12">
 	<div class="dynamic-form">
@@ -75,3 +75,4 @@
         <input type="submit" class="btn btn-danger" value="Delete Project" />  
     {{ Form::close() }}
 </div>
+<div class="clearfix"></div>

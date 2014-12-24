@@ -1,3 +1,4 @@
+
 //--- COLORS
 $color-dark: #454545;
 $color-primary: #3F5378;
@@ -6,7 +7,7 @@ $color-primary-rival: #74CD9E;
 $color-primary-rival-hover: #63B087;
 
 $color-panel-head: #eee;
-$color-bg: #FDFDFD;
+$color-bg: #EDF0EE;
 $color-font: #777;
 $color-weight: #5cb85c;
 $color-main-weigth: tomato;
@@ -296,12 +297,14 @@ span.total{
 .dot{width: 15px; height: 15px; border-radius: 100%; background-color: rgba(0,0,0,.1)}
 
 .app-wrapper{
-	background-color: #fff; 
-	// border: 1px solid #eee; 
+	background-color: #fff;
 	margin: 0 auto;
 	margin-top: 20px;
 	padding: 10px;
 	border-radius: 5px;
+  	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,.3);
+	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,.3);
+  	box-shadow: 0px 1px 1px rgba(0,0,0,.3);
 }
 
 .latest-wrapper{background: none; border: none; margin-top: 0}
