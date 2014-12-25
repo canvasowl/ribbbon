@@ -212,7 +212,7 @@ class ProjectsController extends \BaseController {
 		// Get the id of the user being sent the invite
 		$user_id = DB::table('users')->whereEmail(Input::get('email'))->pluck('id');
 
-		if(Projectuser::whereUserId($user_id)->whereProjectId($id)->get())
+		if( count(Projectuser::whereUserId($user_id)->whereProjectId($id)->get()) != 0 )
 		{
 			$validator->getMessageBag()->add('user', 'A user with that email has already been invited.');
 			return Redirect::back()->withErrors($validator)->withInput();

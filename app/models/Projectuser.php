@@ -3,7 +3,11 @@
 class Projectuser extends \Eloquent {
 	protected $fillable = [];
 
-	public function users(){
-		return $this->belongsToMany('User');
-	}
+	/**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'project_user';
+
 }
