@@ -1,10 +1,21 @@
 
 {{--PROJECT INVITE FORM--}}
-<div class="col-xs-12 col-md-6">
+<div class="col-xs-12 col-md-12">
 	<div class="dynamic-form">
 		<div class="panel panel-holo">
 			<div class="panel-heading"><strong>Manage Project Members</strong></div>
 			<div class="panel-body">
+
+				{{--members--}}
+				<ul class="inline-list list-style-none members-list">
+					<li><a title="{{ Auth::user()->full_name }}" class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li>
+					@foreach($members as $member)
+						<li><img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}"></li>
+					@endforeach
+				</ul>
+				<div class="clearfix"></div>
+
+				{{--invite form--}}
 				{{ Form::open(array('method' => 'POST', 'route' => array('projects.invite', $project->id))) }}
 					<div class="form-group">
 						{{ Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'email'))}}
@@ -13,6 +24,7 @@
 						{{ Form::submit('Invite', array('class' => 'btn btn-default pull-right' )); }}
 					</div>
 				{{ Form::close() }}
+
 			</div>
 		</div>
 	</div>
@@ -20,12 +32,7 @@
 
 {{--PROJECT MEMBERS--}}
 <div class="col-xs-12 col-md-6">
-	<ul class="inline-list list-style-none members-list">
-		<li><a title="{{ Auth::user()->full_name }}" class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li>
-		@foreach($members as $member)
-			<li><img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}"></li>
-		@endforeach
-	</ul>
+
 </div>
 <div class="clearfix"></div>
 
