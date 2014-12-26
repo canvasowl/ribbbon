@@ -33,7 +33,7 @@
 	<div class="row hud-margin">
 		<!-- Latest tasks -->
 		<div class="col-xs-12 col-md-6">
-			<div class="panel panel-default">
+			<div class="panel panel-default panel-latest-tasks">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Tasks <span class="dot pull-right"></span></h3>
 			  </div>
@@ -43,7 +43,7 @@
 				  	@foreach ($latestTasks as $task)
 				  		<p>
 				  			<a href="/projects/{{ $task->project_id }}">{{ $task->name }}</a> 
-				  			<span class="level pull-right">{{ $task->weight}}</span>
+				  			<span class="badge badge-weight pull-right">{{ $task->weight}}</span>
 				  			<span class="pull-right dimmed">{{ $task->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
 				  		</p>
 				  	@endforeach			  			  	
@@ -59,7 +59,7 @@
 
 		<!-- Latest projects -->
 		<div class="col-xs-12 col-md-6">
-			<div class="panel panel-default">
+			<div class="panel panel-default panel-latest-projects">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Projects <span class="dot pull-right"></span></h3>
 			  </div>

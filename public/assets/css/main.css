@@ -273,7 +273,7 @@ img {
 .navbar-collapse {
   border-top: #3f5378; }
 
-.navbar-right .level {
+.navbar-right .badge {
   margin: 13px 0 0; }
 
 .alert-success,
@@ -510,6 +510,9 @@ span.total {
   background: none;
   border: none;
   margin-top: 0; }
+
+.panel-latest-tasks .badge {
+  margin-top: 5px; }
 
 .total-weight {
   background-color: #294256; }

@@ -150,7 +150,7 @@ img{max-width: 100%;}
 .navbar-toggle{background-color: #fff;}
 .navbar-collapse{border-top: $color-primary}
 
-.navbar-right .level{margin: 13px 0 0}
+.navbar-right .badge{margin: 13px 0 0}
 
 // Alerts
 .alert-success,
@@ -314,6 +314,8 @@ span.total{
 }
 
 .latest-wrapper{background: none; border: none; margin-top: 0}
+
+.panel-latest-tasks .badge{margin-top: 5px;}
 
 .total-weight{
 	background-color: $color-primary-accent;
