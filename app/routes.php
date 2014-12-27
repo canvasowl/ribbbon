@@ -25,8 +25,13 @@ Route::group(array('before' => 'admin'), function()
 Route::group(array('before' => 'auth'), function()
 {	
 	Route::resource('clients', 'ClientsController');
-	Route::resource('projects', 'ProjectsController');
+
+	Route::resource('projects', 'ProjectsController');	
 	Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
+	Route::get('projects/{id}/credentials', array('uses' => 'ProjectsController@credentials', 'as' => 'projects.credentials' ));
+	Route::get('projects/{id}/manage', array('uses' => 'ProjectsController@edit', 'as' => 'projects.edit' ));
+
+
 	Route::resource('credentials', 'CredentialsController');
 	Route::resource('tasks', 'TasksController');
 	Route::get('hud', 'HomeController@hud');

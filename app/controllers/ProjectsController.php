@@ -15,7 +15,7 @@ class ProjectsController extends \BaseController {
 		$counter 	=	0;
 		$user 		=	User::find(Auth::id());
 		$projects 	=	$user->projects()->get();
-			
+		
 		return View::make('projects.index', compact(['projects','counter','pTitle']));
 	}
 
@@ -117,7 +117,22 @@ class ProjectsController extends \BaseController {
 		$project 	= 	Project::find($id);
 		$pTitle 	=	"Edit " . $project->name;
 
-		return View::make('projects.edit', compact(['project','pTitle']));
+		// $tasks 			=	$project->tasks()->where('state','incomplete')->orderBy("updated_at", "desc")->get();
+		// $completedTasks	=	$project->tasks()->where('state','complete')->get();
+		// $taskCount 		=	count($tasks);
+		// $completedCount =	count($completedTasks);		
+		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
+		// $credentials   	=	$project->credentials;
+		$owner_id		=	$project->user_id;
+
+		// If project has members, lets get them
+		if( Projectuser::whereProjectId($id) ){
+			$members = $project->members()->get();
+		}else{
+			$members = false;
+		}		
+
+		return View::make('projects.edit', compact(['project','pTitle','owner_id','total_weight','members']));
 	}
 
 	/**
@@ -208,12 +223,12 @@ class ProjectsController extends \BaseController {
         if ($validator->fails())
 		{
 
-		    return Response::json(array(
-		        'success' => false,
-		        'errors' => $validator->getMessageBag()->toArray()
+		    // return Response::json(array(
+		    //     'success' => false,
+		    //     'errors' => $validator->getMessageBag()->toArray()
 
-		    )); 			
-			//return Redirect::back()->withErrors($validator)->withInput();			
+		    // )); 			
+			return Redirect::back()->withErrors($validator)->withInput();			
 		}
 
 		// Get the id of the user being sent the invite
@@ -223,11 +238,11 @@ class ProjectsController extends \BaseController {
 		{	
 			$validator->getMessageBag()->add('email', 'A user with that email has already been invited.');
 		    
-		    return Response::json(array(
-		        'success' => false,
-		        'errors' => $validator->getMessageBag()->toArray()
-		    )); 									
-			// return Redirect::back()->withErrors($validator)->withInput();
+		    // return Response::json(array(
+		    //     'success' => false,
+		    //     'errors' => $validator->getMessageBag()->toArray()
+		    // )); 									
+			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
 		$pu				= new Projectuser;
@@ -235,13 +250,36 @@ class ProjectsController extends \BaseController {
 		$pu->user_id	=	$user_id;
 		$pu->save();
 
-		//return "Relationship has been created";
+		return Redirect::back();
 
-	    return Response::json(array(
-	        'success' => true,
-	        'success' => User::find($user_id)->full_name .' has been added to this project.'
-	    )); 
+	    // return Response::json(array(
+	    //     'success' => true,
+	    //     'success' => User::find($user_id)->full_name .' has been added to this project.'
+	    // )); 
 	}
 
+	public function credentials($id){
+		$project 		=	Project::find($id);
+
+		// Must be refactored as a filter
+		if ( $project->user_id != Auth::id() ) {
+			return Redirect::to('/hud');
+		}
+
+		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
+		$credentials   	=	$project->credentials;
+		$owner_id		=	$project->user_id;
+
+		$pTitle 		=	$project->name; 
+			
+		return  View::make('projects.passwords', compact(
+											[
+												'owner_id',
+												'project',
+												'total_weight',
+												'credentials',
+												'pTitle'
+											]));
+	}
 
 }

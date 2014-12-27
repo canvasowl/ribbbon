@@ -1,10 +1,8 @@
 
 {{--PROJECT INVITE FORM--}}
-<div class="dynamic-form">
-	<div class="panel panel-holo">
-		<div class="panel-heading"><strong>Manage Project Members</strong></div>
-		<div class="panel-body">
-
+<div id="manage" class="dynamic-form">
+		<div><strong>Manage Project Members</strong></div><br>
+		<div>
 			{{--members--}}
 			<ul class="inline-list list-style-none members-list">
 				<li><a title="{{ Auth::user()->full_name }}" class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li>
@@ -25,9 +23,7 @@
 				</div>
 			{{ Form::close() }}
 			</div>
-
-		</div>
-	</div>
+		</div>	
 </div>
 
 

@@ -12,7 +12,7 @@
 
       <div class="col-xs-12 col-md-8">
             <div class="app-wrapper">                                                                 
-                  @include('projects/partials/manage')              
+                  @include('projects.partials.credentials')                                               
             </div>
       </div>      
 
