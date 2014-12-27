@@ -122,6 +122,12 @@ img {
   float: left;
   margin-left: 0; }
 
+.msg .error {
+  color: #D24453; }
+
+.msg .success {
+  color: #74cd9e; }
+
 .badge {
   background-color: #E4E4E4;
   color: #3f5378; }

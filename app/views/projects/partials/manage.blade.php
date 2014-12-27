@@ -12,17 +12,19 @@
 					<li><img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}"></li>
 				@endforeach
 			</ul>
-			<div class="clearfix"></div>
-
+			<div class="clearfix"></div>			
 			{{--invite form--}}
+			<div id="project-invite-form">
 			{{ Form::open(array('method' => 'POST', 'route' => array('projects.invite', $project->id))) }}
+				<br><div class="msg"><span class="error"></span><span class="success"></span></div>
 				<div class="form-group">
 					{{ Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'email'))}}
 				</div>
 				<div class="form-group">
-					{{ Form::submit('Invite', array('class' => 'btn btn-default pull-right' )); }}
+					{{ Form::submit('Invite', array('id'=> $project->id ,'class' => 'btn btn-default pull-right' )); }}
 				</div>
 			{{ Form::close() }}
+			</div>
 
 		</div>
 	</div>

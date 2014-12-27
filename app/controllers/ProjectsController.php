@@ -198,6 +198,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function invite($id){
 
+
 		// Validation
 		$rules = ['email' => 'required|email|exists:users,email'];
 		$messages = [ 'exists' => 'That email is not currently associated with a user.',];
@@ -206,16 +207,27 @@ class ProjectsController extends \BaseController {
 
         if ($validator->fails())
 		{
-			return Redirect::back()->withErrors($validator)->withInput();
+
+		    return Response::json(array(
+		        'success' => false,
+		        'errors' => $validator->getMessageBag()->toArray()
+
+		    )); 			
+			//return Redirect::back()->withErrors($validator)->withInput();			
 		}
 
 		// Get the id of the user being sent the invite
 		$user_id = DB::table('users')->whereEmail(Input::get('email'))->pluck('id');
 
 		if( count(Projectuser::whereUserId($user_id)->whereProjectId($id)->get()) != 0 )
-		{
-			$validator->getMessageBag()->add('user', 'A user with that email has already been invited.');
-			return Redirect::back()->withErrors($validator)->withInput();
+		{	
+			$validator->getMessageBag()->add('email', 'A user with that email has already been invited.');
+		    
+		    return Response::json(array(
+		        'success' => false,
+		        'errors' => $validator->getMessageBag()->toArray()
+		    )); 									
+			// return Redirect::back()->withErrors($validator)->withInput();
 		}
 
 		$pu				= new Projectuser;
@@ -223,9 +235,12 @@ class ProjectsController extends \BaseController {
 		$pu->user_id	=	$user_id;
 		$pu->save();
 
-		return "Relationship has been created";
+		//return "Relationship has been created";
 
-
+	    return Response::json(array(
+	        'success' => true,
+	        'success' => User::find($user_id)->full_name .' has been added to this project.'
+	    )); 
 	}
 
 

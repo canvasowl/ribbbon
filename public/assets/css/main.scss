@@ -87,6 +87,9 @@ img{max-width: 100%;}
 
 .inline-list li{float: left; margin-left: 0}
 
+.msg .error{color: #D24453;}
+.msg .success{color: $color-primary-rival}
+
 // Badges
 .badge{background-color: #E4E4E4; color: $color-primary}
 .badge-weight{background-color: $color-primary-rival; color: #fff;}
