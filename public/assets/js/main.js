@@ -77,32 +77,32 @@ $('.credential-wrap .btn-delete').click(function(){
  * 
  *************************************************/
  // Project invite
-$('#project-invite-form .btn').click(function(){
-	event.preventDefault();
-	var id 		= $(this).attr('id');
-	var data 	= $('#project-invite-form form').serialize();
+// $('#project-invite-form .btn').click(function(){
+// 	event.preventDefault();
+// 	var id 		= $(this).attr('id');
+// 	var data 	= $('#project-invite-form form').serialize();
 	
-	$.ajax({
-	    url:  '/projects/'+id+'/invite',
-	    type: 'POST',
-	    data:data,
-	    dataType: 'json',
-	    success: function(data) {
-	    	// remove all errors and success messages
-	    	$('#project-invite-form .error, #project-invite-form .success').html("");
+// 	$.ajax({
+// 	    url:  '/projects/'+id+'/invite',
+// 	    type: 'POST',
+// 	    data:data,
+// 	    dataType: 'json',
+// 	    success: function(data) {
+// 	    	// remove all errors and success messages
+// 	    	$('#project-invite-form .error, #project-invite-form .success').html("");
 
-	        // error
-	        if (data.success == false) {	        	
-	        	$('#project-invite-form .error').html(data.errors.email[0])
-	        }
-	        // success
-	        else{
-	        	$('#project-invite-form .success').html(data.success)
-	        	$('.members-list').append("<li><p style='background-color:#"+colors[randomInt(0,4)]+";height:40px' class='circle'></p></li>")
-	        }
-	    }
-	  });
-})
+// 	        // error
+// 	        if (data.success == false) {	        	
+// 	        	$('#project-invite-form .error').html(data.errors.email[0])
+// 	        }
+// 	        // success
+// 	        else{
+// 	        	$('#project-invite-form .success').html(data.success)
+// 	        	$('.members-list').append("<li><p style='background-color:#"+colors[randomInt(0,4)]+";height:40px' class='circle'></p></li>")
+// 	        }
+// 	    }
+// 	  });
+// })
 
 /**
  * Delete the users account via ajax
