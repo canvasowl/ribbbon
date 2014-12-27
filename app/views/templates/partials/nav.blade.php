@@ -36,20 +36,18 @@
 
 @if ($errors->first())
 	<div class="hug">
-		<div class="alert alert-danger alert-main animated fadeInDown" role="alert">
-	  		<a href="#" class="alert-link">  			
-	  			{{ $errors->first() }}  			
-	  		</a>
+		<div class="alert alert-danger alert-main animated fadeInDown alert-dismissible" role="alert">
+			 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ $errors->first() }}</strong>
 		</div>
 	</div>
 @endif
 
 @if(Session::has('success'))
 	<div class="hug">
-		<div class="alert alert-success alert-main animated fadeInDown" role="alert">
-	  		<a href="#" class="alert-link">  			
-	  			{{ Session::get('success') }}  			
-	  		</a>
+		<div class="alert alert-success alert-main animated fadeInDown alert-dismissible" role="alert">
+ 			
+ 			<strong class="alert-link">{{ Session::get('success') }}</strong>
 		</div>		
 	</div>	
 @endif

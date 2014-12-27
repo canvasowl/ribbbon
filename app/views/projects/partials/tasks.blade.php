@@ -6,13 +6,11 @@
 	<form action="/tasks/create" method="get">
 		<div class="row">		            				
 			<div class="col-xs-9 no-padding-left">
-    			<label>Name</label>
-    			<input type="text" name="name" class="form-control" value="{{ Input::old('name') }}" autofocus>		            				
+    			<input placeholder="Name" type="text" name="name" class="form-control" value="{{ Input::old('name') }}" autofocus>		            				
 			</div>
 			<div class="col-xs-3 no-padding-right">
-				<label>Weight</label>
 				<div>
-					<input placeholder="1" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
+					<input placeholder="Weight (1-3)" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
 				</div>
 			</div>
 			<input type="hidden" name="projectId" value="{{ $project->id }}">

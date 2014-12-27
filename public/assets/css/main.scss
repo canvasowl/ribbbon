@@ -90,6 +90,8 @@ img{max-width: 100%;}
 .msg .error{color: #D24453;}
 .msg .success{color: $color-primary-rival}
 
+.alert-dismissible .close {top: 5px; right: 5%;}
+
 // Badges
 .badge{background-color: #E4E4E4; color: $color-primary}
 .badge-weight{background-color: $color-primary-rival; color: #fff;}
