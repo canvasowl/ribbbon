@@ -23,46 +23,50 @@
 				</div>
 			{{ Form::close() }}
 			</div>
-		</div>	
+		</div>
+	<div class="clearfix"></div>
 </div>
 
 
 
 {{-- EDIT PROJECT FORM --}}
-<div class="dynamic-form">
-	<div class="panel panel-holo">
-	  <div class="panel-heading"><strong>Project information</strong></div>		
-		<div class="panel-body">
+<hr>
+<div>
+	<div><strong>Project information</strong></div><br>
+	<div>
+		<div class="dynamic-form">
 			<div class="form-w-label">
 				{{ Form::model($project, array('method' => 'PATCH', 'route' => array('projects.update', $project->id))) }}
-					<div class="col-xs-2"><label>Name</label></div>
-					<div class="col-xs-10">{{ Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Name'))}}</div>
+					<div class="col-xs-2 no-padding-left"><label>Name</label></div>
+					<div class="col-xs-10 no-padding-right">{{ Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Name'))}}</div>
 
-					<div class="col-xs-2"><label>Github</label></div>
-					<div class="col-xs-10">{{ Form::text('github', null, array('class' => 'form-control', 'placeholder' => 'https://github.com/canvasowl/hex'))}}</div>
+					<div class="col-xs-2 no-padding-left"><label>Github</label></div>
+					<div class="col-xs-10 no-padding-right">{{ Form::text('github', null, array('class' => 'form-control', 'placeholder' => 'https://github.com/canvasowl/hex'))}}</div>
 
-					<div class="col-xs-2"><label>Production</label></div>
-					<div class="col-xs-10">{{ Form::text('production', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
+					<div class="col-xs-2 no-padding-left"><label>Production</label></div>
+					<div class="col-xs-10 no-padding-right">{{ Form::text('production', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
 
-					<div class="col-xs-2"><label>Staging</label></div>
-					<div class="col-xs-10">{{ Form::text('stage', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
+					<div class="col-xs-2 no-padding-left"><label>Staging</label></div>
+					<div class="col-xs-10 no-padding-right">{{ Form::text('stage', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
 
-					<div class="col-xs-2"><label>Development</label></div>
-					<div class="col-xs-10">{{ Form::text('dev', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
+					<div class="col-xs-2 no-padding-left"><label>Development</label></div>
+					<div class="col-xs-10 no-padding-right">{{ Form::text('dev', null, array('class' => 'form-control', 'placeholder' => 'http://www.example.com'))}}</div>
 
-					<div class="col-xs-2"></div>
-					<div class="col-xs-10"><br>{{ Form::submit('Save', array('class' => 'btn btn-default pull-right' )); }}</div>
+					<div class="col-xs-2 no-padding-left"></div>
+					<div class="col-xs-10 no-padding-right"><br>{{ Form::submit('Save', array('class' => 'btn btn-default pull-right' )); }}</div>
 				{{ Form::close() }}
 			</div>
 		</div>
 	</div>
+	<div class="clearfix"></div>
 </div>
 
 {{--DELETE PROJECT FORM--}}
-<div class="dynamic-form">
-	<div class="panel panel-holo">
-	  <div class="panel-heading"><strong>Delete Project</strong></div>
-		<div class="panel-body">
+<hr>
+<div>
+	<div>
+	  <div><strong>Delete Project</strong></div>
+		<div>
 		    <p class="dimmed">Deleting <i>{{ $project->name }}</i> will delete all tasks associated with this project.</p>
 		    {{ Form::open(array('action' => 'ProjectsController@destroy', 'method' => 'delete')) }}
 		        <input type="hidden" name="id" value="{{ $project->id }}">
