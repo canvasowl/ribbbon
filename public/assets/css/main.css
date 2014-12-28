@@ -286,6 +286,9 @@ img {
 .navbar-right .badge {
   margin: 13px 0 0; }
 
+.nav-stacked i {
+  color: #b4c8bb; }
+
 .alert-success,
 .alert-danger {
   border: none;

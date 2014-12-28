@@ -5,6 +5,7 @@ $color-primary: #3F5378;
 $color-primary-accent: #294256;
 $color-primary-rival: #74CD9E;
 $color-primary-rival-hover: #63B087;
+$color-icons: #B4C8BB;
 
 $color-panel-head: #eee;
 $color-bg: #EDF0EE;
@@ -156,6 +157,8 @@ img{max-width: 100%;}
 .navbar-collapse{border-top: $color-primary}
 
 .navbar-right .badge{margin: 13px 0 0}
+
+.nav-stacked i{color: $color-icons}
 
 // Alerts
 .alert-success,
