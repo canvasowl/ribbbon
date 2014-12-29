@@ -205,8 +205,6 @@ class ProjectsController extends \BaseController {
         if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
-
-			// TODO: send invite email
 		}
 
 		// Get the id of the user being sent the invite
@@ -222,6 +220,9 @@ class ProjectsController extends \BaseController {
 		$pu->project_id	=	$id;
 		$pu->user_id	=	$user_id;
 		$pu->save();
+
+		$project_url = url() . '/projects/'.$id;
+		sendProjectInviteMail(Input::get('email'), $project_url);
 
 		return Redirect::back()->with('success', "A new member has been added to this project.");;
 	}

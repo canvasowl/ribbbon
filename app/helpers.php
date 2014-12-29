@@ -38,3 +38,11 @@ function sendWelcomeMail(){
 
 /** Sends account deletion email **/
 
+/** Sends Project invite email **/
+function sendProjectInviteMail($email, $project_url){
+	$data = array('to' => $email);
+
+	Mail::send('emails.projectInvite', array('project_url' => $project_url), function($message) use ($data) {
+		$message->to($data['to'], '')->subject('You have been invited to a new project');
+	});
+}

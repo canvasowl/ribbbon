@@ -31,9 +31,9 @@
 
 {{-- EDIT PROJECT FORM --}}
 <hr>
-<div>
-	<div><strong>Project information</strong></div><br>
-	<div>
+<div class="">
+	<div class=""><strong>Project information</strong></div><br>
+	<div class="">
 		<div class="dynamic-form">
 			<div class="form-w-label">
 				{{ Form::model($project, array('method' => 'PATCH', 'route' => array('projects.update', $project->id))) }}
@@ -58,15 +58,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="clearfix"></div>
+
 </div>
 
 {{--DELETE PROJECT FORM--}}
 <hr>
-<div>
-	<div>
-	  <div><strong>Delete Project</strong></div>
-		<div>
+<div class="">
+	<div class="">
+	  <div class=""><strong>Delete Project</strong></div>
+		<div class="">
 		    <p class="dimmed">Deleting <i>{{ $project->name }}</i> will delete all tasks associated with this project.</p>
 		    {{ Form::open(array('action' => 'ProjectsController@destroy', 'method' => 'delete')) }}
 		        <input type="hidden" name="id" value="{{ $project->id }}">
