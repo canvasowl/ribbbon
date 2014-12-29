@@ -20,8 +20,7 @@ class ProjectsController extends \BaseController {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 * GET /projects/create
+	 * Create the new project
 	 *
 	 * @return Response
 	 */
@@ -73,17 +72,10 @@ class ProjectsController extends \BaseController {
 			return Redirect::to('/hud');
 		}
 
-		// If project has members, lets get them
-		if( Projectuser::whereProjectId($id) ){
-			$members = $project->members()->get();
-		}else{
-			$members = false;
-		}
-
 		$tasks 			=	$project->tasks()->where('state','incomplete')->orderBy("updated_at", "desc")->get();
 		$completedTasks	=	$project->tasks()->where('state','complete')->get();
 		$taskCount 		=	count($tasks);
-		$completedCount =	count($completedTasks);		
+		$completedCount =	count($completedTasks);
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 		$credentials   	=	$project->credentials;
 		$owner_id		=	$project->user_id;
@@ -99,8 +91,6 @@ class ProjectsController extends \BaseController {
 												'taskCount',
 												'total_weight',
 												'completedCount',
-												'credentials',
-												'members',
 												'pTitle'
 											]));
 	}
@@ -116,13 +106,7 @@ class ProjectsController extends \BaseController {
 	{
 		$project 	= 	Project::find($id);
 		$pTitle 	=	"Edit " . $project->name;
-
-		// $tasks 			=	$project->tasks()->where('state','incomplete')->orderBy("updated_at", "desc")->get();
-		// $completedTasks	=	$project->tasks()->where('state','complete')->get();
-		// $taskCount 		=	count($tasks);
-		// $completedCount =	count($completedTasks);		
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
-		// $credentials   	=	$project->credentials;
 		$owner_id		=	$project->user_id;
 
 		// If project has members, lets get them
@@ -177,7 +161,6 @@ class ProjectsController extends \BaseController {
 		$project->save();
 
 		return Redirect::back()->with('success', "The project " .Input::get('name'). " has been updated.");
-
 	}
 
 	/**
@@ -213,7 +196,6 @@ class ProjectsController extends \BaseController {
 	 */
 	public function invite($id){
 
-
 		// Validation
 		$rules = ['email' => 'required|email|exists:users,email'];
 		$messages = [ 'exists' => 'That email is not currently associated with a user.',];
@@ -222,13 +204,9 @@ class ProjectsController extends \BaseController {
 
         if ($validator->fails())
 		{
+			return Redirect::back()->withErrors($validator)->withInput();
 
-		    // return Response::json(array(
-		    //     'success' => false,
-		    //     'errors' => $validator->getMessageBag()->toArray()
-
-		    // )); 			
-			return Redirect::back()->withErrors($validator)->withInput();			
+			// TODO: send invite email
 		}
 
 		// Get the id of the user being sent the invite
@@ -237,11 +215,6 @@ class ProjectsController extends \BaseController {
 		if( count(Projectuser::whereUserId($user_id)->whereProjectId($id)->get()) != 0 )
 		{	
 			$validator->getMessageBag()->add('email', 'A user with that email has already been invited.');
-		    
-		    // return Response::json(array(
-		    //     'success' => false,
-		    //     'errors' => $validator->getMessageBag()->toArray()
-		    // )); 									
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
@@ -250,12 +223,7 @@ class ProjectsController extends \BaseController {
 		$pu->user_id	=	$user_id;
 		$pu->save();
 
-		return Redirect::back();
-
-	    // return Response::json(array(
-	    //     'success' => true,
-	    //     'success' => User::find($user_id)->full_name .' has been added to this project.'
-	    // )); 
+		return Redirect::back()->with('success', "A new member has been added to this project.");;
 	}
 
 	public function credentials($id){
