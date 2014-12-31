@@ -11,7 +11,7 @@
 						<img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}">
 						{{ Form::open(array('action' => array('ProjectsController@remove', $project->id), 'method' => 'delete' ) ) }}
 							<input type="hidden" name="member_id" value="{{ $member->id }}">
-							<button title="delete" id="{{ $member->id }}" type="submit" class="btn btn-default"><i class="fa fa-trash"></i></button>
+							<button title="remove {{ $member->full_name }}" id="{{ $member->id }}" type="submit" class="btn-trash"><i class="fa fa-trash"></i></button>
 						{{ Form::close() }}
 					</li>
 				@endforeach
