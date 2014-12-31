@@ -5,11 +5,11 @@
 @stop
 
 @section('intro')
-    You have been invite to a new project.
+    You are now a member of the project {{ $project_name }}.
 @stop
 
 @section('content')
-    You have been invited to a new a project making you a new member of this project. As a new member you can create,
+    You have been invited to {{ $project_name }} making you a new member of this project. As a new member you can create,
     delete, tasks and credentials.
     <br><br>
     <a style="text-decoration: none;background-color: #74cd9e;color: #fff;border-radius: 4px;display: inline-block;

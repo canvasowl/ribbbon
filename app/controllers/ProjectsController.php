@@ -195,7 +195,6 @@ class ProjectsController extends \BaseController {
 	 * @return Redirect
 	 */
 	public function invite($id){
-
 		// Validation
 		$rules = ['email' => 'required|email|exists:users,email'];
 		$messages = [ 'exists' => 'That email is not currently associated with a user.',];
@@ -216,13 +215,16 @@ class ProjectsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+		// Save the relationship between user and project.
 		$pu				= new Projectuser;
 		$pu->project_id	=	$id;
 		$pu->user_id	=	$user_id;
 		$pu->save();
 
-		$project_url = url() . '/projects/'.$id;
-		sendProjectInviteMail(Input::get('email'), $project_url);
+		// Prepare email invitation & send it
+		$project_name	= Project::find($id)->pluck('name');
+		$project_url 	= url() . '/projects/'.$id;
+		sendProjectInviteMail(Input::get('email'), $project_name, $project_url);
 
 		return Redirect::back()->with('success', "A new member has been added to this project.");;
 	}
