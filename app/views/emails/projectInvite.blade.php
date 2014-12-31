@@ -1,4 +1,4 @@
-@extends('emails.layouts.master')
+@extends('emails.layouts.masterNoSigniture')
 
 @section('name')
 
