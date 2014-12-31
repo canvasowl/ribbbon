@@ -179,6 +179,8 @@ class ProjectsController extends \BaseController {
 		// delete everything associated with project
 		Task::where('project_id',Input::get("id"))->delete();		
 		Credential::where('project_id',Input::get("id"))->delete();
+		$project->members()->detach();
+
 
 		// delete the project
 		$project->delete();
