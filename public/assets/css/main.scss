@@ -115,8 +115,8 @@ img{max-width: 100%;}
 .btn-primary{background-color: $color-primary-rival;}
 .btn-primary:hover{background-color: $color-primary-rival-hover; }
 .btn{border: none}
-.btn-default{background: transparent; color: $color-primary-rival; border: 1px solid $color-primary-rival}
-.btn-default:hover{background: $color-primary-rival-hover; color: #fff; border: 1px solid $color-primary-rival-hover}
+.btn-default{background: $color-primary; color: #fff; border: 1px solid $color-primary}
+.btn-default:hover{background: $color-primary-accent; color: #fff; border: 1px solid $color-primary-accent}
 .btn-trash{padding: 0; border: none; background: none; color: #aaa;}
 .btn-trash:hover{color: #D24453;}
 

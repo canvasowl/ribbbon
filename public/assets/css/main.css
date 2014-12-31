@@ -198,14 +198,14 @@ img {
   border: none; }
 
 .btn-default {
-  background: transparent;
-  color: #74cd9e;
-  border: 1px solid #74cd9e; }
+  background: #3f5378;
+  color: #fff;
+  border: 1px solid #3f5378; }
 
 .btn-default:hover {
-  background: #63b087;
+  background: #294256;
   color: #fff;
-  border: 1px solid #63b087; }
+  border: 1px solid #294256; }
 
 .btn-trash {
   padding: 0;
