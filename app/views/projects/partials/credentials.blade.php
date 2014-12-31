@@ -29,12 +29,12 @@
 <hr>
 <!-- server panel -->
 <div>
-  <div><strong>FTP & SSH Accounts</strong></div><br>
+  <div><strong>FTP & SSH Accounts</strong></div>
   <div class="ftp-panel-body">
  	<div class="row">
      	@foreach ($credentials as $credential)
      		@if ($credential->type == true)
-	     		<div class="col-xs-12 col-md-6 credential-wrap" id="credential-wrap-{{ $credential->id }}">
+	     		<div class="col-xs-12 col-md-4 credential-wrap" id="credential-wrap-{{ $credential->id }}"><br>
 					<section class="info">
 						<h4>{{ $credential->name }}</h4	>
 						<p><strong>Hostname:</strong> {{ $credential->hostname }}</p>
@@ -64,17 +64,16 @@
      	@endforeach
  	</div>					     	
   </div>	         	
-</div>
+</div><br>
 
 <!-- other panel -->
-<br>
 <div>
-  <div><strong>Other Credentials</strong></div><br>
+  <div><strong>Other Credentials</strong></div>
 	  <div class="other-panel-body">
 	 	<div class="row">
 	     	@foreach ($credentials as $credential)
 	     		@if ($credential->type == false)
-		     		<div class="col-xs-12 col-md-6 credential-wrap" id="credential-wrap-{{ $credential->id }}">
+		     		<div class="col-xs-12 col-md-4 credential-wrap" id="credential-wrap-{{ $credential->id }}"><br>
 						<section class="info">
 							<h4>{{ $credential->name }}</h4	>
 							<p><strong>Username:</strong> {{ $credential->username }}</p>
