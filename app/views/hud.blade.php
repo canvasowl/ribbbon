@@ -32,7 +32,7 @@
 
 	<div class="row hud-margin">
 		<!-- Latest tasks -->
-		<div class="col-xs-12 col-md-6">
+		<div class="col-xs-12 col-md-4">
 			<div class="panel panel-default panel-latest-tasks">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Tasks <span class="dot pull-right"></span></h3>
@@ -58,7 +58,7 @@
 		</div>
 
 		<!-- Latest projects -->
-		<div class="col-xs-12 col-md-6">
+		<div class="col-xs-12 col-md-4">
 			<div class="panel panel-default panel-latest-projects">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Projects <span class="dot pull-right"></span></h3>
@@ -79,6 +79,31 @@
 			  	@endif
 			  </div>
 			</div>			
+		</div>
+
+		<!-- In projects -->
+		<div class="col-xs-12 col-md-4">
+			<div class="panel panel-default panel-latest-projects">
+				<div class="panel-heading">
+					<h3 class="panel-title">Lates Projects Shared With Me<span class="dot pull-right"></span></h3>
+				</div>
+				<div class="panel-body">
+					@if ( count($inProjects) > 0)
+						@foreach ($inProjects as $project)
+							<p>
+								<a href="/projects/{{ $project->id }}">{{ $project->name }}</a>
+								<span class="pull-right dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
+							</p>
+						@endforeach
+					@else
+						<div class="alert alert-info" role="alert">
+							<i class="fa fa-lightbulb-o"></i>
+							No projects have been shared with you.<a href="/clients">clients</a> In order to become a
+							member of a project the project owner has to send you an invite.
+						</div>
+					@endif
+				</div>
+			</div>
 		</div>
 	</div>
 

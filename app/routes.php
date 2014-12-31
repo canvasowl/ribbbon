@@ -35,7 +35,7 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::resource('credentials', 'CredentialsController');
 	Route::resource('tasks', 'TasksController');
-	Route::get('hud', 'HomeController@hud');
+	Route::get('hud', 'HomeController@index');
 	Route::get('profile', 'UsersController@index');
 });
 
