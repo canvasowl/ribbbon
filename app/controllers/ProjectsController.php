@@ -229,6 +229,19 @@ class ProjectsController extends \BaseController {
 		return Redirect::back()->with('success', "A new member has been added to this project.");;
 	}
 
+	/**
+	 * @param int $id
+	 *
+	 * Removes a member from a given project
+	 * @return redirect
+	 */
+	public function remove($id){
+		$project = Project::find($id);
+		$project->members()->detach(Input::get('member_id'));
+
+		return Redirect::back();
+	}
+
 	public function credentials($id){
 		$project 		=	Project::find($id);
 

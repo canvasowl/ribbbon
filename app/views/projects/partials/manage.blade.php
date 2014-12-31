@@ -7,7 +7,13 @@
 			<ul class="inline-list list-style-none members-list">
 				<li><a title="{{ Auth::user()->full_name }}" class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li>
 				@foreach($members as $member)
-					<li><img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}"></li>
+					<li>
+						<img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}">
+						{{ Form::open(array('action' => array('ProjectsController@remove', $project->id), 'method' => 'delete' ) ) }}
+							<input type="hidden" name="member_id" value="{{ $member->id }}">
+							<button title="delete" id="{{ $member->id }}" type="submit" class="btn btn-default"><i class="fa fa-trash"></i></button>
+						{{ Form::close() }}
+					</li>
 				@endforeach
 			</ul>
 			<div class="clearfix"></div>			

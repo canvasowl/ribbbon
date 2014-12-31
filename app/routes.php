@@ -28,6 +28,7 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::resource('projects', 'ProjectsController');	
 	Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
+	Route::delete('projects/{id}/remove', array('uses' => 'ProjectsController@remove', 'as' => 'projects.remove') );
 	Route::get('projects/{id}/credentials', array('uses' => 'ProjectsController@credentials', 'as' => 'projects.credentials' ));
 	Route::get('projects/{id}/manage', array('uses' => 'ProjectsController@edit', 'as' => 'projects.edit' ));
 
