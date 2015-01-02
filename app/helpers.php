@@ -1,5 +1,32 @@
 <?php
 // A helpers file
+
+
+/**
+ * Checks if a given user is the owner a given
+ * project.
+ *
+ * @param $project_id
+ * @param null $user_id
+ * @return bool
+ */
+function isOwner($project_id, $user_id = null){
+
+	if($user_id == null){
+		$user_id = Auth::id();
+	}
+
+	$s = Project::whereId($project_id)->whereUserId($user_id)->get();
+
+	if(count($s) == 0){
+		return false;
+	}
+
+	return true;
+}
+
+
+
 /*******************************
 		MAIL FUNCTIONS
 ********************************/
