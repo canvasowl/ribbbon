@@ -68,7 +68,7 @@ class ProjectsController extends \BaseController {
 		$project 		=	Project::find($id);
 
 		// Must be refactored as a filter
-		if ( $project->user_id != Auth::id() ) {
+		if ( $project->isOwner() == false && $project->isMember() == false ) {
 			return Redirect::to('/hud');
 		}
 
