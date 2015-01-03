@@ -5,7 +5,8 @@
 		<div>
 			{{--members--}}
 			<ul class="inline-list list-style-none members-list">
-				<li><a title="{{ Auth::user()->full_name }}" class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li>
+				<li><a title="{{ User::find($project->user_id)->pluck('full_name') }}" class="profile-link" href="/profile">
+						<img class="circle" src="{{ User::get_gravatar(User::find($project->user_id)->pluck('email')) }}"></a></li>
 				@foreach($members as $member)
 					<li>
 						<img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}">

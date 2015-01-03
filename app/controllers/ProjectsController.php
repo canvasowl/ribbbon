@@ -105,6 +105,11 @@ class ProjectsController extends \BaseController {
 	public function edit($id)
 	{
 		$project 	= 	Project::find($id);
+
+		if($project->isOwner() == false){
+			return Redirect::to('/');
+		}
+
 		$pTitle 	=	"Edit " . $project->name;
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 		$owner_id		=	$project->user_id;
@@ -246,11 +251,6 @@ class ProjectsController extends \BaseController {
 
 	public function credentials($id){
 		$project 		=	Project::find($id);
-
-		// Must be refactored as a filter
-		if ( $project->user_id != Auth::id() ) {
-			return Redirect::to('/hud');
-		}
 
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 		$credentials   	=	$project->credentials;
