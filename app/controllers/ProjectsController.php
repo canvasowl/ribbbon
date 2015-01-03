@@ -15,8 +15,9 @@ class ProjectsController extends \BaseController {
 		$counter 	=	0;
 		$user 		=	User::find(Auth::id());
 		$projects 	=	$user->projects()->get();
+		$inProjects =  $user->inProjects()->orderBy('created_at', 'desc')->take(5)->get();
 		
-		return View::make('projects.index', compact(['projects','counter','pTitle']));
+		return View::make('projects.index', compact(['projects','inProjects','counter','pTitle']));
 	}
 
 	/**
