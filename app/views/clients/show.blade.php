@@ -58,7 +58,7 @@
                             <input type="text" name="name" class="form-control">
                             <input type="hidden" name="client_id" value="{{ $client_id }}">    
                             <div class="clearfix"></div><br>                                                                                    
-                            <input type="submit" class="btn btn-success btn-wide" value="create">    
+                            <input type="submit" class="btn btn-primary btn-wide" value="create">
                         {{ Form::close() }}
                       </div>
                     </div>                     
