@@ -98,8 +98,8 @@
 					@else
 						<div class="alert alert-info" role="alert">
 							<i class="fa fa-lightbulb-o"></i>
-							No projects have been shared with you.<a href="/clients">clients</a> In order to become a
-							member of a project the project owner has to send you an invite.
+							No projects have been shared with you. In order to become a
+							member of a project a <i><b>project owner</b></i> has to send you an invite.
 						</div>
 					@endif
 				</div>
