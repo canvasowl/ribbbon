@@ -373,6 +373,9 @@ section.info .table>tfoot>tr>td{border-top: 1px solid $color-paper-line}
 .credential-wrap .actions ul li{margin-left: 2%;}
 .credential-wrap .actions .btn{background-color: transparent; border: none;}
 
+.form-control[disabled],
+fieldset[disabled]{opacity: .2 !important;}
+
 // ABOUT PAGE
 .hug-about-intro,
 .hug-about-ui,

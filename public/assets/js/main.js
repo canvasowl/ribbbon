@@ -21,6 +21,23 @@ $('.navbar-toggle').click(function(){
 
 /*************************************************
  *
+ * CREDENTIALS INPUT DISABLED DEPENDING ON RADIO CHOICE
+ *
+ *************************************************/
+$('.dynamic-form input[type="radio"]').click(function(){
+	if( $('#other').is(':checked') ){
+		$('.dynamic-form .other').prop('disabled', true);
+	}
+
+	if( $('#ftp').is(':checked') ){
+		$('.dynamic-form .other').prop('disabled', false);
+	}
+});
+
+
+
+/*************************************************
+ *
  * PROMPT
  * 
  *************************************************/

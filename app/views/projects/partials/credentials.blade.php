@@ -3,16 +3,16 @@
 <div>
 	<div class="dynamic-form">
 		{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'get')) }}
-			<label>FTP/SSH</label> <input type="radio" name="type" value="server" checked> 
-			<label>Other</label> <input type="radio" name="type" value="other">							
+			<label>FTP/SSH</label> <input id="ftp" type="radio" name="type" value="server" checked>
+			<label>Other</label> <input id="other" type="radio" name="type" value="other">
 			<input class="form-control" type="text" name="name" placeholder="Name">
-     		<input class="form-control" type="text" name="hostname" placeholder="Hostname">
+     		<input class="form-control other" type="text" name="hostname" placeholder="Hostname">
      		<input class="form-control" type="text" name="username" placeholder="Username">
      		<input class="form-control" type="text" name="password" placeholder="Password">
      		<input type="hidden" name="project_id" value="{{ $project->id }}">
      		<br>
      		<div class="col-xs-4 no-padding-left">
-     			<input class="form-control" type="text" name="port" placeholder="Port">
+     			<input class="form-control other" type="text" name="port" placeholder="Port">
      		</div>
      		<div class="col-xs-8 no-padding-right">
          		<button type="submit" class="btn btn-default">

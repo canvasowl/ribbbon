@@ -613,6 +613,10 @@ section.info .table > tfoot > tr > td {
   background-color: transparent;
   border: none; }
 
+.form-control[disabled],
+fieldset[disabled] {
+  opacity: .2 !important; }
+
 .hug-about-intro,
 .hug-about-ui,
 .hug-about-shield,
