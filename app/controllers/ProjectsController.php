@@ -80,13 +80,7 @@ class ProjectsController extends \BaseController {
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 		$credentials   	=	$project->credentials;
 		$owner_id		=	$project->user_id;
-
-		// If project has members, lets get them
-		if( Projectuser::whereProjectId($id) ){
-			$members = $project->members()->get();
-		}else{
-			$members = false;
-		}
+		$members 		= 	$project->members()->get();
 
 		$pTitle 		=	$project->name; 
 			
@@ -119,16 +113,10 @@ class ProjectsController extends \BaseController {
 			return Redirect::to('/');
 		}
 
-		$pTitle 	=	"Edit " . $project->name;
+		$pTitle 		=	"Edit " . $project->name;
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 		$owner_id		=	$project->user_id;
-
-		// If project has members, lets get them
-		if( Projectuser::whereProjectId($id) ){
-			$members = $project->members()->get();
-		}else{
-			$members = false;
-		}		
+		$members 		= 	$project->members()->get();
 
 		return View::make('projects.edit', compact(['project','pTitle','owner_id','total_weight','members']));
 	}
@@ -264,13 +252,7 @@ class ProjectsController extends \BaseController {
 		$total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
 		$credentials   	=	$project->credentials;
 		$owner_id		=	$project->user_id;
-
-		// If project has members, lets get them
-		if( Projectuser::whereProjectId($id) ){
-			$members = $project->members()->get();
-		}else{
-			$members = false;
-		}
+		$members 		= 	$project->members()->get();
 
 		$pTitle 		=	$project->name; 
 			
