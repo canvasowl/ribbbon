@@ -18,7 +18,7 @@
 	<!-- end of col 8 -->
 
 	<div class="col-xs-12 col-md-4">
-		<div class="app-wrapper">
+		<div class="app-wrapper sidebar">
             <!-- SIDEBAR -->
 				@include('projects.partials.sidebar')	
             <!-- SIDEBAR -->

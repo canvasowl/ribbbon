@@ -81,6 +81,13 @@ class ProjectsController extends \BaseController {
 		$credentials   	=	$project->credentials;
 		$owner_id		=	$project->user_id;
 
+		// If project has members, lets get them
+		if( Projectuser::whereProjectId($id) ){
+			$members = $project->members()->get();
+		}else{
+			$members = false;
+		}
+
 		$pTitle 		=	$project->name; 
 			
 		return  View::make('projects.show', compact(
@@ -92,6 +99,7 @@ class ProjectsController extends \BaseController {
 												'taskCount',
 												'total_weight',
 												'completedCount',
+												'members',
 												'pTitle'
 											]));
 	}
@@ -257,6 +265,13 @@ class ProjectsController extends \BaseController {
 		$credentials   	=	$project->credentials;
 		$owner_id		=	$project->user_id;
 
+		// If project has members, lets get them
+		if( Projectuser::whereProjectId($id) ){
+			$members = $project->members()->get();
+		}else{
+			$members = false;
+		}
+
 		$pTitle 		=	$project->name; 
 			
 		return  View::make('projects.passwords', compact(
@@ -265,6 +280,7 @@ class ProjectsController extends \BaseController {
 												'project',
 												'total_weight',
 												'credentials',
+												'members',
 												'pTitle'
 											]));
 	}
