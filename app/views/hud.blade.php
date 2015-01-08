@@ -43,8 +43,8 @@
 				  	@foreach ($latestTasks as $task)
 				  		<p>
 				  			<a href="/projects/{{ $task->project_id }}">{{ $task->name }}</a> 
-				  			<span class="badge badge-weight pull-right">{{ $task->weight}}</span>
-				  			<span class="pull-right dimmed">{{ $task->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
+				  			<span class="badge badge-weight pull-right">{{ $task->weight}}</span><br>
+				  			<span class="dimmed">{{ $task->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
 				  		</p>
 				  	@endforeach			  			  	
 				@else
@@ -67,8 +67,8 @@
 			  	@if ( count($latestProjects) > 0)
 				  	@foreach ($latestProjects as $project)
 				  		<p>
-							<a href="/projects/{{ $project->id }}">{{ $project->name }}</a>
-				  			<span class="pull-right dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>		  			
+							<a href="/projects/{{ $project->id }}">{{ $project->name }}</a><br>
+				  			<span class="dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
 				  		</p>				  		
 				  	@endforeach			  			  	
 				@else
@@ -91,8 +91,8 @@
 					@if ( count($inProjects) > 0)
 						@foreach ($inProjects as $project)
 							<p>
-								<a href="/projects/{{ $project->id }}">{{ $project->name }}</a>
-								<span class="pull-right dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
+								<a href="/projects/{{ $project->id }}">{{ $project->name }}</a><br>
+								<span class="dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
 							</p>
 						@endforeach
 					@else
