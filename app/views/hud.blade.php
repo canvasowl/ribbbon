@@ -85,7 +85,7 @@
 		<div class="col-xs-12 col-md-4">
 			<div class="panel panel-default panel-latest-projects">
 				<div class="panel-heading">
-					<h3 class="panel-title">Lates Projects Shared With Me<span class="dot pull-right"></span></h3>
+					<h3 class="panel-title">Latest Projects Shared With Me<span class="dot pull-right"></span></h3>
 				</div>
 				<div class="panel-body">
 					@if ( count($inProjects) > 0)
