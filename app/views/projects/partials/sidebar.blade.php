@@ -1,58 +1,23 @@
-<!-- new task form -->
-<div class="panel panel-default">
-  <div class="panel-heading">Create new task</div>
-  <div class="panel-body">					    
-	<i class="dimmed">For the weight, enter a number from 1-3, the higher the number the harder the task.</i>
-	<div class="form-group">
-		<form action="/tasks/create" method="get">
-			<div class="row">		            				
-				<div class="col-xs-9 no-padding-left">
-        			<label>Name</label>
-        			<input type="text" name="name" class="form-control" value="{{ Input::old('name') }}" autofocus>		            				
-    			</div>
-    			<div class="col-xs-3 no-padding-right">
-    				<label>Weight</label>
-    				<div>
-    					<input placeholder="1" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
-    				</div>
-    			</div>
-    			<input type="hidden" name="projectId" value="{{ $project->id }}">
-    		</div>
-			<div class="form-group">
-				<br>
-				<input type="submit" class="pull-right btn btn-primary btn-wide" value="add task">	
-			</div>		            					            			
-		</form>
-	</div>
-  </div>
-</div>	         	
-<!-- new task form -->
+{{--LINKS--}}
+<ul class="nav nav-pills nav-stacked">
+  <li><a href="/projects/{{ $project->id }}"><i class="fa fa-tasks"></i> Tasks</a></li>
+  <li><a href="/projects/{{ $project->id }}/credentials"><i class="fa fa-key"></i> Credentials</a></li>
+  @if( isOwner($project->id) == true )
+    <li><a href="/projects/{{ $project->id }}/manage"><i class="fa fa-cog"></i> Manage</a></li>
+  @endif
+</ul>
+{{--LINKS--}}
 
-<!-- new credentials form -->
-<div class="dynamic-form">
-	<div class="panel panel-default">
-	  <div class="panel-heading">Create new credentials</div>
-	  	<div class="panel-body">					    
-			{{ Form::open(array('action' => 'CredentialsController@create', 'method' => 'get')) }}
-				<label>FTP/SSH</label> <input type="radio" name="type" value="server" checked> 
-				<label>Other</label> <input type="radio" name="type" value="other">							
-				<input class="form-control" type="text" name="name" placeholder="Name">
-	     		<input class="form-control" type="text" name="hostname" placeholder="Hostname">
-	     		<input class="form-control" type="text" name="username" placeholder="Username">
-	     		<input class="form-control" type="text" name="password" placeholder="Password">
-	     		<input type="hidden" name="project_id" value="{{ $project->id }}">
-	     		<br>
-	     		<div class="col-xs-4 no-padding-left">
-	     			<input class="form-control" type="text" name="port" placeholder="Port">
-	     		</div>
-	     		<div class="col-xs-8 no-padding-right">
-	         		<button type="submit" class="btn btn-default">
-		                <i class="fa fa-plus-square-o fa-lg"></i> Save
-		            </button>
-	     		</div>					         					         		
-	     		<div class="clearfix"></div>
-			{{ Form::close() }}		            			            	
-	  	</div>
-	</div>
-</div>
-<!-- new credentials form -->
+{{--MEMBERS--}}
+@if(count($members) > 0)
+  <hr>
+  <ul class="inline-list list-style-none members-list">
+    <li><img class="circle" src="{{ User::get_gravatar(User::find($project->user_id)->email) }}"></li>
+    @foreach($members as $member)
+      <li><img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}"></li>
+    @endforeach
+  </ul>
+  <div class="clearfix"></div>
+@endif
+{{--MEMBERS--}}
+

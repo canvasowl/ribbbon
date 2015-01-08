@@ -32,8 +32,8 @@
 
 	<div class="row hud-margin">
 		<!-- Latest tasks -->
-		<div class="col-xs-12 col-md-6">
-			<div class="panel panel-default">
+		<div class="col-xs-12 col-md-4">
+			<div class="panel panel-default panel-latest-tasks">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Tasks <span class="dot pull-right"></span></h3>
 			  </div>
@@ -43,7 +43,7 @@
 				  	@foreach ($latestTasks as $task)
 				  		<p>
 				  			<a href="/projects/{{ $task->project_id }}">{{ $task->name }}</a> 
-				  			<span class="level pull-right">{{ $task->weight}}</span>
+				  			<span class="badge badge-weight pull-right">{{ $task->weight}}</span>
 				  			<span class="pull-right dimmed">{{ $task->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
 				  		</p>
 				  	@endforeach			  			  	
@@ -58,8 +58,8 @@
 		</div>
 
 		<!-- Latest projects -->
-		<div class="col-xs-12 col-md-6">
-			<div class="panel panel-default">
+		<div class="col-xs-12 col-md-4">
+			<div class="panel panel-default panel-latest-projects">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">Latest Projects <span class="dot pull-right"></span></h3>
 			  </div>
@@ -79,6 +79,31 @@
 			  	@endif
 			  </div>
 			</div>			
+		</div>
+
+		<!-- In projects -->
+		<div class="col-xs-12 col-md-4">
+			<div class="panel panel-default panel-latest-projects">
+				<div class="panel-heading">
+					<h3 class="panel-title">Lates Projects Shared With Me<span class="dot pull-right"></span></h3>
+				</div>
+				<div class="panel-body">
+					@if ( count($inProjects) > 0)
+						@foreach ($inProjects as $project)
+							<p>
+								<a href="/projects/{{ $project->id }}">{{ $project->name }}</a>
+								<span class="pull-right dimmed">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
+							</p>
+						@endforeach
+					@else
+						<div class="alert alert-info" role="alert">
+							<i class="fa fa-lightbulb-o"></i>
+							No projects have been shared with you. In order to become a
+							member of a project a <i><b>project owner</b></i> has to send you an invite.
+						</div>
+					@endif
+				</div>
+			</div>
 		</div>
 	</div>
 

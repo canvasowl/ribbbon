@@ -47,7 +47,7 @@
                         <input class="form-control" type="text" name="name" placeholder="Client Name"/>                                
                     </div>
                     <div class="form-group">
-                        <input class="pull-right btn btn-success btn-wide" type="submit" value="Create Client"/>
+                        <input class="pull-right btn btn-primary btn-wide" type="submit" value="Create Client"/>
                     </div>
                 </form>                  
               </div>

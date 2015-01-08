@@ -23,7 +23,7 @@
 		            <li class="<?php echo ( Request::is('tasks') || Request::is('tasks/*') ) ? 'active' : 'false'; ?>"><a href="/tasks"><span class="glyphicon glyphicon-tasks"></span> Tasks</a></li>			        
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
-			      	<li><p class="level">{{ User::weight() }}</p></li>
+			      	<li><span class="badge badge-weight">{{ User::weight() }}</span></li>
 			      	<li><a class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li> 
 			        <li><a href="/logout">Logout <i class="fa fa-sign-out"></i></a></li>			        
 			      </ul>
@@ -36,20 +36,18 @@
 
 @if ($errors->first())
 	<div class="hug">
-		<div class="alert alert-danger alert-main animated fadeInDown" role="alert">
-	  		<a href="#" class="alert-link">  			
-	  			{{ $errors->first() }}  			
-	  		</a>
+		<div class="alert alert-danger alert-main animated fadeInDown alert-dismissible" role="alert">
+			 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ $errors->first() }}</strong>
 		</div>
 	</div>
 @endif
 
 @if(Session::has('success'))
 	<div class="hug">
-		<div class="alert alert-success alert-main animated fadeInDown" role="alert">
-	  		<a href="#" class="alert-link">  			
-	  			{{ Session::get('success') }}  			
-	  		</a>
+		<div class="alert alert-success alert-main animated fadeInDown alert-dismissible" role="alert">
+ 			
+ 			<strong class="alert-link">{{ Session::get('success') }}</strong>
 		</div>		
 	</div>	
 @endif

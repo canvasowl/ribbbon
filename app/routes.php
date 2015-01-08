@@ -25,10 +25,17 @@ Route::group(array('before' => 'admin'), function()
 Route::group(array('before' => 'auth'), function()
 {	
 	Route::resource('clients', 'ClientsController');
-	Route::resource('projects', 'ProjectsController');
+
+	Route::resource('projects', 'ProjectsController');	
+	Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
+	Route::delete('projects/{id}/remove', array('uses' => 'ProjectsController@remove', 'as' => 'projects.remove') );
+	Route::get('projects/{id}/credentials', array('uses' => 'ProjectsController@credentials', 'as' => 'projects.credentials' ));
+	Route::get('projects/{id}/manage', array('uses' => 'ProjectsController@edit', 'as' => 'projects.edit' ));
+
+
 	Route::resource('credentials', 'CredentialsController');
 	Route::resource('tasks', 'TasksController');
-	Route::get('hud', 'HomeController@hud');
+	Route::get('hud', 'HomeController@index');
 	Route::get('profile', 'UsersController@index');
 });
 
@@ -47,5 +54,10 @@ Route::group(array('before' => 'admin'), function()
 
 		return "All test emails sent";
 	});	
+
+
+	Route::get('pivot', function(){
+		return Project::find(1)->users;
+	});
 	
 });
