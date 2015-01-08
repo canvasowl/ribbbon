@@ -12,8 +12,7 @@
 @if(count($members) > 0)
   <hr>
   <ul class="inline-list list-style-none members-list">
-    <li><a title="{{ User::find($project->user_id)->full_name }}" class="profile-link" href="/profile">
-        <img class="circle" src="{{ User::get_gravatar(User::find($project->user_id)->email) }}"></a></li>
+    <li><img class="circle" src="{{ User::get_gravatar(User::find($project->user_id)->email) }}"></li>
     @foreach($members as $member)
       <li><img class="circle" title="{{ $member->full_name }}" src="{{ User::get_gravatar($member->email)  }}"></li>
     @endforeach
