@@ -73,10 +73,10 @@ img{max-width: 100%;}
 .form-control{ border: 2px solid #ECECEC; border-radius: 3px; height: auto; font-size: 1em; color: #777; box-shadow: none; background-color: #ECECEC}
 .form-control:focus{border-color: #ECECEC; background-color: #fff; outline: none; box-shadow: none;}
 
-.no-margin-top{margin-top: 0;}
-.no-margin-right{margin-right: 0;}
-.no-margin-bottom{margin-bottom: 0;}
-.no-margin-left{margin-left: 0;}
+.no-margin-top{margin-top: 0 !important;}
+.no-margin-right{margin-right: 0 !important;}
+.no-margin-bottom{margin-bottom: 0 !important;}
+.no-margin-left{margin-left: 0 !important;}
 
 .margin-top{margin-top: 20px;}
 
