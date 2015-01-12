@@ -40,6 +40,10 @@ Route::group(array('before' => 'auth'), function()
 });
 
 
+//----------------- API routes
+Route::get('/api/tasks/{key}/{id}', 'ApiController@tasks');
+
+
 //-----------------
 //-----------------
 //-----------------
