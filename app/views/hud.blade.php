@@ -69,12 +69,10 @@
 
 	<div class="col-xs-12 col-md-4">
 		<div class="app-wrapper sidebar">
-			<ul class="nav nav-pills nav-stacked">
-			  <li><a href="/clients"><i class="fa fa-tasks"></i> Clients</a></li>
-			  <li><a href="/projects"><i class="fa fa-key"></i> Projects</a></li>
-			  <li><a href="/tasks"><i class="fa fa-key"></i> Tasks</a></li>
-			  <li><a href="/profile"><i class="fa fa-key"></i> My Profile</a></li>
-			</ul>
+			<center><p class="dimmed">Tasks</p></center>
+			<div id="canvas-holder">
+				<canvas id="chart-area" width="200" height="200"/>
+			</div>			
 		</div>
 	</div>
 
@@ -82,3 +80,29 @@
 
 
 @stop()
+
+<script>
+
+		var doughnutData = [
+				{
+					value: 300,
+					color:"#e46957",
+					highlight: "#FF5A5E",
+					label: "Incomplete Tasks"
+				},
+				{
+					value: 50,
+					color: "#40F4C4",
+					highlight: "#5AD3D1",
+					label: "Completed Tasks"
+				}
+			];
+
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+			};
+
+
+
+	</script>
