@@ -14,5 +14,8 @@ class ApiController extends \BaseController {
 		if ($key != 0000000000) {
 			return "Api key is incorrect";		
 		}		
+		$user = User::find($id);
+		
+		return $user->tasks;
 	}
 }
