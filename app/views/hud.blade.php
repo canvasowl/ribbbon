@@ -17,7 +17,7 @@
 			  		<p>
 			  			<a href="/projects/{{ $task->project_id }}">{{ $task->name }}</a> 
 			  			<span class="badge badge-weight pull-right">{{ $task->weight}}</span><br>
-			  			<span class="dimmed no-margin-left">{{ $task->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
+			  			<span class="dimmed no-margin-left pull">{{ $task->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
 			  		</p>
 			  	@endforeach			  			  	
 			@else
@@ -72,7 +72,12 @@
 			<center><p class="dimmed">Tasks</p></center>
 			<div id="canvas-holder">
 				<canvas id="chart-area" width="200" height="200"/>
-			</div>			
+			</div>	
+
+			<div class="legend">
+				<p><span class="complete"></span> complete</p>
+				<p><span class="incomplete"></span> incomplete</p>
+			</div>		
 		</div>
 	</div>
 
@@ -86,14 +91,14 @@
 		var doughnutData = [
 				{
 					value: 300,
-					color:"#e46957",
-					highlight: "#FF5A5E",
+					color:"#B75DB6",
+					highlight: "#944B94",
 					label: "Incomplete Tasks"
 				},
 				{
 					value: 50,
 					color: "#40F4C4",
-					highlight: "#5AD3D1",
+					highlight: "#18FFC6",
 					label: "Completed Tasks"
 				}
 			];

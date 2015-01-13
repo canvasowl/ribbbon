@@ -41,6 +41,7 @@ Route::group(array('before' => 'auth'), function()
 
 
 //----------------- API routes
+Route::get('/api/{key}/authId', 'ApiController@authId');
 Route::get('/api/{key}/{id}/tasks', 'ApiController@tasks');
 Route::get('/api/{key}/{id}/tasks/incomplete', 'ApiController@incompleteTasks');
 

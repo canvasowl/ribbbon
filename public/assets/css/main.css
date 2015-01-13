@@ -479,6 +479,18 @@ span.total {
 .hud-margin {
   margin-top: 50px; }
 
+.legend span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 4px; }
+
+.legend span.complete {
+  background-color: #40F4C4; }
+
+.legend span.incomplete {
+  background-color: #B75DB6; }
+
 .card {
   background-color: #edf0ee;
   border-radius: 4px;
