@@ -85,29 +85,3 @@
 
 
 @stop()
-
-<script>
-
-		var doughnutData = [
-				{
-					value: 300,
-					color:"#B75DB6",
-					highlight: "#944B94",
-					label: "Incomplete Tasks"
-				},
-				{
-					value: 50,
-					color: "#40F4C4",
-					highlight: "#18FFC6",
-					label: "Completed Tasks"
-				}
-			];
-
-			window.onload = function(){
-				var ctx = document.getElementById("chart-area").getContext("2d");
-				window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
-			};
-
-
-
-	</script>
