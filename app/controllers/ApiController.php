@@ -52,5 +52,21 @@ class ApiController extends \BaseController {
 		return 	$user->tasks()->whereState('incomplete')->get();	
 	}
 
+	/**
+	 * Get all complete tasks for a given user
+	 * @param  [int] $key  [the api key]
+	 * @param  [int] $id   [the user id]
+	 * @return [type]      [complete tasks] 
+	 */
+	public function complete($key, $id){
+		// Validate the api key
+		if ($key != 0000000000) {
+			return "Api key is incorrect";		
+		}		
+		
+		$user = User::find($id);
+
+		return 	$user->tasks()->whereState('complete')->get();		
+	}
 	
 }
