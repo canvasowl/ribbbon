@@ -1,44 +1,80 @@
-$.ajax({
-    url:  '/projects/'+id+'/invite',
-    type: 'GET',
-    data:data,
-    dataType: 'json',
-    success: function(data) {
-    	// remove all errors and success messages
-    	$('#project-invite-form .error, #project-invite-form .success').html("");
+var userId;
+var incompleteCount;
+var completedCount;
 
-        // error
-        if (data.success == false) {	        	
-        	$('#project-invite-form .error').html(data.errors.email[0])
-        }
-        // success
-        else{
-        	$('#project-invite-form .success').html(data.success)
-        	$('.members-list').append("<li><p style='background-color:#"+colors[randomInt(0,4)]+";height:40px' class='circle'></p></li>")
-        }
-    }
+/**** AUTH ID */
+function getAuthId(){
+	return $.ajax({
+		    url:  '/api/0000000000/authId',
+		    type: 'GET',
+		    dataType: 'json',
+		});
+}
+
+
+
+// Handle the getAutId data
+function handleAuthIdData(data /* , textStatus, jqXHR */ ) {
+    userId = data;
+}
+
+// Handle the incompleteCount
+function handleIncompleteCount(data /* , textStatus, jqXHR */ ) {
+    incompleteCount = data.length;
+}
+
+// Handle the completeCount
+function handleCompleteCount(data /* , textStatus, jqXHR */ ) {
+    completeCount = data.length;
+}
+
+getAuthId().done(handleAuthIdData).done(function(){
+	
+	/**** Incomplete Count */
+	function getIncompleteCount(){
+		return $.ajax({
+			    url:  '/api/0000000000/'+ userId +'/tasks/incomplete',
+			    type: 'GET',
+			    dataType: 'json',
+			});
+	}
+	
+	getIncompleteCount().done(handleIncompleteCount).done(function(){
+
+			/**** Incomplete Count */
+			function getCompleteCount(){
+				return $.ajax({
+					    url:  '/api/0000000000/'+ userId +'/tasks/complete',
+					    type: 'GET',
+					    dataType: 'json',
+					});
+			}
+
+			getCompleteCount().done(handleCompleteCount).done(function(){
+
+				// Now that we have completed counts and 
+				// incomplete count numbers
+				// lets create the doughnut chart.
+
+				// Set the informatio for the graph
+				var doughnutData = [
+						{
+							value: incompleteCount,
+							color:"#B75DB6",
+							highlight: "#944B94",
+							label: "Incomplete Tasks"
+						},
+						{
+							value: completeCount,
+							color: "#40F4C4",
+							highlight: "#18FFC6",
+							label: "Completed Tasks"
+						}
+					];
+
+					// Create the graph
+					var ctx = document.getElementById("chart-area").getContext("2d");
+					window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});					
+			});
+	})
 });
-
-
-
-var doughnutData = [
-		{
-			value: 300,
-			color:"#B75DB6",
-			highlight: "#944B94",
-			label: "Incomplete Tasks"
-		},
-		{
-			value: 50,
-			color: "#40F4C4",
-			highlight: "#18FFC6",
-			label: "Completed Tasks"
-		}
-	];
-
-	window.onload = function(){
-		var ctx = document.getElementById("chart-area").getContext("2d");
-		window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
-	};
-
-
