@@ -1,6 +1,9 @@
+a, input {
+  transition: 0.25s !important; }
+
 html, body {
   font-family: "Gotham Rounded Book", sans-serif;
-  background-color: #fdfdfd;
+  background-color: #edf0ee;
   font-size: 16px;
   color: #777777; }
 
@@ -83,21 +86,22 @@ img {
   background-color: #ECECEC; }
 
 .form-control:focus {
-  border-color: #294256;
+  border-color: #ECECEC;
+  background-color: #fff;
   outline: none;
   box-shadow: none; }
 
 .no-margin-top {
-  margin-top: 0; }
+  margin-top: 0 !important; }
 
 .no-margin-right {
-  margin-right: 0; }
+  margin-right: 0 !important; }
 
 .no-margin-bottom {
-  margin-bottom: 0; }
+  margin-bottom: 0 !important; }
 
 .no-margin-left {
-  margin-left: 0; }
+  margin-left: 0 !important; }
 
 .margin-top {
   margin-top: 20px; }
@@ -118,9 +122,27 @@ img {
   float: left;
   margin-left: 0; }
 
+.msg .error {
+  color: #D24453; }
+
+.msg .success {
+  color: #74cd9e; }
+
+.alert-dismissible .close {
+  top: 5px;
+  right: 5%; }
+
 .badge {
   background-color: #E4E4E4;
   color: #3f5378; }
+
+.badge-weight {
+  background-color: #74cd9e;
+  color: #fff; }
+
+.list-group-item .badge {
+  margin-right: 5px;
+  margin-top: 1px; }
 
 .pill {
   padding: 5px 30px;
@@ -174,6 +196,25 @@ img {
 
 .btn {
   border: none; }
+
+.btn-default {
+  background: #3f5378;
+  color: #fff;
+  border: 1px solid #3f5378; }
+
+.btn-default:hover {
+  background: #294256;
+  color: #fff;
+  border: 1px solid #294256; }
+
+.btn-trash {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #aaa; }
+
+.btn-trash:hover {
+  color: #D24453; }
 
 .panel {
   border: none !important;
@@ -242,8 +283,11 @@ img {
 .navbar-collapse {
   border-top: #3f5378; }
 
-.navbar-right .level {
+.navbar-right .badge {
   margin: 13px 0 0; }
+
+.nav-stacked i {
+  color: #b4c8bb; }
 
 .alert-success,
 .alert-danger {
@@ -404,16 +448,20 @@ span.total {
 
 .homepage-msg h1 {
   text-transform: uppercase;
-  font-size: 1.8em;
-  font-weight: bold; }
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 5px; }
 
 .homepage-msg .btn-cta {
   font-size: 1.3em;
-  margin-top: 20%;
   -webkit-box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2);
+  width: 420px;
+  max-width: 100%; }
 
 .athenticate-form-wrap {
   width: 400px;
@@ -435,8 +483,20 @@ span.total {
 .hud-margin {
   margin-top: 50px; }
 
+.legend span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 4px; }
+
+.legend span.complete {
+  background-color: #40F4C4; }
+
+.legend span.incomplete {
+  background-color: #B75DB6; }
+
 .card {
-  background-color: #fdfdfd;
+  background-color: #edf0ee;
   border-radius: 4px;
   padding: 20px 0;
   display: block;
@@ -470,12 +530,18 @@ span.total {
   margin: 0 auto;
   margin-top: 20px;
   padding: 10px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3); }
 
 .latest-wrapper {
   background: none;
   border: none;
   margin-top: 0; }
+
+.panel-latest-tasks .badge {
+  margin-top: 5px; }
 
 .total-weight {
   background-color: #294256; }
@@ -547,7 +613,7 @@ section.info .table > tfoot > tr > td {
   max-height: 45px; }
 
 .credential-wrap .actions {
-  background-color: #fdfdfd;
+  background-color: #E2DDCD;
   padding: 5px; }
 
 .credential-wrap .actions i.fa-trash {
@@ -562,6 +628,10 @@ section.info .table > tfoot > tr > td {
 .credential-wrap .actions .btn {
   background-color: transparent;
   border: none; }
+
+.form-control[disabled],
+fieldset[disabled] {
+  opacity: .2 !important; }
 
 .hug-about-intro,
 .hug-about-ui,
@@ -600,6 +670,21 @@ section.info .table > tfoot > tr > td {
 .hug-about-intro h1 {
   color: #fff !important;
   opacity: 1; }
+
+#manage .circle {
+  width: 40px;
+  max-width: 100%; }
+
+#manage .members-list li {
+  margin-left: 5px; }
+
+.form-w-label label {
+  margin-top: 15px; }
+
+.sidebar .circle {
+  width: 40px;
+  max-width: 100%;
+  margin-right: 5px; }
 
 .faq-container {
   padding: 50px 0; }

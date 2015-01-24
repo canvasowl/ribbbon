@@ -43,7 +43,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	public function tasks(){
 		return $this->hasMany('Task','user_id');
-	}	
+	}
+
+	public function inProjects(){
+		return $this->belongsToMany('Project');
+	}
 
 	/**
 	 * Get the total weight of a user
@@ -56,7 +60,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		}else{
 			$result = DB::table('tasks')->whereUserID($id)->whereState('incomplete')->sum('weight');
 		}
-
 		return $result;
 	}
 

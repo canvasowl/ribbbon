@@ -4,19 +4,21 @@
 @section('content')
 
 <div class="row main-row">
-	<div class="col-xs-12">
-		<div class="app-wrapper app-wrapper-wide">        
-            
-             <div>
-                <h2 class="pull-left no-margin-top">{{ $client->name }}</h2>                                   
-                <ul class="list-inline pull-right">
-                    <li><a title="Go back" class="btn " href="/clients"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
-                    <li><a title="Edit client" class="btn " href="/clients/{{ $client->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
-                </ul>
-                <div class="clearfix"></div>   
-                <hr>                 
-            </div>
 
+    <div class="col-xs-12">
+         <div>
+            <h2 class="pull-left no-margin-top">{{ $client->name }}</h2>                                   
+            <ul class="list-inline pull-right">
+                <li><a title="Go back" class="btn " href="/clients"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
+                <li><a title="Edit client" class="btn " href="/clients/{{ $client->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
+            </ul>
+            <div class="clearfix"></div>   
+            <hr>                 
+        </div>
+    </div>
+
+	<div class="col-xs-12">
+		<div class="app-wrapper app-wrapper-wide">                
             <div class="row">
                 <div class="col-xs-12 col-sm-8 no-padding-left">
                     <section class="info">
@@ -56,7 +58,7 @@
                             <input type="text" name="name" class="form-control">
                             <input type="hidden" name="client_id" value="{{ $client_id }}">    
                             <div class="clearfix"></div><br>                                                                                    
-                            <input type="submit" class="btn btn-success btn-wide" value="create">    
+                            <input type="submit" class="btn btn-primary btn-wide" value="create">
                         {{ Form::close() }}
                       </div>
                     </div>                     

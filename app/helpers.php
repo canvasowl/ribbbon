@@ -1,5 +1,32 @@
 <?php
 // A helpers file
+
+
+/**
+ * Checks if a given user is the owner a given
+ * project.
+ *
+ * @param $project_id
+ * @param null $user_id
+ * @return bool
+ */
+function isOwner($project_id, $user_id = null){
+
+	if($user_id == null){
+		$user_id = Auth::id();
+	}
+
+	$s = Project::whereId($project_id)->whereUserId($user_id)->get();
+
+	if(count($s) == 0){
+		return false;
+	}
+
+	return true;
+}
+
+
+
 /*******************************
 		MAIL FUNCTIONS
 ********************************/
@@ -38,3 +65,11 @@ function sendWelcomeMail(){
 
 /** Sends account deletion email **/
 
+/** Sends Project invite email **/
+function sendProjectInviteMail($email,$project_name, $project_url){
+	$data = array('to' => $email);
+
+	Mail::send('emails.projectInvite', array('project_url' => $project_url, 'project_name' => $project_name), function($message) use ($data) {
+		$message->to($data['to'], '')->subject('You have been invited to a new project');
+	});
+}

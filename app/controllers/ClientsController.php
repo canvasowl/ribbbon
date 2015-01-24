@@ -166,6 +166,7 @@ class ClientsController extends \BaseController {
 		foreach ($client->projects as $p) {
 					Task::where('project_id', $p->id)->delete();
 					Credential::where('project_id', $p->id)->delete();
+					$p->members()->detach();
 				}		
 		
 		// delete related projects

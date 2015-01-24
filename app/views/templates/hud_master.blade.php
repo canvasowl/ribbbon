@@ -4,7 +4,7 @@
 
 <div class="hug hug-homeBody">
 	<div class="container app-container">
-		@yield('content')
+		@yield('content')		
 	</div>	
 </div>
 
