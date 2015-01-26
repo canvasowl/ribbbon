@@ -297,7 +297,7 @@ span.total{
 // INNER PAGES SHARED
 .main-row{margin-top: 100px}
 
-.hug-hudHeader{background-color: $color-primary; position: fixed; z-index: 1;}
+.hug-hudHeader{background-color: $color-primary; position: fixed; z-index: 1; box-shadow: 0 3px 3px rgba(0,0,0,.4) }
 .hug-hudHeader .row{margin-left: 0; margin-right: 0;}
 
 .hud-margin{margin-top: 50px; }

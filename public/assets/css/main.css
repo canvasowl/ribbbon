@@ -474,7 +474,8 @@ span.total {
 .hug-hudHeader {
   background-color: #3f5378;
   position: fixed;
-  z-index: 1; }
+  z-index: 1;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4); }
 
 .hug-hudHeader .row {
   margin-left: 0;
