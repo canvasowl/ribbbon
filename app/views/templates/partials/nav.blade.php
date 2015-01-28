@@ -23,6 +23,13 @@
 		            <li class="<?php echo ( Request::is('tasks') || Request::is('tasks/*') ) ? 'active' : 'false'; ?>"><a href="/tasks"><span class="glyphicon glyphicon-tasks"></span> Tasks</a></li>			        
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
+			      	<li>
+						{{ Form::open(array('action' => 'UsersController@login')) }}
+							<div class="form-group">
+								{{ Form::text( 'search', null, array('class' => 'form-control search-bar', "placeholder" => "project, task, etc.","autofocus" => "true" )) }}	
+							</div>	    			
+						{{ Form::close() }}			      					      		
+			      	</li>
 			      	<li><span class="badge badge-weight">{{ User::weight() }}</span></li>
 			      	<li><a class="profile-link" href="/profile"><img class="circle" src="{{ User::get_gravatar(Auth::user()->email) }}"></a></li> 
 			        <li><a href="/logout">Logout <i class="fa fa-sign-out"></i></a></li>			        
