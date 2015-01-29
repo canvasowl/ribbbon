@@ -277,6 +277,14 @@ img {
   height: 40px;
   border: 2px solid rgba(255, 255, 255, 0.3); }
 
+.navbar-nav .form-group {
+  width: 320px;
+  max-width: 320px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  position: relative;
+  top: 5px; }
+
 .navbar-toggle {
   background-color: #fff; }
 

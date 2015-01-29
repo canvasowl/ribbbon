@@ -153,6 +153,15 @@ img{max-width: 100%;}
 	border: 2px solid rgba(255,255,255,.3);	
 }
 
+.navbar-nav .form-group{
+	width: 320px;
+	max-width: 320px;
+	margin-right: 10px;
+	margin-bottom: 0;	
+	position: relative;
+	top: 5px;	
+}
+
 .navbar-toggle{background-color: #fff;}
 .navbar-collapse{border-top: $color-primary}
 
