@@ -162,6 +162,14 @@ img{max-width: 100%;}
 	top: 5px;	
 }
 
+.navbar-nav .search-bar:focus{
+	-webkit-transition-duration: .1s;
+	-moz-transition-duration: .1s;
+	transition-duration: .1s;
+	border-color: #fff;
+	box-shadow: 0 0 10px rgba(250,250,250,.5);
+}
+
 .navbar-toggle{background-color: #fff;}
 .navbar-collapse{border-top: $color-primary}
 

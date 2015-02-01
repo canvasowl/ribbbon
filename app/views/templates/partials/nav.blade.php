@@ -24,9 +24,9 @@
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 			      	<li>
-						{{ Form::open(array('action' => 'UsersController@login')) }}
+						{{ Form::open(array('action' => 'HomeController@search','method' => 'get')) }}
 							<div class="form-group">
-								{{ Form::text( 'search', null, array('class' => 'form-control search-bar', "placeholder" => "project, task, etc.","autofocus" => "true" )) }}	
+								{{ Form::text( 'q', null, array('class' => 'form-control search-bar', "placeholder" => "search" )) }}	
 							</div>	    			
 						{{ Form::close() }}			      					      		
 			      	</li>
