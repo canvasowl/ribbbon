@@ -26,13 +26,13 @@ class HomeController extends BaseController {
 	 * @return  array of objects with the search results.
 	 */
 	public function search(){
+
 		$q = Input::get("q");
-
 		$clients = Client::where('name', 'like', '%'.$q.'%')->get();		
-		$peojects = Project::where('name', 'like', '%'.$q.'%')->get();		
+		$projects = Project::where('name', 'like', '%'.$q.'%')->get();		
 		$tasks = Task::where('name', 'like', '%'.$q.'%')->get();		
+		$pTitle = "Search Results";
 
-
-		
+		return View::make('search', compact('q','clients','projects','tasks','pTitle'));
 	}
 }
