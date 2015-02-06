@@ -28,6 +28,12 @@ class HomeController extends BaseController {
 	public function search(){
 
 		$q = Input::get("q");
+
+        // redirect user back if nothing was typed
+        if ( empty(trim($q)) ){
+            return Redirect::back();
+        }
+
 		$clients = Client::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
 		$projects = Project::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
 		$tasks = Task::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
