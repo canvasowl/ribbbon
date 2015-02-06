@@ -6,6 +6,7 @@ $color-primary-accent: #294256;
 $color-primary-rival: #74CD9E;
 $color-primary-rival-hover: #63B087;
 $color-icons: #B4C8BB;
+$color-text-link: #4A77CE;
 
 $color-panel-head: #eee;
 $color-bg: #EDF0EE;
@@ -46,7 +47,7 @@ h3{font-size: 1.4em;}
 h2{font-size: 1.5em;}
 h1{font-size: 1.6em;}
 h1,h2,h3,h4,h5,h6{font-family: $main-title-font;}
-a{color: $color-primary-accent}
+a{color: $color-text-link}
 a:hover{color: $color-primary; text-decoration: none}
 a:focus,a:active{color: $color-primary-accent; outline: none !important}
 input:active,
@@ -151,6 +152,23 @@ img{max-width: 100%;}
 	width: 40px;
 	height: 40px;
 	border: 2px solid rgba(255,255,255,.3);	
+}
+
+.navbar-nav .form-group{
+	width: 320px;
+	max-width: 320px;
+	margin-right: 10px;
+	margin-bottom: 0;	
+	position: relative;
+	top: 5px;	
+}
+
+.navbar-nav .search-bar:focus{
+	-webkit-transition-duration: .1s;
+	-moz-transition-duration: .1s;
+	transition-duration: .1s;
+	border-color: #fff;
+	box-shadow: 0 0 10px rgba(250,250,250,.5);
 }
 
 .navbar-toggle{background-color: #fff;}

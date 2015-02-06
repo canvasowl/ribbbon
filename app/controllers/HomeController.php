@@ -3,8 +3,7 @@
 class HomeController extends BaseController {
 
 	// Depending if the user is signed in or not, return the home page 
-	public function index()
-	{
+	public function index(){
 		if( Auth::check() ) {
 			$pTitle			=	"Hud";
 
@@ -22,4 +21,24 @@ class HomeController extends BaseController {
 		}
 	}
 
+	/**
+	 * Run a general search.
+	 * @return  array of objects with the search results.
+	 */
+	public function search(){
+
+		$q = Input::get("q");
+
+        // redirect user back if nothing was typed
+        if ( empty(trim($q)) ){
+            return Redirect::back();
+        }
+
+		$clients = Client::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
+		$projects = Project::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
+		$tasks = Task::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
+		$pTitle = "Search Results";
+
+		return View::make('search', compact('q','clients','projects','tasks','pTitle'));
+	}
 }
