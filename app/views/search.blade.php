@@ -11,32 +11,44 @@
 
 		<!-- Clients -->
 		<div class="app-wrapper">                   				  	
-			<h4>Client results</h4>
-			<ol>
-				@foreach ($clients as $client)
-					<li><a href="/clients/{{ $client->id }}">{{ $client->name }}</a></li>
-				@endforeach
-			</ol>				
+			<h4>Client results</h4>			
+				@if (count($clients) > 0 )
+					<ol>
+						@foreach ($clients as $client)
+							<li><a href="/clients/{{ $client->id }}">{{ $client->name }}</a></li>
+						@endforeach
+					</ol>
+				@else
+					<p class="dimmed">Sorry I couldn't find nothing....</p>
+				@endif		
 		</div>
 
 		<!-- Projects -->
 		<div class="app-wrapper">                   				  	
-			<h4>Project results</h4>		
-			<ol>
-				@foreach ($projects as $project)
-					<li><a href="/projects/{{ $project->id }}">{{ $project->name }}</a></li>
-				@endforeach
-			</ol>	
+			<h4>Project results</h4>
+			@if (count($projects) > 0)
+                <ol>
+                    @foreach ($projects as $project)
+                        <li><a href="/projects/{{ $project->id }}">{{ $project->name }}</a></li>
+                    @endforeach
+                </ol>
+            @else
+                <p class="dimmed">Sorry I couldn't find nothing....</p>
+            @endif
 		</div>
 
 		<!-- Tasks -->
 		<div class="app-wrapper">                   				  	
-			<h4>Task results</h4>		
-			<ol>
-				@foreach ($tasks as $task)
-					<li><a href="">{{ $task->name }}</a></li>
-				@endforeach
-			</ol>				
+			<h4>Task results</h4>
+		    @if( count($tasks) >0 )
+                <ol>
+                    @foreach ($tasks as $task)
+                        <li><a href="">{{ $task->name }}</a></li>
+                    @endforeach
+                </ol>
+		    @else
+		        <p class="dimmed">Sorry I couldn't find nothing....</p>
+		    @endif
 		</div>				
 
 	</div>
