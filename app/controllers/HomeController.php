@@ -28,9 +28,9 @@ class HomeController extends BaseController {
 	public function search(){
 
 		$q = Input::get("q");
-		$clients = Client::where('name', 'like', '%'.$q.'%')->get();		
-		$projects = Project::where('name', 'like', '%'.$q.'%')->get();		
-		$tasks = Task::where('name', 'like', '%'.$q.'%')->get();		
+		$clients = Client::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
+		$projects = Project::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
+		$tasks = Task::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
 		$pTitle = "Search Results";
 
 		return View::make('search', compact('q','clients','projects','tasks','pTitle'));
