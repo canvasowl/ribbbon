@@ -1,8 +1,7 @@
 var current_url = window.location.pathname;
-
 var userId;
 var incompleteCount;
-var completedCount;
+var completeCount;
 
 if (current_url == "/hud" || current_url == "/") {
 
@@ -15,7 +14,7 @@ if (current_url == "/hud" || current_url == "/") {
 				});
 		}
 
-		// Handle the getAutId data
+		// Handle the getAuthId data
 		function handleAuthIdData(data /* , textStatus, jqXHR */ ) {
 		    userId = data;
 		}
@@ -25,7 +24,7 @@ if (current_url == "/hud" || current_url == "/") {
 		    incompleteCount = data.length;
 		}
 
-		// Handle the completeCount
+		// Handle the completedCount
 		function handleCompleteCount(data /* , textStatus, jqXHR */ ) {
 		    completeCount = data.length;
 		}
@@ -43,7 +42,7 @@ if (current_url == "/hud" || current_url == "/") {
 			
 			getIncompleteCount().done(handleIncompleteCount).done(function(){
 
-					/**** Incomplete Count */
+					/**** Complete Count */
 					function getCompleteCount(){
 						return $.ajax({
 							    url:  '/api/0000000000/'+ userId +'/tasks/complete',
