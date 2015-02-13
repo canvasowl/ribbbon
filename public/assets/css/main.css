@@ -4,7 +4,7 @@ a, input {
 html, body {
   font-family: "Gotham Rounded Book", sans-serif;
   background-color: #edf0ee;
-  font-size: 16px;
+  font-size: 14px;
   color: #777777; }
 
 p, a {
@@ -238,8 +238,7 @@ img {
 
 .navbar-default a,
 .navbar-default .navbar-nav > li > a {
-  color: #ccc;
-  font-size: .8em; }
+  color: #ccc; }
 
 .navbar-default .navbar-brand {
   font-family: "Pacifico", cursive;

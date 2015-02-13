@@ -38,7 +38,7 @@ a,input{
 html,body{
 	font-family: $main-font-famliy; 
 	background-color: $color-bg; 
-	font-size: 16px; 
+	font-size: 14px;
 	color: $color-font
 }
 p,a{font-size: 1em;}
@@ -136,7 +136,7 @@ img{max-width: 100%;}
   padding:10px 0;	
 }
 .navbar-default a,
-.navbar-default .navbar-nav>li>a{color: #ccc; font-size: .8em}
+.navbar-default .navbar-nav>li>a{color: #ccc;}
 .navbar-default .navbar-brand{font-family: $logo-font-family; letter-spacing: 2px; opacity: .5}
 .navbar-default .navbar-brand:hover{opacity: 1; color: #fff;}
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus,
