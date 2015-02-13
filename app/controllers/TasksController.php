@@ -29,7 +29,7 @@ class TasksController extends \BaseController {
 	{	
 		// Rules
 		$rules	= array(
-				'weight' 	=> 'integer|between:1,3',
+				'weight' 	=> 'integer|between:1,5',
 				'name' => 'required'
 		);
 

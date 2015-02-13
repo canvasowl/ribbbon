@@ -1,7 +1,7 @@
 <!-- new task form -->
 <div><strong>Create new task</strong></div><br>
 <div>					    
-<i class="dimmed">For the weight, enter a number from 1-3, the higher the number the harder the task.</i>
+<i class="dimmed">For the weight, enter a number from 1-5, the higher the number the harder the task.</i>
 <div class="form-group">
 	<form action="/tasks/create" method="get">
 		<div class="row">		            				
@@ -10,7 +10,7 @@
 			</div>
 			<div class="col-xs-3 no-padding-right">
 				<div>
-					<input placeholder="Weight (1-3)" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
+					<input placeholder="Weight (1-5)" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
 				</div>
 			</div>
 			<input type="hidden" name="projectId" value="{{ $project->id }}">
