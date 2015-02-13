@@ -687,6 +687,11 @@ fieldset[disabled] {
   color: #fff !important;
   opacity: 1; }
 
+.project-name .badge {
+  display: inline-block;
+  position: relative;
+  bottom: 3px; }
+
 #manage .circle {
   width: 40px;
   max-width: 100%; }

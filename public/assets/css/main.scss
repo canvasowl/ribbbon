@@ -433,6 +433,12 @@ fieldset[disabled]{opacity: .2 !important;}
 .hug-about-intro h1 {color: #fff !important; opacity: 1}
 
 // PROJECTS
+.project-name .badge{
+  display: inline-block;
+  position: relative;
+  bottom: 3px;
+}
+
 #manage .circle{width: 40px; max-width: 100%}
 #manage .members-list li{margin-left: 5px}
 
