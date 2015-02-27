@@ -15,6 +15,10 @@ class Project extends \Eloquent {
 		return $this->belongsToMany('User');
 	}
 
+    public function files(){
+        return $this->hasMany('File');
+    }
+
 	/**
 	 * Checks if teh currently Auth user
 	 * is the owner of the project.
