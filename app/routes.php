@@ -15,12 +15,6 @@ Route::get('logout', 'UsersController@logout');
 Route::post('request', 'UsersController@request');
 Route::post('resetPassword/{id}','UsersController@resetPassword');
 
-//----------------- Admin routes
-Route::group(array('before' => 'admin'), function()
-{	
-	Route::get('invite','AdminController@invite');
-});
-
 //----------------- Auth routes
 Route::group(array('before' => 'auth'), function()
 {	
@@ -34,7 +28,6 @@ Route::group(array('before' => 'auth'), function()
     Route::post('projects/{id}/files', array('uses' => 'FilesController@store', 'as' => 'files.store' ));
     Route::delete('projects/{id}/files', array('uses' => 'FilesController@destroy', 'as' => 'files.remove' ));
 
-
 	Route::resource('credentials', 'CredentialsController');
 	Route::resource('tasks', 'TasksController');
 	Route::get('hud', 'HomeController@index');
@@ -42,13 +35,17 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('profile', 'UsersController@index');
 });
 
-
 //----------------- API routes
 Route::get('/api/{key}/authId', 'ApiController@authId');
 Route::get('/api/{key}/{id}/tasks', 'ApiController@tasks');
 Route::get('/api/{key}/{id}/tasks/incomplete', 'ApiController@incompleteTasks');
 Route::get('/api/{key}/{id}/tasks/complete', 'ApiController@complete');
 
+//----------------- Admin routes
+Route::group(array('before' => 'admin'), function()
+{
+    Route::get('invite','AdminController@invite');
+});
 
 //-----------------
 //-----------------
@@ -65,9 +62,7 @@ Route::group(array('before' => 'admin'), function()
 		return "All test emails sent";
 	});	
 
-
 	Route::get('pivot', function(){
 		return Project::find(1)->users;
 	});
-	
 });
