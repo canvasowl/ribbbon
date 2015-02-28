@@ -2,11 +2,6 @@
 
 class FilesController extends \BaseController {
 
-
-    public function index($id){
-
-    }
-
     /**
      * Upload the file and store
      * the file path in the DB.

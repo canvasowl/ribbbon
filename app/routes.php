@@ -25,6 +25,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::delete('projects/{id}/remove', array('uses' => 'ProjectsController@remove', 'as' => 'projects.remove') );
 	Route::get('projects/{id}/credentials', array('uses' => 'ProjectsController@credentials', 'as' => 'projects.credentials' ));
 	Route::get('projects/{id}/manage', array('uses' => 'ProjectsController@edit', 'as' => 'projects.edit' ));
+    Route::get('projects/{id}/files', array('uses' => 'ProjectsController@files', 'as' => 'projects.files' ));
     Route::post('projects/{id}/files', array('uses' => 'FilesController@store', 'as' => 'files.store' ));
     Route::delete('projects/{id}/files', array('uses' => 'FilesController@destroy', 'as' => 'files.remove' ));
 
