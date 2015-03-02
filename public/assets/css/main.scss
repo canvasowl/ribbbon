@@ -113,13 +113,32 @@ img{max-width: 100%;}
 .btn-holo:hover{color: $color-primary; background-color: #fff;}
 .btn-rival{background-color: $color-primary-rival; color: #fff}
 .btn-rival:hover{background-color: $color-primary-rival-hover; color: #fff;}
-.btn-primary{background-color: $color-primary-rival;}
+.btn-primary{background-color: $color-primary-rival; border: none;}
 .btn-primary:hover{background-color: $color-primary-rival-hover; }
 .btn{border: none}
 .btn-default{background: $color-primary; color: #fff; border: 1px solid $color-primary}
 .btn-default:hover{background: $color-primary-accent; color: #fff; border: 1px solid $color-primary-accent}
 .btn-trash{padding: 0; border: none; background: none; color: #aaa;}
 .btn-trash:hover{color: #D24453;}
+
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 12px;
+  margin-left: 0;
+  height: 53px;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
 
 // Panels 
 .panel{border: none !important; box-shadow: none !important}
