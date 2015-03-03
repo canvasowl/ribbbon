@@ -12,7 +12,7 @@ class CreateFilesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('files', function(Blueprint $table)
+		Schema::create('uploads', function(Blueprint $table)
 		{
 			$table->increments('id');
             $table->integer('user_id')->unsigned();
@@ -34,7 +34,7 @@ class CreateFilesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('files');
+		Schema::drop('uploads');
 	}
 
 }
