@@ -1,6 +1,6 @@
 <?php
 
-class File extends \Eloquent {
+class Upload extends \Eloquent {
 	protected $fillable = [];
 
     public function user(){
