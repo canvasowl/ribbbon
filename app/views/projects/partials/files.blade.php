@@ -9,7 +9,7 @@
      		<div class="col-xs-4 no-padding-left">
                 <div class="fileUpload btn btn-primary btn-wide">
                     <span>Choose file</span>
-                    <input type="file" class="upload" />
+                    <input type="file" name="file" class="upload" />
                 </div>
      		</div>
      		<div class="col-xs-8 no-padding-right">

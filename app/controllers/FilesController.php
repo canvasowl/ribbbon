@@ -8,7 +8,15 @@ class FilesController extends \BaseController {
      */
 	public function store()
 	{
-		//
+        $directory = "uploads/files/";
+
+        // Before anything let's make sure a file was uploaded
+        if ( Input::hasFile('file') && Request::file('file')->isValid() )
+        {
+            $file = Input::file('file');
+            $filename = Auth::id() .'_'. $file->getClientOriginalName();
+            $file->move($directory, $filename);
+        }
 	}
 
     /**
