@@ -9,7 +9,8 @@ class FilesController extends \BaseController {
 	public function store()
 	{
         $rules = [ 'name' => 'required', 'file' => 'required|max:20000'];
-        $validator = Validator::make(Input::all(), $rules);
+        $messages = [ 'max' => 'Please make sure the file is not bigger then 20MB.'];
+        $validator = Validator::make(Input::all(), $rules, $messages);
 
         if( $validator->fails() ){
             return Redirect::back()->withErrors($validator)->withInput();
