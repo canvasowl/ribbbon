@@ -1,5 +1,5 @@
 {{-- UPLOAD FILES FORM --}}
-<div><strong>Manage project files</strong></div><br>
+<div><strong>Upload files</strong></div><br>
 <div>
 	<div class="dynamic-form">
 		{{ Form::open(array('action' => 'FilesController@store', 'method' => 'post', 'files' => true)) }}
@@ -22,3 +22,21 @@
 	</div>
 </div>
 {{-- UPLOAD FILES FORM --}}
+<hr>
+{{-- FILE LISTINGS --}}
+<div><strong>Download files</strong></div><br>
+<div>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <p class="pull-left">File Name</p>
+            <div class="pull-right">
+                <a href="" class="btn btn-standout">
+                    <i class="fa fa-cloud-download"></i>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </li>
+    </ul>
+</div>
+{{-- FILE LISTINGS --}}
+
