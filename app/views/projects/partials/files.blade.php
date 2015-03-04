@@ -27,15 +27,17 @@
 <div><strong>Download files</strong></div><br>
 <div>
     <ul class="list-group">
-        <li class="list-group-item">
-            <p class="pull-left">File Name</p>
-            <div class="pull-right">
-                <a href="" class="btn btn-standout">
-                    <i class="fa fa-cloud-download"></i>
-                </a>
-            </div>
-            <div class="clearfix"></div>
-        </li>
+        @foreach( $project->uploads as $upload)
+            <li class="list-group-item">
+                <p class="pull-left">{{ $upload->name }}</p>
+                <div class="pull-right">
+                    <a href="" class="btn btn-standout">
+                        <i class="fa fa-cloud-download"></i>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+        @endforeach
     </ul>
 </div>
 {{-- FILE LISTINGS --}}

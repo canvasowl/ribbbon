@@ -219,11 +219,13 @@ img {
 
 .btn-standout {
   background-color: #ff895c;
-  border-color: #ff895c; }
+  border-color: #ff895c;
+  color: #fff; }
 
 .btn-standout:hover {
   background-color: #d6714d;
-  border-color: #d6714d; }
+  border-color: #d6714d;
+  color: #fff; }
 
 .fileUpload {
   position: relative;
