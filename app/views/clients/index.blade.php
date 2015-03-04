@@ -36,23 +36,7 @@
 
     <div class="col-xs-12 col-md-4">
         <div class="app-wrapper">
-            <!-- Client create form -->
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Create a client</h3>
-              </div>
-              <div class="panel-body">  
-                <form  action="/clients/create" method="get">
-                    <div class="form-group">                                
-                        <input class="form-control" type="text" name="name" placeholder="Client Name"/>                                
-                    </div>
-                    <div class="form-group">
-                        <input class="pull-right btn btn-primary btn-wide" type="submit" value="Create Client"/>
-                    </div>
-                </form>                  
-              </div>
-            </div>                                    
-            <!-- Client create form -->  
+            @include('clients.forms.create')
         </div>      
     </div>
 
