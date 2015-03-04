@@ -3,50 +3,33 @@
 
 @section('content')
 
-<div class="row">
-	<div class="col-xs-12">
-		<div class="app-wrapper">        
-            
-            <div>
-                <center><h2 class="no-margin-top app-wrapper-title">{{ $client->name }}</h2></center>                                                   
-                <hr>
-            </div>
-            
-            <h4>Information</h4>
-            <section class="info">
-	            {{ Form::model($client, array('method' => 'PATCH', 'route' => array('clients.update', $client->id))) }}	            	
-	            	<div class="col-xs-6 no-side-padding small-padding-right">
-		            	<div class="form-group">
-		            		<label>Name</label>{{ Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Name'))}}	
-		            	</div>	            		
-	            	</div>
-	            	<div class="col-xs-6 no-side-padding small-padding-left">
-		            	<div class="form-group">
-		            		<label>Point of contact</label>{{ Form::text('point_of_contact', null, array('class' => 'form-control', 'placeholder' => 'Point of contact'))}}	
-		            	</div>	            		
-	            	</div>	            	
-	            	<hr>
-	            	<div class="form-group">
-	            		<div class="col-xs-6 no-side-padding small-padding-right">
-			            	<div class="form-group">
-			            		<label>Phone number</label>{{ Form::text('phone_number', null, array('class' => 'form-control', 'placeholder' => '1.555.555.555'))}}	
-			            	</div>	            			
-	            		</div>
-	            		<div class="col-xs-6 no-side-padding small-padding-left">
-			            	<div class="form-group">
-			            		<label>Email</label>{{ Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'clientemail@client.com'))}}	
-			            	</div>	            			
-	            		</div>	            								
-	            	</div>
-	            	<div class="form-group">
-						{{ Form::submit('Save', array('class' => 'btn btn-default pull-right' )); }}	            								
-	            	</div>	            	
-	            	<div class="clearfix"></div>
-	            {{ Form::close() }}	                        	
-            </section>
-			     
-		</div>
-	</div>
+<div class="row main-row">
+    <div class="col-xs-12">
+        <h2 class="pull-left">{{ $client->name }}</h2>
+        <ul class="list-inline pull-right">
+            <li><a title="Go back" class="btn " href="/clients"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
+            <li><a title="Edit client" class="btn " href="/clients/{{ $client->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+
+
+    {{-- CONTENT --}}
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="app-wrapper">
+            @include('clients.partials._edit')
+        </div>
+    </div>
+    {{-- CONTENT --}}
+
+    {{-- SIDEBAR --}}
+    <div class="col-xs-12 col-sm-4">
+
+    </div>
+    {{-- SIDEBAR --}}
+
 </div>
 
 @stop()
+
+
