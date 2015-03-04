@@ -29,9 +29,14 @@
     <ul class="list-group">
         @foreach( $project->uploads as $upload)
             <li class="list-group-item">
-                <p class="pull-left">{{ $upload->name }}</p>
+                <p class="pull-left">
+                    {{ $upload->name }}<br>
+                    <span class="dimmed no-margin-left">
+                        <i class="fa fa-clock-o"></i> uploaded on {{ $upload->updated_at->toFormattedDateString() }}
+                    </span>
+                </p>
                 <div class="pull-right">
-                    <a href="" class="btn btn-standout">
+                    <a href="{{ URL::to('/') }}/{{ $upload->path }}" class="btn btn-standout" target="_blank">
                         <i class="fa fa-cloud-download"></i>
                     </a>
                 </div>
