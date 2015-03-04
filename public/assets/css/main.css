@@ -217,6 +217,16 @@ img {
 .btn-trash:hover {
   color: #D24453; }
 
+.btn-standout {
+  background-color: #e56b68;
+  border-color: #e56b68;
+  color: #fff; }
+
+.btn-standout:hover {
+  background-color: #c05957;
+  border-color: #c05957;
+  color: #fff; }
+
 .fileUpload {
   position: relative;
   overflow: hidden;

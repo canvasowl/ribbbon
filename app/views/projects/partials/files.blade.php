@@ -1,5 +1,5 @@
 {{-- UPLOAD FILES FORM --}}
-<div><strong>Manage project files</strong></div><br>
+<div><strong>Upload files</strong></div><br>
 <div>
 	<div class="dynamic-form">
 		{{ Form::open(array('action' => 'FilesController@store', 'method' => 'post', 'files' => true)) }}
@@ -22,3 +22,28 @@
 	</div>
 </div>
 {{-- UPLOAD FILES FORM --}}
+<hr>
+{{-- FILE LISTINGS --}}
+<div><strong>Download files</strong></div><br>
+<div>
+    <ul class="list-group">
+        @foreach( $project->uploads as $upload)
+            <li class="list-group-item">
+                <p class="pull-left">
+                    {{ $upload->name }}<br>
+                    <span class="dimmed no-margin-left">
+                        <i class="fa fa-clock-o"></i> uploaded on {{ $upload->updated_at->toFormattedDateString() }}
+                    </span>
+                </p>
+                <div class="pull-right">
+                    <a href="{{ URL::to('/') }}/{{ $upload->path }}" class="btn btn-standout" target="_blank">
+                        <i class="fa fa-cloud-download"></i>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+        @endforeach
+    </ul>
+</div>
+{{-- FILE LISTINGS --}}
+

@@ -7,6 +7,8 @@ $color-primary-rival: #74CD9E;
 $color-primary-rival-hover: #63B087;
 $color-icons: #B4C8BB;
 $color-text-link: #4A77CE;
+$color-standout: #E56B68;
+$color-standout-hover: #C05957;
 
 $color-panel-head: #eee;
 $color-bg: #EDF0EE;
@@ -120,6 +122,8 @@ img{max-width: 100%;}
 .btn-default:hover{background: $color-primary-accent; color: #fff; border: 1px solid $color-primary-accent}
 .btn-trash{padding: 0; border: none; background: none; color: #aaa;}
 .btn-trash:hover{color: #D24453;}
+.btn-standout{background-color: $color-standout; border-color: $color-standout; color: #fff;}
+.btn-standout:hover{background-color: $color-standout-hover; border-color: $color-standout-hover; color: #fff;}
 
 .fileUpload {
   position: relative;

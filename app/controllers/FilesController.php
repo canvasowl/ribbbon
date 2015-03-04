@@ -8,11 +8,14 @@ class FilesController extends \BaseController {
      */
 	public function store()
 	{
-        $rules = [ 'name' => 'required', 'file' => 'required|max:20000'];
-        $messages = [ 'max' => 'Please make sure the file is not bigger then 20MB.'];
-        $validator = Validator::make(Input::all(), $rules, $messages);
+        // Rules
+        $rules	= array('name' => 'required', 'file' => 'required|max:20000');
+        $messages = array('max' => 'Please make sure the file size is not larger then 20MB');
 
-        if( $validator->fails() ){
+        // Create validation
+        $validator = Validator::make( Input::all(), $rules, $messages);
+
+        if ( $validator->fails() ) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
@@ -35,6 +38,15 @@ class FilesController extends \BaseController {
 
             return Redirect::back();
         }
+
+        $upload = new Upload;
+        $upload->user_id = Auth::id();
+        $upload->project_id = Input::get('project_id');
+        $upload->name = Input::get('name');
+        $upload->path = $directory.$filename;
+        $upload->save();
+
+        return Redirect::back();
 	}
 
     /**
