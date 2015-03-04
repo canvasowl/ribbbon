@@ -53,7 +53,7 @@
 @if(Session::has('success'))
 	<div class="hug">
 		<div class="alert alert-success alert-main animated fadeInDown alert-dismissible" role="alert">
- 			
+ 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
  			<strong class="alert-link">{{ Session::get('success') }}</strong>
 		</div>		
 	</div>	
