@@ -270,24 +270,21 @@ class ProjectsController extends \BaseController {
 
 
     public function files($id){
-        $project 		=	Project::find($id);
-
+        $project  = Project::find($id);
+        $owner_id =	$project->user_id;
         $total_weight	=	$project->tasks()->where('state','incomplete')->sum('weight');
-        $credentials   	=	$project->credentials;
-        $owner_id		=	$project->user_id;
         $members 		= 	$project->members()->get();
 
-        $pTitle 		=	$project->name;
+        $pTitle   = $project->name . " files";
 
-        return  View::make('projects.files', compact(
-            [
-                'owner_id',
-                'project',
-                'total_weight',
-                'credentials',
-                'members',
-                'pTitle'
-            ]));
+        return View::make('projects.files', compact(
+                                            [
+                                                'project',
+                                                'total_weight',
+                                                'owner_id',
+                                                'members',
+                                                'pTitle'
+                                            ]));
     }
 
 }
