@@ -26,7 +26,9 @@
 {{-- FILE LISTINGS --}}
 <div><strong>Download files</strong></div><br>
 <div>
-    <ul class="list-group">
+
+    @if( count($project->uploads) != 0 )
+        <ul class="list-group">
         @foreach( $project->uploads as $upload)
             <li class="list-group-item">
                 <p class="pull-left">
@@ -36,14 +38,17 @@
                     </span>
                 </p>
                 <div class="pull-right">
-                    <a href="{{ URL::to('/') }}/{{ $upload->path }}" class="btn btn-standout" target="_blank">
+                    <a href="{{ URL::to('/') }}/{{ $upload->path }}" class="btn btn-default" target="_blank">
                         <i class="fa fa-cloud-download"></i>
                     </a>
                 </div>
                 <div class="clearfix"></div>
             </li>
         @endforeach
-    </ul>
+        </ul>
+        @else
+        <div class="info"><p>You have no uploaded files.</p></div>
+    @endif
 </div>
 {{-- FILE LISTINGS --}}
 
