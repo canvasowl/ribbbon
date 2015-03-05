@@ -26,8 +26,6 @@
 			}
 			
 			.hug-footerOut{position: absolute; z-index: 100; bottom: 0; left: 0; }
-
-			body,html{font-size: 16px}
 			
 			.hug-homeBody .container{height: 0;}
 

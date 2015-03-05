@@ -110,15 +110,11 @@ img{max-width: 100%;}
 .btn:focus{outline: none;}
 .btn-wide{width: 100%; padding: 15px;}
 .btn-cta{font-size: .5em; padding: 20px 60px}
-.btn-holo{color: #fff; background: rgba(250,250,250,.2);}
-.btn-holo:hover{color: $color-primary; background-color: #fff;}
-.btn-rival{background-color: $color-primary-rival; color: #fff}
-.btn-rival:hover{background-color: $color-primary-rival-hover; color: #fff;}
 .btn-primary{background-color: $color-primary-rival; border: none;}
 .btn-primary:hover{background-color: $color-primary-rival-hover; }
 .btn{border: none}
 .btn-default{background: $color-primary; color: #fff; border: 1px solid $color-primary}
-.btn-default:hover{background: $color-primary-accent; color: #fff; border: 1px solid $color-primary-accent}
+.btn-default:hover{ color: #fff; background: $color-primary-accent !important; border: 1px solid $color-primary-accent !important;}
 .btn-trash{padding: 0; border: none; background: none; color: #aaa;}
 .btn-trash:hover{color: #D24453;}
 .btn-danger{background-color: $color-danger}

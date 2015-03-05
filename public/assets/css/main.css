@@ -176,22 +176,6 @@ img {
   font-size: .5em;
   padding: 20px 60px; }
 
-.btn-holo {
-  color: #fff;
-  background: rgba(250, 250, 250, 0.2); }
-
-.btn-holo:hover {
-  color: #50cde8;
-  background-color: #fff; }
-
-.btn-rival {
-  background-color: #e85c41;
-  color: #fff; }
-
-.btn-rival:hover {
-  background-color: #be4935;
-  color: #fff; }
-
 .btn-primary {
   background-color: #e85c41;
   border: none; }
@@ -208,9 +192,9 @@ img {
   border: 1px solid #50cde8; }
 
 .btn-default:hover {
-  background: #3fa2b7;
   color: #fff;
-  border: 1px solid #3fa2b7; }
+  background: #3fa2b7 !important;
+  border: 1px solid #3fa2b7 !important; }
 
 .btn-trash {
   padding: 0;
