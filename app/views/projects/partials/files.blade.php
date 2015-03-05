@@ -7,13 +7,13 @@
      		<input type="hidden" name="project_id" value="{{ $project->id }}">
      		<br>
      		<div class="col-xs-4 no-padding-left">
-                <div class="fileUpload btn btn-primary btn-wide">
+                <div class="fileUpload btn btn-default btn-wide">
                     <span>Choose file</span>
                     <input type="file" name="file" class="upload" />
                 </div>
      		</div>
      		<div class="col-xs-8 no-padding-right">
-         		<button type="submit" class="btn btn-default btn-wide">
+         		<button type="submit" class="btn btn-primary btn-wide">
 	                 <i class="fa fa-cloud-upload fa-lg"></i> Upload File
 	            </button>
      		</div>

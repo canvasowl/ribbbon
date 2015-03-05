@@ -15,7 +15,7 @@
      			<input class="form-control other" type="text" name="port" placeholder="Port">
      		</div>
      		<div class="col-xs-8 no-padding-right">
-         		<button type="submit" class="btn btn-default">
+         		<button type="submit" class="btn btn-primary">
 	                <i class="fa fa-plus-square-o fa-lg"></i> Save
 	            </button>
      		</div>					         					         		
