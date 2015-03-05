@@ -106,7 +106,7 @@ img{max-width: 100%;}
 .pill-primary{background-color: transparent}
 
 // Buttons
-.btn{text-transform: capitalize}
+.btn{text-transform: capitalize; color: #fff !important;}
 .btn:focus{outline: none;}
 .btn-wide{width: 100%; padding: 15px;}
 .btn-cta{font-size: .5em; padding: 20px 60px}

@@ -162,7 +162,8 @@ img {
   background-color: transparent; }
 
 .btn {
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  color: #fff !important; }
 
 .btn:focus {
   outline: none; }
