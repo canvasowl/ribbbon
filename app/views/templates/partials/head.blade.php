@@ -27,7 +27,7 @@
 			
 			.hug-footerOut{position: absolute; z-index: 100; bottom: 0; left: 0; }
 			
-			.hug-homeBody .container{height: 0;}
+			/*.hug-homeBody .container{height: 0;}*/
 
 			@media (max-width: 767px){
 				html,
