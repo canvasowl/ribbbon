@@ -13,7 +13,7 @@
 				{{ Form::password( 'password', array('class' => 'form-control', "placeholder" => "password" )) }}	
 			</div>
 			<div class="form-group">
-				{{ Form::submit( 'Login', array('class' => 'btn btn-rival btn-wide')) }}
+				{{ Form::submit( 'Login', array('class' => 'btn btn-primary btn-wide')) }}
 			</div>	    			
 		{{ Form::close() }}
 	</div>		  	
