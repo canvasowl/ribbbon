@@ -17,13 +17,13 @@
 
 	@if ( Request::is('/') && !Auth::check() )
 		<style type="text/css">
-			html { 
-			  background: url(/assets/img/home_bg.png) no-repeat center center fixed; 
-			  -webkit-background-size: cover;
-			  -moz-background-size: cover;
-			  -o-background-size: cover;
-			  background-size: cover;
-			}
+                /*html { */
+                  /*background: url(/assets/img/home_bg.png) no-repeat center center fixed; */
+                  /*-webkit-background-size: cover;*/
+                  /*-moz-background-size: cover;*/
+                  /*-o-background-size: cover;*/
+                  /*background-size: cover;*/
+                /*}*/
 			
 			.hug-footerOut{position: absolute; z-index: 100; bottom: 0; left: 0; }
 			
@@ -39,21 +39,21 @@
 	@endif
 
 	@if ( !Auth::check() && Request::is('/') || Request::is('beta') || Request::is('register') || Request::is('signin') || Request::is('about') || Request::is('faq') )
-		<style type="text/css">
-			.row{width: 900px; max-width: 100%; margin: 0 auto;}		
-		</style>
+		{{--<style type="text/css">--}}
+			{{--.row{width: 900px; max-width: 100%; margin: 0 auto;}		--}}
+		{{--</style>--}}
 	@endif	
 
 	@if ( Request::is('about') || Request::is('faq')  )
 		<style type="text/css">
-			.container{padding-left: 0; padding-right: 0;}		
+			/*.container{padding-left: 0; padding-right: 0;}		*/
 		</style>
 	@endif	
 
 	@if ( Request::is('beta') || Request::is('register') || Request::is('signin') )
-		<style type="text/css">
-			.hug-homeBody .container{height: auto;}
-		</style>		
+		{{--<style type="text/css">--}}
+			{{--.hug-homeBody .container{height: auto;}--}}
+		{{--</style>		--}}
 	@endif
 
 	@if ( Request::is('about') )
