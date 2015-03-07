@@ -456,8 +456,33 @@ span.total {
 .module-form form {
   display: inline; }
 
-.hug-homeHeader {
-  background: #fff; }
+.hug-homeBody .container {
+  padding: 0;
+  width: 100%; }
+
+.container-index {
+  font-size: 24px; }
+
+.container-index .row {
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto; }
+
+.container-index .hug {
+  padding: 50px;
+  color: #777777; }
+
+.container-index .hug h2 {
+  font-family: 'Code Pro';
+  font-size: 1.5em; }
+
+.container-index .hug p {
+  line-height: 2; }
+
+.container-index .hug-h-featured {
+  background-color: #50cde8;
+  color: #fff;
+  text-align: center; }
 
 .home-form {
   max-width: 400px;
@@ -466,28 +491,6 @@ span.total {
 
 .home-form input[type="text"], .home-form input[type="password"] {
   font-size: 1.5em; }
-
-.homepage-msg {
-  color: #fff;
-  font-size: 2em;
-  margin-top: 100px !important; }
-
-.homepage-msg h1 {
-  text-transform: uppercase;
-  font-size: 1.1em;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  padding: 5px; }
-
-.homepage-msg .btn-cta {
-  font-size: 1.3em;
-  -webkit-box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2PX 5px rgba(0, 0, 0, 0.2);
-  width: 420px;
-  max-width: 100%; }
 
 .athenticate-form-wrap {
   width: 400px;
@@ -739,7 +742,7 @@ fieldset[disabled] {
   font-size: .8em;
   opacity: .5;
   line-height: .8;
-  margin-top: 50px; }
+  padding: 40px 0; }
 
 @media (max-width: 400px) {
   .homepage-msg {

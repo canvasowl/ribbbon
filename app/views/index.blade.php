@@ -3,7 +3,19 @@
 
 @section('content')
 
-<div class="container">
+<div class="container container-index">
+
+{{-- featured --}}
+<div class="hug hug-h-featured">
+	<div class="row">
+	    <div class="col col-sm-12">
+	        <h2>So what's <span class="site-name">Ribbbon</span>?</h2>
+	        <p>Ribbbon is web based project management system for web artisans. It helps you
+	        manage your projects and more importantly yourself and others.</p>
+            <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
+	    </div>
+	</div>
+</div>
 
 {{-- weight --}}
 <div class="hug hug-h-weight">
@@ -12,8 +24,9 @@
 	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
 	    </div>
 	    <div class="col col-sm-6">
-	        <h2>Title</h2>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae cumque dolore ex, facere id ipsa iste iusto modi molestiae optio placeat reiciendis repudiandae sed sequi similique velit voluptas voluptate.</p>
+	        <h2>Weight</h2>
+	        <p>Keep track on how your project is doing with weights. Each task has
+	        a weight which in turn helps create an overall project weight.</p>
 	    </div>
 	</div>
 </div>
@@ -22,8 +35,9 @@
 <div class="hug hug-h-sharing">
 	<div class="row">
 	    <div class="col col-sm-6">
-	        <h2>Title</h2>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae cumque dolore ex, facere id ipsa iste iusto modi molestiae optio placeat reiciendis repudiandae sed sequi similique velit voluptas voluptate.</p>
+	        <h2>Sharing</h2>
+	        Work on projects with others easily by sharing your project to
+            one or multiple users.
 	    </div>
 	    <div class="col col-sm-6">
 	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
@@ -38,8 +52,9 @@
 	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
 	    </div>
 	    <div class="col col-sm-6">
-	        <h2>Title</h2>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae cumque dolore ex, facere id ipsa iste iusto modi molestiae optio placeat reiciendis repudiandae sed sequi similique velit voluptas voluptate.</p>
+	        <h2>Credentials</h2>
+	        <p>A Ribbbon project has a special place for all your various project credentials.
+	        Finding that Wordpress username & password has never been easier.</p>
 	    </div>
 	</div>
 </div>
@@ -48,8 +63,8 @@
 <div class="hug hug-h-sharing">
 	<div class="row">
 	    <div class="col col-sm-6">
-	        <h2>Title</h2>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae cumque dolore ex, facere id ipsa iste iusto modi molestiae optio placeat reiciendis repudiandae sed sequi similique velit voluptas voluptate.</p>
+	        <h2>Files</h2>
+	        <p>Upload files per project, .pdf, .doc, .psd, .ai and many more file types supported.</p>
 	    </div>
 	    <div class="col col-sm-6">
 	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
@@ -64,8 +79,8 @@
 	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
 	    </div>
 	    <div class="col col-sm-6">
-	        <h2>Title</h2>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae cumque dolore ex, facere id ipsa iste iusto modi molestiae optio placeat reiciendis repudiandae sed sequi similique velit voluptas voluptate.</p>
+	        <h2>Register For Free</h2>
+	        <p>Ribbbon is free so why not take it for spin and start managing your projects more organized.</p>
 	    </div>
 	</div>
 </div>
