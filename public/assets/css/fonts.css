@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Code Pro';
+    src: url('fonts/CodePro.eot'); /* IE9 Compat Modes */
+    src: url('fonts/CodePro.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/CodePro.woff') format('woff'), /* Modern Browsers */
+    url('fonts/CodePro.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('fonts/CodePro.svg#914af12d7d926c76a495fe38f6b38d18') format('svg'); /* Legacy iOS */
+
+    font-style:   normal;
+    font-weight:  400;
+}
+
