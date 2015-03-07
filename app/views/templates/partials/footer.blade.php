@@ -18,7 +18,9 @@
 </div>
 
 
-@if ( Auth::check() && !Request::is('/')  || !Request::is('about') || !Request::is('faq')  )
+@if ( Request::is('/') || Request::is('/faq') || Request::is('/faq')   || Request::is('about') || Request::is('beta')  )
+    {{--nothing--}}
+@else
     <!-- Uservoice Feedback form -->
     <script>
     // Include the UserVoice JavaScript SDK (only needed once on a page)
