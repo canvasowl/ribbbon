@@ -305,11 +305,27 @@ span.total{
 .module-form .form-container{text-align: center}
 .module-form form{display: inline;;}
 
+.diamond {
+  height: 150px;
+  width: 150px;
+  background-color: $color-primary;
+  border: 2px solid #fff;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Safari */
+  transform: rotate(45deg);
+}
+.diamond .fa-5x{
+  position: relative;
+  top: 20px;
+  transform: rotate(-45deg);
+  left: 09px;
+}
+
 //-- HOME
 
 
 //.hug-homeHeader{background: #fff}
-.hug-homeBody .container{padding: 0; width: 100%}
+.hug-homeBody .container{padding: 0;}
 
 .container-index{font-size: 24px;}
 .container-index .row{padding: 0; max-width: 1000px; margin: 0 auto;}
@@ -318,6 +334,9 @@ span.total{
 .container-index .hug p{line-height: 2;}
 
 .container-index .hug-h-featured{background-color: $color-primary; color: #fff; text-align: center}
+.container-index .hug-h-featured .scroll-box{padding: 100px 0;}
+.hug-h-featured .scroll-box .diamond{margin: 0 auto;}
+.hug-h-featured .scroll-box p{text-align: center; margin-top: 30px; font-size: .8em; opacity: .5}
 
 .home-form{ max-width: 400px; width: 100%; margin: 100px auto;}
 .home-form input[type="text"], .home-form input[type="password"]{ font-size: 1.5em; }

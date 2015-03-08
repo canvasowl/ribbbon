@@ -9,10 +9,16 @@
 <div class="hug hug-h-featured">
 	<div class="row">
 	    <div class="col col-sm-12">
-	        <h2>So what's <span class="site-name">Ribbbon</span>?</h2>
-	        <p>Ribbbon is web based project management system for web artisans. It helps you
+	        <h2 class="animated zoomInDown">So what's <span class="site-name">Ribbbon</span>?</h2>
+	        <p class="animated zoomInDown">Ribbbon is web based project management system for web artisans. It helps you
 	        manage your projects and more importantly yourself and others.</p>
-            <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
+
+            <div class="scroll-box">
+                <div class="diamond">
+                    <i class="fa fa-angle-double-down fa-5x"></i>
+                </div>
+                <p>scroll down</p>
+            </div>
 	    </div>
 	</div>
 </div>
