@@ -477,7 +477,8 @@ span.total {
   padding: 0; }
 
 .container-index {
-  font-size: 24px; }
+  font-size: 24px;
+  width: 100%; }
 
 .container-index .row {
   padding: 0;
@@ -514,6 +515,9 @@ span.total {
 
 .hug-h-credentials {
   text-align: center; }
+
+.hug-h-credentials ul {
+  opacity: .3; }
 
 .hug-h-credentials ul li {
   padding: 0 .5%; }

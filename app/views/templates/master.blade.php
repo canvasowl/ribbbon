@@ -29,7 +29,7 @@
 </div>
 
 <div class="hug hug-homeBody">
-	<div class="container">
+	<div class="container container-index">
 		@yield('content')
 	</div>	
 </div>
