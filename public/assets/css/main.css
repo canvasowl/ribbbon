@@ -512,6 +512,15 @@ span.total {
   font-size: .8em;
   opacity: .5; }
 
+.hug-h-credentials {
+  text-align: center; }
+
+.hug-h-credentials ul li {
+  padding: 0 .5%; }
+
+.hug-h-credentials h2 {
+  color: #50cde8; }
+
 .home-form {
   max-width: 400px;
   width: 100%;

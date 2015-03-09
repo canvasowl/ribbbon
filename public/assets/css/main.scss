@@ -337,6 +337,10 @@ span.total{
 .container-index .hug-h-featured .scroll-box{padding: 100px 0;}
 .hug-h-featured .scroll-box .diamond{margin: 0 auto;}
 .hug-h-featured .scroll-box p{text-align: center; margin-top: 30px; font-size: .8em; opacity: .5}
+.hug-h-credentials{text-align: center;}
+.hug-h-credentials ul li{padding: 0 .5%;}
+
+.hug-h-credentials h2{color: $color-primary}
 
 .home-form{ max-width: 400px; width: 100%; margin: 100px auto;}
 .home-form input[type="text"], .home-form input[type="password"]{ font-size: 1.5em; }

@@ -40,27 +40,29 @@
 {{-- sharing --}}
 <div class="hug hug-h-sharing">
 	<div class="row">
-	    <div class="col col-sm-6">
+	    <div class="col col-sm-12">
 	        <h2>Sharing</h2>
 	        Work on projects with others easily by sharing your project to
             one or multiple users.
-	    </div>
-	    <div class="col col-sm-6">
-	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
 	    </div>
 	</div>
 </div>
 
 {{-- credentials --}}
-<div class="hug hug-h-weight">
+<div class="hug hug-h-credentials">
 	<div class="row">
-	    <div class="col col-sm-6">
-	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
-	    </div>
-	    <div class="col col-sm-6">
+	    <div class="col col-sm-12">
 	        <h2>Credentials</h2>
 	        <p>A Ribbbon project has a special place for all your various project credentials.
 	        Finding that Wordpress username & password has never been easier.</p>
+
+            <ul class="list-inline">
+                <li><i class="fa fa-github fa-2x"></i></li>
+                <li><i class="fa fa-wordpress fa-2x"></i></li>
+                <li><i class="fa fa-facebook-square fa-2x"></i></li>
+                <li><i class="fa fa-android fa-2x"></i></li>
+                <li><i class="fa fa-database fa-2x"></i></li>
+            </ul>
 	    </div>
 	</div>
 </div>
@@ -79,7 +81,7 @@
 </div>
 
 {{-- signup --}}
-<div class="hug hug-h-sharing">
+<div class="hug hug-h-register">
 	<div class="row">
 	    <div class="col col-sm-6">
 	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
