@@ -324,7 +324,7 @@ span.total{
 //-- HOME
 
 
-//.hug-homeHeader{background: #fff}
+.hug-homeHeader{background: #fff; position: fixed; z-index: 1;}
 .hug-homeBody .container{padding: 0;}
 
 .container-index{font-size: 24px; width: 100%;}
@@ -333,7 +333,7 @@ span.total{
 .container-index .hug h2{font-family: 'Code Pro'; font-size: 1.5em;}
 .container-index .hug p{line-height: 2;}
 
-.container-index .hug-h-featured{background-color: $color-primary; color: #fff; text-align: center}
+.container-index .hug-h-featured{background-color: $color-primary; color: #fff; text-align: center; margin-top: 75px;}
 .container-index .hug-h-featured .scroll-box{padding: 100px 0;}
 .hug-h-featured .scroll-box .diamond{margin: 0 auto;}
 .hug-h-featured .scroll-box p{text-align: center; margin-top: 30px; font-size: .8em; opacity: .5}

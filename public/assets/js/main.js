@@ -2,6 +2,16 @@ var randomInt = function randomIntFromInterval(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
+// Set the height of home page featured section
+$(document).ready(function(){
+    var a = window.innerHeight;
+    var b = $('.hug-homeHeader').height();
+    var x = (a - b) - 100;
+    $('.hug-h-featured').height(x);
+})
+
+
+
 /*************************************************
  *
  * NAV TABS
