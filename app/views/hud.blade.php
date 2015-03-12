@@ -21,10 +21,10 @@
 			  		</p>
 			  	@endforeach			  			  	
 			@else
-				<div class="alert alert-info" role="alert">
-					<i class="fa fa-lightbulb-o"></i> 
+			    <section class="info">
+					<i class="fa fa-lightbulb-o"></i>
 					Once you start creating tasks for projects, your latest ones will show up here.
-				</div> 
+			    </section>
 		  	@endif			
 		</div>
 
@@ -39,10 +39,10 @@
 			  		</p>				  		
 			  	@endforeach			  			  	
 			@else
-				<div class="alert alert-info" role="alert">
-					<i class="fa fa-lightbulb-o"></i> 
+			    <section class="info">
+					<i class="fa fa-lightbulb-o"></i>
 					Your latest projects will show up here, you will need to create <a href="/clients">clients</a> in order to create projects.
-				</div> 
+			    </section>
 		  	@endif			
 		</div>
 
@@ -57,11 +57,11 @@
 					</p>
 				@endforeach
 			@else
-				<div class="alert alert-info" role="alert">
-					<i class="fa fa-lightbulb-o"></i>
+			    <section class="info">
+                    <i class="fa fa-lightbulb-o"></i>
 					No projects have been shared with you. In order to become a
 					member of a project a <i><b>project owner</b></i> has to send you an invite.
-				</div>
+			    </section>
 			@endif			
 		</div>				
 	</div>

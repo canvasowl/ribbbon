@@ -58,7 +58,9 @@
 
 <!-- Completed tasks -->
 @if ($completedCount == 0)
-	<p>No tasks has been completed for this project.</p>
+    <section class="info">
+        <p>No tasks has been completed for this project.</p>
+    </section>
 @else
 	<ul class="list-group">
 	 @foreach ($completedTasks as $task)
