@@ -59,7 +59,8 @@ img {
   opacity: .3; }
 
 .special-shadow {
-  box-shadow: 0 2px 5px rgba(80, 205, 232, 0.3); }
+  box-shadow: 0 2px 5px rgba(80, 205, 232, 0.3);
+  transition-duration: .5s; }
 
 .site-name {
   font-family: "Pacifico", cursive;

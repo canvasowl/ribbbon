@@ -61,7 +61,7 @@ img{max-width: 100%;}
 *:-ms-input-placeholder{opacity: .3}
 
 // Helpers
-.special-shadow{ box-shadow:0 2px 5px rgba(80,205,232,.3)}
+.special-shadow{ box-shadow:0 2px 5px rgba(80,205,232,.3); transition-duration: .5s}
 
 .site-name{font-family: $logo-font-family; letter-spacing: 2px;}
 

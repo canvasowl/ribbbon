@@ -1,16 +1,33 @@
-var randomInt = function randomIntFromInterval(min,max) {
-    return Math.floor(Math.random()*(max-min+1)+min);
-}
+//var randomInt = function randomIntFromInterval(min,max) {
+//    return Math.floor(Math.random()*(max-min+1)+min);
+//}
 
-// Set the height of home page featured section
+/*************************************************
+ *
+ * Header hug special drop shadow
+ *
+ *************************************************/
+$(window).scroll(function(){
+   var height  = $(document).scrollTop();
+
+   if(height > 42){
+       $('.hug-hudHeader, .hug-homeHeader').addClass("special-shadow");
+   }else{
+       $('.hug-hudHeader, .hug-hudHeader').removeClass("special-shadow");
+   }
+});
+
+/*************************************************
+ *
+ * Set the height of home page featured section
+ *
+ *************************************************/
 $(document).ready(function(){
     var a = window.innerHeight;
     var b = $('.hug-homeHeader').height();
     var x = (a - b) - 100;
     $('.hug-h-featured').height(x);
 })
-
-
 
 /*************************************************
  *
