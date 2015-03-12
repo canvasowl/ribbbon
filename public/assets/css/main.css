@@ -634,6 +634,9 @@ span.total {
 .info p {
   margin: 0; }
 
+.info .list-group {
+  margin-bottom: 0; }
+
 .table a {
   color: #777777; }
 
