@@ -545,6 +545,10 @@ span.total {
   max-width: 100%;
   margin: 0 auto; }
 
+.special-form {
+  max-width: 450px;
+  margin: 100px auto; }
+
 .main-row {
   margin-top: 100px; }
 

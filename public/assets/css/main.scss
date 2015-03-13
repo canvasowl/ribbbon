@@ -212,6 +212,7 @@ img{max-width: 100%;}
 .alert-main{text-align: center; font-size: 1.5em; text-transform: uppercase;}
 .alert-link{color: rgab(0,0,0,.5); font-size: .8em}
 
+// Number Counts
 .numCount{
 	background-color: #ddd;
 	color: #777;
@@ -322,8 +323,6 @@ span.total{
 }
 
 //-- HOME
-
-
 .hug-homeHeader{background: #fff; position: fixed; z-index: 1;}
 .hug-homeBody .container{padding: 0;}
 
@@ -366,6 +365,9 @@ span.total{
 //}
 
 .athenticate-form-wrap{ width: 400px; max-width: 100%; margin: 0 auto; }
+
+// Special Form
+.special-form{max-width: 450px; margin: 100px auto;}
 
 // INNER PAGES SHARED
 .main-row{margin-top: 100px}
