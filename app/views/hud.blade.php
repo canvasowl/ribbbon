@@ -16,8 +16,8 @@
 			  	@foreach ($latestTasks as $task)
 			  		<p>
 			  			<a href="/projects/{{ $task->project_id }}">{{ $task->name }}</a> 
-			  			<span class="badge badge-weight pull-right">{{ $task->weight}}</span><br>
-			  			<span class="dimmed no-margin-left pull">{{ $task->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
+			  			<span class="badge badge-weight pull-right">{{ $task->weight}}</span>
+			  			<span class="dimmed no-margin-left pull">{{ $task->updated_at->toFormattedDateString() }}</span>
 			  		</p>
 			  	@endforeach			  			  	
 			@else
@@ -34,8 +34,8 @@
 		  	@if ( count($latestProjects) > 0)
 			  	@foreach ($latestProjects as $project)
 			  		<p>
-						<a href="/projects/{{ $project->id }}">{{ $project->name }}</a><br>
-			  			<span class="dimmed no-margin-left">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
+						<a href="/projects/{{ $project->id }}">{{ $project->name }}</a>
+			  			<span class="dimmed no-margin-left">{{ $project->updated_at->toFormattedDateString() }}</span>
 			  		</p>				  		
 			  	@endforeach			  			  	
 			@else
@@ -52,8 +52,8 @@
 			@if ( count($inProjects) > 0)
 				@foreach ($inProjects as $project)
 					<p>
-						<a href="/projects/{{ $project->id }}">{{ $project->name }}</a><br>
-						<span class="dimmed no-margin-left">{{ $project->updated_at->toFormattedDateString() }} <i class="fa fa-clock-o"></i></span>
+						<a href="/projects/{{ $project->id }}">{{ $project->name }}</a>
+						<span class="dimmed no-margin-left">{{ $project->updated_at->toFormattedDateString() }}</span>
 					</p>
 				@endforeach
 			@else
@@ -69,15 +69,16 @@
 
 	<div class="col-xs-12 col-md-4">
 		<div class="app-wrapper sidebar">
-			<center><p class="dimmed">Tasks</p></center>
-			<div id="canvas-holder">
-				<canvas id="chart-area" width="200" height="200"/>
-			</div>	
-
-			<div class="legend">
-				<p><span class="complete"></span> complete</p>
-				<p><span class="incomplete"></span> incomplete</p>
-			</div>		
+			<section class="info">
+			@if(count($latestCompletedTasks) > 0)
+			    <h3 class="no-margin-top">Latest completed tasks</h3>
+                @foreach($latestCompletedTasks as $task)
+                    <p><i class="fa fa-check"></i> {{ $task->name }} <span class="dimmed">{{ $task->updated_at->toFormattedDateString() }}</span></p>
+                @endforeach
+            @else
+                <p>You havent completed any tasks lately</p>
+            @endif
+            </section>
 		</div>
 	</div>
 

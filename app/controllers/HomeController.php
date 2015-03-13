@@ -6,16 +6,14 @@ class HomeController extends BaseController {
 	public function index(){
 		if( Auth::check() ) {
 			$pTitle			=	"Hud";
-
 			$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->orderBy('created_at', 'desc')->take(5)->get();
+            $latestCompletedTasks = Task::where('user_id', Auth::id())->where('state','complete')->orderBy('updated_at', 'desc')->take(10)->get();
 			$latestProjects	=	Project::where('user_id', Auth::id())->orderBy('created_at', 'desc')->take(5)->get();
-
-			$user 		= User::find(Auth::id());
-			$inProjects =  $user->inProjects()->orderBy('created_at', 'desc')->take(5)->get();
-
+			$user 		    =   User::find(Auth::id());
+			$inProjects     =   $user->inProjects()->orderBy('created_at', 'desc')->take(5)->get();
 
 
-			return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks', 'inProjects'));
+			return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks', 'latestCompletedTasks', 'inProjects'));
 		}else{
 			return View::make('index')->with('pTitle', "A project management system for artisans");
 		}
