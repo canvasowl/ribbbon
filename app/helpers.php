@@ -25,7 +25,22 @@ function isOwner($project_id, $user_id = null){
 	return true;
 }
 
+function clientNameByTask($task_id){
 
+    $project_id = DB::table('tasks')->where('id', $task_id)->pluck('project_id');
+    $client_id = DB::table('projects')->where('id', $project_id)->pluck('client_id');
+    $client_name = DB::table('clients')->where('id', $client_id)->pluck('name');
+
+    return $client_name;
+}
+
+function clientIdByTask($task_id){
+
+    $project_id = DB::table('tasks')->where('id', $task_id)->pluck('project_id');
+    $client_id = DB::table('projects')->where('id', $project_id)->pluck('client_id');
+
+    return $client_id;
+}
 
 /*******************************
 		MAIL FUNCTIONS
