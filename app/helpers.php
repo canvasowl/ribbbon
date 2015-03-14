@@ -25,6 +25,12 @@ function isOwner($project_id, $user_id = null){
 	return true;
 }
 
+/**
+ * Get the name of a client by a task id
+ *
+ * @param $task_id
+ * @return mixed
+ */
 function clientNameByTask($task_id){
 
     $project_id = DB::table('tasks')->where('id', $task_id)->pluck('project_id');
@@ -34,6 +40,12 @@ function clientNameByTask($task_id){
     return $client_name;
 }
 
+/**
+ * Get the id of a client by a task id
+ *
+ * @param $task_id
+ * @return mixed
+ */
 function clientIdByTask($task_id){
 
     $project_id = DB::table('tasks')->where('id', $task_id)->pluck('project_id');

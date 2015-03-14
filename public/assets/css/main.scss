@@ -7,6 +7,7 @@ $color-primary-rival: #e85c41;
 $color-primary-rival-hover: #BE4935;
 $color-danger: #555;
 $color-danger-accent: #333;
+$color-special-icon : #BE56B5;
 
 $color-panel-head: #eee;
 $color-bg: #fafafa;
@@ -496,6 +497,12 @@ fieldset[disabled]{opacity: .2 !important;}
 #manage .members-list li{margin-left: 5px}
 
 .form-w-label label{margin-top: 15px}
+
+// TREE
+.tree{margin-bottom: 0; border: none;}
+.tree li{border: none;}
+.tree li .fa{color: $color-special-icon}
+
 
 // SIDEBAR
 .sidebar .circle{width: 40px; max-width: 100%; margin-right: 5px;}

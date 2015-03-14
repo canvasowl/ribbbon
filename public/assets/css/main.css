@@ -762,6 +762,16 @@ fieldset[disabled] {
 .form-w-label label {
   margin-top: 15px; }
 
+.tree {
+  margin-bottom: 0;
+  border: none; }
+
+.tree li {
+  border: none; }
+
+.tree li .fa {
+  color: #be56b5; }
+
 .sidebar .circle {
   width: 40px;
   max-width: 100%;

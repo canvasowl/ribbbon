@@ -12,24 +12,26 @@
 
 	<div class="col-xs-12">
 		<div class="app-wrapper">
-            <ul class="list-style-none">
+
                 @if (count($tasks) == 0)
                     <div class="alert alert-info" role="alert">
                     <i class="fa fa-lightbulb-o"></i> 
                         Once you start creating tasks for projects, you will see all your incompleted tasks here. 
                     </div>
                 @else
-                   @foreach ($tasks as $task)
-                        <?php $counter++; ?>
-                        <a class="list-link"href="/projects/{{ $task->project_id }}">
-                            <li>
-                                <span class="numCount">{{ $counter }}</span> {{ $task->name}} 
-                            </li>
-                        </a>
-                    @endforeach
+                    <ul class="list-group tree">
+                       @foreach ($tasks as $task)
+                            <?php $counter++; ?>
+                                <li class="list-group-item">
+                                {{ $counter }}.
+                                <a href="/clients/{{ clientIdByTask( $task->id ) }} }}" class="badge-client">{{ clientNameByTask( $task->id ) }}</a>
+                                 <i class="fa fa-arrow-circle-o-right"></i> <a href="/projects/{{ $task->project->id }}" class="badge-project">{{ $task->project->name }}</a>
+                                 <i class="fa fa-arrow-circle-o-right"></i> <span class="badge-task"><strong>{{ $task->name }}</strong></span>
+                                 </li>
+                        @endforeach
+                    </ul>
                 @endif
- 
-            </ul>
+
         </div>
 	</div>
 </div>
