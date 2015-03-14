@@ -58,6 +58,9 @@ img {
 *:-ms-input-placeholder {
   opacity: .3; }
 
+.line-through {
+  text-decoration: line-through; }
+
 .special-shadow {
   box-shadow: 0 2px 5px rgba(80, 205, 232, 0.3);
   transition-duration: .5s; }

@@ -73,7 +73,7 @@
 			@if(count($latestCompletedTasks) > 0)
 			    <h3 class="no-margin-top">Latest completed tasks</h3>
                 @foreach($latestCompletedTasks as $task)
-                    <p><i class="fa fa-check"></i> {{ $task->name }} <span class="dimmed">{{ $task->updated_at->toFormattedDateString() }}</span></p>
+                    <p><i class="fa fa-check"></i> <span class="line-through">{{ $task->name }}</span> <span class="dimmed">{{ $task->updated_at->toFormattedDateString() }}</span></p>
                 @endforeach
             @else
                 <p>You havent completed any tasks lately</p>
