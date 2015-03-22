@@ -169,12 +169,16 @@ class UsersController extends \BaseController {
 			)
 		);
 
-		// Make sure the email being used has been invited to beta
+        // Commented out for open beta and beyond
+		/************* Make sure the email being used has been invited to beta
+         *
 		if ( !DB::table('beta')->whereEmail($email)->whereStatus(1)->get() ) {
-			$validator->getMessageBag()->add('used', 'The email used has not been invited.');	
-			return Redirect::back()->withErrors($validator)->withInput();		
-		}		
-
+			$validator->getMessageBag()->add('used', 'The email used has not been invited.');
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+         *
+         ******************/
+        
 		if ($validator->fails()){
 		    return Redirect::back()->withErrors($validator)->withInput();
 		}
