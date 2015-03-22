@@ -178,7 +178,7 @@ class UsersController extends \BaseController {
 		}
          *
          ******************/
-        
+
 		if ($validator->fails()){
 		    return Redirect::back()->withErrors($validator)->withInput();
 		}
