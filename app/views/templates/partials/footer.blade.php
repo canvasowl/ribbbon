@@ -4,7 +4,7 @@
             <div class="col-xs-12">
                 <center>
                     <ul class="list-inline">
-                        <li><a href="/about">About Ribbbon</a></li>
+                        {{--<li><a href="/about">About Ribbbon</a></li>--}}
                         <li><a href="/faq">FAQ</a></li>
                     </ul>
                     <ul class="list-inline">

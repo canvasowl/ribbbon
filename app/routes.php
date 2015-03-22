@@ -4,7 +4,7 @@ Route::get('/', 'HomeController@index');
 Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); });
 Route::get('signin', function(){ return View::make('signin')->with('pTitle', "Login"); });
 Route::get('beta', function(){ return View::make('beta')->with('pTitle', "Beta email request"); });
-Route::get('about', function(){ return View::make('about')->with('pTitle', "About Ribbbon"); });
+Route::get('about', 'HomeController@index');
 Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); });
 
 //----------------- User routes
