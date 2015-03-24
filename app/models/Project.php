@@ -15,6 +15,10 @@ class Project extends \Eloquent {
 		return $this->belongsToMany('User');
 	}
 
+    public function client(){
+        return $this->belongsTo('Client');
+    }
+
     public function uploads(){
         return $this->hasMany('Upload', 'project_id');
     }
