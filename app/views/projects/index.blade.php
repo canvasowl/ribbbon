@@ -21,16 +21,14 @@
                     @foreach ($projects as $project)
                         <?php $counter++; ?>
                         <a class="list-link"href="/projects/{{ $project->id }}">
-                            <li>
-                                <span class="numCount">{{ $counter }}</span> {{ $project->name}} 
-                            </li>
+                            <li><span class="numCount">{{ $counter }}</span> {{ $project->name}}</li>
                         </a>
                     @endforeach
                 </ul>                
             @else
-                <div class="alert alert-info" role="alert"><i class="fa fa-lightbulb-o">
+                <section class="info"><i class="fa fa-lightbulb-o">
                     </i> In order to create a project you must first create a <a href="/clients">client</a>
-                </div>
+                </section>
             @endif
             <hr>
             {{--Member Projects--}}
@@ -47,11 +45,11 @@
                     @endforeach
                 </ul>
             @else
-                <div class="alert alert-info" role="alert">
+                <section class="info" role="alert">
                     <i class="fa fa-lightbulb-o"></i>
                     No projects have been shared with you. In order to become a
                     member of a project a <i><b>project owner</b></i> has to send you an invite.
-                </div>
+                </section>
             @endif
 	   </div>
     </div>

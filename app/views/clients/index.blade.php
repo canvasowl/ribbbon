@@ -14,9 +14,9 @@
 		<div class="app-wrapper">  
 
             @if ( count($clients) == 0 )
-                <div class="alert alert-info" role="alert">
+                <section class="info" role="alert">
                     <i class="fa fa-lightbulb-o"></i> Start by creating your very first client.</a>
-                </div> 
+                </section>
             @else    
                 <!-- List clients -->
                 <ul class="list-style-none">

@@ -14,10 +14,10 @@
 		<div class="app-wrapper">
 
                 @if (count($tasks) == 0)
-                    <div class="alert alert-info" role="alert">
+                    <section class="info" role="alert">
                     <i class="fa fa-lightbulb-o"></i> 
                         Once you start creating tasks for projects, you will see all your incompleted tasks here. 
-                    </div>
+                    </section>
                 @else
                     <ul class="list-group tree">
                        @foreach ($tasks as $task)
