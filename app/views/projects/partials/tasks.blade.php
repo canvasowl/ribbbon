@@ -5,20 +5,22 @@
 <div class="form-group">
 	<form action="/tasks/create" method="get">
 		<div class="row">		            				
-			<div class="col-xs-9 no-padding-left">
+			<div class="col-xs-11 no-padding-left">
     			<input placeholder="Name" type="text" name="name" class="form-control" value="{{ Input::old('name') }}" autofocus>		            				
 			</div>
-			<div class="col-xs-3 no-padding-right">
+			<div class="col-xs-1 no-padding-right no-padding-left">
 				<div>
-					<input placeholder="Weight (1-5)" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
+					<input placeholder="1-5" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
 				</div>
 			</div>
-			<input type="hidden" name="projectId" value="{{ $project->id }}">
+			<div class="col-xs-12 no-margin-left no-padding-right no-padding-left">
+			    <br>
+                <div class="form-group">
+                    <input type="hidden" name="projectId" value="{{ $project->id }}">
+                    <button class="btn btn-primary btn-wide"><i class="fa fa-list-ol fa-lg"></i></button>
+                </div>
+			</div>
 		</div>
-		<div class="form-group">
-			<br>
-			<input type="submit" class="pull-right btn btn-primary btn-wide" value="add task">	
-		</div>		            					            			
 	</form>
 </div>
 </div>
