@@ -10,10 +10,9 @@
 			<hr>
 			
 			<div class="question">
-				<h2>How can I reacive an invite to Ribbbon?</h2>
-				<p>Getting into the beta is simple, all you have to do is head on over to the
-				<a href="/beta">invite</a> page and request an invite. After that just keep a lookout, 
-				your invite should be on it's way into your email inbox.
+				<h2>What are the limits to open beta?</h2>
+				<p>None really, with that being said many features are being introduced and refined during the
+				open beta. So enjoy the early stages of Ribbbon.
 				</p>
 			</div>
 
@@ -30,8 +29,8 @@
 
 			<div class="question">
 				<h2>Can I work on the same project with other users?</h2>
-				<p>Right now Ribbbon only handles single managed projects, however the 
-				development for team collaboration has already started so expect that down the road.</p>
+				<p>Yes you can, you can share you're project and add members within your projects manage page. Ribbbon
+				supports project sharing by project basis, however you cannot share your clients.</p>
 			</div>
 
 			<div class="question">

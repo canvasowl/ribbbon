@@ -495,10 +495,12 @@ span.total {
   margin: 0 auto; }
 
 .container-index .hug {
-  padding: 50px;
+  padding: 150px;
   color: #777777; }
 
 .container-index .hug h2 {
+  color: #50cde8;
+  opacity: 1 !important;
   font-family: 'Code Pro';
   font-size: 1.5em; }
 
@@ -735,7 +737,7 @@ fieldset[disabled] {
   background-color: #DA734E; }
 
 .hug-about-tasks {
-  background-color: #CBDBD8; }
+  background-color: #fafafa; }
 
 .hug-about-tasks .btn-cta {
   font-size: 2em; }
