@@ -16,7 +16,7 @@
 
 		<!-- Latest Tasks -->
 		<div class="app-wrapper">                   				  	
-			<h3>Latest Tasks</h3>
+			<h5>Latest Tasks</h5>
 		  	@if (count($latestTasks) > 0)
 			  	@foreach ($latestTasks as $task)
 			  		<p>
@@ -35,7 +35,7 @@
 
 		<!-- My projects -->
 		<div class="app-wrapper">                   				  	
-			<h3>Latest Projects</h3>
+			<h5>Latest Projects</h5>
 		  	@if ( count($latestProjects) > 0)
 			  	@foreach ($latestProjects as $project)
 			  		<p>
@@ -53,7 +53,7 @@
 
 		<!-- Projects shared with me -->
 		<div class="app-wrapper">                   				  	
-			<h3>Projects Shared with me</h3>
+			<h5>Projects Shared with me</h5>
 			@if ( count($inProjects) > 0)
 				@foreach ($inProjects as $project)
 					<p>
