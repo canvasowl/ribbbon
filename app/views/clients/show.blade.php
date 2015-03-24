@@ -5,12 +5,11 @@
 
 <div class="row main-row">
     <div class="col-xs-12">
-        <h2 class="pull-left">{{ $client->name }}</h2>
-        <ul class="list-inline pull-right">
-            <li><a title="Go back" class="btn " href="/clients"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
-            <li><a title="Edit client" class="btn " href="/clients/{{ $client->id }}/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
-        </ul>
-        <div class="clearfix"></div>
+        <h2 class="pull-left">{{ $client->name }}
+            <a title="Edit client" class="btn btn-default" href="/clients/{{ $client->id }}/edit">
+                <i class="fa fa-pencil-square-o fa-lg"></i>
+            </a>
+        </h2>
     </div>
 
 
