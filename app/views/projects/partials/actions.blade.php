@@ -1,13 +1,9 @@
 <!-- ACTIONS -->
 <div class="col-xs-12">
      <div>
-        <h2 class="pull-left no-margin-top project-name">{{ $project->name }} <span class="badge badge-weight">{{ $total_weight }}</span></h2>
-        <ul class="list-inline pull-right">
-			@if($owner_id == Auth::id())
-            	<li><a title="Go back" class="btn " href="/clients/{{ $project->client_id}}"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
-			@endif
-        </ul>
-        <div class="clearfix"></div>   
+        <h2 class="no-margin-top project-name">
+            <a href="/clients/{{ $project->client->id }}">{{ $project->client->name }}</a>
+            <i class="fa fa-arrow-circle-o-right"></i> {{ $project->name }} <span class="badge badge-weight">{{ $total_weight }}</span></h2>
     </div>	
   	<!-- info pills -->
   	<ul class="list-inline">
