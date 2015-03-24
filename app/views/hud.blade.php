@@ -5,6 +5,11 @@
 
 <div class="row main-row">
 
+    @if( Client::where('user_id', Auth::id())->count() === 0)
+        <div class="col-xs-12"><center><a href="/clients" class="btn btn-primary"><i class="fa fa-plus"></i> CREATE FIRST CLIENT</a></center></div>
+    @endif
+
+
 	<div class="col-xs-12"><h2>Hud</h2></div>
 	
 	<div class="col-xs-12 col-md-8">
