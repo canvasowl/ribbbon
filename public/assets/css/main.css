@@ -503,7 +503,7 @@ span.total {
   color: #777777; }
 
 .container-index .hug h2 {
-  color: #50cde8;
+  color: #fff;
   opacity: 1 !important;
   font-family: 'Code Pro';
   font-size: 1.5em; }
@@ -514,8 +514,7 @@ span.total {
 .container-index .hug-h-featured {
   background-color: #50cde8;
   color: #fff;
-  text-align: center;
-  margin-top: 75px; }
+  text-align: center; }
 
 .container-index .hug-h-featured .scroll-box {
   padding: 100px 0; }

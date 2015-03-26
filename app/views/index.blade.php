@@ -9,8 +9,8 @@
 <div class="hug hug-h-featured">
 	<div class="row">
 	    <div class="col col-sm-12">
-	        <h2 class="animated zoomInDown">So what's <span class="site-name">Ribbbon</span>?</h2>
-	        <p class="animated zoomInDown">Ribbbon is web based project management system for web artisans. It helps you
+	        <h2 class="">So what's <span class="site-name">Ribbbon</span>?</h2>
+	        <p class="">Ribbbon is web based project management system for web artisans. It helps you
 	        manage your projects and more importantly yourself and others.</p>
 
             <div class="scroll-box">
@@ -27,7 +27,7 @@
 <div class="hug hug-h-weight">
 	<div class="row">
 	    <div class="col col-sm-6">
-	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
+	        <img src="{{ asset('assets/img/tasks.png') }}">
 	    </div>
 	    <div class="col col-sm-6">
 	        <h2>Weight</h2>

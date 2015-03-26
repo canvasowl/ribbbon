@@ -23,10 +23,11 @@ $(window).scroll(function(){
  *
  *************************************************/
 $(document).ready(function(){
-    var a = window.innerHeight;
+    var a = $( window ).height();
     var b = $('.hug-homeHeader').height();
-    var x = (a - b) - 100;
-    $('.hug-h-featured').height(x);
+    var x = (a - b);
+
+    $('.hug-h-featured').height(a);
 })
 
 /*************************************************
