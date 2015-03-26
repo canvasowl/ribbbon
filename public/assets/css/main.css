@@ -139,6 +139,10 @@ img {
   top: 5px;
   right: 5%; }
 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden; }
+
 .badge {
   background-color: #E4E4E4;
   color: #50cde8; }

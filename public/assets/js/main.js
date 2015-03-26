@@ -66,10 +66,14 @@ $('.dynamic-form input[type="radio"]').click(function(){
  * 
  *************************************************/
 var openModule = function(){
-	var module = $('div#module'); 	
+	var module = $('div#module');
+    var top = $(document).scrollTop();
 	module.height( $(document).height() );
 	module.width( $(document).width() );
 	module.fadeIn();
+    $('.module-form').css('margin-top', top);
+    $('#close').css('margin-top', top + 20);
+    $('body').addClass('stop-scrolling');
 }
 
 var closeModule = function(){
@@ -77,6 +81,7 @@ var closeModule = function(){
 	var moduleForm 	= $('.module-form');
 	module.fadeOut();
 	moduleForm.fadeOut();
+    $('body').removeClass('stop-scrolling');
 }
 
 $('#btn-no').click(function(){
