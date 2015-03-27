@@ -349,6 +349,14 @@ span.total{
 
 .hug-h-credentials h2{color: $color-primary}
 
+.hug-h-register{text-align: center;}
+.hug-h-register .btn{padding: 20px 50px; font-size: 1em; display: block; margin: 0 auto; width: 400px; max-width: 100%;}
+
+.hug-h-credentials,
+.hug-h-files,
+.hug-h-register{padding: 100px !important;}
+.hug-h-weight{padding-bottom: 100px !important;}
+
 .home-form{ max-width: 400px; width: 100%; margin: 100px auto;}
 .home-form input[type="text"], .home-form input[type="password"]{ font-size: 1.5em; }
 //

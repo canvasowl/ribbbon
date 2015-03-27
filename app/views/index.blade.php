@@ -82,11 +82,8 @@
 {{-- signup --}}
 <div class="hug hug-h-register">
 	<div class="row">
-	    <div class="col col-sm-6">
-	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
-	    </div>
-	    <div class="col col-sm-6">
-	        <h2>Register For Free</h2>
+	    <div class="col col-sm-12">
+	        <a href="/register" class="btn btn-primary">Register For Free</a>
 	        <p>Ribbbon is free so why not take it for spin and start managing your projects more organized.</p>
 	    </div>
 	</div>
