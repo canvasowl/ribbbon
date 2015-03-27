@@ -38,9 +38,7 @@
                     </span>
                 </p>
                 <div class="pull-right">
-                    <a href="{{ URL::to('/') }}/{{ $upload->path }}" class="btn btn-default" target="_blank">
-                        <i class="fa fa-cloud-download"></i>
-                    </a>
+                    <a class="btn btn-default" href="{{ URL::to('/') }}/{{ $upload->path }}" download="{{ $upload->name }}"><i class="fa fa-cloud-download"></i></a>
                 </div>
                 <div class="clearfix"></div>
             </li>
