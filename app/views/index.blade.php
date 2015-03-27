@@ -25,10 +25,10 @@
 {{-- weight --}}
 <div class="hug hug-h-weight">
 	<div class="row">
-	    <div class="col col-sm-6">
+	    <div class="col col-sm-8">
 	        <img src="{{ asset('assets/img/tasks.png') }}">
 	    </div>
-	    <div class="col col-sm-6">
+	    <div class="col col-sm-4">
 	        <h2>Weight</h2>
 	        <p>Keep track on how your project is doing with weights. Each task has
 	        a weight which in turn helps create an overall project weight.</p>
@@ -37,15 +37,15 @@
 </div>
 
 {{-- sharing --}}
-<div class="hug hug-h-sharing">
-	<div class="row">
-	    <div class="col col-sm-12">
-	        <h2>Sharing</h2>
-	        Work on projects with others easily by sharing your project to
-            one or multiple users.
-	    </div>
-	</div>
-</div>
+{{--<div class="hug hug-h-sharing">--}}
+	{{--<div class="row">--}}
+	    {{--<div class="col col-sm-12">--}}
+	        {{--<h2>Sharing</h2>--}}
+	        {{--Work on projects with others easily by sharing your project to--}}
+            {{--one or multiple users.--}}
+	    {{--</div>--}}
+	{{--</div>--}}
+{{--</div>--}}
 
 {{-- credentials --}}
 <div class="hug hug-h-credentials">
@@ -67,14 +67,14 @@
 </div>
 
 {{-- files --}}
-<div class="hug hug-h-sharing">
+<div class="hug hug-h-files">
 	<div class="row">
-	    <div class="col col-sm-6">
+	    <div class="col col-sm-4">
 	        <h2>Files</h2>
 	        <p>Upload files per project, .pdf, .doc, .psd, .ai and many more file types supported.</p>
 	    </div>
-	    <div class="col col-sm-6">
-	        <img src="https://api.fnkr.net/testimg/500x500/00CED1/FFF/?text=img+placeholder">
+	    <div class="col col-sm-8">
+	        <img src="{{ asset('assets/img/files.png') }}">
 	    </div>
 	</div>
 </div>

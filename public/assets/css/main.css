@@ -468,7 +468,6 @@ span.total {
   height: 150px;
   width: 150px;
   background-color: #50cde8;
-  border: 2px solid #fff;
   -ms-transform: rotate(45deg);
   /* IE 9 */
   -webkit-transform: rotate(45deg);
@@ -503,7 +502,7 @@ span.total {
   color: #777777; }
 
 .container-index .hug h2 {
-  color: #fff;
+  color: #50cde8;
   opacity: 1 !important;
   font-family: 'Code Pro';
   font-size: 1.5em; }
@@ -517,12 +516,14 @@ span.total {
   text-align: center;
   height: 550px; }
 
+.container-index .hug-h-featured h2 {
+  color: #fff; }
+
 .container-index .hug-h-featured .scroll-box {
   padding: 100px 0; }
 
 .hug-h-featured .scroll-box .diamond {
   margin: 0 auto;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
   border-radius: 40px; }
 
 .hug-h-featured .scroll-box p {
