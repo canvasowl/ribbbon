@@ -19,19 +19,6 @@ $(window).scroll(function(){
 
 /*************************************************
  *
- * Set the height of home page featured section
- *
- *************************************************/
-$(document).ready(function(){
-    var a = $( window ).height();
-    var b = $('.hug-homeHeader').height();
-    var x = (a - b);
-
-    $('.hug-h-featured').height(a);
-})
-
-/*************************************************
- *
  * NAV TABS
  * 
  *************************************************/

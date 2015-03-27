@@ -17,7 +17,6 @@
                 <div class="diamond">
                     <i class="fa fa-angle-double-down fa-5x"></i>
                 </div>
-                <p>scroll down</p>
             </div>
 	    </div>
 	</div>

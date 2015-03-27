@@ -514,7 +514,8 @@ span.total {
 .container-index .hug-h-featured {
   background-color: #50cde8;
   color: #fff;
-  text-align: center; }
+  text-align: center;
+  height: 550px; }
 
 .container-index .hug-h-featured .scroll-box {
   padding: 100px 0; }
