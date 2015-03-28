@@ -553,11 +553,12 @@ fieldset[disabled]{opacity: .2 !important;}
 @media (max-width: 767px){
 	.homepage-msg h1{font-size: 1.5em}
 
-	.navbar-default .navbar-nav .open .dropdown-menu>li>a { color: #FFF; }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a { color: #FFF; }
 
 	.hug-homeBody .container{height: auto;}
 
-	.hug-footerOut{position: static;}
+    .container-index .hug,
+    .hug-h-credentials, .hug-h-files, .hug-h-register{ padding: 70px 20px !important; text-align: center}
 }
 
 @media (max-width: 991px){
@@ -565,4 +566,9 @@ fieldset[disabled]{opacity: .2 !important;}
 	.homepage-msg .btn-cta{text-align: center; margin-top: 5%;}
 
 	.hug-footerOut .pull-right{float: left !important}
+}
+
+@media (max-width: 1118px){
+  .container-index .hug-h-featured{height: auto;}
+  .container-index .hug-h-featured .scroll-box{display: none;}
 }

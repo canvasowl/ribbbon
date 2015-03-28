@@ -866,8 +866,10 @@ fieldset[disabled] {
   .hug-homeBody .container {
     height: auto; }
 
-  .hug-footerOut {
-    position: static; } }
+  .container-index .hug,
+  .hug-h-credentials, .hug-h-files, .hug-h-register {
+    padding: 70px 20px !important;
+    text-align: center; } }
 @media (max-width: 991px) {
   .homepage-msg h1 {
     text-align: center; }
@@ -878,3 +880,9 @@ fieldset[disabled] {
 
   .hug-footerOut .pull-right {
     float: left !important; } }
+@media (max-width: 1118px) {
+  .container-index .hug-h-featured {
+    height: auto; }
+
+  .container-index .hug-h-featured .scroll-box {
+    display: none; } }
