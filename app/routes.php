@@ -29,7 +29,7 @@ Route::group(array('before' => 'auth'), function()
     Route::post('projects/{id}/files', array('uses' => 'FilesController@store', 'as' => 'files.store' ));
     Route::delete('projects/{id}/files', array('uses' => 'FilesController@destroy', 'as' => 'files.remove' ));
 
-	Route::resource('credentials', 'CredentialsController');
+	Route::resource('credentials', 'CredentialsController', array('only' => array('create', 'destroy')));
 	Route::resource('tasks', 'TasksController');
 	Route::get('hud', 'HomeController@index');
 	Route::get('search', 'HomeController@search');
