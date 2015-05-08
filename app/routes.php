@@ -20,7 +20,7 @@ Route::group(array('before' => 'auth'), function()
 {	
 	Route::resource('clients', 'ClientsController', array('except' => array('store')));
 
-	Route::resource('projects', 'ProjectsController');	
+	Route::resource('projects', 'ProjectsController', array('except' => array('store')));
 	Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
 	Route::delete('projects/{id}/remove', array('uses' => 'ProjectsController@remove', 'as' => 'projects.remove') );
 	Route::get('projects/{id}/credentials', array('uses' => 'ProjectsController@credentials', 'as' => 'projects.credentials' ));
