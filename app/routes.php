@@ -18,7 +18,7 @@ Route::post('resetPassword/{id}','UsersController@resetPassword');
 //----------------- Auth routes
 Route::group(array('before' => 'auth'), function()
 {	
-	Route::resource('clients', 'ClientsController');
+	Route::resource('clients', 'ClientsController', array('except' => array('store')));
 
 	Route::resource('projects', 'ProjectsController');	
 	Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));

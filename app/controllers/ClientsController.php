@@ -16,10 +16,8 @@ class ClientsController extends \BaseController {
 		$user		= User::find($id);
 		$clients 	= $user->clients()->orderBy('created_at', 'desc')->take(5)->get();
 
-
 		$counter 	= 0;		
 		return View::make('clients.index', compact([ 'clients', 'counter', 'pTitle']));
-
 	}
 
 	/**
@@ -51,20 +49,7 @@ class ClientsController extends \BaseController {
         $client->user_id 	= $user_id;
         $client->save();
 
-
         return Redirect::back()->with('success', $name ." is now a new client.");
-	}
-
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /clients
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
 	}
 
 	/**
