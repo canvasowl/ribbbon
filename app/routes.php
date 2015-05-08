@@ -8,7 +8,7 @@ Route::get('about', 'HomeController@index');
 Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); });
 
 //----------------- User routes
-Route::resource('users', 'UsersController');
+Route::resource('users', 'UsersController', array('except' => array('create', 'store', 'show','edit','update')));
 Route::post('login', 'UsersController@login');
 Route::post('make', 'UsersController@register');
 Route::get('logout', 'UsersController@logout');
