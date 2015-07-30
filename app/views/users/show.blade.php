@@ -1,0 +1,1 @@
+/Applications/MAMP/htdocs/rainbow/rainbow/app/views/users/show.blade.php
