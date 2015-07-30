@@ -1,6 +1,6 @@
 # Ribbbon
 
-Ribbbon is a project managemnet system built on Laravel 4.2.*
+Ribbbon is a project management system built on Laravel 5.1.*
 
 # Features
   - User / account creation
@@ -20,5 +20,4 @@ Ribbbon is a project managemnet system built on Laravel 4.2.*
 -   Run php artisan migrate
 -   Run php artisan db:seed
 -   Start developing!
-
 

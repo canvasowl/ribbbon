@@ -7,5 +7,9 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
-.idea/
+.idea
 /public/uploads/files/*
+/vendor
+/node_modules
+Homestead.yaml
+.env
