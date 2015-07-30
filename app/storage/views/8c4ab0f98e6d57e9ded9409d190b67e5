@@ -1,0 +1,37 @@
+<?php echo $__env->make('templates/partials/head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="hug hug-homeHeader">
+
+	<?php if(Auth::check()): ?>
+		<?php echo $__env->make('templates/partials/nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>	
+	<?php endif; ?>
+
+	<?php if(!Auth::check()): ?>
+		<?php echo $__env->make('templates/partials/unauth_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>	
+	<?php endif; ?>	
+	
+	<?php if($errors->first()): ?>
+		<div class="alert alert-danger alert-main animated fadeInDown" role="alert">
+	  		<a href="#" class="alert-link">  			
+	  			<?php echo $errors->first(); ?>  			
+	  		</a>
+		</div>
+	<?php endif; ?>
+
+	<?php if(Session::has('success')): ?>
+		<div class="alert alert-success alert-main animated fadeInDown" role="alert">
+	  		<a href="#" class="alert-link">  			
+	  			<?php echo Session::get('success'); ?>  			
+	  		</a>
+		</div>		
+	<?php endif; ?>
+
+</div>
+
+<div class="hug hug-homeBody">
+	<div class="container container-index">
+		<?php echo $__env->yieldContent('content'); ?>
+	</div>	
+</div>
+
+<?php echo $__env->make('templates/partials/footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

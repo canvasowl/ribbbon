@@ -1,0 +1,11 @@
+<?php echo $__env->make('templates/partials/head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo $__env->make('templates/partials/nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="hug hug-homeBody">
+	<div class="container">
+		<?php echo $__env->yieldContent('content'); ?>
+	</div>	
+</div>
+
+<?php echo $__env->make('templates/partials/footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

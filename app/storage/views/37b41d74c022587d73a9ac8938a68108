@@ -1,0 +1,55 @@
+<?php /* UPLOAD FILES FORM */ ?>
+<div><strong>Upload files</strong></div><br>
+<div>
+	<div class="dynamic-form">
+		<?php echo Form::open(array('action' => 'FilesController@store', 'method' => 'post', 'files' => true)); ?>
+
+			<input class="form-control" type="text" name="name" placeholder="File Name">
+     		<input type="hidden" name="project_id" value="<?php echo $project->id; ?>">
+     		<br>
+     		<div class="col-xs-4 no-padding-left">
+                <div class="fileUpload btn btn-default btn-wide">
+                    <span>Choose file</span>
+                    <input type="file" name="file" class="upload" />
+                </div>
+     		</div>
+     		<div class="col-xs-8 no-padding-right">
+         		<button type="submit" class="btn btn-primary btn-wide">
+	                 <i class="fa fa-cloud-upload fa-lg"></i> Upload File
+	            </button>
+     		</div>
+     		<div class="clearfix"></div>
+		<?php echo Form::close(); ?>
+
+	</div>
+</div>
+<?php /* UPLOAD FILES FORM */ ?>
+<hr>
+<?php /* FILE LISTINGS */ ?>
+<div><strong>Download files</strong></div><br>
+<div>
+
+    <?php if( count($project->uploads) != 0 ): ?>
+        <ul class="list-group">
+        <?php foreach( $project->uploads as $upload): ?>
+            <li class="list-group-item">
+                <p class="pull-left">
+                    <?php echo $upload->name; ?><br>
+                    <span class="dimmed no-margin-left">
+                        <i class="fa fa-clock-o"></i> uploaded on <?php echo $upload->updated_at->toFormattedDateString(); ?>
+
+                    </span>
+                </p>
+                <div class="pull-right">
+                    <a class="btn btn-default" href="<?php echo URL::to('/'); ?>/<?php echo $upload->path; ?>" download="<?php echo $upload->name; ?>"><i class="fa fa-cloud-download"></i></a>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+        <?php else: ?>
+        <div class="info"><p>You have no uploaded files.</p></div>
+    <?php endif; ?>
+</div>
+<?php /* FILE LISTINGS */ ?>
+

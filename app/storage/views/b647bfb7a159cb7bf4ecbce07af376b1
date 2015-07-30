@@ -1,0 +1,34 @@
+<?php $__env->startSection('content'); ?>
+
+
+  <div class="special-form">
+      <div class="panel panel-default">
+        <div class="panel-heading">Register For Free!</div>
+            <div class="panel-body">
+                <?php echo Form::open(array('action' => 'UsersController@register')); ?>
+
+                    <div class="form-group">
+                        <?php echo Form::text('fullName', null, array('class' => 'form-control', "placeholder" => "full name", "autofocus" => "true" )); ?>
+
+                    </div>
+                    <div class="form-group">
+                        <?php echo Form::text('email', null, array('class' => 'form-control', "placeholder" => "email" )); ?>
+
+                    </div>
+                    <div class="form-group">
+                        <?php echo Form::password('password', array('class' => 'form-control', "placeholder" => "password" )); ?>
+
+                    </div>
+                    <div class="form-group">
+                        <?php echo Form::submit('Signup', array('class' => 'btn btn-primary btn-wide' ));; ?>
+
+                    </div>
+                <?php echo Form::close(); ?>
+
+            </div>
+      </div>
+  </div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('templates.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

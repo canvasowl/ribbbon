@@ -1,0 +1,25 @@
+<?php /*LINKS*/ ?>
+<ul class="nav nav-pills nav-stacked">
+  <li><a href="/projects/<?php echo $project->id; ?>"><i class="fa fa-tasks"></i> Tasks</a></li>
+  <li><a href="/projects/<?php echo $project->id; ?>/credentials"><i class="fa fa-key"></i> Credentials</a></li>
+  <li><a href="/projects/<?php echo $project->id; ?>/files"><i class="fa fa-folder"></i> Files</a></li>
+  <?php if( isOwner($project->id) == true ): ?>
+    <li><a href="/projects/<?php echo $project->id; ?>/manage"><i class="fa fa-cog"></i> Manage</a></li>
+  <?php endif; ?>
+</ul>
+<?php /*LINKS*/ ?>
+
+<?php /*MEMBERS*/ ?>
+<?php if(count($members) > 0): ?>
+  <hr>
+  <ul class="inline-list list-style-none members-list">
+    <li><img class="circle" src="<?php echo User::get_gravatar(User::find($project->user_id)->email); ?>"></li>
+    <?php foreach($members as $member): ?>
+      <li><img class="circle" title="<?php echo $member->full_name; ?>" src="<?php echo User::get_gravatar($member->email); ?>"></li>
+    <?php endforeach; ?>
+  </ul>
+  <div class="clearfix"></div>
+<?php endif; ?>
+<?php /*MEMBERS*/ ?>
+
+

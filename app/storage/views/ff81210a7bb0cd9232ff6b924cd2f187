@@ -1,0 +1,49 @@
+<?php # /app/views/clients/index.blade.php  ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row main-row">
+    <div class="col-xs-12">
+        <div>
+            <h2>Clients</h2>
+        </div>      
+    </div>
+
+	<div class="col-xs-12 col-md-8">
+		<div class="app-wrapper">  
+
+            <?php if( count($clients) == 0 ): ?>
+                <section class="info" role="alert">
+                    <i class="fa fa-lightbulb-o"></i> Start by creating your very first client.</a>
+                </section>
+            <?php else: ?>    
+                <!-- List clients -->
+                <ul class="list-style-none">
+                    <?php foreach($clients as $client): ?>
+                        <?php $counter++; ?>
+                        <a class="list-link"href="/clients/<?php echo $client->id; ?>">
+                            <li>
+                                <span class="numCount"><?php echo $counter; ?></span> <?php echo $client->name; ?> 
+                            </li>
+                        </a>
+                    <?php endforeach; ?>
+                </ul>                    
+                <!-- List clients -->
+            <?php endif; ?>      
+        </div>
+	</div>
+
+    <div class="col-xs-12 col-md-4">
+        <div class="app-wrapper">
+            <?php echo $__env->make('clients.forms.create', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>      
+    </div>
+
+</div>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make('templates/hud_master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

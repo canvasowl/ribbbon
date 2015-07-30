@@ -1,0 +1,40 @@
+<?php # /app/views/tasks/index.blade.php  ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row main-row">
+    <div class="col-xs-12">
+        <div>
+            <h2>All Tasks</h2>
+        </div>        
+    </div>
+
+	<div class="col-xs-12">
+		<div class="app-wrapper">
+
+                <?php if(count($tasks) == 0): ?>
+                    <section class="info" role="alert">
+                    <i class="fa fa-lightbulb-o"></i> 
+                        Once you start creating tasks for projects, you will see all your incompleted tasks here. 
+                    </section>
+                <?php else: ?>
+                    <ul class="list-group tree">
+                       <?php foreach($tasks as $task): ?>
+                            <?php $counter++; ?>
+                                <li class="list-group-item">
+                                <?php echo $counter; ?>.
+                                <a href="/clients/<?php echo clientIdByTask( $task->id ); ?> }}" class="badge-client"><?php echo clientNameByTask( $task->id ); ?></a>
+                                 <i class="fa fa-arrow-circle-o-right"></i> <a href="/projects/<?php echo $task->project->id; ?>" class="badge-project"><?php echo $task->project->name; ?></a>
+                                 <i class="fa fa-arrow-circle-o-right"></i> <span class="badge-task"><strong><?php echo $task->name; ?></strong></span>
+                                 </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+
+        </div>
+	</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('templates/hud_master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

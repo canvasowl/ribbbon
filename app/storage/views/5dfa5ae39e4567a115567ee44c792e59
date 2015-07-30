@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo $pTitle; ?></title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<link rel="shortcut icon" href="<?php echo asset('assets/img/favicon.ico'); ?>" type="image/x-icon">
+	<link rel="icon" href="<?php echo asset('assets/img/favicon.ico'); ?>" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,700italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="<?php echo asset('assets/css/fonts.css'); ?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo asset('assets/css/animate.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo asset('assets/css/main.css'); ?>">
+
+
+	<?php if( !Auth::check() && Request::is('/') || Request::is('beta') || Request::is('register') || Request::is('signin') || Request::is('about') || Request::is('faq') ): ?>
+		<?php /*<style type="text/css">*/ ?>
+			<?php /*.row{width: 900px; max-width: 100%; margin: 0 auto;}		*/ ?>
+		<?php /*</style>*/ ?>
+	<?php endif; ?>	
+
+	<?php if( Request::is('about') || Request::is('faq')  ): ?>
+		<style type="text/css">
+			/*.container{padding-left: 0; padding-right: 0;}		*/
+		</style>
+	<?php endif; ?>	
+
+	<?php if( Request::is('beta') || Request::is('register') || Request::is('signin') ): ?>
+		<?php /*<style type="text/css">*/ ?>
+			<?php /*.hug-homeBody .container{height: auto;}*/ ?>
+		<?php /*</style>		*/ ?>
+	<?php endif; ?>
+
+	<?php if( Request::is('about') ): ?>
+		<style type="text/css">
+			.container{width: 100%;}
+		</style>		
+	<?php endif; ?>	
+
+	<?php if( Auth::check() ): ?>
+		<style type="text/css">
+			.hug-homeHeader .auth-header .row{width: 100% !important} 
+		</style>		
+	<?php endif; ?>
+
+</head>
+<body>
+<?php echo $__env->make('analyticstracking', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div id="module">
+	<a id="close" onclick="closeModule()" title="Close">X</a>
+</div>
+

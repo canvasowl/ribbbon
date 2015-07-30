@@ -1,0 +1,37 @@
+<?php # /app/views/clients/edit.blade.php  ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row main-row">
+    <div class="col-xs-12">
+        <h2 class="pull-left"><?php echo $client->name; ?></h2>
+        <ul class="list-inline pull-right">
+            <li><a title="Go back" class="btn " href="/clients"><i class="fa fa-arrow-circle-o-left fa-lg"></i></a></li>
+            <li><a title="Edit client" class="btn " href="/clients/<?php echo $client->id; ?>/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <?php /* CONTENT */ ?>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="app-wrapper">
+            <?php echo $__env->make('clients.partials._edit', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+    <?php /* CONTENT */ ?>
+
+    <?php /* SIDEBAR */ ?>
+    <div class="col-xs-12 col-sm-4">
+
+    </div>
+    <?php /* SIDEBAR */ ?>
+
+</div>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make('templates/hud_master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
