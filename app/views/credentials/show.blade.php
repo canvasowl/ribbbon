@@ -1,1 +1,0 @@
-/Applications/MAMP/htdocs/rainbow/rainbow/app/views/credentials/show.blade.php
