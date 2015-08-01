@@ -13,9 +13,9 @@
 @if(count($members) > 0)
   <hr>
   <ul class="inline-list list-style-none members-list">
-    <li><img class="circle" src="{{ App\User::get_gravatar(User::find($project->user_id)->email) }}"></li>
+    <li><img class="circle" src="{{ App\User::get_gravatar(App\User::find($project->user_id)->email) }}"></li>
     @foreach($members as $member)
-      <li><img class="circle" title="{{ $member->full_name }}" src="{{ App\User::get_gravatar($member->email)  }}"></li>
+      <li><img class="circle" title="{{ $member->full_name }}" src="{{ $member->get_gravatar($member->email)  }}"></li>
     @endforeach
   </ul>
   <div class="clearfix"></div>
