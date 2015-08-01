@@ -8,7 +8,7 @@
                         <li><a href="/faq">FAQ</a></li>
                     </ul>
                     <ul class="list-inline">
-                        <li>Developed with<a target="_blank" href="http://laravel.com/"> Laravel</a> by <a target="_blank" href="http://www.punyweblab.com/"> Jefry Cruz.</a></li>
+                        <li>Developed with<a target="_blank" href="http://laravel.com/"> Laravel</a> by <a target="_blank" href="http://punyweblab.com/"> Jefry Cruz.</a></li>
                     </ul>
                     <p>COPYRIGHT {{ date('Y') }} &copy; JEFRY CRUZ</p>
                 </center>
