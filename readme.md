@@ -12,6 +12,10 @@ Ribbbon is a project management system built on Laravel 5.1.*
   - project sharing
 
 # Get involved
+Thank you for being interested in Ribbbon. 
+Slack: https://ribbbon.slack.com (If you want an invite just tweet me )
+
+
 > Clone or fork the project. Once you have changes do a pull request to the develop branch.
 
 #Installation
