@@ -36,7 +36,7 @@ class TasksController extends BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{	
+	{
 		// Rules
 		$rules	= array(
 				'weight' 	=> 'integer|between:1,5',
@@ -63,10 +63,8 @@ class TasksController extends BaseController {
 		$task->project_id 	= Input::get('projectId');
 		$task->user_id 		= Auth::id();
 		$task->name 		= Input::get('name');
-		$task->weight		= Input::get('weight');
-		if (!Input::get('weight')) {
-			$task->weight		= 1;
-		}		
+		$task->weight		= (Input::get("weight") == "" ? 1 : Input::get("weight"));
+		$task->wish 		= (Input::get("wish") == "" ? false : true);
 		$task->state		= "incomplete";
 		$task->save();
 
