@@ -97,10 +97,9 @@ img{max-width: 100%;}
 
 .alert-dismissible .close {top: 5px; right: 5%;}
 
-.stop-scrolling {
-  height: 100%;
-  overflow: hidden;
-}
+.stop-scrolling {height: 100%; overflow: hidden;}
+
+.align-with-base{margin-top: 20px !important}
 
 // Badges
 .badge{background-color: #E4E4E4; color: $color-primary}

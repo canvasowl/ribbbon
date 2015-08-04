@@ -143,6 +143,9 @@ img {
   height: 100%;
   overflow: hidden; }
 
+.align-with-base {
+  margin-top: 20px !important; }
+
 .badge {
   background-color: #E4E4E4;
   color: #50cde8; }

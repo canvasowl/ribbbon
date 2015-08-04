@@ -5,14 +5,17 @@
 <div class="form-group">
 	<form action="/tasks/create" method="get">
 		<div class="row">		            				
-			<div class="col-xs-11 no-padding-left">
+			<div class="col-xs-8 no-padding-left">
     			<input placeholder="Name" type="text" name="name" class="form-control" value="{{ Input::old('name') }}" autofocus>		            				
 			</div>
-			<div class="col-xs-1 no-padding-right no-padding-left">
+			<div class="col-xs-2 no-padding-left">
 				<div>
 					<input placeholder="1-5" type="text" name="weight" class="form-control" value="{{ Input::old('weight') }}">
 				</div>
 			</div>
+			<div class="col-xs-2 no-padding-right no-padding-left">
+				<input type="checkbox" name="wish" class="align-with-base" value="true"> Create as wish
+			</div>			
 			<div class="col-xs-12 no-margin-left no-padding-right no-padding-left">
 			    <br>
                 <div class="form-group">
