@@ -49,7 +49,7 @@ class ClientsController extends BaseController {
         // Validation
         $validator = Validator::make(
             array('name' =>	$name),
-            array('name' => 'required|unique:clients')
+            array('name' => 'required')
         );
 
         if ($validator->fails())
