@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+Use Auth;
+Use App\User;
 
 class ApiController extends BaseController {
 
