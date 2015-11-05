@@ -7,8 +7,8 @@ use App\User;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
-use App\Client;
 use Illuminate\Support\Facades\Redirect;
+use App\Client;
 use App\Project;
 use App\Task;
 use App\Credential;
@@ -31,6 +31,15 @@ class ClientsController extends BaseController {
 
 		$counter 	= 0;		
 		return View::make('clients.index', compact([ 'clients', 'counter', 'pTitle']));
+	}
+
+	// Get all clients for the logged in user
+	public function getAllUserClients(){
+		return Client::where('user_id',Auth::id())->get();
+	}
+
+	public function store($name){
+		return "test";
 	}
 
 	/**

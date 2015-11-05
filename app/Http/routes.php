@@ -18,7 +18,7 @@ Route::post('resetPassword/{id}','UsersController@resetPassword');
 //----------------- Auth routes
 Route::group(array('before' => 'auth'), function()
 {	
-	Route::resource('clients', 'ClientsController', array('except' => array('store')));
+	Route::resource('clients', 'ClientsController');
 
 	Route::resource('projects', 'ProjectsController', array('except' => array('store')));
 	Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
@@ -37,7 +37,14 @@ Route::group(array('before' => 'auth'), function()
 });
 
 //----------------- API routes
+//-- auth
 Route::get('/api/{key}/authId', 'ApiController@authId');
+
+//--clients
+Route::get('/api/clients', 'ClientsController@getAllUserClients');
+Route::post('/api/client/{value}', 'ClientsController@store');
+
+//--tasks
 Route::get('/api/{key}/{id}/tasks', 'ApiController@tasks');
 Route::get('/api/{key}/{id}/tasks/incomplete', 'ApiController@incompleteTasks');
 Route::get('/api/{key}/{id}/tasks/complete', 'ApiController@complete');
