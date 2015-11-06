@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use App\User;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
+use Response;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\User;
 use App\Client;
 use App\Project;
 use App\Task;
@@ -35,11 +38,40 @@ class ClientsController extends BaseController {
 
 	// Get all clients for the logged in user
 	public function getAllUserClients(){
-		return Client::where('user_id',Auth::id())->get();
+		$clients = Client::where('user_id',Auth::id())->get();
+		
+		if (count($clients) === 0) {			
+			return Response::json([
+				'status' => 'error',
+				'message' => 'No clients found'
+			],404);
+		}
+
+		return Response::json([
+				'status' => 'success',
+				'message' => 'Clients retrived successfully',
+				'data' => $clients->toArray()
+			],200);
 	}
 
-	public function store($name){
-		return "test";
+	// create a new client
+	public function store(){		
+
+		if (!Input::all()) {
+			return Response::json([
+				'status' => 'error',
+				'message' => 'No information provided to create client'
+			],406);			
+		}
+
+		Client::create(Input::all());			
+		$id = \DB::getPdo()->lastInsertId();
+
+	    return Response::json([
+			'status' => 'success',
+			'message' => 'Client created successfully',
+			'data' => Client::find($id)
+		],200);			
 	}
 
 	/**
