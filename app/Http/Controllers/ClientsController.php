@@ -64,6 +64,7 @@ class ClientsController extends BaseController {
 			],406);			
 		}
 
+		Input::merge(array('user_id' => Auth::id()));
 		Client::create(Input::all());			
 		$id = \DB::getPdo()->lastInsertId();
 
