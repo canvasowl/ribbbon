@@ -56,7 +56,6 @@ class ClientsController extends BaseController {
 
 	// create a new client
 	public function store(){		
-
 		if (!Input::all()) {
 			return Response::json([
 				'status' => 'error',
@@ -75,6 +74,21 @@ class ClientsController extends BaseController {
 		],200);			
 	}
 
+	// get a specific client 
+	public function getClient($id){
+		if (!Client::find($id)) {
+			return Response::json([
+				'status' => 'error',
+				'message' => 'The client was not found'
+			],404);			
+		}
+	    return Response::json([
+			'status' => 'success',
+			'message' => 'Client was successfully found',
+			'data' => Client::find($id)
+		],200);		
+	}
+	
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /clients/create
