@@ -1,9 +1,7 @@
 <?php
-
 Route::get('/', 'HomeController@index');
 Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); });
 Route::get('signin', function(){ return View::make('signin')->with('pTitle', "Login"); });
-//Route::get('beta', function(){ return View::make('beta')->with('pTitle', "Beta email request"); });
 Route::get('about', 'HomeController@index');
 Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); });
 
@@ -37,42 +35,30 @@ Route::group(array('before' => 'auth'), function()
 });
 
 //----------------- API routes
-//-- auth
-Route::get('/api/{key}/authId', 'ApiController@authId');
+Route::group(['prefix' => '/api/'], function()
+{	
+	// USER 
+	Route::get('{key}/authId', 'ApiController@authId');
 
-//--clients
-Route::get('/api/clients', 'ClientsController@getAllUserClients');
-Route::get('/api/clients/{id}', 'ClientsController@getClient');
-Route::put('/api/clients/{id}', 'ClientsController@updateClient');
-Route::post('/api/clients', 'ClientsController@store');
+	// CLIENT
+	Route::get('clients', 'ClientsController@getAllUserClients');
+	Route::get('clients/{id}', 'ClientsController@getClient');
+	Route::put('clients/{id}', 'ClientsController@updateClient');
+	Route::post('clients', 'ClientsController@store');
 
-//--tasks
-Route::get('/api/{key}/{id}/tasks', 'ApiController@tasks');
-Route::get('/api/{key}/{id}/tasks/incomplete', 'ApiController@incompleteTasks');
-Route::get('/api/{key}/{id}/tasks/complete', 'ApiController@complete');
+	// PROJECT
+
+	// TASK
+	Route::get('{key}/{id}/tasks', 'ApiController@tasks');
+	Route::get('{key}/{id}/tasks/incomplete', 'ApiController@incompleteTasks');
+	Route::get('{key}/{id}/tasks/complete', 'ApiController@complete');
+
+	// CREDENTIALS
+
+});
 
 //----------------- Admin routes
 Route::group(array('before' => 'admin'), function()
 {
     Route::get('invite','AdminController@invite');
-});
-
-//-----------------
-//-----------------
-//-----------------
-//----------------- TEST routes
-Route::group(array('before' => 'admin'), function()
-{	
-	// Send test emails
-	Route::get('/testEmails',function(){
-		sendBetaFollowUpMail('jefrycruz88@gmail.com');
-		sendBetaInviteEmail('jefrycruz88@gmail.com');
-		sendWelcomeMail();
-
-		return "All test emails sent";
-	});	
-
-	Route::get('pivot', function(){
-		return Project::find(1)->users;
-	});
 });
