@@ -36,7 +36,7 @@ class ClientsController extends BaseController {
 		return View::make('clients.index', compact([ 'clients', 'counter', 'pTitle']));
 	}
 
-	// Get all clients for the logged in user
+	// CLIENT - Get all clients for the logged in user
 	public function getAllUserClients(){
 		$clients = Client::where('user_id',Auth::id())->get();
 		
@@ -48,13 +48,13 @@ class ClientsController extends BaseController {
 		}
 
 		return Response::json([
-				'status' => 'success',
+				'status' => 'ok',
 				'message' => 'Clients retrived successfully',
 				'data' => $clients->toArray()
 			],200);
 	}
 
-	// create a new client
+	// CLIENT - create a new client
 	public function store(){		
 		if (!Input::all()) {
 			return Response::json([
@@ -68,13 +68,40 @@ class ClientsController extends BaseController {
 		$id = \DB::getPdo()->lastInsertId();
 
 	    return Response::json([
-			'status' => 'success',
+			'status' => 'ok',
 			'message' => 'Client created successfully',
 			'data' => Client::find($id)
 		],200);			
 	}
 
-	// get a specific client 
+	// CLIENT - update a specific client
+	public function updateClient($id){
+		if (count(Input::all()) <= 1) {
+			return Response::json([
+				'status' => 'error',
+				'message' => 'No information provided to update client'
+			],406);			
+		}
+
+		if (!Client::find($id)) {
+			return Response::json([
+				'status' => 'error',
+				'message' => 'Client not found'
+			],404);
+		}
+
+		$input = Input::all();
+		unset($input['_method']);
+
+		Client::find($id)->update($input);
+		
+		return Response::json([
+			'status' => 'ok',
+			'message' => 'The client has been updated'
+		],200);
+	}
+
+	// CLIENT - get a specific client 
 	public function getClient($id){
 		if (!Client::find($id)) {
 			return Response::json([
@@ -83,12 +110,12 @@ class ClientsController extends BaseController {
 			],404);			
 		}
 	    return Response::json([
-			'status' => 'success',
+			'status' => 'ok',
 			'message' => 'Client was successfully found',
 			'data' => Client::find($id)
 		],200);		
 	}
-	
+
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /clients/create

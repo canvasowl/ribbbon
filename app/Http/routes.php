@@ -43,6 +43,7 @@ Route::get('/api/{key}/authId', 'ApiController@authId');
 //--clients
 Route::get('/api/clients', 'ClientsController@getAllUserClients');
 Route::get('/api/clients/{id}', 'ClientsController@getClient');
+Route::put('/api/clients/{id}', 'ClientsController@updateClient');
 Route::post('/api/clients', 'ClientsController@store');
 
 //--tasks
