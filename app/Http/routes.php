@@ -41,17 +41,14 @@ Route::group(['prefix' => '/api/'], function()
 	Route::get('{key}/authId', 'ApiController@authId');
 
 	// CLIENT
-	Route::get('clients', 'ClientsController@getAllUserClients');
-	Route::get('clients/{id}', 'ClientsController@getClient');
-	Route::put('clients/{id}', 'ClientsController@updateClient');
-	Route::post('clients', 'ClientsController@store');
+	Route::get('clients', 'ApiController@getAllUserClients');
+	Route::get('clients/{id}', 'ApiController@getClient');
+	Route::put('clients/{id}', 'ApiController@updateClient');
+	Route::post('clients', 'ApiController@storeClient');
 
 	// PROJECT
 
 	// TASK
-	Route::get('{key}/{id}/tasks', 'ApiController@tasks');
-	Route::get('{key}/{id}/tasks/incomplete', 'ApiController@incompleteTasks');
-	Route::get('{key}/{id}/tasks/complete', 'ApiController@complete');
 
 	// CREDENTIALS
 
