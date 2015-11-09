@@ -47,6 +47,8 @@ Route::group(['prefix' => '/api/'], function()
 	Route::post('clients', 'ApiController@storeClient');
 
 	// PROJECT
+	Route::put('projects/{id}', 'ApiController@updateProject');
+	Route::post('projects', 'ApiController@storeProject');
 
 	// TASK
 

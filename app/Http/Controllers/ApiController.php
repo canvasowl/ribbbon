@@ -110,5 +110,52 @@ class ApiController extends BaseController {
 			'data' => Client::find($id)
 		],200);		
 	}
+
+	// PROJECT - store a new project
+	public function storeProject(){
+		if (!Input::all()) {
+			return Response::json([
+				'status' => 'error',
+				'message' => 'No information provided to create project'
+			],406);			
+		}
+
+		Input::merge(array('user_id' => 1));
+		Project::create(Input::all());			
+		$id = \DB::getPdo()->lastInsertId();
+
+	    return Response::json([
+			'status' => 'ok',
+			'message' => 'Project created successfully',
+			'data' => Project::find($id)
+		],200);			
+	}
+
+	// PROJEC - update project
+	public function updateProject($id){
+		if (count(Input::all()) <= 1) {
+			return Response::json([
+				'status' => 'error',
+				'message' => 'No information provided to update project'
+			],406);			
+		}
+
+		if (!Project::find($id)) {
+			return Response::json([
+				'status' => 'error',
+				'message' => 'Project not found'
+			],404);
+		}
+
+		$input = Input::all();
+		unset($input['_method']);
+
+		Project::find($id)->update($input);
+		
+		return Response::json([
+			'status' => 'ok',
+			'message' => 'The project has been updated'
+		],200);
+	}	
 	
 }

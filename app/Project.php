@@ -7,7 +7,20 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Project extends Model {
-	protected $fillable = [];
+	protected $fillable = [
+			'user_id',
+			'client_id',
+			'name',
+			'description',
+			'production',
+			'stage',
+			'dev',
+			'github'
+		];
+	protected $hidden = [
+			'created_at',
+			'updated_at'
+	];
 
 	public function tasks(){
 		return $this->hasMany('App\Task', 'project_id');
