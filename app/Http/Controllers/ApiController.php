@@ -146,4 +146,21 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('The project has been updated');
 	}
 
+    // TASK - create new task
+    public function storeTask(){
+        if (!Input::all()) {
+            return $this->setStatusCode(406)->makeResponse('No information provided to create client');
+        }
+
+        if (!Input::get('name')) {
+            return $this->setStatusCode(406)->makeResponse('The name seems to be empty');
+        }
+
+        Input::merge(array('user_id' => Auth::id()));
+        Task::create(Input::all());
+        $id = \DB::getPdo()->lastInsertId();
+
+        return $this->setStatusCode(200)->makeResponse('Task created successfully', Task::find($id));
+    }
+
 }

@@ -51,6 +51,7 @@ Route::group(['prefix' => '/api/'], function()
 	Route::post('projects', 'ApiController@storeProject');
 
 	// TASK
+    Route::post('tasks', 'ApiController@storeTask');
 
 	// CREDENTIALS
 

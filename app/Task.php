@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model {
-	protected $fillable = [];
+	protected $fillable = ['name','weight','user_id','project_id','state'];
 
     /**
      * Relationship to project
