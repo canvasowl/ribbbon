@@ -52,6 +52,7 @@ Route::group(['prefix' => '/api/'], function()
 
 	// TASK
     Route::post('tasks', 'ApiController@storeTask');
+    Route::delete('tasks/{id}', 'ApiController@removeTask');
 
 	// CREDENTIALS
 

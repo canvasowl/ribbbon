@@ -163,4 +163,14 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Task created successfully', Task::find($id));
     }
 
+    // TASK - remove a task
+    public  function removeTask($id){
+        if (!Task::find($id)) {
+            return $this->setStatusCode(400)->makeResponse('Could not find the task');
+        }
+
+        Task::find($id)->delete();
+        return $this->setStatusCode(200)->makeResponse('Task deleted successfully');
+    }
+
 }
