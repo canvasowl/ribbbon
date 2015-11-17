@@ -164,7 +164,7 @@ class ApiController extends BaseController {
     }
 
     // TASK - remove a task
-    public  function removeTask($id){
+    public function removeTask($id){
         if (!Task::find($id)) {
             return $this->setStatusCode(400)->makeResponse('Could not find the task');
         }
@@ -173,4 +173,24 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Task deleted successfully');
     }
 
+    // TASK - update task
+    public function updateTask($id){
+        if (!Task::find($id)) {
+            return $this->setStatusCode(400)->makeResponse('Could not find the task');
+        }
+
+        if ( Input::get('name') === "") {
+            return $this->setStatusCode(406)->makeResponse('The task needs a name');
+        }
+
+        if ( Input::get('weight') === "" || Input::get('weight') <= 0) {
+            return $this->setStatusCode(406)->makeResponse('The task needs a weight');
+        }
+
+        $input = Input::all();
+        unset($input['_method']);
+
+        Task::find($id)->update($input);
+        return $this->setStatusCode(200)->makeResponse('The task has been updated');
+    }
 }
