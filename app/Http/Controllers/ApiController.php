@@ -193,4 +193,54 @@ class ApiController extends BaseController {
         Task::find($id)->update($input);
         return $this->setStatusCode(200)->makeResponse('The task has been updated');
     }
+
+    // CREDENTIAL - create new credential
+    public function storeCredential(){
+        if (!Input::all()) {
+            return $this->setStatusCode(406)->makeResponse('No information provided to create credential');
+        }
+
+        if (!Input::get('name')) {
+            return $this->setStatusCode(406)->makeResponse('The name seems to be empty');
+        }
+
+        if (!Input::get('username')) {
+            return $this->setStatusCode(406)->makeResponse('The username seems to be empty');
+        }
+
+        if (!Input::get('password')) {
+            return $this->setStatusCode(406)->makeResponse('The password seems to be empty');
+        }
+
+        Input::merge(array('user_id' => 4));
+        Credential::create(Input::all());
+        $id = \DB::getPdo()->lastInsertId();
+
+        return $this->setStatusCode(200)->makeResponse('Credential created successfully', Credential::find($id));
+    }
+
+    // CREDENTIAL - update credential
+    public function updateCredential($id){
+        if (!Credential::find($id)) {
+            return $this->setStatusCode(400)->makeResponse('Could not find the credential');
+        }
+
+        if ( Input::get('name') === "") {
+            return $this->setStatusCode(406)->makeResponse('The credential needs a name');
+        }
+
+        if ( Input::get('username') === "") {
+            return $this->setStatusCode(406)->makeResponse('The credential needs a username');
+        }
+
+        if ( Input::get('password') === "") {
+            return $this->setStatusCode(406)->makeResponse('The credential needs a password');
+        }
+
+        $input = Input::all();
+        unset($input['_method']);
+
+        Credential::find($id)->update($input);
+        return $this->setStatusCode(200)->makeResponse('The credential has been updated');
+    }
 }
