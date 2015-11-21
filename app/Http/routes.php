@@ -56,8 +56,10 @@ Route::group(['prefix' => '/api/'], function()
     Route::put('tasks/{id}', 'ApiController@updateTask');
 
 	// CREDENTIALS
+    Route::get('credentials/{id}','ApiController@getProjectCredentials');
     Route::post('credentials', 'ApiController@storeCredential');
     Route::put('credentials/{id}', 'ApiController@updateCredential');
+    Route::delete('credentials/{id}', 'ApiController@removeCredential');
 
 });
 

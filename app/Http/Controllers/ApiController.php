@@ -194,6 +194,17 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('The task has been updated');
     }
 
+    // CREDENTIALS - get credentials related to a project
+    public function getProjectCredentials($id){
+        if( count(Credential::where('project_id',$id)->get()) === 0 ){
+            if (!Input::get('password')) {
+                return $this->setStatusCode(404)->makeResponse('No credentials found for this project');
+            }
+        }
+
+        return $this->setStatusCode(200)->makeResponse('Found credentials for this project', Credential::where('project_id',$id)->get() );
+    }
+
     // CREDENTIAL - create new credential
     public function storeCredential(){
         if (!Input::all()) {
@@ -242,5 +253,15 @@ class ApiController extends BaseController {
 
         Credential::find($id)->update($input);
         return $this->setStatusCode(200)->makeResponse('The credential has been updated');
+    }
+
+    // CREDENTIAL - remove a credential
+    public function removeCredential($id){
+        if (!Credential::find($id)) {
+            return $this->setStatusCode(400)->makeResponse('Could not find the credentials');
+        }
+
+        Credential::find($id)->delete();
+        return $this->setStatusCode(200)->makeResponse('Credentials deleted successfully');
     }
 }
