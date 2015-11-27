@@ -16,23 +16,23 @@ Route::post('resetPassword/{id}','UsersController@resetPassword');
 //----------------- Auth routes
 Route::group(array('before' => 'auth'), function()
 {	
+	Route::get('hud', 'HomeController@index');
+	Route::get('search', 'HomeController@search');	
+	Route::get('profile', 'UsersController@index');	
+
 	Route::get('clients', 'ClientsController@index');
 	Route::delete('clients/{id}', 'ClientsController@destroy');
 
-	Route::resource('projects', 'ProjectsController', array('except' => array('store')));
+	Route::resource('projects', 'ProjectsController', array('only' => array('index','show')));	
 	Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
 	Route::delete('projects/{id}/remove', array('uses' => 'ProjectsController@remove', 'as' => 'projects.remove') );
 	Route::get('projects/{id}/credentials', array('uses' => 'ProjectsController@credentials', 'as' => 'projects.credentials' ));
-	Route::get('projects/{id}/manage', array('uses' => 'ProjectsController@edit', 'as' => 'projects.edit' ));
     Route::get('projects/{id}/files', array('uses' => 'ProjectsController@files', 'as' => 'projects.files' ));
     Route::post('projects/{id}/files', array('uses' => 'FilesController@store', 'as' => 'files.store' ));
     Route::delete('projects/{id}/files', array('uses' => 'FilesController@destroy', 'as' => 'files.remove' ));
 
 	Route::resource('credentials', 'CredentialsController', array('only' => array('create', 'destroy')));
 	Route::resource('tasks', 'TasksController');
-	Route::get('hud', 'HomeController@index');
-	Route::get('search', 'HomeController@search');
-	Route::get('profile', 'UsersController@index');
 });
 
 //----------------- API routes
