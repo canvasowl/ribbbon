@@ -32,7 +32,6 @@ Route::group(array('before' => 'auth'), function()
     Route::delete('projects/{id}/files', array('uses' => 'FilesController@destroy', 'as' => 'files.remove' ));
 
 	Route::resource('credentials', 'CredentialsController', array('only' => array('create', 'destroy')));
-	Route::resource('tasks', 'TasksController');
 });
 
 //----------------- API routes
