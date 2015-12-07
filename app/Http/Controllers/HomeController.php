@@ -23,7 +23,7 @@ class HomeController extends BaseController {
 			$inProjects     =   $user->inProjects()->orderBy('created_at', 'desc')->take(5)->get();
 
 
-			return View::make('hud', compact('pTitle', 'latestProjects', 'latestTasks', 'latestCompletedTasks', 'inProjects'));
+			return View::make('ins/hud', compact('pTitle', 'latestProjects', 'latestTasks', 'latestCompletedTasks', 'inProjects'));
 		}else{
 			return View::make('index')->with('pTitle', "A project management system for artisans");
 		}

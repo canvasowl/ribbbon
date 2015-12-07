@@ -1,0 +1,46 @@
+// DEFAULT COLORS
+$color-primary-light: #3958b3;
+$color-primary-dark: #14202c;
+$color-badge: #10e1c2;
+
+// GLOBALS
+html,body{
+	font-family: 'Open Sans', sans-serif;;
+	font-size: 14px;
+}
+
+.weight{
+	background-color: $color-badge; 
+	color: #4f4055;
+	padding: 2px 8px;
+    border-radius: 15px;	
+}
+
+// SIDE NAV SECTION
+.side-nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 100%;
+	background-color: $color-primary-dark;
+}
+.side-nav .logo-section{
+	display: block;
+	padding: 10px 25px;	
+	font-family: 'Pacifico', cursive;	
+	font-size: 1.5em;	
+	text-align: left;	
+	background-color: $color-primary-light;	
+}
+.side-nav .logo-section p{color: #fff; margin-bottom: 0}
+.side-nav .logo-section p:hover{text-decoration: none}
+.side-nav .user-section{padding: 25px; text-align: center;}
+.side-nav .user-section p{color: #fff; text-align: center;}
+.side-nav .user-section img{
+	width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;	
+}
