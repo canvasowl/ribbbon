@@ -49,7 +49,6 @@ class Project extends Model {
 	 * @return bool
 	 */
 	public function isOwner(){
-
 		if($this->user_id != Auth::id()){
 			return false;
 		}
@@ -74,4 +73,8 @@ class Project extends Model {
 		return true;
 	}
 
+	// Get the toal weight of the given project
+	public function totalWeight(){
+		return $this->tasks()->where('state','incomplete')->sum('weight');;
+	}
 }
