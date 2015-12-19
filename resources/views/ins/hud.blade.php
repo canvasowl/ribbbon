@@ -2,7 +2,11 @@
 
 @section('content')
 	<div class="row">
-		<div class="col-xs-12"><h1>Hud</h1></div>
+		<div class="col-xs-12 page-title-section">
+			<h1 class="pull-left">Hud</h1>
+			<a href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 	<div class="row">
