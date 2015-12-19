@@ -1,11 +1,88 @@
 @extends('templates/ins/master')
 
 @section('content')
-	<h1>Hud</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<div class="row">
+		<div class="col-xs-12"><h1>Hud</h1></div>
+	</div>
+
+	<div class="row">
+		{{-- latest section  --}}
+		<div class="col-xs-12 col-md-8">
+			{{-- projects --}}
+			<div class="panel panel-default panel-list">
+			  <div class="panel-heading">Latest Tasks</div>
+			  <div class="panel-body">
+			  	@if (count($latestProjects) > 0)
+				  	@foreach ($latestProjects as $project)
+				  		<a href="/projects/{{ $project->id }}">
+				  			{{ $project->name }} 
+				  			<span class="weight pull-right">w.{{ $project->totalWeight() }}</span>
+				  		</a>
+				  	@endforeach			  			  	
+				@else
+				    <section class="info">
+						<i class="fa fa-lightbulb-o"></i>
+						Your latest projects will show up here, you will need to create <a href="/clients">clients</a> in order to create projects.
+				    </section>
+			  	@endif
+			  </div>
+			</div>			
+
+			{{-- tasks --}}
+			<div class="panel panel-default panel-list">
+			  <div class="panel-heading">Latest Tasks</div>
+			  <div class="panel-body">
+			  	@if (count($latestTasks) > 0)
+				  	@foreach ($latestTasks as $task)
+				  		<a href="/projects/{{ $task->project_id }}">
+				  			{{ $task->name }} 
+				  			<span class="weight pull-right">w.{{ $task->weight}}</span>
+				  		</a>
+				  	@endforeach			  			  	
+				@else
+				    <section class="info">
+						<i class="fa fa-lightbulb-o"></i>
+						Once you start creating tasks for projects, your latest ones will show up here.
+				    </section>
+			  	@endif
+			  </div>
+			</div>
+
+			{{-- shared projects --}}
+			@if (count($inProjects) > 0)
+				<div class="panel panel-default panel-list">
+				  <div class="panel-heading">Shared Projects</div>
+				  <div class="panel-body">
+					  	@foreach ($inProjects as $project)
+					  		<a href="/projects/{{ $project->id }}">
+					  			{{ $project->name }} 
+					  			<span class="weight pull-right">w.{{ $project->totalWeight() }}</span>
+					  		</a>
+					  	@endforeach			  			  	
+				  </div>
+				</div>
+			@endif		
+
+		</div>
+
+		{{-- latest completed tasks --}}
+		<div class="col-xs-12 col-md-4">
+			<div class="panel panel-default panel-list">
+			  <div class="panel-heading">Last Completed Tasks</div>
+			  <div class="panel-body">
+			  	@if (count($latestCompletedTasks) > 0)
+				  	@foreach ($latestCompletedTasks as $task)
+				  		<a  href="/projects/{{ $task->project_id }}">
+				  			{{ $task->name }} 
+				  			<span class="weight pull-right">w.{{ $task->weight }}</span>
+				  		</a>
+				  	@endforeach				  		
+			  	@else
+		  			<center>You haven't comepleted any task in a while!</p></center>								  		
+			  	@endif		  			  	
+			  </div>
+			</div>			
+		</div>
+
+	</div>
 @stop()
