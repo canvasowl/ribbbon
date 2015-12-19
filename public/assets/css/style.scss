@@ -168,6 +168,47 @@ $side-nav-padding: 20px;
 
 }
 
+// Pop Up Form
+.popup-form{
+	position: fixed;
+	bottom: 0;
+	right: 20px;
+	width: 400px;
+	max-width: 400px;
+	height: 450px;
+	background-color: #fff;
+	box-shadow: 0 2px 10px rgba(50,50,50,.4);
+	-webkit-box-shadow: 0 2px 10px rgba(50,50,50,.4);
+	-moz-box-shadow: 0 2px 10px rgba(50,50,50,.4);
+	display: none;
+}
+.popup-form header{
+	padding: 10px;
+	background: $color-primary-dark;
+	color: #fff;
+}
+.popup-form header p{
+	margin-bottom: 0;
+}
+.popup-form header .actions i{
+	color: #fff;	
+	transition-duration: .2s;
+	opacity: .8;
+}
+.popup-form header .actions i:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+.popup-form header .actions i:nth-child(1){
+	margin-right: 10px;
+}
+.popup-form.minimized{
+	transition-duration: .3s;
+	height: 40px;
+}
+
+
+
 .content-area{
     padding: 20px;    	
     margin-left: 260px;

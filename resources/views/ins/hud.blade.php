@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-xs-12 page-title-section">
 			<h1 class="pull-left">Hud</h1>
-			<a href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
+			<a onClick="showForm('.popup-form.new-client')" href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -89,4 +89,23 @@
 		</div>
 
 	</div>
+
+	<div id="client" class="popup-form new-client">
+		<header>
+			<p class="pull-left">New Client</p>
+			<div class="actions pull-right">
+				<i title="Minimze "class="ion-minus-round"></i>
+				<i title="Close" class="ion-close-round"></i>
+			</div>
+			<div class="clearfix"></div>
+		</header>
+		<section>
+			
+		</section>
+		<footer>
+			
+		</footer>
+	</div>
+	<script src="{{ asset('assets/js/controllers/client.js') }}"></script>
+
 @stop()

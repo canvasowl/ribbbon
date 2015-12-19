@@ -1,7 +1,6 @@
 //var randomInt = function randomIntFromInterval(min,max) {
 //    return Math.floor(Math.random()*(max-min+1)+min);
 //}
-
 /*************************************************
  *
  * Header hug special drop shadow
@@ -78,10 +77,39 @@ $('#btn-no').click(function(){
 
 /*************************************************
  *
+ * FORM EVENTS
+ * 
+ *************************************************/
+ function showForm(selector){
+ 	$(selector).show();
+ 	event.preventDefault();
+ }
+
+$(document).ready(function(){
+
+	// Toggle minimize popup form
+	$('.popup-form .ion-minus-round').click(function(){
+		// If the form is not expanded expand it
+		if ( !$(this).parents(".popup-form").hasClass('minimized') ) {
+			$(this).attr('title', "Expand");
+		  	$(this).parents(".popup-form").addClass("minimized");
+		}else{
+			$(this).attr('title', "Minimze");
+		  	$(this).parents(".popup-form").removeClass("minimized");
+		}		
+	});
+	// Close popup form
+	$('.popup-form .ion-close-round').click(function(){
+		$(this).attr('title', "Minimze");
+	  	$(this).parents(".popup-form").removeClass("minimized");		
+	  	$(this).parents(".popup-form").hide();
+	});	
+});
+/*************************************************
+ *
  * DELETIIONS
  * 
  *************************************************/
-
 // Delete user account prompt
 $('#delete-account').click(function(){	
 	openModule();
@@ -103,10 +131,5 @@ $('.credential-wrap .btn-delete').click(function(){
 	    }
 	  });	
 })
-
-
-
-
-
 
 
