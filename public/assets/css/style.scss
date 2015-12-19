@@ -149,7 +149,25 @@ $side-nav-padding: 20px;
 .side-nav .footer {text-align: center}
 .side-nav .footer p{font-size: .8em}
 
+// Buttons
+.btn{
+	padding: 12px 20px;
+	border: none;
+	transition-duration: .2s;
+}
+.btn:hover{
+	opacity: .95;
+}
+.btn.btn-primary{
+	background-color: $color-primary-light;
+}
+
 // CONTENT AREA
+.page-title-section .btn{
+	margin-top: 10px;
+
+}
+
 .content-area{
     padding: 20px;    	
     margin-left: 260px;
