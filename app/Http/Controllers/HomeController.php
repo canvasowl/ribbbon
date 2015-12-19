@@ -17,7 +17,13 @@ class HomeController extends BaseController {
 		if( Auth::check() ) {
 			$pTitle			=	"Hud";
 			$latestTasks	=	Task::where('user_id', Auth::id())->where('state','incomplete')->orderBy('created_at', 'desc')->take(5)->get();
-            $latestCompletedTasks = Task::where('user_id', Auth::id())->where('state','complete')->orderBy('updated_at', 'desc')->take(10)->get();
+
+			$aWeekAgo		=	$start = date('Y-m-d 00:00:00',strtotime("-1 week"));
+            $latestCompletedTasks = Task::where('user_id', Auth::id())
+            							->where('state','complete')
+            							->where('updated_at','<',$aWeekAgo)
+            							->orderBy('updated_at', 'desc')->take(10)->get();
+
 			$latestProjects	=	Project::where('user_id', Auth::id())->orderBy('created_at', 'desc')->take(5)->get();
 			$user 		    =   User::find(Auth::id());
 			$inProjects     =   $user->inProjects()->orderBy('created_at', 'desc')->take(5)->get();
