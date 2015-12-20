@@ -17,7 +17,7 @@
 
 <div class="menu">
 	<h3>Menu</h3>
-	<a class="<?php echo ( Request::is('hud') ) ? 'active' : 'false'; ?>" href="/"><i class="icon ion-ios-home"></i> Hud</a>
+	<a class="<?php echo ( Request::is('hud') ) ? 'active' : 'false'; ?> <?php echo ( Request::is('/') ) ? 'active' : 'false'; ?>" href="/"><i class="icon ion-ios-home"></i> Hud</a>
 	<a class="<?php echo ( Request::is('clients') ) ? 'active' : 'false'; ?>" href="/clients"><i class="icon ion-person"></i> Clients</a>
 	<a class="<?php echo ( Request::is('projects') ) ? 'active' : 'false'; ?>" href="/projects"><i class="icon ion-ios-folder"></i> Projects</a>
 	<a href="/logout"><i class="icon ion-android-exit"></i> Logout</a>

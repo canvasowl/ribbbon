@@ -82,7 +82,7 @@
 				  		</a>
 				  	@endforeach				  		
 			  	@else
-		  			<center>You haven't comepleted any task in a while!</p></center>								  		
+		  			<center><p>You haven't comepleted any task in a while!</p></center>								  		
 			  	@endif		  			  	
 			  </div>
 			</div>			

@@ -56,6 +56,10 @@ h1,h2,h3,h4,h5,h6{
 	background-color: #fafafa;
 	text-decoration: none;
 }
+.panel.panel-list .panel-body p{
+	margin-bottom: 0;
+	padding: 10px;
+}
 
 input.form-control{
 	border: none;
@@ -132,10 +136,11 @@ $side-nav-padding: 20px;
 	padding: 6px 16px;
 	border-left: 4px solid $color-primary-dark;	
 }
-.side-nav .menu a:hover{
-	border-left: 4px solid $color-primary-light;	
+.side-nav .menu a:hover,
+.side-nav .menu a.active{
+	border-left: 4px solid $color-primary-light;
+	color: #fff;	
 }
-.side-nav .menu a.active{color: #fff;}
 .side-nav .menu a:last-child{margin-top: 20px;}
 .side-nav .line{
     padding-left: $side-nav-padding;
