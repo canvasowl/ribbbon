@@ -17,12 +17,14 @@ var client = new Vue({
 		  error: function(e) {
 		    var response = jQuery.parseJSON(e.responseText);
 		  	$('.new-client .status-msg').text("")
+		  								.removeClass('success-msg')
 		  								.addClass("error-msg")
 		  								.text(response.message);			    
 		  	return false;
 		  },
 		  success: function(data){		  	
 		  	$('.new-client .status-msg').text("")
+		  								.removeClass('remove-msg')		  								
 		  								.addClass("success-msg")
 		  								.text(data.message);		    		  	
 		  	
