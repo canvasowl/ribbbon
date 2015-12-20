@@ -77,8 +77,9 @@ class ApiController extends BaseController {
 
 	// CLIENT - create a new client
 	public function storeClient(){		
-		if (!Input::all()) {
-            return $this->setStatusCode(406)->makeResponse('No information provided to create client');
+		
+        if ( Input::get('name') == '') {
+            return $this->setStatusCode(400)->makeResponse('Name field is requied');
 		}
 
 		Input::merge(array('user_id' => Auth::id()));
