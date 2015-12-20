@@ -7,6 +7,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans light', sans-serif;
   font-weight: 300; }
 
+.status-msg {
+  padding: 10px;
+  display: block; }
+
+.status-msg.error-msg {
+  color: #D82929; }
+
+.status-msg.success-msg {
+  color: #5cb85c; }
+
 .weight {
   background-color: #10e1c2;
   color: #4f4055;
@@ -41,6 +51,16 @@ h1, h2, h3, h4, h5, h6 {
   border-left-color: #3958b3;
   background-color: #fafafa;
   text-decoration: none; }
+
+input.form-control {
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0; }
+
+input.form-control:focus {
+  box-shadow: none;
+  border-color: #14202c; }
 
 .side-nav {
   position: fixed;
@@ -203,6 +223,19 @@ h1, h2, h3, h4, h5, h6 {
 .popup-form.minimized {
   transition-duration: .3s;
   height: 40px; }
+
+.popup-form section {
+  padding: 10px; }
+
+.popup-form footer {
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  background-color: #f2f4f3; }
+
+.popup-form.minimized footer {
+  position: static; }
 
 .content-area {
   padding: 20px;

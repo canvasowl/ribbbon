@@ -100,10 +100,17 @@
 			<div class="clearfix"></div>
 		</header>
 		<section>
-			
+			<form>
+				<span class="status-msg"></span>
+				<input v-model="client.name" placeholder="Client Name" type="text" class="form-control">
+				<input v-model="client.email" placeholder="Email" type="text" class="form-control">
+				<input v-model="client.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
+				<input v-model="client.phone_number" placeholder="Contact Number" type="text"class="form-control">
+			</form>
 		</section>
 		<footer>
-			
+			<a v-on:click="create(client)" href="" class="btn btn-primary pull-right">Save</a>
+			<div class="clearfix"></div>
 		</footer>
 	</div>
 	<script src="{{ asset('assets/js/controllers/client.js') }}"></script>
