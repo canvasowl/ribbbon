@@ -53,6 +53,6 @@ class HomeController extends BaseController {
 		$tasks = Task::where('name', 'like', '%'.$q.'%')->whereUserId(Auth::id())->get();
 		$pTitle = "Search Results";
 
-		return View::make('search', compact('q','clients','projects','tasks','pTitle'));
+		return View::make('ins/search', compact('q','clients','projects','tasks','pTitle'));
 	}
 }

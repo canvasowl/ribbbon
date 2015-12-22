@@ -1,11 +1,15 @@
 html, body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  height: 100%; }
+  height: 100%;
+  color: #444; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans light', sans-serif;
   font-weight: 300; }
+
+.color-primary {
+  color: #3958b3; }
 
 .status-msg {
   padding: 10px;

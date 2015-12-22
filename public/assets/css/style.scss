@@ -9,12 +9,15 @@ html,body{
 	font-family: 'Open Sans', sans-serif;;
 	font-size: 14px;
 	height: 100%;
+	color: #444;
 }
 
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Open Sans light', sans-serif;
 	font-weight: 300;
 }
+
+.color-primary{color: $color-primary-light}
 
 .status-msg{padding: 10px; display:block}
 .status-msg.error-msg{color: #D82929;}
