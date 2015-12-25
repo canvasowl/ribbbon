@@ -15,3 +15,5 @@ Homestead.yaml
 .env
 
 .env
+
+config/database.php
