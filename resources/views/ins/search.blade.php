@@ -6,7 +6,6 @@
 			<h1 class="pull-left">Search</h1>
 		</div>
 		<div class="col-xs-12">
-			<h4>
 			<strong class="color-primary">
 				{{ count($clients) + count($projects) + count($tasks) }}
 			</strong>Results for: "<strong class="color-primary"><i>{{ $q }}</i></strong>"</h4>			

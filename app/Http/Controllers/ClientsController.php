@@ -33,7 +33,7 @@ class ClientsController extends BaseController {
 		$clients 	= $user->clients()->orderBy('created_at', 'desc')->take(5)->get();
 
 		$counter 	= 0;		
-		return View::make('clients.index', compact([ 'clients', 'counter', 'pTitle']));
+		return View::make('ins/clients/index', compact([ 'clients', 'counter', 'pTitle']));
 	}
 	
 	/**
