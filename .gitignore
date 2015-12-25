@@ -13,3 +13,5 @@ Thumbs.db
 /node_modules
 Homestead.yaml
 .env
+
+.env
