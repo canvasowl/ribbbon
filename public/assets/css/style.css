@@ -183,7 +183,8 @@ input.form-control:focus {
 .btn {
   padding: 12px 20px;
   border: none;
-  transition-duration: .2s; }
+  transition-duration: .2s;
+  background-color: #ebefef; }
 
 .btn:hover {
   opacity: .95; }
@@ -192,7 +193,8 @@ input.form-control:focus {
   background-color: #3958b3; }
 
 .page-title-section .btn {
-  margin-top: 10px; }
+  margin-top: 10px;
+  margin-left: 10px; }
 
 .popup-form {
   position: fixed;
@@ -244,9 +246,14 @@ input.form-control:focus {
 .popup-form.minimized footer {
   position: static; }
 
+.mega-menu .content .item {
+  display: none; }
+
 .content-area {
   padding: 20px;
   margin-left: 260px;
   min-height: 100%;
   border-top: 5px solid #3958b3;
   border-left: 1px solid #eee; }
+
+/*# sourceMappingURL=style.css.map */

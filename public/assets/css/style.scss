@@ -3,6 +3,7 @@ $color-primary-light: #3958b3;
 $color-primary-dark: #14202c;
 $color-badge: #10e1c2;
 $color-panel-heading: #d3dddf;
+$color-default-grey: #ebefef;
 
 // GLOBALS
 html,body{
@@ -177,6 +178,7 @@ $side-nav-padding: 20px;
 	padding: 12px 20px;
 	border: none;
 	transition-duration: .2s;
+	background-color: $color-default-grey;
 }
 .btn:hover{
 	opacity: .95;
@@ -188,8 +190,9 @@ $side-nav-padding: 20px;
 // CONTENT AREA
 .page-title-section .btn{
 	margin-top: 10px;
-
+	margin-left: 10px;
 }
+
 
 // Pop Up Form
 .popup-form{
@@ -241,6 +244,11 @@ $side-nav-padding: 20px;
 }
 .popup-form.minimized footer{
 	position: static;
+}
+
+// Mega Toggle Menu
+.mega-menu .content .item{
+	display: none;
 }
 
 
