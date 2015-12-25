@@ -2,11 +2,22 @@ html, body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   height: 100%;
-  color: #444; }
+  color: #444;
+  background-color: #f2f4f3; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans light', sans-serif;
   font-weight: 300; }
+
+input.form-control {
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0; }
+
+input.form-control:focus {
+  box-shadow: none;
+  border-color: #14202c; }
 
 .color-primary {
   color: #3958b3; }
@@ -59,16 +70,6 @@ h1, h2, h3, h4, h5, h6 {
 .panel.panel-list .panel-body p {
   margin-bottom: 0;
   padding: 10px; }
-
-input.form-control {
-  border: none;
-  box-shadow: none;
-  border-bottom: 1px solid #ccc;
-  border-radius: 0; }
-
-input.form-control:focus {
-  box-shadow: none;
-  border-color: #14202c; }
 
 .side-nav {
   position: fixed;
@@ -192,10 +193,6 @@ input.form-control:focus {
 .btn.btn-primary {
   background-color: #3958b3; }
 
-.page-title-section .btn {
-  margin-top: 10px;
-  margin-left: 10px; }
-
 .popup-form {
   position: fixed;
   bottom: 0;
@@ -246,8 +243,44 @@ input.form-control:focus {
 .popup-form.minimized footer {
   position: static; }
 
+.mega-menu .links {
+  float: left;
+  width: 30%;
+  position: relative;
+  left: 1px; }
+
+.mega-menu .links a {
+  display: block;
+  padding: 15px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #999c9b;
+  border-left: 4px solid #f2f4f3; }
+
+.mega-menu .links a.active,
+.mega-menu .links a:hover {
+  border-left-color: #3958b3;
+  color: #444; }
+
+.mega-menu .links a.active {
+  border-top: 1px solid #cdcdd4;
+  border-bottom: 1px solid #cdcdd4;
+  font-weight: bold;
+  background-color: #fff; }
+
+.mega-menu .content {
+  float: left;
+  width: 70%;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #cdcdd4;
+  min-height: 500px; }
+
 .mega-menu .content .item {
   display: none; }
+
+.mega-menu .content .item:first-child {
+  display: block; }
 
 .content-area {
   padding: 20px;
@@ -255,5 +288,9 @@ input.form-control:focus {
   min-height: 100%;
   border-top: 5px solid #3958b3;
   border-left: 1px solid #eee; }
+
+.page-title-section .btn {
+  margin-top: 10px;
+  margin-left: 10px; }
 
 /*# sourceMappingURL=style.css.map */

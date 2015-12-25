@@ -15,7 +15,7 @@
 			
 			<div class="mega-menu">			
 				<div class="links">
-					<a data-id="client_1" href="">Client 1</a>
+					<a class="active" data-id="client_1" href="">Client 1</a>
 					<a data-id="client_2" href="">Client 2</a>
 				</div>
 
