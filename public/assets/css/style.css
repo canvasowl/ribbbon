@@ -9,6 +9,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans light', sans-serif;
   font-weight: 300; }
 
+a:hover {
+  text-decoration: none; }
+
 input.form-control {
   border: none;
   box-shadow: none;
@@ -274,14 +277,18 @@ input.form-control:focus {
   border-top: none;
   border-bottom: none;
   border-left: 4px solid #f2f4f3;
-  color: #444;
+  color: #999c9b;
   font-weight: normal;
   background-color: transparent; }
+
+.mega-menu .links a.inactive:hover {
+  border-left-color: #3958b3;
+  color: #444; }
 
 .mega-menu .content {
   float: left;
   width: 70%;
-  padding: 15px;
+  padding: 10px;
   background-color: #fff;
   border: 1px solid #cdcdd4;
   min-height: 500px; }
@@ -291,6 +298,36 @@ input.form-control:focus {
 
 .mega-menu .content .item:first-child {
   display: block; }
+
+.mega-menu .content header {
+  padding: 5px 15px;
+  background-color: #3958b3;
+  color: #fff;
+  line-height: .8; }
+
+.mega-menu .content header h2 {
+  margin-top: 5px;
+  transition-duration: .2s; }
+
+.mega-menu .content header i {
+  font-size: 1.2em;
+  position: relative;
+  top: 10px; }
+
+.mega-menu .content header i:hover {
+  opacity: .9;
+  cursor: pointer; }
+
+.mega-menu .content header p {
+  font-style: italic; }
+
+.mega-menu .content header a {
+  color: #b4af67;
+  transition-duration: .2s; }
+
+.mega-menu .content header a:hover {
+  color: #b4af67;
+  opacity: .9em; }
 
 .content-area {
   padding: 20px;
