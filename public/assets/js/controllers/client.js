@@ -2,11 +2,44 @@ var client = new Vue({
   el: '#client',
   data: {
     client: { name : null, phone_number : null, point_of_contact : null, email : null},
+    clients: [],
     lastRequest: false,
 
   },
 
+
+  compiled: function(){
+  	this.getClients();
+  },
+
   methods: {
+  	getClients: function(){
+		$.ajax({
+		  type: 'GET',
+		  url: "/api/clients",
+		  error: function(e) {
+		  	return false;
+		  },
+		  success: function(results){	
+			client.clients = results.data;		  	  	
+			console.log(client.client);			
+
+			Vue.nextTick(function () {
+				$(".mega-menu .links a").click(function(){		
+					event.preventDefault()
+
+					$(".mega-menu .links a").removeClass("active");
+					$(this).addClass("active");
+
+					var id = "#" + $(this).attr("data-id");
+					$(".mega-menu .content .item").hide();
+					$(id).show();
+					
+				});	
+			})
+		  }
+		});
+  	},  	
   	create: function(client){
 		event.preventDefault();
 

@@ -13,15 +13,17 @@
 	<div class="row">
 		<div class="col-xs-12">			
 			
-			<div class="mega-menu">			
-				<div class="links">
-					<a class="active" data-id="client_1" href="">Client 1</a>
-					<a data-id="client_2" href="">Client 2</a>
+			<div id="client" class="mega-menu">			
+				<div class="links">					
+					<a v-for="client in clients" class="" data-id="client_@{{client.id}}" href="">
+						@{{client.name}}
+					</a>
 				</div>
 
 				<div class="content">
-					<div class="item" id="client_1">CLIENT 1</div>
-					<div class="item" id="client_2">CLIENT 2</div>
+					<div v-for="client in clients" class="item" id="client_@{{client.id}}">
+						@{{client.name}}
+					</div>
 				</div>
 			</div>
 
