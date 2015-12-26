@@ -188,7 +188,10 @@ input.form-control:focus {
   padding: 12px 20px;
   border: none;
   transition-duration: .2s;
-  background-color: #ebefef; }
+  background-color: #ebefef;
+  -webki-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
 
 .btn:hover {
   opacity: .95; }
