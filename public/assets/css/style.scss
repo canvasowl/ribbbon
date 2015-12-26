@@ -260,18 +260,27 @@ $side-nav-padding: 20px;
 	text-decoration: none;
 	color: #999c9b;
 	border-left: 4px solid $background-color;
-	// background-color: $background-color;
 }
 .mega-menu .links a.active,
-.mega-menu .links a:hover{
+.mega-menu .links a:hover,
+.mega-menu .links a:first-child{
 	border-left-color: $color-primary-light;
 	color: $color-default-text;
 }
-.mega-menu .links a.active{
+.mega-menu .links a.active,
+.mega-menu .links a:first-child{
 	border-top: 1px solid #cdcdd4;
 	border-bottom: 1px solid #cdcdd4;	
 	font-weight: bold;
 	background-color: #fff;
+}
+.mega-menu .links a.inactive{
+	border-top: none;
+	border-bottom: none;	
+	border-left: 4px solid $background-color;
+	color: $color-default-text;
+	font-weight: normal;
+	background-color: transparent;	
 }
 .mega-menu .content{
 	float: left;
