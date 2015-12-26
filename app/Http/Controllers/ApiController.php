@@ -67,7 +67,7 @@ class ApiController extends BaseController {
 
 	// CLIENT - Get all clients for the logged in user
 	public function getAllUserClients(){
-		$clients = Client::where('user_id',4)->get();
+		$clients = Client::with('projects')->where('user_id',4)->get();        
 		
 		if (count($clients) === 0) {
             return $this->setStatusCode(400)->makeResponse('Could not find clients');
