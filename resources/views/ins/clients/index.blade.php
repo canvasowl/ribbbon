@@ -10,19 +10,26 @@
 		</div>
 	</div>
 
+<div id="client">
 	<div class="row">
 		<div class="col-xs-12">			
 			
-			<div id="client" class="mega-menu">			
+			<div class="mega-menu">			
 				<div class="links">					
 					<a v-for="client in clients" class="" data-id="client_@{{client.id}}" href="">
 						@{{client.name}}
 					</a>
 				</div>
-
 				<div class="content">
-					<div v-for="client in clients" class="item" id="client_@{{client.id}}">
-						@{{client.name}}
+					<div v-for="client in clients" class="item" id="client_@{{client.id}}" title="Edit client">
+						<header>
+							<h2 class="pull-left">@{{client.name}}</h2>
+							<p class="pull-right"><i class="ion-edit"></i></p>
+							<div class="clearfix"></div>
+							<p>@{{client.point_of_contact}}</p>
+							<p>@{{client.phone_number}}</p>
+							<p><a href="mailto:@{{client.email}}">@{{client.email}}</a></p>				
+						</header>
 					</div>
 				</div>
 			</div>
@@ -30,7 +37,7 @@
 		</div>
 	</div>
 
-	<div id="client" class="popup-form new-client">
+	<div class="popup-form new-client">
 		<header>
 			<p class="pull-left">New Client</p>
 			<div class="actions pull-right">
@@ -49,9 +56,12 @@
 			</form>
 		</section>
 		<footer>
-			<a v-on:click="create(client)" href="" class="btn btn-primary pull-right">Save</a>
+			<a v-on:click="create(client,true)" href="" class="btn btn-primary pull-right">Save</a>
 			<div class="clearfix"></div>
 		</footer>
-	</div>
+	</div>	
+</div>
+
+
 	<script src="{{ asset('assets/js/controllers/client.js') }}"></script>
 @stop()

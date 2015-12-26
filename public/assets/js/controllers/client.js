@@ -4,11 +4,10 @@ var client = new Vue({
     client: { name : null, phone_number : null, point_of_contact : null, email : null},
     clients: [],
     lastRequest: false,
-
   },
 
 
-  compiled: function(){
+  ready: function(){
   	this.getClients();
   },
 
@@ -17,6 +16,7 @@ var client = new Vue({
 		$.ajax({
 		  type: 'GET',
 		  url: "/api/clients",
+		  
 		  error: function(e) {
 		  	return false;
 		  },
@@ -26,15 +26,17 @@ var client = new Vue({
 				megaMenuInit();
 			})
 		  }
+
 		});
   	},  	
-  	create: function(client){
+  	create: function(new_client, update){
 		event.preventDefault();
+		update = update || false;
 
 		$.ajax({
 		  type: 'POST',
 		  url: "/api/clients",
-		  data: client,
+		  data: new_client,
 		  error: function(e) {
 		    var response = jQuery.parseJSON(e.responseText);
 		  	$('.new-client .status-msg').text("")
@@ -43,16 +45,24 @@ var client = new Vue({
 		  								.text(response.message);			    
 		  	return false;
 		  },
-		  success: function(data){		  	
+
+		  success: function(result){			  		  	
 		  	$('.new-client .status-msg').text("")
 		  								.removeClass('remove-msg')		  								
 		  								.addClass("success-msg")
-		  								.text(data.message);		    		  	
+		  								.text(result.message);
+						
+			if (update == true){
+		  		client.clients.push(result.data);
+				Vue.nextTick(function () {
+					megaMenuInit();
+				})		  		
+		  	}		    
 		  	
-		  	client.name = null;
-		  	client.phone_number = null;
-		  	client.point_of_contact = null;
-		  	client.email = null;
+		  	new_client.name = null;
+		  	new_client.phone_number = null;
+		  	new_client.point_of_contact = null;
+		  	new_client.email = null;
 		  }
 		}); 
   	}
