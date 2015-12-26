@@ -30,6 +30,20 @@
 							<p>@{{client.phone_number}}</p>
 							<p><a href="mailto:@{{client.email}}">@{{client.email}}</a></p>				
 						</header>
+						
+						<div class="panel panel-default panel-list">
+						  <div class="panel-heading">Projecs</div>
+						  <div class="panel-body">
+					  		<a v-for="project in client.projects" href="/projects/@{{ project.id }}">
+					  			@{{ project.name }}
+					  			<span class="weight pull-right">w.50</span>
+					  		</a>
+						    {{-- <section class="info">
+								<i class="fa fa-lightbulb-o"></i>
+								Your latest projects will show up here, you will need to create <a href="/clients">clients</a> in order to create projects.
+						    </section> --}}
+						  </div>
+						</div>
 					</div>
 				</div>
 			</div>

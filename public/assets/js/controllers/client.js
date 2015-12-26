@@ -20,7 +20,8 @@ var client = new Vue({
 		  error: function(e) {
 		  	return false;
 		  },
-		  success: function(results){	
+		  success: function(results){
+		  	console.log(results);	
 			client.clients = results.data;		  	  	
 			Vue.nextTick(function () {
 				megaMenuInit();
