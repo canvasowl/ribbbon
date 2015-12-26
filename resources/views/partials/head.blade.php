@@ -17,6 +17,8 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.12/vue.js"></script>
+	<script src="{{ asset('assets/js/ui.js') }}"></script>
+
 </head>
 <body>
 @include('analyticstracking')
