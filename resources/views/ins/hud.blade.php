@@ -14,7 +14,7 @@
 		<div class="col-xs-12 col-md-8">
 			{{-- projects --}}
 			<div class="panel panel-default panel-list">
-			  <div class="panel-heading">Latest Tasks</div>
+			  <div class="panel-heading">Latest Projects</div>
 			  <div class="panel-body">
 			  	@if (count($latestProjects) > 0)
 				  	@foreach ($latestProjects as $project)
