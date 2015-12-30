@@ -86,8 +86,8 @@ class ApiController extends BaseController {
      */
     public function storeClient(){
 		
-        if ( Input::get('name') == '') {
-            return $this->setStatusCode(400)->makeResponse('Name field is requied');
+        if (  strlen(trim(Input::get('name'))) == 0) {
+            return $this->setStatusCode(400)->makeResponse('Name field is required');
 		}
 
 		Input::merge(array('user_id' => Auth::id()));
@@ -138,7 +138,7 @@ class ApiController extends BaseController {
      * @return mixed
      */
     public function storeProject(){
-		if (!Input::all()) {
+		if (!Input::all() || strlen(trim(Input::get('name'))) == 0) {
             return $this->setStatusCode(406)->makeResponse('No information provided to create project');
 		}
 
