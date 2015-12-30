@@ -1,7 +1,8 @@
 @extends('templates/ins/master')
 
 @section('content')
-	<div class="row">
+	<div class="row" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml"
+		 xmlns:v-on="http://www.w3.org/1999/xhtml">
 		<div class="col-xs-12 page-title-section">
 			<h1 class="pull-left">Hud</h1>
 			<a onClick="showForm('.popup-form.new-client')" href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
@@ -94,7 +95,7 @@
 		<header>
 			<p class="pull-left">New Client</p>
 			<div class="actions pull-right">
-				<i title="Minimze "class="ion-minus-round"></i>
+				<i title="Minimze " class="ion-minus-round"></i>
 				<i title="Close" class="ion-close-round"></i>
 			</div>
 			<div class="clearfix"></div>

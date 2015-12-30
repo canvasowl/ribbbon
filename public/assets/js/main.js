@@ -15,7 +15,6 @@ $(window).scroll(function(){
        $('.hug-hudHeader, .hug-hudHeader').removeClass("special-shadow");
    }
 });
-
 /*************************************************
  *
  * NAV TABS
@@ -28,8 +27,7 @@ $('#myTab a').click(function (e) {
 
 $('.navbar-toggle').click(function(){
 	$('.alert').addClass('animated fadeOutDown');
-})
-
+});
 /*************************************************
  *
  * CREDENTIALS INPUT DISABLED DEPENDING ON RADIO CHOICE
@@ -44,9 +42,6 @@ $('.dynamic-form input[type="radio"]').click(function(){
 		$('.dynamic-form .other').prop('disabled', false);
 	}
 });
-
-
-
 /*************************************************
  *
  * PROMPT
@@ -74,22 +69,26 @@ var closeModule = function(){
 $('#btn-no').click(function(){
 	closeModule();
 });
-
 /*************************************************
  *
  * FORM EVENTS
  * 
  *************************************************/
- function showForm(selector, clientId){
+ function showForm(selector, clientId, index){
 	clientId = clientId || false;
-
+	if(index === false || index === undefined){
+		index = false;
+	}else{
+		client.tempClientIndex = index;
+	}
 	if(clientId !== false){
 		client.newProject.client_id = clientId;
 	}
 
 	$(selector).show();
- 	event.preventDefault();
- }
+	$(selector).find('input[type=text],textarea,select').filter(':visible:first').focus();
+	event.preventDefault();
+}
 
 $(document).ready(function(){
 
@@ -113,7 +112,7 @@ $(document).ready(function(){
 });
 /*************************************************
  *
- * DELETIIONS
+ * DELETIONS
  * 
  *************************************************/
 // Delete user account prompt
@@ -137,5 +136,3 @@ $('.credential-wrap .btn-delete').click(function(){
 	    }
 	  });	
 })
-
-

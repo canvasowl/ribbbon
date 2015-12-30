@@ -1,7 +1,7 @@
 @extends('templates/ins/master')
 
 @section('content')
-	<div class="row">
+	<div class="row" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 		<div class="col-xs-12 page-title-section">
 			<h1 class="pull-left">Clients</h1>
 			<a onClick="showForm('.popup-form.new-client')" href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>						
@@ -29,18 +29,19 @@
 							<p>@{{client.phone_number}}</p>
 							<p><a href="mailto:@{{client.email}}">@{{client.email}}</a></p>				
 						</header>
-						
-						<div class="panel panel-default panel-list">
-						  <div class="panel-heading">Projects</div>
-						  <div class="panel-body">
-					  		<a v-for="project in client.projects" href="/projects/@{{ project.id }}">
-					  			@{{ project.name }}
-					  			<span class="weight pull-right">w.50</span>
-					  		</a>
-					  		<br>
-							<span onClick="showForm('.popup-form.new-project',@{{ client.id }})" class="btn btn-default pull-right" title="Create new project">New Project</span>
-						  </div>
-						</div>
+						<template v-if="client.projects.length > 0">
+							<div class="panel panel-default panel-list">
+								<div class="panel-heading">Projects</div>
+								<div class="panel-body">
+									<a v-for="project in client.projects" href="/projects/@{{ project.id }}">
+										@{{ project.name }}
+										<span class="weight pull-right">w.50</span>
+									</a>
+								</div>
+							</div>
+						</template>
+						<br>
+						<span data-index="@{{ client.id }}" onClick="showForm('.popup-form.new-project',@{{ client.id }},@{{ $index }})" class="btn btn-default pull-right" title="Create new project">New Project</span>
 					</div>
 				</div>
 			</div>
@@ -60,7 +61,7 @@
 		<section>
 			<form>
 				<span class="status-msg"></span>
-				<input v-model="client.name" placeholder="Client Name" type="text" class="form-control">
+				<input v-model="client.name" placeholder="Client Name" type="text" class="form-control first">
 				<input v-model="client.email" placeholder="Email" type="text" class="form-control">
 				<input v-model="client.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
 				<input v-model="client.phone_number" placeholder="Contact Number" type="text"class="form-control">
@@ -84,7 +85,7 @@
 		<section>
 			<form>
 				<span class="status-msg"></span>
-				<input v-model="newProject.name" placeholder="Name" type="text" class="form-control">
+				<input v-model="newProject.name" placeholder="Name" type="text" class="form-control first">
 			</form>
 		</section>
 		<footer>
