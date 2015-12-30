@@ -75,6 +75,6 @@ class Project extends Model {
 
 	// Get the toal weight of the given project
 	public function totalWeight(){
-		return $this->tasks()->where('state','incomplete')->sum('weight');;
+		return $this->tasks()->where('state','!=','complete')->sum('weight');
 	}
 }
