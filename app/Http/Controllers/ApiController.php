@@ -65,8 +65,12 @@ class ApiController extends BaseController {
 		return Auth::id();
 	}
 
-	// CLIENT - Get all clients for the logged in user
-	public function getAllUserClients(){
+
+    /**
+     * Get all the clients for the logged in user
+     * @return mixed
+     */
+    public function getAllUserClients(){
 		$clients = Client::with('projects')->where('user_id',4)->get();        
 		
 		if (count($clients) === 0) {
@@ -75,8 +79,12 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Clients retrieved successfully',$clients->toArray());
 	}
 
-	// CLIENT - create a new client
-	public function storeClient(){		
+
+    /**
+     * Insert a new client into the database
+     * @return mixed
+     */
+    public function storeClient(){
 		
         if ( Input::get('name') == '') {
             return $this->setStatusCode(400)->makeResponse('Name field is requied');
@@ -89,8 +97,13 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Client created successfully', Client::find($id));
 	}
 
-	// CLIENT - update a specific client
-	public function updateClient($id){
+
+    /**
+     * Update the given client
+     * @param $id
+     * @return mixed
+     */
+    public function updateClient($id){
 		if (count(Input::all()) <= 1) {
             return $this->setStatusCode(406)->makeResponse('No information provided to update client');
 		}
@@ -107,8 +120,12 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('The client has been updated');
 	}
 
-	// CLIENT - get a specific client 
-	public function getClient($id){
+    /**
+     * Get a specific client
+     * @param $id
+     * @return mixed
+     */
+    public function getClient($id){
 		if (!Client::find($id)) {
             return $this->setStatusCode(404)->makeResponse('The client was not found');
 		}
@@ -116,21 +133,28 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Client was successfully found', Client::find($id));
 	}
 
-	// PROJECT - store a new project
-	public function storeProject(){
+    /**
+     * Insert a new project into the database
+     * @return mixed
+     */
+    public function storeProject(){
 		if (!Input::all()) {
             return $this->setStatusCode(406)->makeResponse('No information provided to create project');
 		}
 
-		Input::merge(array('user_id' => 1));
+		Input::merge(array('user_id' => Auth::id()));
 		Project::create(Input::all());			
 		$id = \DB::getPdo()->lastInsertId();
 
         return $this->setStatusCode(200)->makeResponse('Project created successfully', Project::find($id));
 	}
 
-	// PROJECT - update project
-	public function updateProject($id){
+    /**
+     * Update the given project
+     * @param $id
+     * @return mixed
+     */
+    public function updateProject($id){
 		if (count(Input::all()) <= 1) {
             return $this->setStatusCode(406)->makeResponse('No information provided to update project');
 		}
@@ -147,7 +171,10 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('The project has been updated');
 	}
 
-    // TASK - create new task
+    /**
+     * Insert a new task into the database
+     * @return mixed
+     */
     public function storeTask(){
         if (!Input::all()) {
             return $this->setStatusCode(406)->makeResponse('No information provided to create client');
@@ -164,7 +191,11 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Task created successfully', Task::find($id));
     }
 
-    // TASK - remove a task
+    /**
+     * Remove a task from the database
+     * @param $id
+     * @return mixed
+     */
     public function removeTask($id){
         if (!Task::find($id)) {
             return $this->setStatusCode(400)->makeResponse('Could not find the task');
@@ -174,7 +205,11 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Task deleted successfully');
     }
 
-    // TASK - update task
+    /**
+     * Update the given task
+     * @param $id
+     * @return mixed
+     */
     public function updateTask($id){
         if (!Task::find($id)) {
             return $this->setStatusCode(400)->makeResponse('Could not find the task');
@@ -195,7 +230,11 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('The task has been updated');
     }
 
-    // CREDENTIALS - get credentials related to a project
+    /**
+     * Get all credentials for the given project
+     * @param $id
+     * @return mixed
+     */
     public function getProjectCredentials($id){
         if( count(Credential::where('project_id',$id)->get()) === 0 ){
             if (!Input::get('password')) {
@@ -206,7 +245,10 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Found credentials for this project', Credential::where('project_id',$id)->get() );
     }
 
-    // CREDENTIAL - create new credential
+    /**
+     * Insert a new credential into the database
+     * @return mixed
+     */
     public function storeCredential(){
         if (!Input::all()) {
             return $this->setStatusCode(406)->makeResponse('No information provided to create credential');
@@ -231,7 +273,11 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Credential created successfully', Credential::find($id));
     }
 
-    // CREDENTIAL - update credential
+    /**
+     * Update the given credential
+     * @param $id
+     * @return mixed
+     */
     public function updateCredential($id){
         if (!Credential::find($id)) {
             return $this->setStatusCode(400)->makeResponse('Could not find the credential');
@@ -256,7 +302,11 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('The credential has been updated');
     }
 
-    // CREDENTIAL - remove a credential
+    /**
+     * Remove the given credential from the database
+     * @param $id
+     * @return mixed
+     */
     public function removeCredential($id){
         if (!Credential::find($id)) {
             return $this->setStatusCode(400)->makeResponse('Could not find the credentials');
