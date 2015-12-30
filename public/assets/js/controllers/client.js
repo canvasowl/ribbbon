@@ -3,6 +3,7 @@ var client = new Vue({
   data: {
     client: { name : null, phone_number : null, point_of_contact : null, email : null},
     clients: [],
+    newProject: {name: null, project_id: null},
     lastRequest: false,
   },
 
@@ -21,7 +22,6 @@ var client = new Vue({
 		  	return false;
 		  },
 		  success: function(results){
-		  	console.log(results);	
 			client.clients = results.data;		  	  	
 			Vue.nextTick(function () {
 				megaMenuInit();
@@ -66,6 +66,40 @@ var client = new Vue({
 		  	new_client.email = null;
 		  }
 		}); 
+  	},
+  	createProject: function(update){
+		event.preventDefault();
+		update = update || false;
+
+		 $.ajax({
+		   type: 'POST',
+		   url: "/api/projects",
+		   data: client.newProject,
+		   error: function(e) {
+		        var response = jQuery.parseJSON(e.responseText);
+                $('.new-project .status-msg').text("")
+		   								.removeClass('success-msg')
+		   								.addClass("error-msg")
+		   								.text(response.message);
+		   	return false;
+		   },
+
+		    success: function(result){
+		   	$('.new-project .status-msg').text("")
+		   								.removeClass('remove-msg')
+		   								.addClass("success-msg")
+		   								.text(result.message);
+
+            // TODO: insert the new client into the client array
+		 	//if (update == true){
+		   	//	client.clients.push(result.data);
+		 	//	Vue.nextTick(function () {
+		 	//		megaMenuInit();
+		 	//	})
+		   	//}
+
+		   }
+		 });
   	}
   },
 

@@ -80,8 +80,14 @@ $('#btn-no').click(function(){
  * FORM EVENTS
  * 
  *************************************************/
- function showForm(selector){
- 	$(selector).show();
+ function showForm(selector, clientId){
+	clientId = clientId || false;
+
+	if(clientId !== false){
+		client.newProject.client_id = clientId;
+	}
+
+	$(selector).show();
  	event.preventDefault();
  }
 

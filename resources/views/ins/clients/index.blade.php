@@ -4,8 +4,7 @@
 	<div class="row">
 		<div class="col-xs-12 page-title-section">
 			<h1 class="pull-left">Clients</h1>
-			<a onClick="showForm('.popup-form.new-client')" href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>			
-			<a onClick="showForm('.popup-form.new-project')" href="" class="btn btn-default pull-right" title="Create new project">New Project</a>			
+			<a onClick="showForm('.popup-form.new-client')" href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>						
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -32,16 +31,14 @@
 						</header>
 						
 						<div class="panel panel-default panel-list">
-						  <div class="panel-heading">Projecs</div>
+						  <div class="panel-heading">Projects</div>
 						  <div class="panel-body">
 					  		<a v-for="project in client.projects" href="/projects/@{{ project.id }}">
 					  			@{{ project.name }}
 					  			<span class="weight pull-right">w.50</span>
 					  		</a>
-						    {{-- <section class="info">
-								<i class="fa fa-lightbulb-o"></i>
-								Your latest projects will show up here, you will need to create <a href="/clients">clients</a> in order to create projects.
-						    </section> --}}
+					  		<br>
+							<span onClick="showForm('.popup-form.new-project',@{{ client.id }})" class="btn btn-default pull-right" title="Create new project">New Project</span>
 						  </div>
 						</div>
 					</div>
@@ -73,7 +70,28 @@
 			<a v-on:click="create(client,true)" href="" class="btn btn-primary pull-right">Save</a>
 			<div class="clearfix"></div>
 		</footer>
-	</div>	
+	</div>
+
+	<div class="popup-form new-project">
+		<header>
+			<p class="pull-left">New Project</p>
+			<div class="actions pull-right">
+				<i title="Minimze "class="ion-minus-round"></i>
+				<i title="Close" class="ion-close-round"></i>
+			</div>
+			<div class="clearfix"></div>
+		</header>
+		<section>
+			<form>
+				<span class="status-msg"></span>
+				<input v-model="newProject.name" placeholder="Name" type="text" class="form-control">
+			</form>
+		</section>
+		<footer>
+			<a v-on:click="createProject(true)" href="" class="btn btn-primary pull-right">Save</a>
+			<div class="clearfix"></div>
+		</footer>
+	</div>
 </div>
 
 
