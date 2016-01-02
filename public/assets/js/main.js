@@ -135,4 +135,4 @@ $('.credential-wrap .btn-delete').click(function(){
 	        $('#credential-wrap-'+id).fadeOut(300)	        
 	    }
 	  });	
-})
+});

@@ -187,7 +187,7 @@ $side-nav-padding: 20px;
 // Buttons
 .btn{
 	padding: 12px 20px;
-	border: none;
+	border: none; 
 	transition-duration: .2s;
 	background-color: $color-default-grey;
 	-webki-box-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -336,6 +336,9 @@ $side-nav-padding: 20px;
 .mega-menu .content header a:hover{
 	color: #b4af67;
 	opacity: .9em;
+}
+.mega-menu .content header .client-update-form{
+	display: none;
 }
 .mega-menu .content .panel{
     margin-top: 10px;

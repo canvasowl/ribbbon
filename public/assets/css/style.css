@@ -332,6 +332,9 @@ input.form-control:focus {
   color: #b4af67;
   opacity: .9em; }
 
+.mega-menu .content header .client-update-form {
+  display: none; }
+
 .mega-menu .content .panel {
   margin-top: 10px;
   box-shadow: none;

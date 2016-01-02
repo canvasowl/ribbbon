@@ -9,7 +9,6 @@ var client = new Vue({
     lastRequest: false,
   },
 
-
   ready: function(){
   	this.getClients();
   },
@@ -63,6 +62,29 @@ var client = new Vue({
           }
 		}); 
   	},
+	startClientEditMode: function(clientIndex){
+        $(".client-info-"+clientIndex).hide();
+        $(".client-update-form-"+clientIndex).show();
+    },
+    updateClient: function(clientIndex){
+        var data = this.clients[clientIndex];
+        var id = data.id;
+        data._method = "put";
+
+        $.ajax({
+            type: "POST",
+            url: "/api/clients/"+id,
+            data: data,
+            success: function(){
+                $(".client-update-form-"+clientIndex).hide();
+                $(".client-info-"+clientIndex).show();
+            },
+            error: function(e){
+                var response = jQuery.parseJSON(e.responseText);
+                $('.client-update-form-'+clientIndex+ " .error-msg").text(response.message);
+            }
+        });
+    },
   	createProject: function(update){
 		event.preventDefault();
 		update = update || false;
@@ -77,7 +99,7 @@ var client = new Vue({
 		   								.removeClass('success-msg')
 		   								.addClass("error-msg")
 		   								.text(response.message);
-		   	return false;
+		   	    return false;
 		   },
 
 		    success: function(result){
@@ -86,7 +108,6 @@ var client = new Vue({
 		   								.addClass("success-msg")
 		   								.text(result.message);
 
-            // TODO: insert the new client into the client array
 		 	if (update == true){
                 client.clients[client.tempClientIndex].projects.push(result.data);
 		 		Vue.nextTick(function () {

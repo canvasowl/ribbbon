@@ -108,6 +108,10 @@ class ApiController extends BaseController {
             return $this->setStatusCode(406)->makeResponse('No information provided to update client');
 		}
 
+        if( strlen(trim(Input::get('name'))) === 0 ){
+            return $this->setStatusCode(406)->makeResponse('The client name is required');
+        }
+
 		if (!Client::find($id)) {
             return $this->setStatusCode(404)->makeResponse('Client not found');
 		}
