@@ -15,7 +15,7 @@ var client = new Vue({
 
   methods: {
   	getClients: function(){
-        $.get( "/api/clients", function( results ) {
+        $.get( "/api/clients/true", function( results ) {
             client.clients = results.data;
             Vue.nextTick(function () {
                 megaMenuInit();

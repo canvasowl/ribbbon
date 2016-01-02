@@ -53,7 +53,7 @@
 								<div class="panel-body">
 									<a v-for="project in client.projects" href="/projects/@{{ project.id }}">
 										@{{ project.name }}
-										<span class="weight pull-right">w.50</span>
+										<span class="weight pull-right">w.@{{ project.weight }}</span>
 									</a>
 								</div>
 							</div>
