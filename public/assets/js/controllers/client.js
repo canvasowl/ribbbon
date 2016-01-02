@@ -65,6 +65,7 @@ var client = new Vue({
 	startClientEditMode: function(clientIndex){
         $(".client-info-"+clientIndex).hide();
         $(".client-update-form-"+clientIndex).show();
+        $(".client-update-form-"+clientIndex).find('input[type=text],textarea,select').filter(':visible:first').focus();
     },
     updateClient: function(clientIndex){
         var data = this.clients[clientIndex];
