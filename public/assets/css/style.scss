@@ -40,6 +40,9 @@ input.form-control:focus{
 // Helpers
 .color-primary{color: $color-primary-light}
 
+.no-padding-left{padding-left: 0}
+.no-padding-right{padding-right: 0}
+
 // Messages
 .status-msg{padding: 10px; display:block}
 .status-msg.error-msg{color: #D82929;}
@@ -187,7 +190,7 @@ $side-nav-padding: 20px;
 // Buttons
 .btn{
 	padding: 12px 20px;
-	border: none; 
+	border: none;
 	transition-duration: .2s;
 	background-color: $color-default-grey;
 	-webki-box-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -196,6 +199,11 @@ $side-nav-padding: 20px;
 }
 .btn:hover{
 	opacity: .95;
+}
+.btn:focus,
+.btn:active{
+  outline: none;
+  border: none;
 }
 .btn.btn-primary{
 	background-color: $color-primary-light;
@@ -339,6 +347,16 @@ $side-nav-padding: 20px;
 }
 .mega-menu .content header .client-update-form{
 	display: none;
+}
+.mega-menu .content header .client-update-form input{
+  border: 1px solid rgba(50,50,50,.2);
+  padding: 21px 10px;
+  background-color: transparent;
+  color: #fff;
+  margin-top: 5px;
+}
+.mega-menu .content header .client-update-form input:focus{
+  border-color: #fff;
 }
 .mega-menu .content .panel{
     margin-top: 10px;

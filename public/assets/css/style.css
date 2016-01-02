@@ -25,6 +25,12 @@ input.form-control:focus {
 .color-primary {
   color: #3958b3; }
 
+.no-padding-left {
+  padding-left: 0; }
+
+.no-padding-right {
+  padding-right: 0; }
+
 .status-msg {
   padding: 10px;
   display: block; }
@@ -196,6 +202,11 @@ input.form-control:focus {
 .btn:hover {
   opacity: .95; }
 
+.btn:focus,
+.btn:active {
+  outline: none;
+  border: none; }
+
 .btn.btn-primary {
   background-color: #3958b3; }
 
@@ -334,6 +345,16 @@ input.form-control:focus {
 
 .mega-menu .content header .client-update-form {
   display: none; }
+
+.mega-menu .content header .client-update-form input {
+  border: 1px solid rgba(50, 50, 50, 0.2);
+  padding: 21px 10px;
+  background-color: transparent;
+  color: #fff;
+  margin-top: 5px; }
+
+.mega-menu .content header .client-update-form input:focus {
+  border-color: #fff; }
 
 .mega-menu .content .panel {
   margin-top: 10px;

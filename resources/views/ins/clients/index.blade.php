@@ -32,11 +32,17 @@
 							</div>
 							<div class="client-update-form client-update-form-@{{$index}}">
                                 <span class="status-msg error-msg"></span>
-								<input v-model="client.name" placeholder="Client Name" type="text" class="form-control first">
-								<input v-model="client.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
-								<input v-model="client.phone_number" placeholder="Contact Number" type="text" class="form-control">
-								<input v-model="client.email" placeholder="Email" type="text" class="form-control">
-                                <br>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <input v-model="client.name" placeholder="Client Name" type="text" class="form-control first">
+                                        <input v-model="client.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <input v-model="client.phone_number" placeholder="Contact Number" type="text" class="form-control">
+                                        <input v-model="client.email" placeholder="Email" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <br><br>
 								<button v-on:click="updateClient($index)" class="pull-right btn btn-default">Save Changes</button>
                                 <div class="clearfix"></div>
 							</div>
