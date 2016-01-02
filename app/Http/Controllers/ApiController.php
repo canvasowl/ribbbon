@@ -65,20 +65,32 @@ class ApiController extends BaseController {
 		return Auth::id();
 	}
 
-
     /**
      * Get all the clients for the logged in user
      * @return mixed
      */
-    public function getAllUserClients(){
-		$clients = Client::with('projects')->where('user_id',4)->get();        
+    public function getAllUserClients($withWeight = false){
+		$clients = Client::with('projects')->where('user_id',4)->get();
 		
 		if (count($clients) === 0) {
             return $this->setStatusCode(400)->makeResponse('Could not find clients');
         }
+
+        // Get each project total weight if needed
+        if($withWeight == true){
+            if($clients) {
+                foreach ($clients as $client) {
+                    if($client->projects){
+                        foreach($client->projects as $project){
+                            $weight = Project::find($project->id)->tasks()->where('state','!=','complete')->sum('weight');
+                            $project["weight"] = $weight;
+                        }
+                    }
+                }
+            }
+        }
         return $this->setStatusCode(200)->makeResponse('Clients retrieved successfully',$clients->toArray());
 	}
-
 
     /**
      * Insert a new client into the database

@@ -41,7 +41,7 @@ Route::group(['prefix' => '/api/'], function()
 	Route::get('{key}/authId', 'ApiController@authId');
 
 	// CLIENT
-	Route::get('clients', 'ApiController@getAllUserClients');
+	Route::get('clients/{withWeight?}', 'ApiController@getAllUserClients');
 	Route::get('clients/{id}', 'ApiController@getClient');
 	Route::put('clients/{id}', 'ApiController@updateClient');
 	Route::post('clients', 'ApiController@storeClient');
