@@ -46,7 +46,7 @@ input.form-control:focus {
   color: #4f4055;
   padding: 2px 8px;
   border-radius: 15px;
-  font-size: .8em; }
+  font-size: 14px; }
 
 .panel {
   box-shadow: 0 2px 10px rgba(50, 50, 50, 0.3);
