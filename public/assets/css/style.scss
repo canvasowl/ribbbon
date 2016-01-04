@@ -74,7 +74,7 @@ input.form-control:focus{
 }
 .panel.panel-list a{
 	display: block;
-	padding: 13px 25px;
+	padding: 8px 25px;
 	border-left: 4px solid #fff;
 	transition-duration: .2s;
 	color: #333;
@@ -192,7 +192,6 @@ $side-nav-padding: 20px;
 	padding: 12px 20px;
 	border: none;
 	transition-duration: .2s;
-	background-color: $color-default-grey;
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.3);
 	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.3);
 	box-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -205,6 +204,9 @@ $side-nav-padding: 20px;
   outline: none;
   border: none;
 }
+.btn-default{
+  background-color: $color-default-grey;
+}
 .btn.btn-primary{
 	background-color: $color-primary-light;
 }
@@ -216,7 +218,7 @@ $side-nav-padding: 20px;
 	right: 20px;
 	width: 400px;
 	max-width: 400px;
-	height: 450px;
+	height: 350px;
 	background-color: #fff;
 	box-shadow: 0 2px 10px rgba(50,50,50,.4);
 	-webkit-box-shadow: 0 2px 10px rgba(50,50,50,.4);
