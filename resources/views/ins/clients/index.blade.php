@@ -48,7 +48,7 @@
 							</div>
 						</header>
 						<template v-if="client.projects.length > 0">
-							<div class="panel panel-default panel-list">
+							<div class="panel panel-default panel-list animated fadeIn">
 								<div class="panel-heading">Projects</div>
 								<div class="panel-body">
 									<a v-for="project in client.projects" href="/projects/@{{ project.id }}">
@@ -59,7 +59,10 @@
 							</div>
 						</template>
 						<br>
-						<span data-index="@{{ client.id }}" onClick="showForm('.popup-form.new-project',@{{ client.id }},@{{ $index }})" class="btn btn-default pull-right" title="Create new project">New Project</span>
+						<span data-index="@{{ client.id }}" onClick="showForm('.popup-form.new-project',@{{ client.id }},@{{ $index }})" class="btn btn-default pull-right animated fadeIn" title="Create new project">New Project</span>
+                        <div class="clearfix"></div>
+                        <hr><br><br>
+                        <span v-on:click="deleteClient(client)" class="btn btn-danger">Delete @{{ client.name }}</span>
 					</div>
 				</div>
 			</div>

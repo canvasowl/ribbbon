@@ -8,7 +8,7 @@
 		<div class="col-xs-12">
 			<strong class="color-primary">
 				{{ count($clients) + count($projects) + count($tasks) }}
-			</strong>Results for: "<strong class="color-primary"><i>{{ $q }}</i></strong>"</h4>			
+			</strong>Results for: "<strong class="color-primary"><i>{{ $q }}</i></strong>"</h4><br><br>
 		</div>
 	</div>
 
@@ -41,7 +41,7 @@
 				  	@foreach ($projects as $project)
 				  		<a href="/projects/{{ $project->id }}">
 				  			{{ $project->name }} 
-				  			<span class="weight pull-right">w.{{ $project->weight}}</span>
+				  			<span class="weight pull-right">w.{{ $project->totalWeight()}}</span>
 				  		</a>
 				  	@endforeach			  			  	
 				@else
