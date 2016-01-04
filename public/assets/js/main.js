@@ -1,6 +1,3 @@
-//var randomInt = function randomIntFromInterval(min,max) {
-//    return Math.floor(Math.random()*(max-min+1)+min);
-//}
 /*************************************************
  *
  * Header hug special drop shadow
@@ -14,19 +11,6 @@ $(window).scroll(function(){
    }else{
        $('.hug-hudHeader, .hug-hudHeader').removeClass("special-shadow");
    }
-});
-/*************************************************
- *
- * NAV TABS
- * 
- *************************************************/
-$('#myTab a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
-
-$('.navbar-toggle').click(function(){
-	$('.alert').addClass('animated fadeOutDown');
 });
 /*************************************************
  *
@@ -109,30 +93,4 @@ $(document).ready(function(){
 	  	$(this).parents(".popup-form").removeClass("minimized");		
 	  	$(this).parents(".popup-form").hide();
 	});	
-});
-/*************************************************
- *
- * DELETIONS
- * 
- *************************************************/
-// Delete user account prompt
-$('#delete-account').click(function(){	
-	openModule();
-	$('#delete-account-module').fadeIn();
-});
-
-// Delete credential
-$('.credential-wrap .btn-delete').click(function(){
-	event.preventDefault();
-	var id 		= $(this).attr('id');
-	var data	= {_method: 'delete' };
-	
-	$.ajax({
-	    url:  '/credentials/'+id,
-	    type: 'DELETE',
-	    data:data,
-	    success: function(result) {
-	        $('#credential-wrap-'+id).fadeOut(300)	        
-	    }
-	  });	
 });

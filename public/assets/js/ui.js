@@ -1,4 +1,8 @@
-// Mega Toggle Menu
+/*************************************************
+ *
+ * MEGA MENU
+ *
+ *************************************************/
 function megaMenuInit(){	
 	$(".mega-menu .links a").click(function(){		
 		event.preventDefault()
@@ -9,9 +13,23 @@ function megaMenuInit(){
 		var id = "#" + $(this).attr("data-id");
 		$(".mega-menu .content .item").hide();
 		$(id).show();
-		
-	});	
+
+	});
 }
+
+/*************************************************
+ *
+ * NAV TABS
+ *
+ *************************************************/
+$('#myTab a').click(function (e) {
+	e.preventDefault()
+	$(this).tab('show')
+})
+
+$('.navbar-toggle').click(function(){
+	$('.alert').addClass('animated fadeOutDown');
+});
 
 
 
