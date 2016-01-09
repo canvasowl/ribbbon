@@ -150,6 +150,31 @@ class ApiController extends BaseController {
 	}
 
     /**
+     * Remove a client from the database
+     * @param $id
+     * @return mixed
+     */
+    public function removeClient($id){
+        if (!Client::find($id)) {
+            return $this->setStatusCode(400)->makeResponse('Could not find the client');
+        }
+
+        $client 	= 	Client::find($id);
+
+        // delete all related tasks and credentials
+        foreach ($client->projects as $p) {
+            Task::where('project_id', $p->id)->delete();
+            Credential::where('project_id', $p->id)->delete();
+            $p->members()->detach();
+        }
+
+        // delete projects
+        Project::where("client_id", $id)->delete();
+        $client->delete();
+        return $this->setStatusCode(200)->makeResponse('Client deleted successfully');
+    }
+
+    /**
      * Insert a new project into the database
      * @return mixed
      */

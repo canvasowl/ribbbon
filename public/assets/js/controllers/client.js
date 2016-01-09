@@ -86,6 +86,34 @@ var client = new Vue({
             }
         });
     },
+    deleteClient: function(currentClient, clientIndex){
+        showSheet();
+        makePrompt(
+            "Are you sure you want to delete the client: "+currentClient.name+"?",
+            "By deleting this client you will loose all data associated with any project under this client",
+            "No now", "Yes");
+
+        $("#cancel-btn").click(function(){
+            closePrompt();
+        });
+
+        $("#confirm-btn").click(function(){
+            console.log(client);
+            console.log(clientIndex);
+            $.ajax({
+                type: "POST",
+                url: "/api/clients/"+currentClient.id,
+                data: {_method: "delete"},
+                success: function(){
+                    client.clients.splice(clientIndex);
+                    closePrompt();
+                },
+                error: function(e){
+                    closePrompt();
+                }
+            });
+        });
+    },
   	createProject: function(update){
 		event.preventDefault();
 		update = update || false;

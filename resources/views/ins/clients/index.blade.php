@@ -62,7 +62,7 @@
 						<span data-index="@{{ client.id }}" onClick="showForm('.popup-form.new-project',@{{ client.id }},@{{ $index }})" class="btn btn-default pull-right animated fadeIn" title="Create new project">New Project</span>
                         <div class="clearfix"></div>
                         <hr><br><br>
-                        <span v-on:click="deleteClient(client)" class="btn btn-danger">Delete @{{ client.name }}</span>
+                        <span v-on:click="deleteClient(client, $index)" class="btn btn-danger">Delete @{{ client.name }}</span>
 					</div>
 				</div>
 			</div>

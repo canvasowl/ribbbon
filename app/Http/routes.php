@@ -45,6 +45,7 @@ Route::group(['prefix' => '/api/'], function()
 	Route::get('clients/{id}', 'ApiController@getClient');
 	Route::put('clients/{id}', 'ApiController@updateClient');
 	Route::post('clients', 'ApiController@storeClient');
+	Route::delete('clients/{id}', 'ApiController@removeClient');
 
 	// PROJECT
 	Route::put('projects/{id}', 'ApiController@updateProject');

@@ -23,7 +23,15 @@
 <body>
 @include('analyticstracking')
 
-<!-- <div id="module">
-	<a id="close" onclick="closeModule()" title="Close">X</a>
-</div> -->
+<div id="sheet" class="animated"></div>
+<div id="pop-up-prompt" class="animated">
+	<header><h3></h3></header>
+	<div>
+		<p></p>
+        <section>
+            <span id="cancel-btn" class="btn"></span>
+            <span id="confirm-btn" class="btn"></span>
+        </section>
+	</div>
+</div>
 
