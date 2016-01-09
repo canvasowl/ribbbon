@@ -48,6 +48,9 @@ input.form-control:focus{
 .status-msg.error-msg{color: #D82929;}
 .status-msg.success-msg{color: #5cb85c;}
 
+.noScroll{
+  overflow-y:hidden;
+}
 // Weight
 .weight{
 	background-color: $color-badge; 
@@ -364,6 +367,52 @@ $side-nav-padding: 20px;
     margin-top: 10px;
     box-shadow: none;
     border: none;	
+}
+
+// SHEET AND PROMPT
+#sheet{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: $color-primary-dark;
+  opacity: .9;
+  display: none;
+}
+
+#pop-up-prompt{
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  z-index: 150;
+  width: 650px;
+  max-width: 100%;
+  min-height: 400px;
+  margin: 0 auto;
+  color: #fff;
+  display: none;
+}
+#pop-up-prompt h4{
+  margin-top: 30px;
+}
+#pop-up-prompt section{
+  margin-top: 40px;
+}
+#pop-up-prompt section .btn{
+  display: block;
+  border-top: 1px solid rgba(250,250,250,.2);
+  border-radius: 0;
+  color: rgba(250,250,250,.2);
+}
+#pop-up-prompt section .btn:last-child{
+  border-bottom: 1px solid rgba(250,250,250,.2);
+}
+#pop-up-prompt section .btn:hover{
+  color: #fff;
+  background-color: rgba(250,250,250,.1);
 }
 
 // CONTENT AREA
