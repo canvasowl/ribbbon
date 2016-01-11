@@ -39,6 +39,7 @@ input.form-control:focus{
 
 // Helpers
 .color-primary{color: $color-primary-light}
+.color-badge{color: $color-badge}
 
 .no-padding-left{padding-left: 0}
 .no-padding-right{padding-right: 0}
@@ -388,12 +389,12 @@ $side-nav-padding: 20px;
   left: 0;
   right: 0;
   z-index: 150;
-  width: 650px;
-  max-width: 100%;
+  width: 100%;
   min-height: 400px;
   margin: 0 auto;
   color: #fff;
   display: none;
+  text-align: center;
 }
 #pop-up-prompt h4{
   margin-top: 30px;

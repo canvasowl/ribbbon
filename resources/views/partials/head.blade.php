@@ -25,7 +25,7 @@
 
 <div id="sheet" class="animated"></div>
 <div id="pop-up-prompt" class="animated">
-	<header><h3></h3></header>
+	<header><h3 class="color-badge"></h3></header>
 	<div>
 		<p></p>
         <section>

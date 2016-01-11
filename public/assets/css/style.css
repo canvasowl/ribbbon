@@ -25,6 +25,9 @@ input.form-control:focus {
 .color-primary {
   color: #3958b3; }
 
+.color-badge {
+  color: #10e1c2; }
+
 .no-padding-left {
   padding-left: 0; }
 
@@ -383,12 +386,12 @@ input.form-control:focus {
   left: 0;
   right: 0;
   z-index: 150;
-  width: 650px;
-  max-width: 100%;
+  width: 100%;
   min-height: 400px;
   margin: 0 auto;
   color: #fff;
-  display: none; }
+  display: none;
+  text-align: center; }
 
 #pop-up-prompt h4 {
   margin-top: 30px; }
