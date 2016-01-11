@@ -1,7 +1,9 @@
 <?php
 
 // Composer: "fzaninotto/faker": "v1.3.0"
+use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+
 
 class ClientsTableSeeder extends Seeder {
 
