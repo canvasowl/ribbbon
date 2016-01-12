@@ -48,12 +48,14 @@ var client = new Vue({
 		  								.text(result.message);
 						
 			if (update == true){
+                result.data.projects = [];
+                console.log(result.data);
 		  		client.clients.push(result.data);
 				Vue.nextTick(function () {
 					megaMenuInit();
 				})		  		
-		  	}		    
-		  	
+		  	}
+
 		  	new_client.name = null;
 		  	new_client.phone_number = null;
 		  	new_client.point_of_contact = null;
@@ -138,6 +140,7 @@ var client = new Vue({
 		   								.text(result.message);
 
 		 	if (update == true){
+                result.data.weight = 0;
                 client.clients[client.tempClientIndex].projects.push(result.data);
 		 		Vue.nextTick(function () {
 		 			megaMenuInit();
