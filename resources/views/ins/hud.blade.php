@@ -18,11 +18,13 @@
 			  <div class="panel-heading">Latest Projects</div>
 			  <div class="panel-body">
 			  	@if (count($latestProjects) > 0)
+					<?php $pCounter = 1; ?>
 				  	@foreach ($latestProjects as $project)
-				  		<a href="/projects/{{ $project->id }}">
-				  			{{ $project->name }} 
+				  		<a class="with-number" href="/projects/{{ $project->id }}">
+				  			<span class="dim">{{ $pCounter }}.</span> {{ $project->name }}
 				  			<span class="weight pull-right">w.{{ $project->totalWeight() }}</span>
 				  		</a>
+						<?php $pCounter++; ?>
 				  	@endforeach			  			  	
 				@else
 				    <section class="info">
@@ -38,11 +40,13 @@
 			  <div class="panel-heading">Latest Tasks</div>
 			  <div class="panel-body">
 			  	@if (count($latestTasks) > 0)
+					<?php $tCounter = 1; ?>
 				  	@foreach ($latestTasks as $task)
-				  		<a href="/projects/{{ $task->project_id }}">
-				  			{{ $task->name }} 
+				  		<a class="with-number" href="/projects/{{ $task->project_id }}">
+							<span class=dim>{{ $tCounter }}.</span> {{ $task->name }}
 				  			<span class="weight pull-right">w.{{ $task->weight}}</span>
 				  		</a>
+						<?php $tCounter++ ?>
 				  	@endforeach			  			  	
 				@else
 				    <section class="info">
@@ -58,11 +62,13 @@
 				<div class="panel panel-default panel-list">
 				  <div class="panel-heading">Shared Projects</div>
 				  <div class="panel-body">
+					   <?php $sCounter = 1; ?>
 					  	@foreach ($inProjects as $project)
-					  		<a href="/projects/{{ $project->id }}">
-					  			{{ $project->name }} 
+					  		<a class="with-number" href="/projects/{{ $project->id }}">
+					  			<span class="dim">{{ $sCounter }}</span> {{ $project->name }}
 					  			<span class="weight pull-right">w.{{ $project->totalWeight() }}</span>
 					  		</a>
+							<?php $sCounter++ ?>
 					  	@endforeach			  			  	
 				  </div>
 				</div>
@@ -76,12 +82,14 @@
 			  <div class="panel-heading">Last Completed Tasks</div>
 			  <div class="panel-body">
 			  	@if (count($latestCompletedTasks) > 0)
+					<?php $ltCounter = 1;?>
 				  	@foreach ($latestCompletedTasks as $task)
-				  		<a  href="/projects/{{ $task->project_id }}">
-				  			{{ $task->name }} 
+				  		<a class="with-number" href="/projects/{{ $task->project_id }}">
+				  			<span class="dim">{{ $ltCounter }}</span>. {{ $task->name }}
 				  			<span class="weight pull-right">w.{{ $task->weight }}</span>
 				  		</a>
-				  	@endforeach				  		
+				  	@endforeach
+					<?php $ltCounter++ ?>
 			  	@else
 		  			<center><p>You haven't comepleted any task in a while!</p></center>								  		
 			  	@endif		  			  	

@@ -27,9 +27,16 @@ class ProjectsController extends BaseController {
 		$counter 	=	0;
 		$user 		=	User::find(Auth::id());
 		$projects 	=	$user->projects()->get();
-		$inProjects =  $user->inProjects()->orderBy('created_at', 'desc')->take(5)->get();
-		
-		return View::make('projects.index', compact(['projects','inProjects','counter','pTitle']));
+		$inProjects =   $user->inProjects()->orderBy('created_at', 'desc')->take(5)->get();
+
+        if($projects) {
+            foreach ($projects as $project) {
+                $weight = Project::find($project->id)->tasks()->where('state','!=','complete')->sum('weight');
+                $project["weight"] = $weight;
+            }
+        }
+
+		return View::make('ins/projects/index', compact(['projects','inProjects','counter','pTitle']));
 	}
 
 	/**

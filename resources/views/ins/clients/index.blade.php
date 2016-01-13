@@ -4,17 +4,17 @@
 	<div class="row" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 		<div class="col-xs-12 page-title-section">
 			<h1 class="pull-left">Clients</h1>
-			<a onClick="showForm('.popup-form.new-client')" href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>						
+			<a onClick="showForm('.popup-form.new-client')" href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
 			<div class="clearfix"></div>
 		</div>
 	</div>
 
 <div id="client">
 	<div class="row">
-		<div class="col-xs-12">			
-			
-			<div class="mega-menu">			
-				<div class="links">					
+		<div class="col-xs-12">
+
+			<div class="mega-menu">
+				<div class="links">
 					<a v-for="client in clients" class="" data-id="client_@{{client.id}}" href="">
 						@{{client.name}}
 					</a>
@@ -51,8 +51,8 @@
 							<div class="panel panel-default panel-list animated fadeIn">
 								<div class="panel-heading">Projects</div>
 								<div class="panel-body">
-									<a v-for="project in client.projects" href="/projects/@{{ project.id }}">
-										@{{ project.name }}
+									<a class="with-number" v-for="project in client.projects" href="/projects/@{{ project.id }}">
+										<span class="dim">@{{ $index + 1 }}.</span> @{{ project.name }}
 										<span class="weight pull-right">w.@{{ project.weight }}</span>
 									</a>
 								</div>

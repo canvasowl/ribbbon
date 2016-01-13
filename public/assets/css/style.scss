@@ -52,6 +52,10 @@ input.form-control:focus{
 .noScroll{
   overflow-y:hidden;
 }
+
+.dim{
+	opacity: .5;
+}
 // Weight
 .weight{
 	background-color: $color-badge; 
@@ -63,9 +67,9 @@ input.form-control:focus{
 
 // Panel
 .panel{
-	box-shadow: 0 2px 10px rgba(50,50,50,.3);
-	-webkit-box-shadow: 0 2px 10px rgba(50,50,50,.3);
-	-moz-box-shadow: 0 2px 10px rgba(50,50,50,.3);
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
 }
 .panel .panel-heading{
 	background-color: $color-panel-heading;
@@ -89,6 +93,12 @@ input.form-control:focus{
 	border-left-color: $color-primary-light;
 	background-color: #fafafa;
 	text-decoration: none;
+}
+.panel.panel-list a.with-number{
+  padding-left: 10px;
+}
+.panel.panel-list a.with-number .dim{
+  font-size: .7em;
 }
 .panel.panel-list .panel-body p{
 	margin-bottom: 0;
