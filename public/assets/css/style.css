@@ -50,6 +50,9 @@ input.form-control:focus {
 .dim {
   opacity: .5; }
 
+.circle {
+  border-radius: 100%; }
+
 .weight {
   background-color: #10e1c2;
   color: #4f4055;
@@ -289,7 +292,7 @@ input.form-control:focus {
   font-size: 1.2em;
   text-decoration: none;
   color: #999c9b;
-  border-left: 4px solid #f2f4f3; }
+  border-left: 4px solid transparent; }
 
 .mega-menu .links a.active,
 .mega-menu .links a:hover,
@@ -307,7 +310,7 @@ input.form-control:focus {
 .mega-menu .links a.inactive {
   border-top: none;
   border-bottom: none;
-  border-left: 4px solid #f2f4f3;
+  border-left: 4px solid transparent;
   color: #999c9b;
   font-weight: normal;
   background-color: transparent; }
@@ -430,5 +433,39 @@ input.form-control:focus {
 .page-title-section .btn {
   margin-top: 10px;
   margin-left: 10px; }
+
+.settings-container section {
+  background-color: #fff;
+  overflow: auto; }
+
+.settings-container .left-side {
+  background-color: #14202c;
+  padding: 10px 20px;
+  height: 600px; }
+
+.settings-container .left-side .info {
+  float: left;
+  padding: 10px 0 10px 10px; }
+
+.settings-container .left-side .info p {
+  margin-bottom: 0; }
+
+.settings-container .left-side .info p.name {
+  color: #fff; }
+
+.settings-container .left-side a {
+  float: left; }
+
+.settings-container .left-side .bio {
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 2;
+  text-align: center; }
+
+.settings-container .right-side {
+  padding-left: 5px; }
+
+.settings-container .right-side .mega-menu {
+  padding-top: 50px; }
 
 /*# sourceMappingURL=style.css.map */
