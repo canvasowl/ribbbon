@@ -34,7 +34,7 @@ class UsersController extends BaseController {
 		if ($completed == "") {
 			$completed = 0;
 		}
-		return View::make('users.index',compact(['user','created','completed','pTitle']));			
+		return View::make('ins/settings',compact(['user','created','completed','pTitle']));
 	}
 
 	/**
