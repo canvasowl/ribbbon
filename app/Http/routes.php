@@ -39,6 +39,7 @@ Route::group(['prefix' => '/api/'], function()
 {	
 	// USER 
 	Route::get('{key}/authId', 'ApiController@authId');
+    Route::get('user', 'ApiController@getUser');
 
 	// CLIENT
 	Route::get('clients/{withWeight?}', 'ApiController@getAllUserClients');

@@ -66,11 +66,20 @@ class ApiController extends BaseController {
 	}
 
     /**
+     * Get the current logged in user
+     * @return mixed
+     */
+    public function getUser(){
+        $user = User::where('id',4)->get();
+        return $this->setStatusCode(200)->makeResponse('User found',$user);
+    }
+
+    /**
      * Get all the clients for the logged in user
      * @return mixed
      */
     public function getAllUserClients($withWeight = false){
-		$clients = Client::with('projects')->where('user_id',4)->get();
+		$clients = Client::with('projects')->where('user_id',Auth::id())->get();
 		
 		if (count($clients) === 0) {
             return $this->setStatusCode(400)->makeResponse('Could not find clients');
