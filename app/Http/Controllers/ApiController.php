@@ -52,26 +52,33 @@ class ApiController extends BaseController {
     }
 
     /**
-     * @param $key
-     * @return string or Int
-     */
-    public function authId($key){
-		
-		// Validate the api key
-		if ($key != 0000000000) {
-			return "Api key is incorrect";		
-		}			
-
-		return Auth::id();
-	}
-
-    /**
      * Get the current logged in user
      * @return mixed
      */
     public function getUser(){
         $user = User::find(Auth::id());
         return $user;
+    }
+
+    public function updateUser($id){
+        if (strlen(trim(Input::get('email'))) === 0) {
+            return $this->setStatusCode(406)->makeResponse('You need to provide an email.');
+        }
+
+        if( strlen(trim(Input::get('full_name'))) === 0 ){
+            return $this->setStatusCode(406)->makeResponse('You have a name, no?');
+        }
+
+        if (!User::find(Auth::id())) {
+            return $this->setStatusCode(404)->makeResponse('User not found');
+        }
+
+        $input = Input::all();
+        unset($input['_method']);
+
+        User::find(Auth::id())->update($input);
+
+        return $this->setStatusCode(200)->makeResponse('Your changes have been saved');
     }
 
     /**

@@ -38,8 +38,8 @@ Route::group(array('before' => 'auth'), function()
 Route::group(['prefix' => '/api/'], function()
 {	
 	// USER 
-	Route::get('{key}/authId', 'ApiController@authId');
     Route::get('user', 'ApiController@getUser');
+    Route::post('user/{id}', 'ApiController@updateUser');
 
 	// CLIENT
 	Route::get('clients/{withWeight?}', 'ApiController@getAllUserClients');
