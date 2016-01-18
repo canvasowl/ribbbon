@@ -70,8 +70,8 @@ class ApiController extends BaseController {
      * @return mixed
      */
     public function getUser(){
-        $user = User::where('id',4)->get();
-        return $this->setStatusCode(200)->makeResponse('User found',$user);
+        $user = User::find(Auth::id());
+        return $user;
     }
 
     /**

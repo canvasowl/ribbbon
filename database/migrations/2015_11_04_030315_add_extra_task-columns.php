@@ -13,7 +13,6 @@ class AddExtraTaskColumns extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->string('description');
             $table->string('due_date');
         });
     }
@@ -26,7 +25,7 @@ class AddExtraTaskColumns extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn(['description', 'due_date']);
+            $table->dropColumn(['due_date']);
         });
     }
 }
