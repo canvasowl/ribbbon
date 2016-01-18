@@ -1,7 +1,7 @@
 var userObj = new Vue({
     el: '#user',
     data: {
-        user: {full_name: null}
+        user: {}
     },
 
     ready: function(){
@@ -10,11 +10,11 @@ var userObj = new Vue({
 
     methods: {
         getUser: function(){
-            $.get( "/api/user/", function( results ) {
-                userObj.user = results.data[0];
-                Vue.nextTick(function () {
-                    megaMenuInit();
-                });
+            $.get( "/api/user/", function( result ) {
+                userObj.user = result;
+                //Vue.nextTick(function () {
+                //    megaMenuInit();
+                //});
             });
         },
         update: function(user){

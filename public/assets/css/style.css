@@ -13,12 +13,10 @@ a:hover {
   text-decoration: none; }
 
 input.form-control {
-  border: none;
-  box-shadow: none;
-  border-bottom: 1px solid #ccc;
-  border-radius: 0; }
+  padding: 19px 12px; }
 
-input.form-control:focus {
+input.form-control:focus,
+textarea.form-control:focus {
   box-shadow: none;
   border-color: #14202c; }
 
@@ -461,6 +459,11 @@ input.form-control:focus {
   font-size: 1.1em;
   line-height: 2;
   text-align: center; }
+
+.settings-container .left-side hr {
+  border-top: none;
+  height: 2px;
+  background-color: rgba(150, 150, 150, 0.1); }
 
 .settings-container .right-side {
   padding-left: 5px; }
