@@ -465,6 +465,18 @@ textarea.form-control:focus {
   height: 2px;
   background-color: rgba(150, 150, 150, 0.1); }
 
+.settings-container .left-side .links a {
+  float: none;
+  color: rgba(150, 150, 150, 0.6);
+  transition-duration: .2s; }
+
+.settings-container .left-side .links a:hover {
+  color: #fff; }
+
+.settings-container .left-side .links span {
+  display: inline-block;
+  width: 13px; }
+
 .settings-container .right-side {
   padding-left: 5px; }
 
