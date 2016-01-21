@@ -62,11 +62,11 @@ class ApiController extends BaseController {
 
     public function updateUser($id){
         if (strlen(trim(Input::get('email'))) === 0) {
-            return $this->setStatusCode(406)->makeResponse('You need to provide an email.');
+            return $this->setStatusCode(200)->makeResponse('You need to provide an email.');
         }
 
         if( strlen(trim(Input::get('full_name'))) === 0 ){
-            return $this->setStatusCode(406)->makeResponse('You have a name, no?');
+            return $this->setStatusCode(200)->makeResponse('You have a name, no?');
         }
 
         if (!User::find(Auth::id())) {
