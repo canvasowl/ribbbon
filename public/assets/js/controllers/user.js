@@ -17,18 +17,20 @@ var userObj = new Vue({
         update: function(){
             event.preventDefault();
             var data = this.user;
-            console.log(data);
-            //return false;
 
             $.ajax({
                 type: "POST",
                 url: "/api/user/"+data.id,
                 data: data,
                 success: function(result){
-                    console.log(result);
+                    if(result.message != "Your changes have been saved"){
+                        $("#error").text(result.message);
+                        return false;
+                    }
+                    $("#error").text("");
                 },
                 error: function(e){
-                    console.log(e);
+                    // do nothing
                 }
             });
         },

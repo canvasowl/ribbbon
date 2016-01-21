@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-xs-12 page-title-section">
                 <h1 class="pull-left">Settings</h1>
-                <a href="" class="btn btn-primary pull-right" title="Create new client">Save Changes</a>
+                <a v-on:click="update()" class="btn btn-primary pull-right" title="Create new client">Save Changes</a>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -21,6 +21,29 @@
                         <p class="color-primary">@{{ user.title }}</p>
                     </div>
                     <div class="clearfix"></div>
+                    <br>
+                    <div class="links">
+                        <p v-if="user.link">
+                            <a target="_blank" href="">
+                                <span class="ion-ios-world-outline"></span> @{{ user.link }}
+                            </a>
+                        </p>
+                        <p v-if="user.twitter">
+                            <a target="_blank" href="https://twitter.com/@{{ user.twitter }}">
+                                <span class="ion-social-twitter"></span> https://twitter.com/@{{ user.twitter }}
+                            </a>
+                        </p>
+                        <p v-if="user.facebook">
+                            <a target="_blank" href="https://www.facebook.com/people/@{{ user.facebook }}">
+                                <span class="ion-social-facebook"></span> https://www.facebook.com/people/@{{ user.facebook}}
+                            </a>
+                        </p>
+                        <p v-if="user.linkedin">
+                            <a target="_blank" href="https://www.linkedin.com/in/@{{ user.linkedin }}">
+                                <span class="ion-social-linkedin"></span> https://www.linkedin.com/in/@{{ user.linkedin }}
+                            </a>
+                        </p>
+                    </div>
                     <hr>
 
                     <div class="bio">
@@ -31,6 +54,7 @@
                 </div>
                 <div class="col-xs-12 col-md-8 right-side">
                     <div class="mega-menu">
+                        <p id="error" class="status-msg error-msg"></p>
                         <div class="links">
                             <a class="" data-id="settings_info" href="">Personal Info</a>
                             <a class="" data-id="settings_links" href="">Links</a>
@@ -59,7 +83,7 @@
                                             <br>
                                             <span class="count pull-right">@{{ 250 - user.bio.length }}</span>
                                         </div>
-                                    </form>````
+                                    </form>
                                 </div>
                             </div>
                             <div class="item" id="settings_links">
@@ -80,8 +104,8 @@
                                     <input v-model="user.linkedin" type="text" class="form-control" placeholder="username">
                                 </div>
                             </div>
-                            <div class="item" id="settings_links">Settings Themes</div>
-                            <div class="item" id="settings_links">Account Settings</div>
+                            <div class="item" id="settings_themes">Settings Themes</div>
+                            <div class="item" id="settings"></div>
                         </div>
                     </div>
                 </div>
