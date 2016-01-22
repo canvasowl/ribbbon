@@ -58,7 +58,6 @@
                         <div class="links">
                             <a class="" data-id="settings_info" href="">Personal Info</a>
                             <a class="" data-id="settings_links" href="">Links</a>
-                            <a class="" data-id="settings_themes" href="">Themes</a>
                             <a class="" data-id="settings" href="">Account Settings</a>
                         </div>
                         <div class="content">
@@ -104,8 +103,26 @@
                                     <input v-model="user.linkedin" type="text" class="form-control" placeholder="username">
                                 </div>
                             </div>
-                            <div class="item" id="settings_themes">Settings Themes</div>
-                            <div class="item" id="settings"></div>
+                            <div class="item" id="settings">
+                                <label>Current Password</label>
+                                {!! Form::open(array('action' => array('UsersController@resetPassword', Auth::id() ))) !!}
+                                <div class="form-group">
+                                    {!! Form::password( 'current_pwd', array('class' => 'form-control', "placeholder" => "Current Password" )) !!}
+                                </div>
+                                <label>New Password</label>
+                                <div class="form-group">
+                                    {!! Form::password( 'new_pwd', array('class' => 'form-control', "placeholder" => "New Password" )) !!}
+                                </div>
+                                <div class="form-group">
+                                    {!! Form::submit( 'Update Password', array('class' => 'btn btn-default pull-right')) !!}
+                                    <div class="clearfix"></div>
+                                </div>
+                                {!! Form::close() !!}
+                                <hr>
+                                <label>Delete account</label>
+                                <p class="dimmed">Deleting your account will delete <b>ALL</b>, clients, projects and tasks created under this account</p>
+                                <button id="delete-account" class="btn btn-danger">Delete my account</button>
+                            </div>
                         </div>
                     </div>
                 </div>
