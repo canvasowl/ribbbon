@@ -278,6 +278,9 @@ textarea.form-control:focus {
 .popup-form.minimized footer {
   position: static; }
 
+.popup-form .form-control {
+  margin-bottom: 10px; }
+
 .mega-menu .links {
   float: left;
   width: 30%;
