@@ -120,8 +120,13 @@
                                 {!! Form::close() !!}
                                 <hr>
                                 <label>Delete account</label>
-                                <p class="dimmed">Deleting your account will delete <b>ALL</b>, clients, projects and tasks created under this account</p>
-                                <button id="delete-account" class="btn btn-danger">Delete my account</button>
+                                <p>Enable the delete button by typing delete below</p>
+                                <p class="dim">Deleting your account will delete <b>ALL</b>, clients, projects and tasks created under this account</p>
+                                <input v-model="delete_text" type="text" class="form-control">
+                                <br>
+                                <div v-if="delete_text == 'delete' ">
+                                    <button v-on:click="delete()" id="delete-account" class="btn btn-danger">Delete my account</button>
+                                </div>
                             </div>
                         </div>
                     </div>

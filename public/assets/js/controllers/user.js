@@ -1,7 +1,8 @@
 var userObj = new Vue({
     el: '#user',
     data: {
-        user: {}
+        user: {},
+        delete_text: null
     },
 
     ready: function(){
@@ -35,7 +36,25 @@ var userObj = new Vue({
             });
         },
         delete: function(){
-            console.log("The delete the logged in user");
+            showSheet();
+            makePrompt("Are you sure you want to delete your account","This action is irreversible","No now", "Yes");
+
+            $("#cancel-btn").click(function(){
+                closePrompt();
+            });
+
+            $("#confirm-btn").click(function(){
+                $.ajax({
+                    type: "DELETE",
+                    url: "/api/user/",
+                    success: function(result){
+                        document.location.href="/";
+                    },
+                    error: function(e){
+                        closePrompt();
+                    }
+                });
+            });
         }
     }
 

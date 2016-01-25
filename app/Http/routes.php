@@ -40,6 +40,7 @@ Route::group(['prefix' => '/api/'], function()
 	// USER 
     Route::get('user', 'ApiController@getUser');
     Route::post('user/{id}', 'ApiController@updateUser');
+	Route::delete('user/', 'ApiController@deleteUser');
 
 	// CLIENT
 	Route::get('clients/{withWeight?}', 'ApiController@getAllUserClients');

@@ -82,6 +82,21 @@ class ApiController extends BaseController {
     }
 
     /**
+     * Delete the given user
+     * @param $id
+     * @return mixed
+     */
+    public function deleteUser()
+    {
+        // Delete everything related to the user
+        Task::where('user_id', Auth::id())->delete();
+        Credential::where('user_id', Auth::id())->delete();
+        Project::where('user_id', Auth::id())->delete();
+        Client::where('user_id', Auth::id())->delete();
+        User::where('id', Auth::id())->delete();
+    }
+
+    /**
      * Get all the clients for the logged in user
      * @return mixed
      */
