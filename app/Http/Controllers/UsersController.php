@@ -44,19 +44,19 @@ class UsersController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		// Delete everything related to the user
-		Task::where('user_id', Auth::id())->delete(); 
-		Credential::where('user_id', Auth::id())->delete();
-		Project::where('user_id', Auth::id())->delete();
-		Client::where('user_id', Auth::id())->delete();		
-		User::where('id', Auth::id())->delete();
-
-		// Logout and redirect back to home page
-		Auth::logout();
-		return Redirect::to('/');
-	}
+//	public function destroy($id)
+//	{
+//		// Delete everything related to the user
+//		Task::where('user_id', Auth::id())->delete();
+//		Credential::where('user_id', Auth::id())->delete();
+//		Project::where('user_id', Auth::id())->delete();
+//		Client::where('user_id', Auth::id())->delete();
+//		User::where('id', Auth::id())->delete();
+//
+//		// Logout and redirect back to home page
+//		Auth::logout();
+//		return Redirect::to('/');
+//	}
 
 	/**
 	 * Logout the user from the application
@@ -205,26 +205,26 @@ class UsersController extends BaseController {
 	/**
 	 * Request for a beta invite
 	 */
-	public function request(){
-		// lets validate the email
-		$validator = Validator::make(
-			array( 'email' 		=>	Input::get('email'), ),
-			array( 'email'		=> 	'required|email|unique:beta' )
-		);		
-
-		if ($validator->fails()){
-		    return Redirect::back()->withErrors($validator)->withInput();
-		}		
-
-		$beta_user 			= new Beta;
-		$beta_user->email 	= Input::get('email');
-		$beta_user->status 	= 0;
-		$beta_user->save(); 
-
-		// Send the beta confirmation email
-		sendBetaFollowUpMail(Input::get('email'));
-		
-		return Redirect::back()->with('success', "You are all set, your invitation will arrive soon.");
-	}
+//	public function request(){
+//		// lets validate the email
+//		$validator = Validator::make(
+//			array( 'email' 		=>	Input::get('email'), ),
+//			array( 'email'		=> 	'required|email|unique:beta' )
+//		);
+//
+//		if ($validator->fails()){
+//		    return Redirect::back()->withErrors($validator)->withInput();
+//		}
+//
+//		$beta_user 			= new Beta;
+//		$beta_user->email 	= Input::get('email');
+//		$beta_user->status 	= 0;
+//		$beta_user->save();
+//
+//		// Send the beta confirmation email
+//		sendBetaFollowUpMail(Input::get('email'));
+//
+//		return Redirect::back()->with('success', "You are all set, your invitation will arrive soon.");
+//	}
 
 }
