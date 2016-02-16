@@ -66,7 +66,7 @@ class ProjectsController extends BaseController {
 
 		$pTitle 		=	$project->name; 
 			
-		return  View::make('projects.show', compact(
+		return  View::make('ins/projects/show', compact(
 											[
 												'owner_id',
 												'project',

@@ -388,6 +388,39 @@ $side-nav-padding: 20px;
     box-shadow: none;
     border: none;	
 }
+.mega-menu.mega-menu-tab .links{
+	float: none;
+	width: auto;
+    min-height: 56px;
+    position: relative;
+    z-index: 2;
+}
+.mega-menu.mega-menu-tab .links a{
+	float: left;
+    border-top: 1px solid #cdcdd4;
+	border-right: 1px solid #cdcdd4;
+    border-left: 1px solid transparent;
+    border-bottom: none;
+}
+.mega-menu .links a.inactive:hover{
+  border-left-color: transparent;
+}
+.mega-menu.mega-menu-tab .links a:first-child{
+  border-left: 1px solid #cdcdd4;
+}
+.mega-menu.mega-menu-tab .links a.active,
+.mega-menu.mega-menu-tab .links a:first-child{
+
+}
+.mega-menu.mega-menu-tab .content{
+  float: none;
+  width: auto;
+  position: relative;
+  top: -2px;
+  left: 1px;
+  z-index: 1;
+}
+
 
 // SHEET AND PROMPT
 #sheet{
