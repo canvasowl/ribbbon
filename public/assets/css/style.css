@@ -410,6 +410,48 @@ textarea.form-control:focus {
   left: 1px;
   z-index: 1; }
 
+.task-list-row,
+.task-list-row .col-md-4,
+.mega-menu.mega-menu-tab .content .item {
+  height: 100%;
+  min-height: 500px; }
+
+.task-list {
+  padding: 15px;
+  margin-bottom: 0;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  max-height: 500px;
+  min-height: 500px;
+  overflow-y: auto;
+  list-style: none;
+  background-color: #14202c;
+  color: #ccc; }
+
+.task-list .title {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2); }
+
+.task-list li {
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  padding: 10px 0; }
+
+.task-list li .show-on-hover {
+  opacity: 0; }
+
+.task-list li:hover .show-on-hover {
+  opacity: 1; }
+
+.task-list li span {
+  transition-duration: .2s; }
+
+.task-list li span:hover {
+  opacity: .7; }
+
+.task-list li span:first-child {
+  margin-right: 5px; }
+
 #sheet {
   position: absolute;
   top: 0;
