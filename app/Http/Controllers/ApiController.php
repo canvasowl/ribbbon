@@ -206,6 +206,17 @@ class ApiController extends BaseController {
     }
 
     /**
+     *  Returns the given project
+     */
+    public function getProject($id){
+        if (!Project::find($id)) {
+            return $this->setStatusCode(404)->makeResponse('The project was not found');
+        }
+
+        return $this->setStatusCode(200)->makeResponse('Project was successfully found', Project::find($id));
+    }
+
+    /**
      * Insert a new project into the database
      * @return mixed
      */
@@ -247,16 +258,16 @@ class ApiController extends BaseController {
      * Insert a new task into the database
      * @return mixed
      */
-    public function storeTask(){
+    public function storeTask($client_id, $project_id){
         if (!Input::all()) {
-            return $this->setStatusCode(406)->makeResponse('No information provided to create client');
+            return $this->setStatusCode(406)->makeResponse('No information provided to create task');
         }
 
         if (!Input::get('name')) {
             return $this->setStatusCode(406)->makeResponse('The name seems to be empty');
         }
 
-        Input::merge(array('user_id' => Auth::id()));
+        Input::merge(array('user_id' => Auth::id(), 'client_id' => $client_id, 'project_id' => $project_id));
         Task::create(Input::all());
         $id = \DB::getPdo()->lastInsertId();
 
