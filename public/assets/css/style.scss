@@ -45,6 +45,7 @@ textarea.form-control:focus{
 
 .no-padding-left{padding-left: 0}
 .no-padding-right{padding-right: 0}
+.no-side-padding{padding-left: 0; padding-right: 0}
 
 // Messages
 .status-msg{padding: 10px; display:block}
@@ -429,7 +430,7 @@ $side-nav-padding: 20px;
 }
 
 .task-list{
-  padding: 15px;
+  padding: 15px 0;
   margin-bottom: 0;
   border: 1px solid #eee;
   border-radius: 5px;
@@ -437,17 +438,18 @@ $side-nav-padding: 20px;
   min-height: 500px;
   overflow-y: auto;
   list-style: none;
-  background-color: $color-primary-dark;
-  color: #ccc;
+  background-color: #fff;
+  color: #fff;
 }
 .task-list .title{
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(250,250,250,.2);
+  color: #ccc;
 }
 .task-list li{
   border-bottom: 1px solid rgba(250,250,250,.2);
-  padding: 10px 0;
+  padding: 10px;
 }
 .task-list li .show-on-hover{opacity: 0;}
 .task-list li:hover .show-on-hover{opacity: 1;}
@@ -455,6 +457,11 @@ $side-nav-padding: 20px;
 .task-list li span:hover{opacity: .7;}
 .task-list li span:first-child{margin-right: 5px}
 
+.priority-e{background-color: $color-primary-light}
+.priority-d{background-color: #2449B3}
+.priority-c{background-color: #48D0BE}
+.priority-b{background-color: #FFC61C}
+.priority-a{background-color: #FB532A}
 // SHEET AND PROMPT
 #sheet{
   position: absolute;
