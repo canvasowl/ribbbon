@@ -44,9 +44,9 @@
                                 <div class="col-xs-12 col-md-4">
                                     <ul class="task-list">
                                         <h5 class="title">In Progress (10)</h5>
-                                        <li class="priority-a">
+                                        <li v-for="task in project.tasks" class="priority-@{{ task.priority }}" >
                                             <div>
-                                                <div class="pull-left">w.30</div>
+                                                <div class="pull-left">w.@{{ task.weight }}</div>
                                                 <div class="show-on-hover pull-right">
                                                     <span class="ion-close-round"></span>
                                                     <span class="ion-edit"></span>
@@ -54,59 +54,8 @@
                                                 <div class="clearfix"></div>
                                             </div>
                                             <div>
-                                                <h5>Task Name</h5>
-                                            </div>
-                                        </li>
-                                        <li class="priority-b">
-                                            <div>
-                                                <div class="pull-left">w.30</div>
-                                                <div class="show-on-hover pull-right">
-                                                    <span class="ion-close-round"></span>
-                                                    <span class="ion-edit"></span>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div>
-                                                <h5>Task Name</h5>
-                                            </div>
-                                        </li>
-                                        <li class="priority-c">
-                                            <div>
-                                                <div class="pull-left">w.30</div>
-                                                <div class="show-on-hover pull-right">
-                                                    <span class="ion-close-round"></span>
-                                                    <span class="ion-edit"></span>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div>
-                                                <h5>Task Name</h5>
-                                            </div>
-                                        </li>
-                                        <li class="priority-d">
-                                            <div>
-                                                <div class="pull-left">w.30</div>
-                                                <div class="show-on-hover pull-right">
-                                                    <span class="ion-close-round"></span>
-                                                    <span class="ion-edit"></span>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div>
-                                                <h5>Task Name</h5>
-                                            </div>
-                                        </li>
-                                        <li class="priority-e">
-                                            <div>
-                                                <div class="pull-left">w.30</div>
-                                                <div class="show-on-hover pull-right">
-                                                    <span class="ion-close-round"></span>
-                                                    <span class="ion-edit"></span>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                            <div>
-                                                <h5>Task Name</h5>
+                                                <h5>@{{ task.name }}</h5>
+                                                <span class="ion-android-textsms"></span>
                                             </div>
                                         </li>
                                     </ul>
@@ -149,9 +98,9 @@
                     <input v-model="newTask.name" placeholder="Name" type="text" class="form-control first">
                 </div>
                 <div class="col-xs-4 no-side-padding">
+                    <label>Weight:</label>
                     <select v-model="newTask.weight" class="form-control">
-                        <option selected>Weight</option>
-                        <option>1</option>
+                        <option selected>1</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -164,27 +113,31 @@
                     </select>
                 </div>
                 <div class="col-xs-4">
+                    <label>Priority:</label>
                     <select v-model="newTask.priority" class="form-control">
-                        <option selected>Priority</option>
-                        <option>Low Priority</option>
-                        <option>Normal Priority</option>
-                        <option>Medium Priority</option>
-                        <option>High Priority</option>
-                        <option>Highest Priority</option>
+                        <option>low</option>
+                        <option selected>normal</option>
+                        <option>medium</option>
+                        <option>high</option>
+                        <option>highest</option>
                     </select>
                 </div>
                 <div class="col-xs-4 no-side-padding">
+                    <label>State:</label>
                     <select v-model="newTask.state" class="form-control">
-                        <option selected>backlog</option>
-                        <option>progress</option>
+                        <option>backlog</option>
+                        <option selected>progress</option>
                         <option>testing</option>
                         <option>complete</option>
                     </select>
                 </div>
+                <textarea v-model="newTask.description" rows="5" class="form-control" placeholder="Description..."></textarea>
+                <br>
+                <span class="count pull-right">@{{ 250 - newTask.description.length }}</span>
             </form>
         </section>
         <footer>
-            <a v-on:click="createProject(client_id)" href="" class="btn btn-primary pull-right">Save</a>
+            <a v-on:click="createTask(project.client_id, project.id)" href="" class="btn btn-primary pull-right">Save</a>
             <div class="clearfix"></div>
         </footer>
     </div>

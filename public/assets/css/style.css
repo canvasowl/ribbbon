@@ -38,13 +38,16 @@ textarea.form-control:focus {
 
 .status-msg {
   padding: 10px;
-  display: block; }
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #fff; }
 
 .status-msg.error-msg {
-  color: #D82929; }
+  background-color: #ef8282; }
 
 .status-msg.success-msg {
-  color: #5cb85c; }
+  background-color: #48D0BE; }
 
 .noScroll {
   overflow-y: hidden; }
@@ -285,6 +288,9 @@ textarea.form-control:focus {
 .popup-form .form-control {
   margin-bottom: 10px; }
 
+.popup-form.new-task {
+  height: 450px; }
+
 .mega-menu .links {
   float: left;
   width: 30%;
@@ -439,7 +445,6 @@ textarea.form-control:focus {
   color: #ccc; }
 
 .task-list li {
-  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
   padding: 10px; }
 
 .task-list li .show-on-hover {
@@ -457,20 +462,20 @@ textarea.form-control:focus {
 .task-list li span:first-child {
   margin-right: 5px; }
 
-.priority-e {
-  background-color: #3958b3; }
+.priority-low {
+  background-color: #2196F3; }
 
-.priority-d {
-  background-color: #2449B3; }
+.priority-normal {
+  background-color: #00BCD4; }
 
-.priority-c {
-  background-color: #48D0BE; }
+.priority-medium {
+  background-color: #FFC107; }
 
-.priority-b {
-  background-color: #FFC61C; }
+.priority-high {
+  background-color: #FF9800; }
 
-.priority-a {
-  background-color: #FB532A; }
+.priority-highest {
+  background-color: #FF5722; }
 
 #sheet {
   position: absolute;

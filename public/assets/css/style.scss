@@ -48,9 +48,15 @@ textarea.form-control:focus{
 .no-side-padding{padding-left: 0; padding-right: 0}
 
 // Messages
-.status-msg{padding: 10px; display:block}
-.status-msg.error-msg{color: #D82929;}
-.status-msg.success-msg{color: #5cb85c;}
+.status-msg{
+  padding: 10px;
+  display:block;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #fff;
+}
+.status-msg.error-msg{background-color: rgb(239, 130, 130)};
+.status-msg.success-msg{background-color: #48D0BE};
 
 .noScroll{
   overflow-y:hidden;
@@ -286,6 +292,9 @@ $side-nav-padding: 20px;
 .popup-form .form-control{
   margin-bottom: 10px;
 }
+.popup-form.new-task{
+  height: 450px;
+}
 
 // Mega Menu
 .mega-menu .links{
@@ -448,7 +457,6 @@ $side-nav-padding: 20px;
   color: #ccc;
 }
 .task-list li{
-  border-bottom: 1px solid rgba(250,250,250,.2);
   padding: 10px;
 }
 .task-list li .show-on-hover{opacity: 0;}
@@ -457,11 +465,11 @@ $side-nav-padding: 20px;
 .task-list li span:hover{opacity: .7;}
 .task-list li span:first-child{margin-right: 5px}
 
-.priority-e{background-color: $color-primary-light}
-.priority-d{background-color: #2449B3}
-.priority-c{background-color: #48D0BE}
-.priority-b{background-color: #FFC61C}
-.priority-a{background-color: #FB532A}
+.priority-low{background-color: #2196F3}
+.priority-normal{background-color: #00BCD4}
+.priority-medium{background-color: #FFC107}
+.priority-high{background-color: #FF9800}
+.priority-highest{background-color: #FF5722}
 // SHEET AND PROMPT
 #sheet{
   position: absolute;
