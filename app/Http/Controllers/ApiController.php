@@ -213,7 +213,10 @@ class ApiController extends BaseController {
             return $this->setStatusCode(404)->makeResponse('The project was not found');
         }
 
-        return $this->setStatusCode(200)->makeResponse('Project was successfully found', Project::find($id));
+        $project = Project::find($id);
+        $project->tasks = Task::where('project_id', $id)->get();
+
+        return $this->setStatusCode(200)->makeResponse('Project was successfully found', $project);
     }
 
     /**
@@ -267,7 +270,8 @@ class ApiController extends BaseController {
             return $this->setStatusCode(406)->makeResponse('The name seems to be empty');
         }
 
-        Input::merge(array('user_id' => Auth::id(), 'client_id' => $client_id, 'project_id' => $project_id));
+        Input::merge(array('user_id' => 3, 'client_id' => $client_id, 'project_id' => $project_id));
+
         Task::create(Input::all());
         $id = \DB::getPdo()->lastInsertId();
 
