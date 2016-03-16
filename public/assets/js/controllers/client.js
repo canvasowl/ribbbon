@@ -49,7 +49,6 @@ var client = new Vue({
 						
 			if (update == true){
                 result.data.projects = [];
-                console.log(result.data);
 		  		client.clients.push(result.data);
 				Vue.nextTick(function () {
 					megaMenuInit();
