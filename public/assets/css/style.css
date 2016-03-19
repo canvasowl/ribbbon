@@ -445,7 +445,12 @@ textarea.form-control:focus {
   color: #ccc; }
 
 .task-list li {
-  padding: 10px; }
+  padding: 10px;
+  transition-duration: .2s; }
+
+.task-list li:hover {
+  opacity: .9;
+  cursor: pointer; }
 
 .task-list li .show-on-hover {
   opacity: 0; }
