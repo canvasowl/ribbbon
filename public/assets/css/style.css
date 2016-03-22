@@ -270,7 +270,7 @@ textarea.form-control:focus {
 
 .popup-form.minimized {
   transition-duration: .3s;
-  height: 40px; }
+  height: 40px !important; }
 
 .popup-form section {
   padding: 10px; }
@@ -288,7 +288,8 @@ textarea.form-control:focus {
 .popup-form .form-control {
   margin-bottom: 10px; }
 
-.popup-form.new-task {
+.popup-form.new-task,
+.popup-form.update-task {
   height: 450px; }
 
 .mega-menu .links {
