@@ -3,7 +3,8 @@ var project = new Vue({
     data: {
         project: { name : null, weight : null, production : null, stage : null, github: null},
         newProject: {name: null, project_id: null},
-        newTask: {name: null, weight: null, state: null, priority: null, description: null}
+        newTask: {name: null, weight: null, state: null, priority: null, description: null},
+        currentTask: {name: null, weight: null, state: null, priority: null, description: null}
     },
 
     ready: function(){
@@ -111,8 +112,34 @@ var project = new Vue({
                 }
             });
         },
-        startTaskEditMode: function(){},
-        updateTask: function(){}
+        editMode: function(task){
+            this.currentTask = task;
+            $(".popup-form.update-task").show();
+        },
+        updateTask: function(taskId){
+            event.preventDefault();
+            this.currentTask._method = "put";
+
+            $.ajax({
+                type: 'POST',
+                url: "/api/tasks/"+ taskId,
+                data: project.currentTask,
+                error: function(e) {
+                    var response = jQuery.parseJSON(e.responseText);
+                    $('.update-task .status-msg').text("")
+                        .removeClass('success-msg')
+                        .addClass("error-msg")
+                        .text(response.message);
+                    return false;
+                },
+                success: function(result){
+                    $('.update-task .status-msg').text("")
+                        .removeClass('remove-msg')
+                        .addClass("success-msg")
+                        .text(result.message);
+                }
+            });
+        }
     }
 
 });

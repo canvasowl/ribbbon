@@ -306,10 +306,6 @@ class ApiController extends BaseController {
             return $this->setStatusCode(406)->makeResponse('The task needs a name');
         }
 
-        if ( Input::get('weight') === "" || Input::get('weight') <= 0) {
-            return $this->setStatusCode(406)->makeResponse('The task needs a weight');
-        }
-
         $input = Input::all();
         unset($input['_method']);
 
