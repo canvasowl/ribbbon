@@ -214,7 +214,7 @@ textarea.form-control:focus {
   font-size: .8em; }
 
 .btn {
-  padding: 12px 20px;
+  padding: 10px 20px;
   border: none;
   transition-duration: .2s;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -430,7 +430,6 @@ textarea.form-control:focus {
 .task-list {
   padding: 15px 0;
   margin-bottom: 0;
-  border: 1px solid #eee;
   border-radius: 5px;
   max-height: 500px;
   min-height: 500px;
@@ -467,6 +466,16 @@ textarea.form-control:focus {
 
 .task-list li span:first-child {
   margin-right: 5px; }
+
+.task-list.backlog li {
+  width: 31.33%;
+  float: left;
+  margin: 1%; }
+
+.task-list.backlog li:nth-child(2),
+.task-list.backlog li:nth-child(3),
+.task-list.backlog li:nth-child(4) {
+  margin-top: 0; }
 
 .priority-low {
   background-color: #2196F3; }
@@ -586,5 +595,14 @@ textarea.form-control:focus {
 
 .settings-container .right-side .mega-menu {
   padding-top: 50px; }
+
+.progress-bar {
+  background-color: #10e1c2;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+.credential-form .form-group.type-0 {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

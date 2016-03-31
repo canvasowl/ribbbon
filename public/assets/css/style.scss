@@ -216,7 +216,7 @@ $side-nav-padding: 20px;
 
 // Buttons
 .btn{
-	padding: 12px 20px;
+	padding: 10px 20px;
 	border: none;
 	transition-duration: .2s;
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -442,7 +442,7 @@ $side-nav-padding: 20px;
 .task-list{
   padding: 15px 0;
   margin-bottom: 0;
-  border: 1px solid #eee;
+  //border: 1px solid #eee;
   border-radius: 5px;
   max-height: 500px;
   min-height: 500px;
@@ -457,13 +457,24 @@ $side-nav-padding: 20px;
   border-bottom: 1px solid rgba(250,250,250,.2);
   color: #ccc;
 }
-.task-list li{ padding: 10px; transition-duration: .2s}
+.task-list li{ padding: 10px; transition-duration: .2s;}
 .task-list li:hover{opacity: .9; cursor: pointer}
 .task-list li .show-on-hover{opacity: 0;}
 .task-list li:hover .show-on-hover{opacity: 1;}
 .task-list li span{transition-duration: .2s;}
 .task-list li span:hover{opacity: .7;}
 .task-list li span:first-child{margin-right: 5px}
+
+.task-list.backlog li{
+  width: 31.33%;
+  float: left;
+  margin: 1%;
+}
+.task-list.backlog li:nth-child(2),
+.task-list.backlog li:nth-child(3),
+.task-list.backlog li:nth-child(4){
+  margin-top: 0;
+}
 
 .priority-low{background-color: #2196F3}
 .priority-normal{background-color: #00BCD4}
@@ -594,3 +605,13 @@ $side-nav-padding: 20px;
   padding-top: 50px;
 }
 
+.progress-bar{
+  background-color: #10e1c2;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.credential-form .form-group.type-0{
+  display: none;
+}
