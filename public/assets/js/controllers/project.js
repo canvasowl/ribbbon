@@ -4,14 +4,31 @@ var project = new Vue({
         project: { name : null, weight : null, production : null, stage : null, github: null},
         newProject: {name: null, project_id: null},
         newTask: {name: null, weight: null, state: null, priority: null, description: null},
-        currentTask: {name: null, weight: null, state: null, priority: null, description: null}
+        currentTask: {name: null, weight: null, state: null, priority: null, description: null},
+        newCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
+        currentCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null}
     },
-
     ready: function(){
         this.setupProject();
         //console.log(this.project.id);
     },
+    computed: {
+      numTasks: function(){
+        return this.project.tasks.length;
+      },
+      numProgressTasks: function(){
 
+      },
+      numTestingTasks: function(){
+
+      },
+      nunCompletedTasks: function(){
+
+      },
+      numBacklogTasks: function(){
+
+      }
+    },
     methods: {
         setupProject: function(){
             var url = window.location.href,
@@ -19,6 +36,7 @@ var project = new Vue({
 
             $.get( "/api/projects/"+project_id, function( results ) {
                 project.project = results.data;
+                console.log(project.project);
                 Vue.nextTick(function () {
                     megaMenuInit();
                 })
@@ -139,7 +157,39 @@ var project = new Vue({
                         .text(result.message);
                 }
             });
-        }
+        },
+        createCredential: function(user_id, project_id){
+            event.preventDefault();
+
+            var data = this.newCredential;
+            data.user_id = user_id;
+            data.project_id = project_id;
+
+            $.ajax({
+                type: 'POST',
+                url: "/api/credentials",
+                data: data,
+                error: function(e) {
+                    var response = jQuery.parseJSON(e.responseText);
+                    $('.new-credential .status-msg').text("")
+                        .removeClass('success-msg')
+                        .addClass("error-msg")
+                        .text(response.message);
+                    return false;
+                },
+                success: function(result){
+                    $('.new-credential .status-msg').text("")
+                        .removeClass('remove-msg')
+                        .addClass("success-msg")
+                        .text(result.message);
+
+                    project.newCredential.name = null;
+                    project.newCredential.hostname = null;
+                    project.newCredential.password = null;
+                    project.newCredential.port = null;
+                }
+            });
+        },
     }
 
 });

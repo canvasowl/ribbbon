@@ -215,6 +215,7 @@ class ApiController extends BaseController {
 
         $project = Project::find($id);
         $project->tasks = Task::where('project_id', $id)->get();
+        $project->credentials = Credential::where('project_id', $id)->get();
 
         return $this->setStatusCode(200)->makeResponse('Project was successfully found', $project);
     }
@@ -345,11 +346,18 @@ class ApiController extends BaseController {
             return $this->setStatusCode(406)->makeResponse('The username seems to be empty');
         }
 
+        if (!Input::get('user_id')) {
+            return $this->setStatusCode(406)->makeResponse('No user id is being passed');
+        }
+
+        if (!Input::get('project_id')) {
+            return $this->setStatusCode(406)->makeResponse('No project id is being passed');
+        }
+
         if (!Input::get('password')) {
             return $this->setStatusCode(406)->makeResponse('The password seems to be empty');
         }
 
-        Input::merge(array('user_id' => 4));
         Credential::create(Input::all());
         $id = \DB::getPdo()->lastInsertId();
 
