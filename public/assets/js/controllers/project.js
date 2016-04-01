@@ -13,21 +13,69 @@ var project = new Vue({
         //console.log(this.project.id);
     },
     computed: {
-      numTasks: function(){
-        return this.project.tasks.length;
-      },
-      numProgressTasks: function(){
+        numTasks: function(){
+            var tasks = this.project.tasks;
+            var finalNum = 0;
 
-      },
-      numTestingTasks: function(){
+            for (var i = 0; i < tasks.length; i++){
+                if( tasks[i].state != "backlog" ){
+                    finalNum++;
+                }
+            }
 
-      },
-      nunCompletedTasks: function(){
+            return finalNum;
+        },
+        numProgressTasks: function(){
+            var tasks = this.project.tasks;
+            var finalNum = 0;
 
-      },
-      numBacklogTasks: function(){
+            for (var i = 0; i < tasks.length; i++){
+                if( tasks[i].state == "progress" ){
+                    finalNum++;
+                }
+            }
 
-      }
+            return finalNum;
+        },
+        numTestingTasks: function(){
+            var tasks = this.project.tasks;
+            var finalNum = 0;
+
+            for (var i = 0; i < tasks.length; i++){
+                if( tasks[i].state == "testing" ){
+                    finalNum++;
+                }
+            }
+
+            return finalNum;
+        },
+        numCompleteTasks: function(){
+            var tasks = this.project.tasks;
+            var finalNum = 0;
+
+            for (var i = 0; i < tasks.length; i++){
+                if( tasks[i].state == "complete" ){
+                    finalNum++;
+                }
+            }
+
+            return finalNum;
+        },
+        numBacklogTasks: function(){
+            var tasks = this.project.tasks;
+            var finalNum = 0;
+
+            for (var i = 0; i < tasks.length; i++){
+                if( tasks[i].state == "backlog" ){
+                    finalNum++;
+                }
+            }
+
+            return finalNum;
+        },
+        numCredentials: function(){
+            return this.project.credentials.length;
+        }
     },
     methods: {
         setupProject: function(){
@@ -36,7 +84,6 @@ var project = new Vue({
 
             $.get( "/api/projects/"+project_id, function( results ) {
                 project.project = results.data;
-                console.log(project.project);
                 Vue.nextTick(function () {
                     megaMenuInit();
                 })

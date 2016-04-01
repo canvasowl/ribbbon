@@ -33,8 +33,8 @@
                 <div class="mega-menu mega-menu-tab">
                     <div class="links">
                         <a  data-id="tab_tasks" href="">Tasks (@{{ numTasks }})</a>
-                        <a  data-id="tab_backlog" href="">Backlog (0)</a>
-                        <a  data-id="tab_credentials" href="">Credentials (0)</a>
+                        <a  data-id="tab_backlog" href="">Backlog (@{{ numBacklogTasks }})</a>
+                        <a  data-id="tab_credentials" href="">Credentials (@{{ numCredentials }})</a>
                         <a  data-id="tab_files" href="">Files (0)</a>
                         <a  data-id="tab_manage" href="">Manage (0)</a>
                     </div>
