@@ -34,6 +34,18 @@
 </form>
 <hr>
 
+<div class="row credential-list">
+    <div v-for="credential in project.credentials" class="col-xs-12 col-md-4">
+        <div class="credential">
+            <label> @{{ credential.name }} </label>
+            <p>Username: @{{ credential.username }} </p>
+            <p>Password: @{{ credential.password }}</p>
+            <p v-if=" credential.hostname != '' ">Hostname: @{{ credential.hostname }}</p>
+            <p v-if=" credential.port != 0 ">Port: @{{ credential.port }}</p>
+        </div>
+    </div>
+</div>
+
 
 {{--@if( count($credentials) > 0)--}}
         {{--<!-- server panel -->--}}
