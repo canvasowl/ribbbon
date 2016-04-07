@@ -314,9 +314,7 @@ textarea.form-control:focus {
 
 .mega-menu .links a.active,
 .mega-menu .links a:first-child {
-  border-top: 1px solid #cdcdd4;
   border-bottom: 1px solid #cdcdd4;
-  font-weight: bold;
   background-color: #fff; }
 
 .mega-menu .links a.inactive {
@@ -336,7 +334,6 @@ textarea.form-control:focus {
   width: 70%;
   padding: 10px;
   background-color: #fff;
-  border: 1px solid #cdcdd4;
   min-height: 500px; }
 
 .mega-menu .content .item {
@@ -402,22 +399,17 @@ textarea.form-control:focus {
 
 .mega-menu.mega-menu-tab .links a {
   float: left;
-  border-top: 1px solid #cdcdd4;
-  border-right: 1px solid #cdcdd4;
   border-left: 1px solid transparent;
   border-bottom: none; }
 
 .mega-menu .links a.inactive:hover {
   border-left-color: transparent; }
 
-.mega-menu.mega-menu-tab .links a:first-child {
-  border-left: 1px solid #cdcdd4; }
-
 .mega-menu.mega-menu-tab .content {
   float: none;
   width: auto;
   position: relative;
-  top: -2px;
+  top: -3px;
   left: 1px;
   z-index: 1; }
 
@@ -538,15 +530,13 @@ textarea.form-control:focus {
   padding: 20px;
   margin-left: 260px;
   min-height: 100%;
-  border-top: 5px solid #3958b3;
-  border-left: 1px solid #eee; }
+  border-top: 5px solid #3958b3; }
 
 .page-title-section .btn {
   margin-top: 10px;
   margin-left: 10px; }
 
 .settings-container section {
-  background-color: #fff;
   overflow: auto; }
 
 .settings-container .left-side {
@@ -604,5 +594,10 @@ textarea.form-control:focus {
 
 .credential-form .form-group.type-0 {
   display: none; }
+
+.credential-list .credential {
+  padding: 5px;
+  background-color: #F2F4F3;
+  margin-top: 5px; }
 
 /*# sourceMappingURL=style.css.map */

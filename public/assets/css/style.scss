@@ -320,9 +320,9 @@ $side-nav-padding: 20px;
 }
 .mega-menu .links a.active,
 .mega-menu .links a:first-child{
-	border-top: 1px solid #cdcdd4;
+	//border-top: 1px solid #cdcdd4;
 	border-bottom: 1px solid #cdcdd4;	
-	font-weight: bold;
+	//font-weight: bold;
 	background-color: #fff;
 }
 .mega-menu .links a.inactive{
@@ -342,7 +342,7 @@ $side-nav-padding: 20px;
 	width: 70%;
 	padding: 10px;
 	background-color: #fff;
-	border: 1px solid #cdcdd4;
+	//border: 1px solid #cdcdd4;
 	min-height: 500px;
 }
 .mega-menu .content .item{
@@ -408,17 +408,17 @@ $side-nav-padding: 20px;
 }
 .mega-menu.mega-menu-tab .links a{
 	float: left;
-    border-top: 1px solid #cdcdd4;
-	border-right: 1px solid #cdcdd4;
+    //border-top: 1px solid #cdcdd4;
+	//border-right: 1px solid #cdcdd4;
     border-left: 1px solid transparent;
     border-bottom: none;
 }
 .mega-menu .links a.inactive:hover{
   border-left-color: transparent;
 }
-.mega-menu.mega-menu-tab .links a:first-child{
-  border-left: 1px solid #cdcdd4;
-}
+//.mega-menu.mega-menu-tab .links a:first-child{
+//  border-left: 1px solid #cdcdd4;
+//}
 .mega-menu.mega-menu-tab .links a.active,
 .mega-menu.mega-menu-tab .links a:first-child{
 
@@ -427,7 +427,7 @@ $side-nav-padding: 20px;
   float: none;
   width: auto;
   position: relative;
-  top: -2px;
+  top: -3px;
   left: 1px;
   z-index: 1;
 }
@@ -532,7 +532,6 @@ $side-nav-padding: 20px;
     margin-left: 260px;
 	min-height: 100%;    
     border-top: 5px solid $color-primary-light;
-    border-left: 1px solid #eee;
 }
 
 .page-title-section .btn{
@@ -542,7 +541,6 @@ $side-nav-padding: 20px;
 
 // SETTINGS
 .settings-container section{
-  background-color: #fff;
   overflow: auto;
 }
 
