@@ -10,9 +10,20 @@ var project = new Vue({
     },
     ready: function(){
         this.setupProject();
-        //console.log(this.project.id);
     },
     computed: {
+        projectWeight: function(){
+            var tasks = this.project.tasks;
+            var remainingWeight = 0;
+
+            for (var i = 0; i < tasks.length; i++){
+                if( tasks[i].state != "complete" ){
+                    remainingWeight = remainingWeight + Number(tasks[i].weight);
+                }
+            }
+
+            return remainingWeight;
+        },
         numTasks: function(){
             var tasks = this.project.tasks;
             var finalNum = 0;
@@ -229,6 +240,8 @@ var project = new Vue({
                         .removeClass('remove-msg')
                         .addClass("success-msg")
                         .text(result.message);
+
+                    project.project.credentials.push(result.data);
 
                     project.newCredential.name = null;
                     project.newCredential.hostname = null;

@@ -13,12 +13,11 @@
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="70"
                          aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                        <span class="sr-only">70% Complete</span>
                     </div>
                 </div>
             </div>
             <div class="col-xs-1 no-margin-right">
-                <div class="pull-right"><span class="weight">w.10</span></div>
+                <div class="pull-right"><span class="weight">w.@{{ projectWeight }}</span></div>
                 <div class="clearfix"></div>
             </div>
         </div>
