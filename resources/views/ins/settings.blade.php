@@ -54,7 +54,8 @@
                 </div>
                 <div class="col-xs-12 col-md-8 right-side">
                     <div class="mega-menu">
-                        <p id="error" class="status-msg error-msg"></p>
+                        <p v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</p>
+                        <p v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</p>
                         <div class="links">
                             <a class="" data-id="settings_info" href="">Personal Info</a>
                             <a class="" data-id="settings_links" href="">Links</a>

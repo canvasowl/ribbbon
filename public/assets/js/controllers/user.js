@@ -2,7 +2,8 @@ var userObj = new Vue({
     el: '#user',
     data: {
         user: {},
-        delete_text: null
+        delete_text: null,
+        msg: {error: null, success: null},
     },
 
     ready: function(){
@@ -25,10 +26,12 @@ var userObj = new Vue({
                 data: data,
                 success: function(result){
                     if(result.message != "Your changes have been saved"){
-                        $("#error").text(result.message);
+                        userObj.msg.error = result.message;
+                        userObj.msg.success = null;
                         return false;
                     }
-                    $("#error").text("");
+                    userObj.msg.success = result.message;
+                    userObj.msg.error = null
                 },
                 error: function(e){
                     // do nothing
