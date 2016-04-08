@@ -6,7 +6,6 @@
     <div class="row" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
         <div class="col-xs-12 page-title-section">
             <h1 class="pull-left">@{{ project.name }}</h1>
-
             <div class="clearfix"></div>
             <p class="dim">Progress</p>
             <div class="col-xs-11 no-padding-left">
@@ -34,8 +33,6 @@
                         <a  data-id="tab_tasks" href="">Tasks (@{{ numTasks }})</a>
                         <a  data-id="tab_backlog" href="">Backlog (@{{ numBacklogTasks }})</a>
                         <a  data-id="tab_credentials" href="">Credentials (@{{ numCredentials }})</a>
-                        <a  data-id="tab_files" href="">Files (0)</a>
-                        <a  data-id="tab_manage" href="">Manage (0)</a>
                     </div>
                     <div class="content">
                         <div class="item" id="tab_tasks">
@@ -46,12 +43,6 @@
                         </div>
                         <div class="item" id="tab_credentials">
                             @include('ins.projects.partials.credentials')
-                        </div>
-                        <div class="item" id="tab_files">
-                            @include('ins.projects.partials.files')
-                        </div>
-                        <div class="item" id="tab_manage">
-                            @include('ins.projects.partials.manage')
                         </div>
                     </div>
                 </div>
