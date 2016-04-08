@@ -85,7 +85,7 @@ textarea.form-control:focus {
   border-left: 4px solid #fff;
   transition-duration: .2s;
   color: #333;
-  font-size: 1.2em;
+  font-size: 1em;
   border-bottom: 1px solid #e0e9e8; }
 
 .panel.panel-list a:hover {
