@@ -250,6 +250,29 @@ var project = new Vue({
                 }
             });
         },
+        deleteCredential: function(credentialId){
+            showSheet();
+            makePrompt("Are you sure you want to delete this credential?","","No now", "Yes");
+
+            $("#cancel-btn").click(function(){
+                closePrompt();
+            });
+
+            $("#confirm-btn").click(function(){
+                $.ajax({
+                    type: "POST",
+                    url: "/api/credentials/"+credentialId,
+                    data: {_method: "delete"},
+                    success: function(){
+                        $(".credential-"+credentialId).hide();
+                        closePrompt();
+                    },
+                    error: function(e){
+                        closePrompt();
+                    }
+                });
+            });
+        }
     }
 
 });

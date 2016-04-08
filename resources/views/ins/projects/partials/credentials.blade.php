@@ -35,9 +35,15 @@
 <hr>
 
 <div class="row credential-list">
-    <div v-for="credential in project.credentials" class="col-xs-12 col-md-4">
+    <div v-for="credential in project.credentials" class="col-xs-12 col-md-4 credential-@{{ credential.id }}">
         <div class="credential">
-            <label> @{{ credential.name }} </label>
+            <div>
+                <label class="pull-left">w.@{{ credential.name }}</label>
+                <div class="show-on-hover pull-right">
+                    <span v-on:click="deleteCredential(credential.id)" class="ion-close-round"></span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
             <p>Username: @{{ credential.username }} </p>
             <p>Password: @{{ credential.password }}</p>
             <p v-if=" credential.hostname != '' ">Hostname: @{{ credential.hostname }}</p>
