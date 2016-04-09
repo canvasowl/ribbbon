@@ -241,7 +241,6 @@ textarea.form-control:focus {
   right: 20px;
   width: 400px;
   max-width: 400px;
-  height: 350px;
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(50, 50, 50, 0.4);
   -webkit-box-shadow: 0 2px 10px rgba(50, 50, 50, 0.4);
@@ -273,7 +272,8 @@ textarea.form-control:focus {
   height: 40px !important; }
 
 .popup-form section {
-  padding: 10px; }
+  padding: 10px;
+  padding-bottom: 60px; }
 
 .popup-form footer {
   width: 100%;

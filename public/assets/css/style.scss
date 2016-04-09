@@ -245,7 +245,6 @@ $side-nav-padding: 20px;
 	right: 20px;
 	width: 400px;
 	max-width: 400px;
-	height: 350px;
 	background-color: #fff;
 	box-shadow: 0 2px 10px rgba(50,50,50,.4);
 	-webkit-box-shadow: 0 2px 10px rgba(50,50,50,.4);
@@ -278,6 +277,7 @@ $side-nav-padding: 20px;
 }
 .popup-form section{
 	padding: 10px;
+    padding-bottom: 60px;
 }
 .popup-form footer{
 	width: 100%;
