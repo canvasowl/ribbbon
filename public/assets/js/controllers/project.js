@@ -272,6 +272,35 @@ var project = new Vue({
                     }
                 });
             });
+        },
+        editCredential: function(credential){
+            this.currentCredential = credential ;
+            $(".popup-form.update-credential").show();
+        },
+        updateCredential: function(credentialId){
+            console.log("Update credential");
+            event.preventDefault();
+            this.currentCredential._method = "put";
+
+            $.ajax({
+                type: 'POST',
+                url: "/api/credentials/"+ credentialId,
+                data: project.currentCredential,
+                error: function(e) {
+                    var response = jQuery.parseJSON(e.responseText);
+                    $('.update-credential .status-msg').text("")
+                        .removeClass('success-msg')
+                        .addClass("error-msg")
+                        .text(response.message);
+                    return false;
+                },
+                success: function(result){
+                    $('.update-credential .status-msg').text("")
+                        .removeClass('remove-msg')
+                        .addClass("success-msg")
+                        .text(result.message);
+                }
+            });
         }
     }
 

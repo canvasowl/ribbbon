@@ -35,7 +35,7 @@
 <hr>
 
 <div class="row credential-list">
-    <div v-for="credential in project.credentials" class="col-xs-12 col-md-4 credential-@{{ credential.id }}">
+    <div v-on:click="editCredential(credential)" v-for="credential in project.credentials" class="col-xs-12 col-md-4 credential-@{{ credential.id }}">
         <div class="credential">
             <div>
                 <label class="pull-left">w.@{{ credential.name }}</label>

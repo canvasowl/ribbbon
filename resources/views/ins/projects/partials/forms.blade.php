@@ -57,6 +57,7 @@
         <div class="clearfix"></div>
     </footer>
 </div>
+
 <div style="z-index: 20" class="popup-form update-task">
     <header>
         <p class="pull-left">Update Task</p>
@@ -113,6 +114,42 @@
     </section>
     <footer>
         <a v-on:click="updateTask(currentTask.id)" href="" class="btn btn-primary pull-right">Update</a>
+        <div class="clearfix"></div>
+    </footer>
+</div>
+
+<div style="z-index: 20" class="popup-form update-credential">
+    <header>
+        <p class="pull-left">Update Credential</p>
+        <div class="actions pull-right">
+            <i title="Minimize" class="ion-minus-round"></i>
+            <i title="Close" class="ion-close-round"></i>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+    <section>
+        <form>
+            <span class="status-msg"></span>
+            <div class="form-group">
+                <input v-model="currentCredential.name" placeholder="Name" type="text" class="form-control first">
+            </div>
+            <div class="form-group">
+                <input v-model="currentCredential.username" placeholder="Username" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <input v-model="currentCredential.password" placeholder="Password" type="text" class="form-control">
+            </div>
+            <div v-if="currentCredential.type == 1" class="form-group">
+                <input v-model="currentCredential.hostname" placeholder="Hostname" type="text" class="form-control">
+            </div>
+            <div v-if="currentCredential.type == 1" class="form-group">
+                <input v-model="currentCredential.port" placeholder="Port" type="text" class="form-control">
+            </div>
+            <br>
+        </form>
+    </section>
+    <footer>
+        <a v-on:click="updateCredential(currentCredential.id)" href="" class="btn btn-primary pull-right">Update</a>
         <div class="clearfix"></div>
     </footer>
 </div>
