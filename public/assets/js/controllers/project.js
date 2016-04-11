@@ -6,7 +6,8 @@ var project = new Vue({
         newTask: {name: null, weight: null, state: null, priority: null, description: null},
         currentTask: {name: null, weight: null, state: null, priority: null, description: null},
         newCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
-        currentCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null}
+        currentCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
+        msg: {success: null, error: null}
     },
     ready: function(){
         this.setupProject();
@@ -176,18 +177,16 @@ var project = new Vue({
                 data: project.newTask,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
-                    $('.new-task .status-msg').text("")
-                        .removeClass('success-msg')
-                        .addClass("error-msg")
-                        .text(response.message);
+
+                    project.msg.success = null;
+                    project.msg.error = response.message;
+
                     return false;
                 },
 
                 success: function(result){
-                    $('.new-task .status-msg').text("")
-                        .removeClass('remove-msg')
-                        .addClass("success-msg")
-                        .text(result.message);
+                    project.msg.success = result.message;
+                    project.msg.error = null;
 
                     project.project.tasks.push(result.data);
                     Vue.nextTick(function () {
@@ -218,44 +217,40 @@ var project = new Vue({
                 data: project.currentTask,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
-                    $('.update-task .status-msg').text("")
-                        .removeClass('success-msg')
-                        .addClass("error-msg")
-                        .text(response.message);
+
+                    project.msg.success = null;
+                    project.msg.error = response.message;
+
                     return false;
                 },
                 success: function(result){
-                    $('.update-task .status-msg').text("")
-                        .removeClass('remove-msg')
-                        .addClass("success-msg")
-                        .text(result.message);
+                    project.msg.success = result.message;
+                    project.msg.error = null;
                 }
             });
         },
         createCredential: function(user_id, project_id){
             event.preventDefault();
 
-            var data = this.newCredential;
-            data.user_id = user_id;
-            data.project_id = project_id;
+            var credential = this.newCredential;
+            credential.user_id = user_id;
+            credential.project_id = project_id;
 
             $.ajax({
                 type: 'POST',
                 url: "/api/credentials",
-                data: data,
+                data: credential,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
-                    $('.new-credential .status-msg').text("")
-                        .removeClass('success-msg')
-                        .addClass("error-msg")
-                        .text(response.message);
+
+                    project.msg.success = null;
+                    project.msg.error = response.message;
+
                     return false;
                 },
                 success: function(result){
-                    $('.new-credential .status-msg').text("")
-                        .removeClass('remove-msg')
-                        .addClass("success-msg")
-                        .text(result.message);
+                    project.msg.success = result.message;
+                    project.msg.error = null;
 
                     project.project.credentials.push(result.data);
 
@@ -293,10 +288,8 @@ var project = new Vue({
             this.currentCredential = credential ;
             $(".popup-form.update-credential").show();
             $(".popup-form.update-credential .first").focus();
-
         },
         updateCredential: function(credentialId){
-            console.log("Update credential");
             event.preventDefault();
             this.currentCredential._method = "put";
 
@@ -306,17 +299,15 @@ var project = new Vue({
                 data: project.currentCredential,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
-                    $('.update-credential .status-msg').text("")
-                        .removeClass('success-msg')
-                        .addClass("error-msg")
-                        .text(response.message);
+
+                    project.msg.success = null;
+                    project.msg.error = response.message;
+
                     return false;
                 },
                 success: function(result){
-                    $('.update-credential .status-msg').text("")
-                        .removeClass('remove-msg')
-                        .addClass("success-msg")
-                        .text(result.message);
+                    project.msg.success = result.message;
+                    project.msg.error = null;
                 }
             });
         }

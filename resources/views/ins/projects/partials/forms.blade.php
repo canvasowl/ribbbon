@@ -9,7 +9,8 @@
     </header>
     <section>
         <form>
-            <span class="status-msg"></span>
+            <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
+            <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
             <div class="col-xs-12 no-side-padding">
                 <label>Name:</label>
                 <input v-model="newTask.name" type="text" class="form-control first">
@@ -71,7 +72,8 @@
     </header>
     <section>
         <form>
-            <span class="status-msg"></span>
+            <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
+            <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
             <div class="col-xs-12 no-side-padding">
                 <label>Name:</label>
                 <input v-model="currentTask.name" type="text" class="form-control first">
@@ -133,7 +135,8 @@
     </header>
     <section>
         <form>
-            <span class="status-msg"></span>
+            <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
+            <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
             <div class="form-group">
                 <label>Name:</label>
                 <input v-model="currentCredential.name" type="text" class="form-control first">
