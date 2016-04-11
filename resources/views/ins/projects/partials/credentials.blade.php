@@ -1,4 +1,3 @@
-<div><strong>Create new credentials</strong></div><br>
 <form class="credential-form new-credential">
     <span class="status-msg"></span>
     <div class="form-group">

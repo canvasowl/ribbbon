@@ -1,7 +1,7 @@
 <div class="row task-list-row">
     <div class="col-xs-12">
         <ul class="task-list backlog">
-            <h5 class="title">Backlog (10)</h5>
+            <h5 class="title">Backlog (@{{ numBacklogTasks }})</h5>
             <li v-on:click="editMode(task)" v-for="task in project.tasks | filterBy 'backlog' in 'state' " class="priority-@{{ task.priority }} task-@{{ task.id }}" >
                 <div>
                     <div class="pull-left">w.@{{ task.weight }}</div>
