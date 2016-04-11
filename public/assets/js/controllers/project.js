@@ -86,6 +86,20 @@ var project = new Vue({
         },
         numCredentials: function(){
             return this.project.credentials.length;
+        },
+        projectProgress: function(){
+            var tasks = this.project.tasks;
+            var totalWeight = 0;
+            var completedWeight = 0;
+
+            for (var i = 0; i < tasks.length; i++){
+                totalWeight = totalWeight + Number(tasks[i].weight);
+
+                if( tasks[i].state == "complete" ){
+                    completedWeight = completedWeight + Number(tasks[i].weight);
+                }
+            }
+            return  (completedWeight / totalWeight) * 100;
         }
     },
     methods: {
@@ -151,6 +165,7 @@ var project = new Vue({
         },
         showTaskCreateForm: function(){
             $(".popup-form.new-task").show();
+            $(".popup-form.new-task .first").focus();
         },
         createTask: function(client_id, project_id){
             event.preventDefault();
@@ -169,7 +184,6 @@ var project = new Vue({
                 },
 
                 success: function(result){
-
                     $('.new-task .status-msg').text("")
                         .removeClass('remove-msg')
                         .addClass("success-msg")
@@ -191,9 +205,11 @@ var project = new Vue({
         editMode: function(task){
             this.currentTask = task;
             $(".popup-form.update-task").show();
+            $(".popup-form.update-task .first").focus();
         },
         updateTask: function(taskId){
             event.preventDefault();
+
             this.currentTask._method = "put";
 
             $.ajax({
@@ -276,6 +292,8 @@ var project = new Vue({
         editCredential: function(credential){
             this.currentCredential = credential ;
             $(".popup-form.update-credential").show();
+            $(".popup-form.update-credential .first").focus();
+
         },
         updateCredential: function(credentialId){
             console.log("Update credential");
