@@ -466,9 +466,7 @@ $side-nav-padding: 20px;
 .task-list li span:first-child{margin-right: 5px}
 
 .task-list.backlog li{
-  width: 31.33%;
-  float: left;
-  margin: 1%;
+  margin-bottom: 20px;
 }
 .task-list.backlog li:nth-child(2),
 .task-list.backlog li:nth-child(3),
@@ -602,7 +600,9 @@ $side-nav-padding: 20px;
 .settings-container .right-side .mega-menu{
   padding-top: 50px;
 }
-
+.progress{
+  background-color: $color-primary-light;
+}
 .progress-bar{
   background-color: #10e1c2;
   -webkit-box-shadow: none;

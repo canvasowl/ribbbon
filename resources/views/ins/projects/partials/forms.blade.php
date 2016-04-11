@@ -11,7 +11,8 @@
         <form>
             <span class="status-msg"></span>
             <div class="col-xs-12 no-side-padding">
-                <input v-model="newTask.name" placeholder="Name" type="text" class="form-control first">
+                <label>Name:</label>
+                <input v-model="newTask.name" type="text" class="form-control first">
             </div>
             <div class="col-xs-4 no-side-padding">
                 <label>Weight:</label>
@@ -47,7 +48,8 @@
                     <option>complete</option>
                 </select>
             </div>
-            <textarea v-model="newTask.description" rows="5" class="form-control" placeholder="Description..."></textarea>
+            <label>Description:</label>
+            <textarea v-model="newTask.description" rows="5" class="form-control"></textarea>
             <br>
             <span class="count pull-right">@{{ 250 - newTask.description.length }}</span>
         </form>
@@ -71,7 +73,8 @@
         <form>
             <span class="status-msg"></span>
             <div class="col-xs-12 no-side-padding">
-                <input v-model="currentTask.name" placeholder="Name" type="text" class="form-control first">
+                <label>Name:</label>
+                <input v-model="currentTask.name" type="text" class="form-control first">
             </div>
             <div class="col-xs-4 no-side-padding">
                 <label>Weight:</label>
@@ -107,7 +110,8 @@
                     <option>complete</option>
                 </select>
             </div>
-            <textarea v-model="currentTask.description" rows="5" class="form-control" placeholder="Description..."></textarea>
+            <label>Description:</label>
+            <textarea v-model="currentTask.description" rows="5" class="form-control"></textarea>
             <br>
             <span class="count pull-right">@{{ 250 - currentTask.description.length }}</span>
         </form>
@@ -131,19 +135,24 @@
         <form>
             <span class="status-msg"></span>
             <div class="form-group">
-                <input v-model="currentCredential.name" placeholder="Name" type="text" class="form-control first">
+                <label>Name:</label>
+                <input v-model="currentCredential.name" type="text" class="form-control first">
             </div>
             <div class="form-group">
-                <input v-model="currentCredential.username" placeholder="Username" type="text" class="form-control">
+                <label>Username:</label>
+                <input v-model="currentCredential.username" type="text" class="form-control">
             </div>
             <div class="form-group">
-                <input v-model="currentCredential.password" placeholder="Password" type="text" class="form-control">
+                <label>Password:</label>
+                <input v-model="currentCredential.password" type="text" class="form-control">
             </div>
             <div v-if="currentCredential.type == 1" class="form-group">
-                <input v-model="currentCredential.hostname" placeholder="Hostname" type="text" class="form-control">
+                <label>Hostname:</label>
+                <input v-model="currentCredential.hostname" type="text" class="form-control">
             </div>
             <div v-if="currentCredential.type == 1" class="form-group">
-                <input v-model="currentCredential.port" placeholder="Port" type="text" class="form-control">
+                <label>Port:</label>
+                <input v-model="currentCredential.port" type="text" class="form-control">
             </div>
             <br>
         </form>

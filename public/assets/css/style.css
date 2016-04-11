@@ -460,9 +460,7 @@ textarea.form-control:focus {
   margin-right: 5px; }
 
 .task-list.backlog li {
-  width: 31.33%;
-  float: left;
-  margin: 1%; }
+  margin-bottom: 20px; }
 
 .task-list.backlog li:nth-child(2),
 .task-list.backlog li:nth-child(3),
@@ -585,6 +583,9 @@ textarea.form-control:focus {
 
 .settings-container .right-side .mega-menu {
   padding-top: 50px; }
+
+.progress {
+  background-color: #3958b3; }
 
 .progress-bar {
   background-color: #10e1c2;
