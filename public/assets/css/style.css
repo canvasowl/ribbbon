@@ -20,6 +20,9 @@ textarea.form-control:focus {
   box-shadow: none;
   border-color: #14202c; }
 
+.label-default {
+  font-size: 1em; }
+
 .color-primary {
   color: #3958b3; }
 
@@ -35,6 +38,9 @@ textarea.form-control:focus {
 .no-side-padding {
   padding-left: 0;
   padding-right: 0; }
+
+.show-on-hover {
+  display: none; }
 
 .status-msg {
   padding: 10px;
@@ -411,7 +417,8 @@ textarea.form-control:focus {
   position: relative;
   top: -3px;
   left: 1px;
-  z-index: 1; }
+  z-index: 1;
+  background-color: #fff; }
 
 .task-list-row,
 .task-list-row .col-md-4,
@@ -427,8 +434,7 @@ textarea.form-control:focus {
   min-height: 500px;
   overflow-y: auto;
   list-style: none;
-  background-color: #fff;
-  color: #fff; }
+  background-color: #fff; }
 
 .task-list .title {
   text-align: center;
@@ -438,7 +444,10 @@ textarea.form-control:focus {
 
 .task-list li {
   padding: 10px;
-  transition-duration: .2s; }
+  transition-duration: .2s;
+  background-color: #F2F4F3;
+  color: #777;
+  margin-top: 5px; }
 
 .task-list li:hover {
   opacity: .9;
@@ -448,7 +457,8 @@ textarea.form-control:focus {
   opacity: 0; }
 
 .task-list li:hover .show-on-hover {
-  opacity: 1; }
+  opacity: 1;
+  display: inline-block; }
 
 .task-list li span {
   transition-duration: .2s; }
@@ -467,20 +477,26 @@ textarea.form-control:focus {
 .task-list.backlog li:nth-child(4) {
   margin-top: 0; }
 
-.priority-low {
-  background-color: #2196F3; }
+.priority-circle {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%; }
 
-.priority-normal {
+.priority-low {
   background-color: #00BCD4; }
 
+.priority-normal {
+  background-color: #2196F3; }
+
 .priority-medium {
-  background-color: #FFC107; }
+  background-color: #e167ff; }
 
 .priority-high {
   background-color: #FF9800; }
 
 .priority-highest {
-  background-color: #FF5722; }
+  background-color: #ff4559; }
 
 #sheet {
   position: absolute;
@@ -530,9 +546,15 @@ textarea.form-control:focus {
   min-height: 100%;
   border-top: 5px solid #3958b3; }
 
-.page-title-section .btn {
+.page-title-section > h1 {
+  height: 50px; }
+
+.page-title-section .btn.btn-primary {
   margin-top: 10px;
   margin-left: 10px; }
+
+.page-title-section:hover .show-on-hover {
+  display: inline-block; }
 
 .settings-container section {
   overflow: auto; }
@@ -585,7 +607,8 @@ textarea.form-control:focus {
   padding-top: 50px; }
 
 .progress {
-  background-color: #3958b3; }
+  background-color: #CECECE;
+  border-radius: 30px; }
 
 .progress-bar {
   background-color: #10e1c2;

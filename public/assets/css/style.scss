@@ -39,6 +39,10 @@ textarea.form-control:focus{
 	border-color: $color-primary-dark;
 }
 
+.label-default{
+  font-size: 1em;
+}
+
 // Helpers
 .color-primary{color: $color-primary-light}
 .color-badge{color: $color-badge}
@@ -46,6 +50,8 @@ textarea.form-control:focus{
 .no-padding-left{padding-left: 0}
 .no-padding-right{padding-right: 0}
 .no-side-padding{padding-left: 0; padding-right: 0}
+
+.show-on-hover{display: none}
 
 // Messages
 .status-msg{
@@ -430,6 +436,7 @@ $side-nav-padding: 20px;
   top: -3px;
   left: 1px;
   z-index: 1;
+  background-color: #fff;
 }
 
 .task-list-row,
@@ -442,14 +449,12 @@ $side-nav-padding: 20px;
 .task-list{
   padding: 15px 0;
   margin-bottom: 0;
-  //border: 1px solid #eee;
   border-radius: 5px;
   max-height: 500px;
   min-height: 500px;
   overflow-y: auto;
   list-style: none;
   background-color: #fff;
-  color: #fff;
 }
 .task-list .title{
   text-align: center;
@@ -457,10 +462,16 @@ $side-nav-padding: 20px;
   border-bottom: 1px solid rgba(250,250,250,.2);
   color: #ccc;
 }
-.task-list li{ padding: 10px; transition-duration: .2s;}
+.task-list li{
+  padding: 10px;
+  transition-duration: .2s;
+  background-color: #F2F4F3;
+  color: #777;
+  margin-top: 5px;
+}
 .task-list li:hover{opacity: .9; cursor: pointer}
 .task-list li .show-on-hover{opacity: 0;}
-.task-list li:hover .show-on-hover{opacity: 1;}
+.task-list li:hover .show-on-hover{opacity: 1; display: inline-block}
 .task-list li span{transition-duration: .2s;}
 .task-list li span:hover{opacity: .7;}
 .task-list li span:first-child{margin-right: 5px}
@@ -474,11 +485,17 @@ $side-nav-padding: 20px;
   margin-top: 0;
 }
 
-.priority-low{background-color: #2196F3}
-.priority-normal{background-color: #00BCD4}
-.priority-medium{background-color: #FFC107}
+.priority-circle{
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+}
+.priority-low{background-color: #00BCD4}
+.priority-normal{background-color: #2196F3}
+.priority-medium{background-color: #e167ff}
 .priority-high{background-color: #FF9800}
-.priority-highest{background-color: #FF5722}
+.priority-highest{background-color: #ff4559}
 // SHEET AND PROMPT
 #sheet{
   position: absolute;
@@ -532,9 +549,15 @@ $side-nav-padding: 20px;
     border-top: 5px solid $color-primary-light;
 }
 
-.page-title-section .btn{
+.page-title-section > h1{
+	height: 50px;
+}
+.page-title-section .btn.btn-primary{
 	margin-top: 10px;
 	margin-left: 10px;
+}
+.page-title-section:hover .show-on-hover{
+	display: inline-block;
 }
 
 // SETTINGS
@@ -601,7 +624,8 @@ $side-nav-padding: 20px;
   padding-top: 50px;
 }
 .progress{
-  background-color: $color-primary-light;
+  background-color: #CECECE;
+  border-radius: 30px;
 }
 .progress-bar{
   background-color: #10e1c2;
