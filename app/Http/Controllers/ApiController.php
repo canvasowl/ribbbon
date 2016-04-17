@@ -122,7 +122,25 @@ class ApiController extends BaseController {
         }
         return $this->setStatusCode(200)->makeResponse('Clients retrieved successfully',$clients->toArray());
 	}
+    public function getAllUserProjects(){
+        $projects = Project::where('user_id',Auth::id())->get();
 
+        if($projects) {
+            foreach ($projects as $project) {
+                $completedWeight = Project::find($project->id)->tasks()->where('state','=','complete')->sum('weight');
+                $totalWeight = Project::find($project->id)->tasks()->sum('weight');
+
+                $project["completedWeight"] = $completedWeight;
+                $project["totalWeight"] = $totalWeight;
+            }
+        }
+
+        return $this->setStatusCode(200)->makeResponse('Projects retrieved successfully',$projects->toArray());
+    }
+    public function getAllUserOpenTasks(){
+        $tasks = Task::where('user_id',Auth::id())->where('state', '!=', 'complete')->get();
+        return $this->setStatusCode(200)->makeResponse('Tasks retrieved successfully',$tasks->toArray());
+    }
     /**
      * Insert a new client into the database
      * @return mixed

@@ -50,11 +50,13 @@ Route::group(['prefix' => '/api/'], function()
 	Route::delete('clients/{id}', 'ApiController@removeClient');
 
 	// PROJECT
+    Route::get('projects/', 'ApiController@getAllUserProjects');
     Route::get('projects/{id}','ApiController@getProject');
-	Route::put('projects/{id}', 'ApiController@updateProject');
+    Route::put('projects/{id}', 'ApiController@updateProject');
 	Route::post('projects', 'ApiController@storeProject');
 
 	// TASK
+    Route::get('tasks', 'ApiController@getAllUserOpenTasks');
     Route::post('tasks/{client_id}/{project_id}', 'ApiController@storeTask');
     Route::delete('tasks/{id}', 'ApiController@removeTask');
     Route::put('tasks/{id}', 'ApiController@updateTask');
