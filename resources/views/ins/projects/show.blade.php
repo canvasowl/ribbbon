@@ -5,7 +5,16 @@
 <div id="project">
     <div class="row" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
         <div class="col-xs-12 page-title-section">
-            <h1 class="pull-left">@{{ project.name }}</h1>
+            <h1 class="pull-left">@{{ project.name }} <a v-on:click="startProjectEditMode()" class="show-on-hover btn btn-default" title="Edit Project"><i class="ion-edit"></i></a></h1>
+            <div class="clearfix"></div>
+            <div v-if="project.description != '' " class="col-sm-12 col-md-6 no-side-padding">
+                <p><span class="dim">Description:</span> @{{ project.description }}</p>
+            </div>
+            <div class="col-sm-12 col-md-6 no-side-padding">
+                    <a v-if="project.production != '' " href="@{{ project.production }} " target="_blank" class="pull-right"><span class="label label-default"><i class="ion-ios-world-outline"></i> Production</span></a>
+                    <a v-if="project.dev != '' " href="@{{ project.dev }}" target="_blank" class="pull-right"><span class="label label-default"><i class="ion-ios-world-outline"></i> Development</span></a>
+                    <a v-if="project.github != '' " href="@{{ project.github }}" target="_blank" class="pull-right"><span class="label label-default"><i class="ion-fork-repo"></i> Version Control</span></a>
+            </div>
             <div class="clearfix"></div>
             <p class="dim">Progress</p>
             <div class="col-xs-11 no-padding-left">
