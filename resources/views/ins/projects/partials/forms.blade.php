@@ -1,3 +1,46 @@
+{{-- Update Project--}}
+<div style="z-index: 20" class="popup-form update-project">
+    <header>
+        <p class="pull-left">Update Project</p>
+        <div class="actions pull-right">
+            <i title="Minimize" class="ion-minus-round"></i>
+            <i title="Close" class="ion-close-round"></i>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+    <section>
+        <form>
+            <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
+            <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
+            <div class="col-xs-12 no-side-padding">
+                <label>Name:</label>
+                <input v-model="project.name" type="text" class="form-control first">
+            </div>
+            <div class="col-xs-12 no-side-padding">
+                <label>Production Url:</label>
+                <input v-model="project.production" type="text" class="form-control first">
+            </div>
+            <div class="col-xs-12 no-side-padding">
+                <label>Development Url:</label>
+                <input v-model="project.dev" type="text" class="form-control first">
+            </div>
+            <div class="col-xs-12 no-side-padding">
+                <label>Github (or other):</label>
+                <input v-model="project.github" type="text" class="form-control first">
+            </div>
+            <label>Description:</label>
+            <textarea v-model="project.description" rows="5" class="form-control"></textarea>
+            <br>
+            <span class="count pull-right">@{{ 250 - project.description.length }}</span>
+            <div class="clearfix"></div>
+        </form>
+    </section>
+    <footer>
+        <a v-on:click="updateProject()" href="" class="btn btn-primary pull-right">Update</a>
+        <div class="clearfix"></div>
+    </footer>
+</div>
+{{-- New Task--}}
 <div style="z-index: 20" class="popup-form new-task">
     <header>
         <p class="pull-left">New Task</p>
@@ -60,7 +103,7 @@
         <div class="clearfix"></div>
     </footer>
 </div>
-
+{{-- Update Task--}}
 <div style="z-index: 20" class="popup-form update-task">
     <header>
         <p class="pull-left">Update Task</p>
@@ -123,7 +166,7 @@
         <div class="clearfix"></div>
     </footer>
 </div>
-
+{{-- Update Credential--}}
 <div style="z-index: 20" class="popup-form update-credential">
     <header>
         <p class="pull-left">Update Credential</p>
