@@ -1,5 +1,6 @@
 <form class="credential-form new-credential">
-    <span class="status-msg"></span>
+    <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
+    <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
     <div class="form-group">
         <label>FTP/SSH</label> <input v-model="newCredential.type" type="radio" name="type" value="1">
         <label>Other</label> <input v-model="newCredential.type" type="radio" name="type" value="0" checked>
