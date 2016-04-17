@@ -242,9 +242,9 @@ class ApiController extends BaseController {
      * @return mixed
      */
     public function updateProject($id){
-		if (count(Input::all()) <= 1) {
-            return $this->setStatusCode(406)->makeResponse('No information provided to update project');
-		}
+        if ( Input::get('name') === "") {
+            return $this->setStatusCode(406)->makeResponse('The project needs a name');
+        }
 
 		if (!Project::find($id)) {
             return $this->setStatusCode(404)->makeResponse('Project not found');
@@ -254,7 +254,6 @@ class ApiController extends BaseController {
 		unset($input['_method']);
 
 		Project::find($id)->update($input);
-
         return $this->setStatusCode(200)->makeResponse('The project has been updated');
 	}
 

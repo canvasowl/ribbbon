@@ -1,7 +1,7 @@
 var project = new Vue({
     el: '#project',
     data: {
-        project: { name : null, weight : null, production : null, stage : null, github: null},
+        project: { name : null, weight : null, production : null, dev : null, github: null, description: null},
         newProject: {name: null, project_id: null},
         newTask: {name: null, weight: null, state: null, priority: null, description: null},
         currentTask: {name: null, weight: null, state: null, priority: null, description: null},
@@ -118,28 +118,37 @@ var project = new Vue({
             });
         },
         startProjectEditMode: function(){
-            //$(".client-info-"+clientIndex).hide();
-            //$(".client-update-form-"+clientIndex).show();
-            //$(".client-update-form-"+clientIndex).find('input[type=text],textarea,select').filter(':visible:first').focus();
+            this.msg.success = null;
+            this.msg.error = null;
+            $(".popup-form.update-project").show();
+            $(".popup-form.update-project .first").focus();
         },
         updateProject: function(){
-            //var data = this.clients[clientIndex];
-            //var id = data.id;
-            //data._method = "put";
-            //
-            //$.ajax({
-            //    type: "POST",
-            //    url: "/api/clients/"+id,
-            //    data: data,
-            //    success: function(){
-            //        $(".client-update-form-"+clientIndex).hide();
-            //        $(".client-info-"+clientIndex).show();
-            //    },
-            //    error: function(e){
-            //        var response = jQuery.parseJSON(e.responseText);
-            //        $('.client-update-form-'+clientIndex+ " .error-msg").text(response.message);
-            //    }
-            //});
+            event.preventDefault();
+            var updatedProject = this.project;
+
+            delete updatedProject.tasks;
+            delete updatedProject.credentials;
+
+            updatedProject._method = "put";
+
+            $.ajax({
+                type: 'POST',
+                url: "/api/projects/"+ updatedProject.id,
+                data: updatedProject,
+                error: function(e) {
+                    var response = jQuery.parseJSON(e.responseText);
+
+                    project.msg.success = null;
+                    project.msg.error = response.message;
+
+                    return false;
+                },
+                success: function(result){
+                    project.msg.success = result.message;
+                    project.msg.error = null;
+                }
+            });
         },
         deleteTask: function(taskId){
             showSheet();
@@ -165,6 +174,8 @@ var project = new Vue({
             });
         },
         showTaskCreateForm: function(){
+            this.msg.success = null;
+            this.msg.error = null;
             $(".popup-form.new-task").show();
             $(".popup-form.new-task .first").focus();
         },
@@ -202,6 +213,8 @@ var project = new Vue({
             });
         },
         editMode: function(task){
+            this.msg.success = null;
+            this.msg.error = null;
             this.currentTask = task;
             $(".popup-form.update-task").show();
             $(".popup-form.update-task .first").focus();
@@ -255,6 +268,7 @@ var project = new Vue({
                     project.project.credentials.push(result.data);
 
                     project.newCredential.name = null;
+                    project.newCredential.username = null;
                     project.newCredential.hostname = null;
                     project.newCredential.password = null;
                     project.newCredential.port = null;
@@ -285,6 +299,8 @@ var project = new Vue({
             });
         },
         editCredential: function(credential){
+            this.msg.success = null;
+            this.msg.error = null;
             this.currentCredential = credential ;
             $(".popup-form.update-credential").show();
             $(".popup-form.update-credential .first").focus();
