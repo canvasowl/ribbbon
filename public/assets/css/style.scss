@@ -21,8 +21,12 @@ h1,h2,h3,h4,h5,h6{
 	font-weight: 300;
 }
 
+a{
+  color: $color-primary-light
+}
 a:hover{
-	text-decoration: none;
+  text-decoration: none;
+  color: $color-primary-dark;
 }
 
 // Inputs
@@ -632,6 +636,10 @@ $side-nav-padding: 20px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+
+.table .progress{
+  margin-bottom: 0;
 }
 
 .credential-form .form-group.type-0{

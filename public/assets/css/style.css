@@ -9,8 +9,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans light', sans-serif;
   font-weight: 300; }
 
+a {
+  color: #3958b3; }
+
 a:hover {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #14202c; }
 
 input.form-control {
   padding: 19px 12px; }
@@ -615,6 +619,9 @@ textarea.form-control:focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none; }
+
+.table .progress {
+  margin-bottom: 0; }
 
 .credential-form .form-group.type-0 {
   display: none; }
