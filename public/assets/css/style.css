@@ -353,19 +353,18 @@ textarea.form-control:focus {
   display: block; }
 
 .mega-menu .content header {
-  padding: 5px 15px;
-  background-color: #3958b3;
-  color: #fff;
   line-height: .8; }
 
 .mega-menu .content header h2 {
+  height: 40px;
+  width: 140px;
   margin-top: 5px;
-  transition-duration: .2s; }
+  margin-bottom: 15px;
+  transition-duration: .2s;
+  line-height: 2; }
 
 .mega-menu .content header i {
-  font-size: 1.2em;
-  position: relative;
-  top: 10px; }
+  color: #333; }
 
 .mega-menu .content header i:hover {
   opacity: .9;
@@ -423,6 +422,9 @@ textarea.form-control:focus {
   left: 1px;
   z-index: 1;
   background-color: #fff; }
+
+.client.page-title-section {
+  height: 70px; }
 
 .task-list-row,
 .task-list-row .col-md-4,
@@ -560,6 +562,9 @@ textarea.form-control:focus {
 .page-title-section:hover .show-on-hover {
   display: inline-block; }
 
+.page-title-section .label {
+  margin-left: 5px; }
+
 .settings-container section {
   overflow: auto; }
 
@@ -634,7 +639,7 @@ textarea.form-control:focus {
 
 .credential-list .credential:hover {
   cursor: pointer;
-  opacity: .9s; }
+  opacity: .9; }
 
 .credential-list .credential .show-on-hover {
   display: none;

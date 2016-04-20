@@ -362,19 +362,18 @@ $side-nav-padding: 20px;
 	display: block;
 }
 .mega-menu .content header{
-	padding: 5px 15px;
-    background-color: $color-primary-light;
-    color: #fff;
-    line-height: .8;	
+    line-height: .8;
 }
 .mega-menu .content header h2{
+    height: 40px;
+    width: 140px;
 	margin-top: 5px;
+    margin-bottom: 15px;
 	transition-duration: .2s;
+    line-height: 2;
 }
 .mega-menu .content header i{
-	font-size: 1.2em;
-	position: relative;
-	top: 10px;
+	color: #333;
 }
 .mega-menu .content header i:hover{
 	opacity: .9;
@@ -418,20 +417,11 @@ $side-nav-padding: 20px;
 }
 .mega-menu.mega-menu-tab .links a{
 	float: left;
-    //border-top: 1px solid #cdcdd4;
-	//border-right: 1px solid #cdcdd4;
     border-left: 1px solid transparent;
     border-bottom: none;
 }
 .mega-menu .links a.inactive:hover{
   border-left-color: transparent;
-}
-//.mega-menu.mega-menu-tab .links a:first-child{
-//  border-left: 1px solid #cdcdd4;
-//}
-.mega-menu.mega-menu-tab .links a.active,
-.mega-menu.mega-menu-tab .links a:first-child{
-
 }
 .mega-menu.mega-menu-tab .content{
   float: none;
@@ -441,6 +431,10 @@ $side-nav-padding: 20px;
   left: 1px;
   z-index: 1;
   background-color: #fff;
+}
+
+.client.page-title-section{
+	height: 70px;
 }
 
 .task-list-row,
@@ -564,6 +558,10 @@ $side-nav-padding: 20px;
 	display: inline-block;
 }
 
+.page-title-section .label{
+  margin-left: 5px;
+}
+
 // SETTINGS
 .settings-container section{
   overflow: auto;
@@ -654,7 +652,7 @@ $side-nav-padding: 20px;
 }
 .credential-list .credential:hover{
   cursor: pointer;
-  opacity: .9s;
+  opacity: .9;
 }
 .credential-list .credential .show-on-hover{
   display: none;

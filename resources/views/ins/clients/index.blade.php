@@ -22,10 +22,12 @@
 				<div class="content">
 					<div v-for="client in clients" class="item" id="client_@{{client.id}}" title="Edit client">
 						<header>
-                            <div class="client-info-@{{$index}}">
-                                <h2 class="pull-left">@{{client.name}}</h2>
-							    <p class="pull-right"><i v-on:click="startClientEditMode($index)" class="ion-edit"></i></p>
+                            <div class="client client-info-@{{$index}} page-title-section">
+                                <h2 class="pull-left">@{{client.name}} <a v-on:click="startClientEditMode($index)" class="show-on-hover btn btn-default" title="Edit Client"><i class="ion-edit"></i></a></h2>
+							    <span data-index="@{{ client.id }}" onClick="showForm('.popup-form.new-project',@{{ client.id }},@{{ $index }})" class="btn btn-default pull-right" title="Create new project">New Project</span>
 							    <div class="clearfix"></div>
+							</div>
+							<div>
 								<p>@{{client.point_of_contact}}</p>
 								<p>@{{client.phone_number}}</p>
 								<p><a href="mailto:@{{client.email}}">@{{client.email}}</a></p>
@@ -48,18 +50,23 @@
 							</div>
 						</header>
 						<template v-if="client.projects.length > 0">
-							<div class="panel panel-default panel-list animated fadeIn">
-								<div class="panel-heading">Projects</div>
-								<div class="panel-body">
-									<a class="with-number" v-for="project in client.projects" href="/projects/@{{ project.id }}">
-										<span class="dim">@{{ $index + 1 }}.</span> @{{ project.name }}
-										<span class="weight pull-right">w.@{{ project.weight }}</span>
-									</a>
-								</div>
-							</div>
+                            <h4>Projects</h4>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>Name</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="project in client.projects">
+                                        <td>@{{ $index + 1 }}</td>
+                                        <td><a href="/projects/@{{ project.id }}">@{{ project.name }}</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
 						</template>
 						<br>
-						<span data-index="@{{ client.id }}" onClick="showForm('.popup-form.new-project',@{{ client.id }},@{{ $index }})" class="btn btn-default pull-right animated fadeIn" title="Create new project">New Project</span>
                         <div class="clearfix"></div>
                         <hr><br><br>
                         <span v-on:click="deleteClient(client, $index)" class="btn btn-danger">Delete @{{ client.name }}</span>
