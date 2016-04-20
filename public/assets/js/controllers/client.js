@@ -1,12 +1,14 @@
 var client = new Vue({
   el: '#client',
   data: {
-    client: { name : null, phone_number : null, point_of_contact : null, email : null},
     clients: [],
-    newProjectClientId: null,
+    client: null,
+    currentClient: null,
+    newProjectClientId: {name: null, project_id: null},
     newProject: {name: null, project_id: null},
     tempClientIndex: null,
     lastRequest: false,
+    msg: {success: null, error: null}
   },
 
   ready: function(){
@@ -64,12 +66,17 @@ var client = new Vue({
 		}); 
   	},
 	startClientEditMode: function(clientIndex){
-        $(".client-info-"+clientIndex).hide();
-        $(".client-update-form-"+clientIndex).show();
-        $(".client-update-form-"+clientIndex).find('input[type=text],textarea,select').filter(':visible:first').focus();
+        this.msg.success = null;
+        this.msg.error = null;
+        this.currentClient = this.clients[clientIndex];
+        this.currentClient.position = clientIndex;
+
+        $(".popup-form.update-client").show();
+        $(".popup-form.update-client").find('input[type=text],textarea,select').filter(':visible:first').focus();
     },
-    updateClient: function(clientIndex){
-        var data = this.clients[clientIndex];
+    updateClient: function(){
+        event.preventDefault();
+        var data = this.currentClient;
         var id = data.id;
         data._method = "put";
 
@@ -77,13 +84,16 @@ var client = new Vue({
             type: "POST",
             url: "/api/clients/"+id,
             data: data,
-            success: function(){
-                $(".client-update-form-"+clientIndex).hide();
-                $(".client-info-"+clientIndex).show();
+            success: function(e){
+                console.log(e);
+                client.msg.success = e.message;
+                client.msg.error = null;
             },
             error: function(e){
+                console.log(e);
                 var response = jQuery.parseJSON(e.responseText);
-                $('.client-update-form-'+clientIndex+ " .error-msg").text(response.message);
+                client.msg.success = null;
+                client.msg.error = response.message;
             }
         });
     },
@@ -114,6 +124,15 @@ var client = new Vue({
                 }
             });
         });
+    },
+    showNewProjectForm: function(project_id){
+        event.preventDefault();
+        this.msg.success = null;
+        this.msg.error = null;
+        $(".popup-form.update-project").show();
+        $(".popup-form.update-project .first").focus();
+
+        this.newProject.project_id = project_id;
     },
   	createProject: function(update){
 		event.preventDefault();
