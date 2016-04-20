@@ -18,15 +18,15 @@
             </div>
             <div class="col-xs-12 no-side-padding">
                 <label>Production Url:</label>
-                <input v-model="project.production" type="text" class="form-control first">
+                <input v-model="project.production" type="text" class="form-control">
             </div>
             <div class="col-xs-12 no-side-padding">
                 <label>Development Url:</label>
-                <input v-model="project.dev" type="text" class="form-control first">
+                <input v-model="project.dev" type="text" class="form-control">
             </div>
             <div class="col-xs-12 no-side-padding">
                 <label>Github (or other):</label>
-                <input v-model="project.github" type="text" class="form-control first">
+                <input v-model="project.github" type="text" class="form-control">
             </div>
             <label>Description:</label>
             <textarea v-model="project.description" rows="5" class="form-control"></textarea>
