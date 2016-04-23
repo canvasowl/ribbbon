@@ -90,7 +90,6 @@ var client = new Vue({
                 client.msg.error = null;
             },
             error: function(e){
-                console.log(e);
                 var response = jQuery.parseJSON(e.responseText);
                 client.msg.success = null;
                 client.msg.error = response.message;
@@ -125,50 +124,38 @@ var client = new Vue({
             });
         });
     },
-    showNewProjectForm: function(project_id){
+    showNewProjectForm: function(clientId, clientIndex){
         event.preventDefault();
         this.msg.success = null;
         this.msg.error = null;
-        $(".popup-form.update-project").show();
-        $(".popup-form.update-project .first").focus();
+        this.newProject.client_id = clientId;
+        this.tempClientIndex = clientIndex;
 
-        this.newProject.project_id = project_id;
+        $(".popup-form.new-project").show();
+        $(".popup-form.new-project .first").focus();
     },
-  	createProject: function(update){
+  	createProject: function(){
 		event.preventDefault();
-		update = update || false;
 
 		 $.ajax({
 		   type: 'POST',
 		   url: "/api/projects",
 		   data: client.newProject,
 		   error: function(e) {
-		        var response = jQuery.parseJSON(e.responseText);
-                $('.new-project .status-msg').text("")
-		   								.removeClass('success-msg')
-		   								.addClass("error-msg")
-		   								.text(response.message);
-		   	    return false;
+               var response = jQuery.parseJSON(e.responseText);
+               client.msg.success = null;
+               client.msg.error = response.message;
 		   },
-
 		    success: function(result){
-		   	$('.new-project .status-msg').text("")
-		   								.removeClass('remove-msg')
-		   								.addClass("success-msg")
-		   								.text(result.message);
-
-		 	if (update == true){
-                result.data.weight = 0;
+                console.log(client.clients);
+                console.log(result);
                 client.clients[client.tempClientIndex].projects.push(result.data);
-		 		Vue.nextTick(function () {
-		 			megaMenuInit();
-		 		})
-		   	}
-            client.newProject.name = null;
-            client.newProject.project_id = null;
-            client.tempClientIndex = null;
-            $('.popup-form.new-project').find('input[type=text],textarea,select').filter(':visible:first').focus();
+                client.msg.success = result.message;
+                client.msg.error = null;
 
+                client.newProject.name = null;
+                client.newProject.project_id = null;
+                $('.popup-form.new-project').find('input[type=text],textarea,select').filter(':visible:first').focus();
             }
 		 });
   	}

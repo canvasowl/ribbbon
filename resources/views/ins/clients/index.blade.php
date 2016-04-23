@@ -33,7 +33,7 @@
 							</div>
 						</header>
                         <hr>
-                        <span v-on:click="showNewProjectForm(client.id)" title="Create new project" class="btn btn-default pull-right">New Project</span>
+                        <span v-on:click="showNewProjectForm(client.id, $index)" title="Create new project" class="btn btn-default pull-right">New Project</span>
                         <template v-if="client.projects.length > 0">
                             <h4>Projects</h4>
                             <table class="table">
@@ -63,6 +63,7 @@
 		</div>
 	</div>
 
+	{{-- FORMS --}}
 	<div class="popup-form new-client">
 		<header>
 			<p class="pull-left">New Client</p>
@@ -74,7 +75,8 @@
 		</header>
 		<section>
 			<form>
-				<span class="status-msg"></span>
+				<span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
+				<span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
 				<input v-model="client.name" placeholder="Client Name" type="text" class="form-control first">
 				<input v-model="client.email" placeholder="Email" type="text" class="form-control">
 				<input v-model="client.point_of_contact" placeholder="Point Of Contact" type="text" class="form-control">
@@ -97,7 +99,8 @@
 		</header>
 		<section>
 			<form>
-				<span class="status-msg"></span>
+                <span v-if="msg.success != null" class="status-msg success-msg">@{{ msg.success }}</span>
+                <span v-if="msg.error != null" class="status-msg error-msg">@{{ msg.error }}</span>
 				<input v-model="newProject.name" placeholder="Name" type="text" class="form-control first">
 			</form>
 		</section>
