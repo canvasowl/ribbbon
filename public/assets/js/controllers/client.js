@@ -97,6 +97,8 @@ var client = new Vue({
         });
     },
     deleteClient: function(currentClient, clientIndex){
+        this.currentClient = currentClient;
+
         showSheet();
         makePrompt(
             "Are you sure you want to delete the client: "+currentClient.name+"?",
@@ -108,17 +110,23 @@ var client = new Vue({
         });
 
         $("#confirm-btn").click(function(){
-            console.log(client);
-            console.log(clientIndex);
             $.ajax({
                 type: "POST",
                 url: "/api/clients/"+currentClient.id,
                 data: {_method: "delete"},
                 success: function(){
                     client.clients.splice(clientIndex);
+                    client.currentClient = null;
+
+                    $(".mega-menu .links a").removeClass("active").addClass("inactive");
+                    $(".mega-menu .links a:first-child").removeClass("inactive").addClass("active");
+                    $(".mega-menu .content .item").hide();
+                    var id = "#" + $(".mega-menu .content div:first-child").show();
+
                     closePrompt();
                 },
-                error: function(e){
+                error: function(){
+                    client.currentClient = null;
                     closePrompt();
                 }
             });
