@@ -27,9 +27,9 @@
 							    <div class="clearfix"></div>
 							</div>
 							<div>
-								<p>@{{client.point_of_contact}}</p>
-								<p>@{{client.phone_number}}</p>
-								<p><a href="mailto:@{{client.email}}">@{{client.email}}</a></p>
+								<p><label>Contact name: </label> @{{client.point_of_contact}}</p>
+								<p><label>Contact number: </label> @{{client.phone_number}}</p>
+								<p><label>Contact email: </label> <a href="mailto:@{{client.email}}">@{{client.email}}</a></p>
 							</div>
 						</header>
                         <hr>

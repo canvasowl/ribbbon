@@ -366,7 +366,6 @@ $side-nav-padding: 20px;
 }
 .mega-menu .content header h2{
     height: 40px;
-    width: 140px;
 	margin-top: 5px;
     margin-bottom: 15px;
 	transition-duration: .2s;
@@ -381,14 +380,6 @@ $side-nav-padding: 20px;
 }
 .mega-menu .content header p{
 	font-style: italic;
-}
-.mega-menu .content header a{
-	color: #b4af67;
-	transition-duration: .2s;
-}
-.mega-menu .content header a:hover{
-	color: #b4af67;
-	opacity: .9;
 }
 .mega-menu .content header .client-update-form{
 	display: none;
