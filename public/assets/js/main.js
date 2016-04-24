@@ -40,7 +40,7 @@ var openModule = function(){
     $('.module-form').css('margin-top', top);
     $('#close').css('margin-top', top + 20);
     $('body').addClass('stop-scrolling');
-}
+};
 
 var closeModule = function(){
 	var module 		= $('div#module');
@@ -48,7 +48,7 @@ var closeModule = function(){
 	module.fadeOut();
 	moduleForm.fadeOut();
     $('body').removeClass('stop-scrolling');
-}
+};
 
 $('#btn-no').click(function(){
 	closeModule();
@@ -58,6 +58,9 @@ $('#btn-no').click(function(){
  * FORM EVENTS
  * 
  *************************************************/
+/**
+ * TODO: Needs to handled by Vue.js
+ */
  function showForm(selector, clientId, index){
 	clientId = clientId || false;
 	if(index === false || index === undefined){
