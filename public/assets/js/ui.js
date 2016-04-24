@@ -5,7 +5,7 @@
  *************************************************/
 function megaMenuInit(){	
 	$(".mega-menu .links a").click(function(){		
-		event.preventDefault()
+		event.preventDefault();
 
 		$(".mega-menu .links a").removeClass("active").addClass("inactive");
 		$(this).removeClass("inactive").addClass("active");
@@ -13,7 +13,6 @@ function megaMenuInit(){
 		var id = "#" + $(this).attr("data-id");
 		$(".mega-menu .content .item").hide();
 		$(id).show();
-
 	});
 }
 /*************************************************
@@ -22,9 +21,9 @@ function megaMenuInit(){
  *
  *************************************************/
 $('#myTab a').click(function (e) {
-	e.preventDefault()
+	e.preventDefault();
 	$(this).tab('show')
-})
+});
 
 $('.navbar-toggle').click(function(){
 	$('.alert').addClass('animated fadeOutDown');
