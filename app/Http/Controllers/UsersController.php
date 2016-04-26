@@ -20,43 +20,10 @@ class UsersController extends BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{		
-		$user 		= 	Auth::user();
-		$created 	= 	$user->tasks_created;
-		$completed 	= 	$user->tasks_completed;
-
+	{
 		$pTitle		=	Auth::user()->full_name;
-
-		if ($created == "") {
-			$created = 0;
-		}
-
-		if ($completed == "") {
-			$completed = 0;
-		}
-		return View::make('ins/settings',compact(['user','created','completed','pTitle']));
+		return View::make('ins/settings',compact(['pTitle']));
 	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /users/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-//	public function destroy($id)
-//	{
-//		// Delete everything related to the user
-//		Task::where('user_id', Auth::id())->delete();
-//		Credential::where('user_id', Auth::id())->delete();
-//		Project::where('user_id', Auth::id())->delete();
-//		Client::where('user_id', Auth::id())->delete();
-//		User::where('id', Auth::id())->delete();
-//
-//		// Logout and redirect back to home page
-//		Auth::logout();
-//		return Redirect::to('/');
-//	}
 
 	/**
 	 * Logout the user from the application
@@ -121,16 +88,6 @@ class UsersController extends BaseController {
 					'password'	=>	'required|min:8'
 			)
 		);
-
-        // Commented out for open beta and beyond
-		/************* Make sure the email being used has been invited to beta
-         *
-		if ( !DB::table('beta')->whereEmail($email)->whereStatus(1)->get() ) {
-			$validator->getMessageBag()->add('used', 'The email used has not been invited.');
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-         *
-         ******************/
 
 		if ($validator->fails()){
 		    return Redirect::back()->withErrors($validator)->withInput();
@@ -201,30 +158,5 @@ class UsersController extends BaseController {
 								->with('success', "Your password has been updated!");
 
 	}
-
-	/**
-	 * Request for a beta invite
-	 */
-//	public function request(){
-//		// lets validate the email
-//		$validator = Validator::make(
-//			array( 'email' 		=>	Input::get('email'), ),
-//			array( 'email'		=> 	'required|email|unique:beta' )
-//		);
-//
-//		if ($validator->fails()){
-//		    return Redirect::back()->withErrors($validator)->withInput();
-//		}
-//
-//		$beta_user 			= new Beta;
-//		$beta_user->email 	= Input::get('email');
-//		$beta_user->status 	= 0;
-//		$beta_user->save();
-//
-//		// Send the beta confirmation email
-//		sendBetaFollowUpMail(Input::get('email'));
-//
-//		return Redirect::back()->with('success', "You are all set, your invitation will arrive soon.");
-//	}
 
 }
