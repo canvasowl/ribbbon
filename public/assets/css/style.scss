@@ -635,23 +635,3 @@ $side-nav-padding: 20px;
   display: none;
 }
 
-.credential-list .credential {
-  padding: 10px;
-  background-color: #F2F4F3;
-  margin-top: 5px;
-  transition-duration: .2s;
-}
-.credential-list .credential:hover{
-  cursor: pointer;
-  opacity: .9;
-}
-.credential-list .credential .show-on-hover{
-  display: none;
-  transition-duration: .2s;
-}
-.credential-list .credential:hover .show-on-hover{
-  display: block;
-}
-.credential-list .credential .show-on-hover:hover{
-  opacity: .8;
-}

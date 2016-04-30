@@ -275,7 +275,7 @@ var project = new Vue({
                 }
             });
         },
-        deleteCredential: function(credentialId){
+        deleteCredential: function(credential){
             showSheet();
             makePrompt("Are you sure you want to delete this credential?","","No now", "Yes");
 
@@ -286,10 +286,10 @@ var project = new Vue({
             $("#confirm-btn").click(function(){
                 $.ajax({
                     type: "POST",
-                    url: "/api/credentials/"+credentialId,
+                    url: "/api/credentials/"+credential.id,
                     data: {_method: "delete"},
                     success: function(){
-                        $(".credential-"+credentialId).hide();
+                        project.project.credentials.$remove(credential);
                         closePrompt();
                     },
                     error: function(e){

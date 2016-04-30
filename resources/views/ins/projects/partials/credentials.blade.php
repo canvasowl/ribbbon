@@ -34,20 +34,21 @@
 </form>
 <hr>
 
-<div class="row credential-list">
-    <div v-on:click="editCredential(credential)" v-for="credential in project.credentials" class="col-xs-12 col-md-4 credential-@{{ credential.id }}">
-        <div class="credential">
-            <div>
-                <label class="pull-left">@{{ credential.name }}</label>
-                <div class="show-on-hover pull-right">
-                    <span v-on:click="deleteCredential(credential.id)" class="ion-close-round"></span>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <p>Username: @{{ credential.username }} </p>
-            <p>Password: @{{ credential.password }}</p>
-            <p v-if=" credential.hostname != '' ">Hostname: @{{ credential.hostname }}</p>
-            <p v-if=" credential.port != 0 ">Port: @{{ credential.port }}</p>
-        </div>
-    </div>
-</div>
+<template v-if="project.credentials.length > 0">
+    <table class="table table-striped">
+        <thead><tr><th>Name</th><th>Username</th><th>Password</th><th>Hostname</th><th>Port</th><th>Actions</th></tr></thead>
+        <tbody>
+            <tr v-for="credential in project.credentials">
+                <td>@{{ credential.name }}</th>
+                <td>@{{ credential.username }}</td>
+                <td>@{{ credential.password }}</td>
+                <td>@{{ credential.hostname }}</td>
+                <td>@{{ credential.port }}</td>
+                <td>
+                    <button v-on:click="editCredential(credential)" class="btn btn-default"><i class="ion-ios-color-wand-outline"></i></button>
+                    <button v-on:click="deleteCredential(credential)" class="btn btn-danger"><i class="ion-ios-trash-outline"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>
