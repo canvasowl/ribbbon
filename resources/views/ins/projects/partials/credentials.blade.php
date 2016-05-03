@@ -44,9 +44,9 @@
                 <td>@{{ credential.password }}</td>
                 <td>@{{ credential.hostname }}</td>
                 <td>@{{ credential.port }}</td>
-                <td>
-                    <button v-on:click="editCredential(credential)" class="btn btn-default"><i class="ion-ios-color-wand-outline"></i></button>
-                    <button v-on:click="deleteCredential(credential)" class="btn btn-danger"><i class="ion-ios-trash-outline"></i></button>
+                <td style="font-size: 1.5em">
+                    <a title="Edit" v-on:click="editCredential(credential)"><i class="ion-ios-color-wand-outline"></i></a>
+                    <a title="Delete" v-on:click="deleteCredential(credential)"><i class="ion-ios-close-outline"></i></a>
                 </td>
             </tr>
         </tbody>
