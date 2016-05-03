@@ -31,12 +31,12 @@
         <div class="col-xs-12">
             <hr>
             <h4>Projects</h4>
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <td>#</td>
-                        <td>Name</td>
-                        <td>Progress</td>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Progress</th>
                     </tr>
                 </thead>
                 <tbody>
