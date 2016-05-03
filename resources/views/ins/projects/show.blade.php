@@ -16,7 +16,17 @@
                     <a v-if="project.github != '' " href="@{{ project.github }}" target="_blank" class="pull-right"><span class="label label-default"><i class="ion-fork-repo"></i> Version Control</span></a>
             </div>
             <div class="clearfix"></div>
-            <p class="dim">Progress</p>
+            <p>
+                <hr>
+                <span class="dim">Progress</span>
+                <span>
+                    <span class="dim">| Low</span> <span class="priority-circle priority-low"></span>
+                    <span class="dim">Normal</span> <span class="priority-circle priority-normal"></span>
+                    <span class="dim">Medium</span> <span class="priority-circle priority-medium"></span>
+                    <span class="dim">High</span> <span class="priority-circle priority-high"></span>
+                    <span class="dim">Highest</span> <span class="priority-circle priority-highest"></span>
+                </span>
+            </p>
             <div class="col-xs-11 no-padding-left">
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="70"
