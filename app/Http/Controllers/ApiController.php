@@ -187,57 +187,7 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('Client deleted successfully');
     }
 
-    /**
-     *  Returns the given project
-     */
-    public function getProject($id){
-        if (!Project::find($id)) {
-            return $this->setStatusCode(404)->makeResponse('The project was not found');
-        }
 
-        $project = Project::find($id);
-        $project->tasks = Task::where('project_id', $id)->get();
-        $project->credentials = Credential::where('project_id', $id)->get();
-
-        return $this->setStatusCode(200)->makeResponse('Project was successfully found', $project);
-    }
-
-    /**
-     * Insert a new project into the database
-     * @return mixed
-     */
-    public function storeProject(){
-		if (!Input::all() || strlen(trim(Input::get('name'))) == 0) {
-            return $this->setStatusCode(406)->makeResponse('No information provided to create project');
-		}
-
-		Input::merge(array('user_id' => Auth::id()));
-		Project::create(Input::all());			
-		$id = \DB::getPdo()->lastInsertId();
-
-        return $this->setStatusCode(200)->makeResponse('Project created successfully', Project::find($id));
-	}
-
-    /**
-     * Update the given project
-     * @param $id
-     * @return mixed
-     */
-    public function updateProject($id){
-        if ( Input::get('name') === "") {
-            return $this->setStatusCode(406)->makeResponse('The project needs a name');
-        }
-
-		if (!Project::find($id)) {
-            return $this->setStatusCode(404)->makeResponse('Project not found');
-		}
-
-		$input = Input::all();
-		unset($input['_method']);
-
-		Project::find($id)->update($input);
-        return $this->setStatusCode(200)->makeResponse('The project has been updated');
-	}
 
     /**
      * Insert a new task into the database
