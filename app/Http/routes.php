@@ -50,10 +50,10 @@ Route::group(['prefix' => '/api/'], function()
     Route::put('projects/{id}', 'ProjectsController@updateProject');
 
 	// TASK
-    Route::get('tasks', 'ApiController@getAllUserOpenTasks');
-    Route::post('tasks/{client_id}/{project_id}', 'ApiController@storeTask');
-    Route::delete('tasks/{id}', 'ApiController@removeTask');
-    Route::put('tasks/{id}', 'ApiController@updateTask');
+    Route::get('tasks', 'TasksController@getAllUserOpenTasks');
+    Route::post('tasks/{client_id}/{project_id}', 'TasksController@storeTask');
+    Route::delete('tasks/{id}', 'TasksController@removeTask');
+    Route::put('tasks/{id}', 'TasksController@updateTask');
 
 	// CREDENTIALS
     Route::get('credentials/{id}','CredentialsController@getProjectCredentials');

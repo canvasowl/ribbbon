@@ -101,10 +101,7 @@ class ApiController extends BaseController {
 
         return $this->setStatusCode(200)->makeResponse('Projects retrieved successfully',$projects->toArray());
     }
-    public function getAllUserOpenTasks(){
-        $tasks = Task::where('user_id',Auth::id())->where('state', '!=', 'complete')->get();
-        return $this->setStatusCode(200)->makeResponse('Tasks retrieved successfully',$tasks->toArray());
-    }
+
     /**
      * Insert a new client into the database
      * @return mixed
@@ -185,64 +182,6 @@ class ApiController extends BaseController {
         Project::where("client_id", $id)->delete();
         $client->delete();
         return $this->setStatusCode(200)->makeResponse('Client deleted successfully');
-    }
-
-
-
-    /**
-     * Insert a new task into the database
-     * @return mixed
-     */
-    public function storeTask($client_id, $project_id){
-        if (!Input::all()) {
-            return $this->setStatusCode(406)->makeResponse('No information provided to create task');
-        }
-
-        if (!Input::get('name')) {
-            return $this->setStatusCode(406)->makeResponse('The name seems to be empty');
-        }
-
-        Input::merge(array('user_id' => 3, 'client_id' => $client_id, 'project_id' => $project_id));
-
-        Task::create(Input::all());
-        $id = \DB::getPdo()->lastInsertId();
-
-        return $this->setStatusCode(200)->makeResponse('Task created successfully', Task::find($id));
-    }
-
-    /**
-     * Remove a task from the database
-     * @param $id
-     * @return mixed
-     */
-    public function removeTask($id){
-        if (!Task::find($id)) {
-            return $this->setStatusCode(400)->makeResponse('Could not find the task');
-        }
-
-        Task::find($id)->delete();
-        return $this->setStatusCode(200)->makeResponse('Task deleted successfully');
-    }
-
-    /**
-     * Update the given task
-     * @param $id
-     * @return mixed
-     */
-    public function updateTask($id){
-        if (!Task::find($id)) {
-            return $this->setStatusCode(400)->makeResponse('Could not find the task');
-        }
-
-        if ( Input::get('name') === "") {
-            return $this->setStatusCode(406)->makeResponse('The task needs a name');
-        }
-
-        $input = Input::all();
-        unset($input['_method']);
-
-        Task::find($id)->update($input);
-        return $this->setStatusCode(200)->makeResponse('The task has been updated');
     }
 
 }
