@@ -37,10 +37,10 @@ Route::group(['prefix' => '/api/'], function()
 	Route::delete('user/', 'ApiController@deleteUser');
 
 	// CLIENT
-	Route::get('clients/{withWeight?}', 'ApiController@getAllUserClients');
-	Route::put('clients/{id}', 'ApiController@updateClient');
-	Route::post('clients', 'ApiController@storeClient');
-	Route::delete('clients/{id}', 'ApiController@removeClient');
+	Route::get('clients/{withWeight?}', 'ClientsController@getAllUserClients');
+	Route::put('clients/{id}', 'ClientsController@updateClient');
+	Route::post('clients', 'ClientsController@storeClient');
+	Route::delete('clients/{id}', 'ClientsController@removeClient');
 
 	// PROJECT
     Route::get('projects/', 'ProjectsController@getAllUserProjects');
