@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use Response;
 use App\User;
 use App\Client;
 use App\Project;
@@ -15,41 +14,6 @@ use App\Task;
 use App\Credential;
 
 class ApiController extends BaseController {
-
-	private $statusCode = 200;
-
-    /**
-     * @return int
-     */
-    public function getStatusCode()
-    {
-        return $this->statusCode;
-    }
-
-    /**
-     * @param $statusCode
-     * @return $this
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->statusCode = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * @param $message
-     * @param null $data
-     * @return mixed
-     */
-    public function makeResponse($message, $data = null)
-    {
-        return Response::json([
-            'status_code' => $this->getStatusCode(),
-            'message' => $message,
-            'data' => $data
-        ], $this->getStatusCode());
-    }
 
     /**
      * Get the current logged in user
@@ -331,96 +295,4 @@ class ApiController extends BaseController {
         return $this->setStatusCode(200)->makeResponse('The task has been updated');
     }
 
-    /**
-     * Get all credentials for the given project
-     * @param $id
-     * @return mixed
-     */
-    public function getProjectCredentials($id){
-        if( count(Credential::where('project_id',$id)->get()) === 0 ){
-            if (!Input::get('password')) {
-                return $this->setStatusCode(404)->makeResponse('No credentials found for this project');
-            }
-        }
-
-        return $this->setStatusCode(200)->makeResponse('Found credentials for this project', Credential::where('project_id',$id)->get() );
-    }
-
-    /**
-     * Insert a new credential into the database
-     * @return mixed
-     */
-    public function storeCredential(){
-        if (!Input::all()) {
-            return $this->setStatusCode(406)->makeResponse('No information provided to create credential');
-        }
-
-        if (!Input::get('name')) {
-            return $this->setStatusCode(406)->makeResponse('The name seems to be empty');
-        }
-
-        if (!Input::get('username')) {
-            return $this->setStatusCode(406)->makeResponse('The username seems to be empty');
-        }
-
-        if (!Input::get('user_id')) {
-            return $this->setStatusCode(406)->makeResponse('No user id is being passed');
-        }
-
-        if (!Input::get('project_id')) {
-            return $this->setStatusCode(406)->makeResponse('No project id is being passed');
-        }
-
-        if (!Input::get('password')) {
-            return $this->setStatusCode(406)->makeResponse('The password seems to be empty');
-        }
-
-        Credential::create(Input::all());
-        $id = \DB::getPdo()->lastInsertId();
-
-        return $this->setStatusCode(200)->makeResponse('Credential created successfully', Credential::find($id));
-    }
-
-    /**
-     * Update the given credential
-     * @param $id
-     * @return mixed
-     */
-    public function updateCredential($id){
-        if (!Credential::find($id)) {
-            return $this->setStatusCode(400)->makeResponse('Could not find the credential');
-        }
-
-        if ( Input::get('name') === "") {
-            return $this->setStatusCode(406)->makeResponse('The credential needs a name');
-        }
-
-        if ( Input::get('username') === "") {
-            return $this->setStatusCode(406)->makeResponse('The credential needs a username');
-        }
-
-        if ( Input::get('password') === "") {
-            return $this->setStatusCode(406)->makeResponse('The credential needs a password');
-        }
-
-        $input = Input::all();
-        unset($input['_method']);
-
-        Credential::find($id)->update($input);
-        return $this->setStatusCode(200)->makeResponse('The credential has been updated');
-    }
-
-    /**
-     * Remove the given credential from the database
-     * @param $id
-     * @return mixed
-     */
-    public function removeCredential($id){
-        if (!Credential::find($id)) {
-            return $this->setStatusCode(400)->makeResponse('Could not find the credentials');
-        }
-
-        Credential::find($id)->delete();
-        return $this->setStatusCode(200)->makeResponse('Credentials deleted successfully');
-    }
 }

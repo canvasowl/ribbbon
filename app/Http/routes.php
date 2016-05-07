@@ -23,11 +23,9 @@ Route::group(array('before' => 'auth'), function()
 
 //    Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
 //	Route::delete('projects/{id}/remove', array('uses' => 'ProjectsController@remove', 'as' => 'projects.remove') );
-//	Route::get('projects/{id}/credentials', array('uses' => 'ProjectsController@credentials', 'as' => 'projects.credentials' ));
 //    Route::get('projects/{id}/files', array('uses' => 'ProjectsController@files', 'as' => 'projects.files' ));
 //    Route::post('projects/{id}/files', array('uses' => 'FilesController@store', 'as' => 'files.store' ));
 //    Route::delete('projects/{id}/files', array('uses' => 'FilesController@destroy', 'as' => 'files.remove' ));
-//	Route::resource('credentials', 'CredentialsController', array('only' => array('create', 'destroy')));
 });
 
 //----------------- API routes
@@ -58,10 +56,10 @@ Route::group(['prefix' => '/api/'], function()
     Route::put('tasks/{id}', 'ApiController@updateTask');
 
 	// CREDENTIALS
-    Route::get('credentials/{id}','ApiController@getProjectCredentials');
-    Route::post('credentials', 'ApiController@storeCredential');
-    Route::put('credentials/{id}', 'ApiController@updateCredential');
-    Route::delete('credentials/{id}', 'ApiController@removeCredential');
+    Route::get('credentials/{id}','CredentialsController@getProjectCredentials');
+    Route::post('credentials', 'CredentialsController@storeCredential');
+    Route::put('credentials/{id}', 'CredentialsController@updateCredential');
+    Route::delete('credentials/{id}', 'CredentialsController@removeCredential');
 });
 
 //----------------- Admin routes

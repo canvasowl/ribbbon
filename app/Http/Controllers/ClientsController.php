@@ -18,57 +18,11 @@ use App\Credential;
 
 class ClientsController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /clients
-	 *
-	 * @return Response
-	 */
+	// Go to clients index page
 	public function index()
 	{	
 		$pTitle		= "Clients";
-
-		$id 		= Auth::id();
-		$user		= User::find($id);
-		$clients 	= $user->clients()->orderBy('created_at', 'desc')->take(5)->get();
-
-		$counter 	= 0;		
-		return View::make('ins/clients/index', compact([ 'clients', 'counter', 'pTitle']));
-	}
-	
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /clients/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{	
-		$pTitle		= "Clients";
-
-		$c_id 		= 	Input::get('id');
-		$client 	= 	Client::find($c_id);
-
-		// delete all related tasks and credentials
-		foreach ($client->projects as $p) {
-					Task::where('project_id', $p->id)->delete();
-					Credential::where('project_id', $p->id)->delete();
-					$p->members()->detach();
-				}		
-		
-		// delete related projects
-		Project::where("client_id", $c_id)->delete(); 
-		
-		// delete client
-		$client->delete();
-			
-		// ----------------------------------------------------	
-		$user		= User::find(Auth::id());
-		$clients 	= $user->clients()->orderBy('created_at', 'desc')->get();
-		$counter 	= 0;
-
-		return View::make('clients.index', compact([ 'clients','counter','pTitle' ]));
+		return View::make('ins/clients/index', compact(['pTitle']));
 	}
 
 }
