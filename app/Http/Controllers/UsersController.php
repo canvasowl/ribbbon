@@ -10,37 +10,30 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Helpers\Helpers;
 use Illuminate\Support\Facades\View;
+use App\Client;
+use App\Project;
+use App\Task;
+use App\Credential;
 
 class UsersController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /users
-	 *
-	 * @return Response
-	 */
+	// Go to user settings page
 	public function index()
 	{
-		$pTitle		=	Auth::user()->full_name;
-		return View::make('ins/settings',compact(['pTitle']));
+		return View::make('ins/settings')->with('pTitle', Auth::user()->full_name);
 	}
 
-	/**
-	 * Logout the user from the application
-	 */	
+	// Logout the user
 	public function logout(){
 		Auth::logout();
 		return Redirect::to('/');
 	}
 
-	/**
-	 * Login the user and start a session
-	 */
+	// Login the user
 	public function login()
 	{				
 		$email 		=	Input::get('email');
 		$password	=	Input::get('password');
-
 
 		// lets validate the users input
 		$validator = Validator::make(
@@ -66,9 +59,7 @@ class UsersController extends BaseController {
 		}
 	}	
 
-	/**
-	 * Register the user and start a session
-	 */
+	// Register the user and start a new session
 	public function register()
 	{	
 		$fullName	=	Input::get('fullName');
@@ -108,6 +99,7 @@ class UsersController extends BaseController {
 		return Redirect::back()->withErrors($validator);
 	}	
 
+	// Reset the user password
 	public function resetPassword($id)
 	{		
 		// ----------------------------------------
@@ -158,5 +150,42 @@ class UsersController extends BaseController {
 								->with('success', "Your password has been updated!");
 
 	}
+
+    // Get the current user
+    public function getUser(){
+        $user = User::find(Auth::id());
+        return $user;
+    }
+    // Update the given user
+    public function updateUser($id){
+        if (strlen(trim(Input::get('email'))) === 0) {
+            return $this->setStatusCode(200)->makeResponse('You need to provide an email.');
+        }
+
+        if( strlen(trim(Input::get('full_name'))) === 0 ){
+            return $this->setStatusCode(200)->makeResponse('You have a name, no?');
+        }
+
+        if (!User::find(Auth::id())) {
+            return $this->setStatusCode(404)->makeResponse('User not found');
+        }
+
+        $input = Input::all();
+        unset($input['_method']);
+
+        User::find(Auth::id())->update($input);
+
+        return $this->setStatusCode(200)->makeResponse('Your changes have been saved');
+    }
+
+    // Delete the users account
+    public function deleteUser()
+    {
+        Task::where('user_id', Auth::id())->delete();
+        Credential::where('user_id', Auth::id())->delete();
+        Project::where('user_id', Auth::id())->delete();
+        Client::where('user_id', Auth::id())->delete();
+        User::where('id', Auth::id())->delete();
+    }
 
 }

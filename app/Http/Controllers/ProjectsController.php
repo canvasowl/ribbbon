@@ -27,6 +27,23 @@ class ProjectsController extends BaseController {
 		return  View::make('ins/projects/show')->with('pTitle', $project->name);
 	}
 
+	// Get all user projects
+	public function getAllUserProjects(){
+		$projects = Project::where('user_id',Auth::id())->get();
+
+		if($projects) {
+			foreach ($projects as $project) {
+				$completedWeight = Project::find($project->id)->tasks()->where('state','=','complete')->sum('weight');
+				$totalWeight = Project::find($project->id)->tasks()->sum('weight');
+
+				$project["completedWeight"] = $completedWeight;
+				$project["totalWeight"] = $totalWeight;
+			}
+		}
+
+		return $this->setStatusCode(200)->makeResponse('Projects retrieved successfully',$projects->toArray());
+	}
+
 	//	Return the given project
 	public function getProject($id){
 		if (!Project::find($id)) {
@@ -70,11 +87,7 @@ class ProjectsController extends BaseController {
 		return $this->setStatusCode(200)->makeResponse('The project has been updated');
 	}
 
-
-	/**
-	 * Invites a user to the given project.
-	 * @return Redirect
-	 */
+    // Invites a user to the given project.
 	public function invite($id){
 		//		// Validation
 		//		$rules = ['email' => 'required|email|exists:users,email'];
@@ -110,12 +123,7 @@ class ProjectsController extends BaseController {
 		//		return Redirect::back()->with('success', "A new member has been added to this project.");
 	}
 
-	/**
-	 * @param int $id
-	 *
-	 * Removes a member from a given project
-	 * @return redirect
-	 */
+    // Removes a member from a given project
 	public function remove($id){
 		//		$project = Project::find($id);
 		//		$project->members()->detach(Input::get('member_id'));

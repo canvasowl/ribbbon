@@ -32,9 +32,9 @@ Route::group(array('before' => 'auth'), function()
 Route::group(['prefix' => '/api/'], function()
 {	
 	// USER 
-    Route::get('user', 'ApiController@getUser');
-    Route::post('user/{id}', 'ApiController@updateUser');
-	Route::delete('user/', 'ApiController@deleteUser');
+    Route::get('user', 'UsersController@getUser');
+    Route::post('user/{id}', 'UsersController@updateUser');
+	Route::delete('user/', 'UsersController@deleteUser');
 
 	// CLIENT
 	Route::get('clients/{withWeight?}', 'ClientsController@getAllUserClients');
