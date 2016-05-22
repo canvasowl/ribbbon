@@ -28,18 +28,19 @@
             </div>
         </div>
 
-        <div class="col-xs-12">
-            <hr>
-            <h4>Projects</h4>
-            <table class="table table-striped">
-                <thead>
+        <template v-if="projects.length > 0">
+            <div class="col-xs-12">
+                <hr>
+                <h4>Projects</h4>
+                <table class="table table-striped">
+                    <thead>
                     <tr>
                         <th>#</th>
                         <th>Name</th>
                         <th>Progress</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <tr v-for="project in projects">
                         <td>@{{ $index + 1 }}</td>
                         <td><a href="/projects/@{{ project.id }}">@{{ project.name }}</a></td>
@@ -50,12 +51,20 @@
                             </div>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+
+        <template v-if="projects.length == 0">
+            <div class="clearfix"></div>
+            <p class="alert alert-warning">
+                Your projects will be listed here once you create some.
+                Create a new project within the <a href="/clients">clients</a> page.
+            </p>
+        </template>
+
     </div>
-
-
 
 	<div id="client" class="popup-form new-client">
 		<header>
