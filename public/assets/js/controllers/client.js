@@ -23,9 +23,17 @@ var client = new Vue({
                 megaMenuInit();
             })
         }).fail(function(e){
-            console.log( "error "+ e );
+            console.log( e );
         });
-  	},  	
+  	},
+    showCreateForm: function(){
+          event.preventDefault();
+
+          this.msg.success = null;
+          this.msg.error = null;
+          $(".new-client").show();
+          $(".new-client .first").focus();
+      },
   	create: function(new_client, update){
 		event.preventDefault();
 		update = update || false;
