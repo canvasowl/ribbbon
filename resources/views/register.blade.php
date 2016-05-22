@@ -11,13 +11,13 @@
         <hr>
         {!! Form::open(array('action' => 'UsersController@register')) !!}
         <div class="form-group">
-            {!! Form::text('fullName', null, array('class' => 'form-control', "placeholder" => "full name", "autofocus" => "true" )) !!}
+            {!! Form::text('fullName', null, array('class' => 'form-control', "placeholder" => "Full name", "autofocus" => "true" )) !!}
         </div>
         <div class="form-group">
-            {!! Form::text('email', null, array('class' => 'form-control', "placeholder" => "email" )) !!}
+            {!! Form::text('email', null, array('class' => 'form-control', "placeholder" => "Email" )) !!}
         </div>
         <div class="form-group">
-            {!! Form::password('password', array('class' => 'form-control', "placeholder" => "password" )) !!}
+            {!! Form::password('password', array('class' => 'form-control', "placeholder" => "Password" )) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('Register', array('class' => 'btn btn-primary btn-wide' )) !!}
