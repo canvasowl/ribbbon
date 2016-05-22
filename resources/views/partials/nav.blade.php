@@ -1,6 +1,6 @@
-<a href="/" class="logo-section">
-	<p>Ribbbon</p>		
-</a>
+{{--<a href="/" class="logo-section">--}}
+	{{--<img src="{{\App\Helpers\Helpers::logoUrl()}}" alt="Ribbbon">--}}
+{{--</a>--}}
 
 <div class="user-section">
 	<a href="/profile"><img class="circle" src="{{ App\User::get_gravatar(Auth::user()->email) }}">

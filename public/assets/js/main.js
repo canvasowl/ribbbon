@@ -1,33 +1,5 @@
 /*************************************************
  *
- * Header hug special drop shadow
- *
- *************************************************/
-$(window).scroll(function(){
-   var height  = $(document).scrollTop();
-
-   if(height > 42){
-       $('.hug-hudHeader, .hug-homeHeader').addClass("special-shadow");
-   }else{
-       $('.hug-hudHeader, .hug-hudHeader').removeClass("special-shadow");
-   }
-});
-/*************************************************
- *
- * CREDENTIALS INPUT DISABLED DEPENDING ON RADIO CHOICE
- *
- *************************************************/
-$('.dynamic-form input[type="radio"]').click(function(){
-	if( $('#other').is(':checked') ){
-		$('.dynamic-form .other').prop('disabled', true);
-	}
-
-	if( $('#ftp').is(':checked') ){
-		$('.dynamic-form .other').prop('disabled', false);
-	}
-});
-/*************************************************
- *
  * PROMPT
  * 
  *************************************************/
@@ -61,24 +33,23 @@ $('#btn-no').click(function(){
 /**
  * TODO: Needs to handled by Vue.js
  */
- function showForm(selector, clientId, index){
-	clientId = clientId || false;
-	if(index === false || index === undefined){
-		index = false;
-	}else{
-		client.tempClientIndex = index;
-	}
-	if(clientId !== false){
-		client.newProject.client_id = clientId;
-	}
-
-	$(selector).show();
-	$(selector).find('input[type=text],textarea,select').filter(':visible:first').focus();
-	event.preventDefault();
-}
+// function showForm(selector, clientId, index){
+//	clientId = clientId || false;
+//	if(index === false || index === undefined){
+//		index = false;
+//	}else{
+//		client.tempClientIndex = index;
+//	}
+//	if(clientId !== false){
+//		client.newProject.client_id = clientId;
+//	}
+//
+//	$(selector).show();
+//	$(selector).find('input[type=text],textarea,select').filter(':visible:first').focus();
+//	event.preventDefault();
+//}
 
 $(document).ready(function(){
-
 	// Toggle minimize popup form
 	$('.popup-form .ion-minus-round').click(function(){
 		// If the form is not expanded expand it
