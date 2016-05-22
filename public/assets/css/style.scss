@@ -1,7 +1,7 @@
 // DEFAULT COLORS
 $background-color: #f2f4f3;
-$color-primary-light: #3958b3;
-$color-primary-dark: #14202c;
+$color-primary-light: #26b2ad;
+$color-primary-dark: #3e3e3e;
 $color-badge: #10e1c2;
 $color-panel-heading: #d3dddf;
 $color-default-grey: #ebefef;
@@ -31,16 +31,16 @@ a:hover{
 
 // Inputs
 input.form-control{
-    //border: none;
-    //box-shadow: none;
-    //border-bottom: 1px solid #ccc;
-    //border-radius: 0;
     padding: 19px 12px
 }
 input.form-control:focus,
 textarea.form-control:focus{
 	box-shadow: none;
-	border-color: $color-primary-dark;
+	border-color: $color-primary-light;
+}
+
+img{
+  max-width: 100%;
 }
 
 .label-default{
@@ -240,6 +240,9 @@ $side-nav-padding: 20px;
 .btn:active{
   outline: none;
   border: none;
+}
+.btn.btn-wide{
+  width: 100%;
 }
 .btn-default{
   background-color: $color-default-grey;
@@ -621,7 +624,7 @@ $side-nav-padding: 20px;
   border-radius: 30px;
 }
 .progress-bar{
-  background-color: #10e1c2;
+  background-color: $color-primary-light;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -635,3 +638,24 @@ $side-nav-padding: 20px;
   display: none;
 }
 
+// Login and register
+.special-form{
+	width: 500px;
+	margin: 5% auto 0;
+	background-color: #F2F4F3;
+	padding: 10px;
+	border-radius: 5px;
+}
+.special-form img{
+  max-width: 100%;
+  width: 150px;
+  opacity: .5;
+  display: block;
+  margin: 0 auto;
+}
+.special-form input{
+  padding: 25px;
+}
+.special-form .btn{
+  padding: 20px;
+}

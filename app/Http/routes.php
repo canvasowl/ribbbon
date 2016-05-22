@@ -1,7 +1,7 @@
 <?php
 Route::get('/', 'HomeController@index');
 Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); });
-Route::get('signin', function(){ return View::make('signin')->with('pTitle', "Login"); });
+Route::get('login', function(){ return View::make('signin')->with('pTitle', "Login"); });
 Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); });
 
 //----------------- User routes

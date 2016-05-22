@@ -17,7 +17,7 @@
                     <a href="/profile"><img class="circle" src="{{ App\User::get_gravatar(Auth::user()->email) }}"></a>
                     <div class="info">
                         <p class="name">@{{ user.full_name }}</p>
-                        <p class="color-badge">@{{ user.email }}</p>
+                        <p class="color-primary">@{{ user.email }}</p>
                         <p class="color-primary">@{{ user.title }}</p>
                     </div>
                     <div class="clearfix"></div>
