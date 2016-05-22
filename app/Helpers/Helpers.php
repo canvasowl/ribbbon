@@ -12,6 +12,12 @@ use App\Project;
  * @package App\Helpers
  */
 class Helpers {
+
+	// Return the image logo path
+	static public function logoUrl(){
+		return asset('assets/img/logo.png');
+	}
+
 	/**
 	 * Checks if a given user is the owner a given
 	 * project.
@@ -64,32 +70,9 @@ class Helpers {
 	    return $client_id;
 	}
 
-		/*******************************
+	/*******************************
 			MAIL FUNCTIONS
 	********************************/
-
-	/** Sends a follow up email when the user signs up for beta
-	 *
-	 * @param $email
-	 */
-	function sendBetaFollowUpMail($email){
-		$data = [ 'to' => $email ];
-
-		Mail::send('emails.beta.follow', [ ] , function($message) use ($data) {
-			$message->from(getenv('MAIL_FROM'), getenv('MAIL_FROM_NAME'));
-			$message->to($data['to'], '')->subject('Invitation request confirmation');
-		});
-	}
-
-	/** Sends beta invitation **/
-	function sendBetaInviteEmail($email){
-		$data = [ 'to' 	=> $email ];
-
-		Mail::send('emails.beta.invite', [ ] , function($message) use ($data) {
-			$message->from(getenv('MAIL_FROM'), getenv('MAIL_FROM_NAME'));
-	        $message->to($data['to'], '' )->subject('Ribbbon invitation');
-		});
-	}
 
 
 	/**
