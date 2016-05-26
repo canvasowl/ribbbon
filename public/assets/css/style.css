@@ -631,21 +631,29 @@ img {
 .special-form {
   width: 500px;
   margin: 5% auto 0;
-  background-color: #F2F4F3;
+  background-color: #393d4e;
   padding: 10px;
-  border-radius: 5px; }
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(50, 50, 50, 0.2);
+  color: #fff; }
 
 .special-form img {
   max-width: 100%;
   width: 150px;
-  opacity: .5;
   display: block;
   margin: 0 auto; }
+
+.special-form hr {
+  opacity: .1; }
 
 .special-form input {
   padding: 25px; }
 
 .special-form .btn {
   padding: 20px; }
+
+.special-form a:hover {
+  color: #26b2ad;
+  text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

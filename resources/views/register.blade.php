@@ -4,7 +4,7 @@
 
     <div class="special-form">
         <img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt="">
-        <h1 class="text-center">REGISTER FOR FREE!</h1>
+        <h3 class="text-center">REGISTER</h3>
         @if ($errors->first())
             <span class="status-msg error-msg">{{ $errors->first() }}</span>
         @endif
