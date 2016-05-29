@@ -251,6 +251,16 @@ img {
 .btn.btn-primary {
   background-color: #26b2ad; }
 
+.btn.btn-primary.btn-line {
+  color: #26b2ad;
+  border: 1px solid #26b2ad;
+  background: transparent;
+  box-shadow: none; }
+
+.btn.btn-primary.btn-line:hover {
+  background-color: #26b2ad;
+  color: #fff; }
+
 .popup-form {
   position: fixed;
   bottom: 0;
@@ -655,5 +665,54 @@ img {
 .special-form a:hover {
   color: #26b2ad;
   text-decoration: underline; }
+
+.hug {
+  width: 100%; }
+
+.hug-header {
+  background-color: #fff; }
+
+.hug-header img {
+  max-width: 125px;
+  padding: 10px 0; }
+
+.hug-header .btn {
+  font-size: 1.5em;
+  margin-top: 25px; }
+
+.hug-header .btn.register {
+  margin-right: 20px; }
+
+.hug-hero .left-side,
+.hug-hero .right-side {
+  width: 50%;
+  float: left; }
+
+.hug-hero {
+  background: url("/assets/img/hero_screen.png") no-repeat;
+  background-size: cover;
+  min-height: 730px;
+  padding-top: 150px; }
+
+.hug-hero .left-side h1 {
+  font-family: 'parmapetitregular';
+  font-size: 8em;
+  color: #26b2ad;
+  line-height: .9; }
+
+.hug-hero .mascot {
+  max-width: 400px;
+  float: right; }
+
+.btn-special {
+  background-color: #f81280;
+  color: #fff;
+  font-size: 2.5em;
+  padding: 10px 80px;
+  margin-top: 40px; }
+
+.btn-special:hover {
+  background-color: #d11264;
+  color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
