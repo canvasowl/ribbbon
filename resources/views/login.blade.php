@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="special-form">
-      <img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt="">
+      <a href="/"><img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt=""></a>
       <h3 class="text-center">LOGIN</h3>
       @if ($errors->first())
           <span class="status-msg error-msg">{{ $errors->first() }}</span>
