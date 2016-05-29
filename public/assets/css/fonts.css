@@ -10,3 +10,11 @@
     font-weight:  400;
 }
 
+@font-face {
+    font-family: 'parmapetitregular';
+    src: url('fonts/parmapetit-normal-webfont.woff2') format('woff2'),
+         url('fonts/sparmapetit-normal-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
