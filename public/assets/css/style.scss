@@ -2,6 +2,8 @@
 $background-color: #f2f4f3;
 $color-primary-light: #26b2ad;
 $color-primary-dark: #3e3e3e;
+$color-primary-dark-two: #333545;
+$color-mint: #e1f2f1;
 $color-badge: #10e1c2;
 $color-panel-heading: #d3dddf;
 $color-default-grey: #ebefef;
@@ -259,6 +261,17 @@ $side-nav-padding: 20px;
 .btn.btn-primary.btn-line:hover{
   background-color: $color-primary-light;
   color: #fff;
+}
+.btn-special{
+	background-color: #f81280;
+	color: #fff;
+	font-size: 2.5em;
+	padding: 10px 80px;
+	margin-top: 40px;
+}
+.btn-special:hover{
+	background-color: #d11264;
+	color: #fff;
 }
 // Pop Up Form
 .popup-form{
@@ -691,10 +704,10 @@ $side-nav-padding: 20px;
 
 .hug-header .btn{
   font-size: 1.5em;
-  margin-top: 25px;
+  margin-top: 35px;
 }
 .hug-header .btn.register{
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .hug-hero .left-side,
@@ -711,23 +724,147 @@ $side-nav-padding: 20px;
 }
 .hug-hero .left-side h1{
   font-family: 'parmapetitregular';
-  font-size: 8em;
+  font-size: 7em;
+  text-transform: uppercase;
   color: $color-primary-light;
   line-height: .9;
 }
-.hug-hero .mascot{
-  max-width: 400px;
-  float: right;
+
+.mascot{
+  max-width: 475px;
 }
 
-.btn-special{
-  background-color: #f81280;
-  color: #fff;
-  font-size: 2.5em;
-  padding: 10px 80px;
-  margin-top: 40px;
+.hug-skyline{
+  background-color: $color-mint;
+  height: 350px;
 }
-.btn-special:hover{
-  background-color: #d11264;
+.hug-skyline .skyline{
+  height: 350px;
+  background: url("/assets/img/skyline.png") no-repeat;
+  background-size: cover; ;
+}
+.hug-features{
+  background-color: #393d4d;
+  padding: 50px 0 150px;
+}
+.hug-features h2{
   color: #fff;
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+  margin-bottom: 50px;
+  text-transform: capitalize;
+}
+.hug-features i{
+  font-size: 6em;
+  color: $color-primary-light;
+}
+.hug-features h3{
+  margin-top: 0;
+  color: $color-primary-light;
+  text-transform: uppercase;
+}
+.hug-features p{
+  color: #fff;
+  line-height: 2;
+}
+
+.hug-info{
+  color: $color-primary-light;
+  padding-bottom: 290px;
+  position: relative;
+  background-color: #fff;
+  background-image: url("/assets/img/oval_bg.png");
+  background-repeat: no-repeat;
+  background-position: right 0 bottom 0;
+  background-size: contain;
+}
+.hug-info h2{
+  font-family: 'Lobster', cursive;
+  font-size: 7em;
+  text-transform: capitalize;
+  margin-top: -90px;
+}
+.hug-info h3{
+  font-size: 3em;
+}
+.hug-info .row img{
+  max-width: 100px;
+  margin: 20px;
+}
+.hug-info .arrow{
+  position: relative;
+  top: -90px;
+}
+
+.hug-ui{
+  background-color: #26b2ad;
+  color: #fff;
+}
+.hug-ui .text-bucket{
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+.hug-ui h2{
+  font-size: 5em;
+  font-family: 'Lobster', cursive;
+  text-transform: capitalize;
+}
+.hug-ui h3{
+  font-size: 2.5em;
+}
+.hug-ui img{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.hug-exit{
+  background-color: $color-primary-dark;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.hug-exit .img{
+  position: relative;
+  top: -150px;
+  max-width: 100%;
+  padding-bottom: 600px;
+  background-image: url("/assets/img/fantastic.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.hug-exit .img h2{
+  max-width: 50%;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.hug-exit .img h2,
+.hug-exit .img a{
+  position: relative;
+  top: 400px;
+}
+
+.hug-footer{
+  background-color: $color-primary-dark;
+  color: rgba(200,200,200,.5);
+}
+.hug-footer hr{
+  border: none;
+  height: 1px;
+  margin-bottom: 10px;
+  background-color: rgba(200,200,200,.5);;
+}
+.hug-footer hr.special{
+  background-color: $color-primary-light;
+}
+.hug-footer a{
+  color: $color-primary-light;
+}
+.hug-footer a:hover{
+  color: #fff;
+}
+.hug-footer .last-line{
+  padding: 50px 0;
 }
