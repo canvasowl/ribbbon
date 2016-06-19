@@ -726,7 +726,8 @@ img {
 
 .hug-features {
   background-color: #393d4d;
-  padding: 50px 0 150px; }
+  padding: 50px 0 150px;
+  margin-top: -1px; }
 
 .hug-features h2 {
   color: #fff;
@@ -844,5 +845,42 @@ img {
 
 .hug-footer .last-line {
   padding: 50px 0; }
+
+@media screen and (max-width: 991px) {
+  .hug-hero {
+    min-height: 530px; }
+
+  .hug-hero .right-side {
+    display: none; }
+
+  .hug-hero .left-side {
+    width: 100%;
+    text-align: center; }
+
+  .hug-features {
+    text-align: center; }
+
+  .hug-ui .text-bucket {
+    width: 100%; }
+
+  .hug-exit .img {
+    background-image: none;
+    position: static;
+    padding-top: 50px;
+    padding-bottom: 100px; }
+
+  .hug-exit .img h2, .hug-exit .img a {
+    position: static;
+    max-width: 100%; }
+
+  .hug-footer {
+    text-align: center;
+    margin-top: -1px; } }
+@media screen and (max-width: 770px) {
+  .hug-hero h1 {
+    font-size: 7em; } }
+@media screen and (max-width: 600px) {
+  .hug-hero h1 {
+    font-size: 4em !important; } }
 
 /*# sourceMappingURL=style.css.map */
