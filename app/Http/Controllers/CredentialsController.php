@@ -7,127 +7,85 @@ use Illuminate\Support\Facades\Input;
 use App\Credential;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Response;
 
 
 class CredentialsController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /credentials
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /credentials/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{	
-		$rules = array(
-				'name' 		=> 'required',
-				'username' 	=> 'required',
-				'password' 	=> 'required',
-				'type'		=> 'required'
-			);
-
-		$validator = Validator::make($data = Input::all(), $rules);
-
-		if ($validator->fails()) {
-			return Redirect::back()->withErrors($validator)->withInput();
+	// Get all credentials for the given project
+	public function getProjectCredentials($id){
+		if( count(Credential::where('project_id',$id)->get()) === 0 ){
+			if (!Input::get('password')) {
+				return $this->setStatusCode(404)->makeResponse('No credentials found for this project');
+			}
 		}
 
-		$credential 				= new Credential;
-		$credential->user_id 		= Auth::id();
-		$credential->project_id 	= Input::get('project_id');
-		$credential->name 			= Input::get('name');
-		$credential->username 		= Input::get('username');
-		$credential->password 		= Input::get('password');		
-
-		if (Input::get('type') == "server") {						
-			$credential->type 		= true;			
-			$credential->hostname 	= Input::get('hostname');
-			$credential->port 		= Input::get('port');			
-			
-		}else{
-			$credential->type 		= false;	
-			$credential->hostname 	= "";
-			$credential->port 		= "";
-		}
-		$credential->save();
-		return  Redirect::back();						
+		return $this->setStatusCode(200)->makeResponse('Found credentials for this project', Credential::where('project_id',$id)->get() );
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /credentials
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /credentials/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /credentials/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /credentials/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /credentials/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		// TODO: refactor into a provider?
-		if(Credential::find($id) != null) {
-			Credential::find($id)->delete();
-			return Response::json(array('code' => 200, 'message' => 'ok'),200);
+	// Insert a new credential into the database
+	public function storeCredential(){
+		if (!Input::all()) {
+			return $this->setStatusCode(406)->makeResponse('No information provided to create credential');
 		}
 
-		return Response::json(array('code' => 401, 'message' => 'the requested resource was not found'),401);
+		if (!Input::get('name')) {
+			return $this->setStatusCode(406)->makeResponse('The name seems to be empty');
+		}
+
+		if (!Input::get('username')) {
+			return $this->setStatusCode(406)->makeResponse('The username seems to be empty');
+		}
+
+		if (!Input::get('user_id')) {
+			return $this->setStatusCode(406)->makeResponse('No user id is being passed');
+		}
+
+		if (!Input::get('project_id')) {
+			return $this->setStatusCode(406)->makeResponse('No project id is being passed');
+		}
+
+		if (!Input::get('password')) {
+			return $this->setStatusCode(406)->makeResponse('The password seems to be empty');
+		}
+
+		Credential::create(Input::all());
+		$id = \DB::getPdo()->lastInsertId();
+
+		return $this->setStatusCode(200)->makeResponse('Credential created successfully', Credential::find($id));
 	}
 
+	// Update the given credential
+	public function updateCredential($id){
+		if (!Credential::find($id)) {
+			return $this->setStatusCode(400)->makeResponse('Could not find the credential');
+		}
+
+		if ( Input::get('name') === "") {
+			return $this->setStatusCode(406)->makeResponse('The credential needs a name');
+		}
+
+		if ( Input::get('username') === "") {
+			return $this->setStatusCode(406)->makeResponse('The credential needs a username');
+		}
+
+		if ( Input::get('password') === "") {
+			return $this->setStatusCode(406)->makeResponse('The credential needs a password');
+		}
+
+		$input = Input::all();
+		unset($input['_method']);
+
+		Credential::find($id)->update($input);
+		return $this->setStatusCode(200)->makeResponse('The credential has been updated');
+	}
+
+	// Remove the given credential from the database
+	public function removeCredential($id){
+		if (!Credential::find($id)) {
+			return $this->setStatusCode(400)->makeResponse('Could not find the credentials');
+		}
+
+		Credential::find($id)->delete();
+		return $this->setStatusCode(200)->makeResponse('Credentials deleted successfully');
+	}
 }

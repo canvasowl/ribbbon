@@ -10,70 +10,30 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Helpers\Helpers;
 use Illuminate\Support\Facades\View;
+use App\Client;
+use App\Project;
+use App\Task;
+use App\Credential;
 
 class UsersController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /users
-	 *
-	 * @return Response
-	 */
+	// Go to user settings page
 	public function index()
-	{		
-		$user 		= 	Auth::user();
-		$created 	= 	$user->tasks_created;
-		$completed 	= 	$user->tasks_completed;
-
-		$pTitle		=	Auth::user()->full_name;
-
-		if ($created == "") {
-			$created = 0;
-		}
-
-		if ($completed == "") {
-			$completed = 0;
-		}
-		return View::make('users.index',compact(['user','created','completed','pTitle']));			
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /users/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
 	{
-		// Delete everything related to the user
-		Task::where('user_id', Auth::id())->delete(); 
-		Credential::where('user_id', Auth::id())->delete();
-		Project::where('user_id', Auth::id())->delete();
-		Client::where('user_id', Auth::id())->delete();		
-		User::where('id', Auth::id())->delete();
-
-		// Logout and redirect back to home page
-		Auth::logout();
-		return Redirect::to('/');
+		return View::make('ins/settings')->with('pTitle', Auth::user()->full_name);
 	}
 
-	/**
-	 * Logout the user from the application
-	 */	
+	// Logout the user
 	public function logout(){
 		Auth::logout();
 		return Redirect::to('/');
 	}
 
-	/**
-	 * Login the user and start a session
-	 */
+	// Login the user
 	public function login()
 	{				
 		$email 		=	Input::get('email');
 		$password	=	Input::get('password');
-
 
 		// lets validate the users input
 		$validator = Validator::make(
@@ -99,9 +59,7 @@ class UsersController extends BaseController {
 		}
 	}	
 
-	/**
-	 * Register the user and start a session
-	 */
+	// Register the user and start a new session
 	public function register()
 	{	
 		$fullName	=	Input::get('fullName');
@@ -122,16 +80,6 @@ class UsersController extends BaseController {
 			)
 		);
 
-        // Commented out for open beta and beyond
-		/************* Make sure the email being used has been invited to beta
-         *
-		if ( !DB::table('beta')->whereEmail($email)->whereStatus(1)->get() ) {
-			$validator->getMessageBag()->add('used', 'The email used has not been invited.');
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-         *
-         ******************/
-
 		if ($validator->fails()){
 		    return Redirect::back()->withErrors($validator)->withInput();
 		}
@@ -151,6 +99,7 @@ class UsersController extends BaseController {
 		return Redirect::back()->withErrors($validator);
 	}	
 
+	// Reset the user password
 	public function resetPassword($id)
 	{		
 		// ----------------------------------------
@@ -202,29 +151,41 @@ class UsersController extends BaseController {
 
 	}
 
-	/**
-	 * Request for a beta invite
-	 */
-	public function request(){
-		// lets validate the email
-		$validator = Validator::make(
-			array( 'email' 		=>	Input::get('email'), ),
-			array( 'email'		=> 	'required|email|unique:beta' )
-		);		
+    // Get the current user
+    public function getUser(){
+        $user = User::find(Auth::id());
+        return $user;
+    }
+    // Update the given user
+    public function updateUser($id){
+        if (strlen(trim(Input::get('email'))) === 0) {
+            return $this->setStatusCode(200)->makeResponse('You need to provide an email.');
+        }
 
-		if ($validator->fails()){
-		    return Redirect::back()->withErrors($validator)->withInput();
-		}		
+        if( strlen(trim(Input::get('full_name'))) === 0 ){
+            return $this->setStatusCode(200)->makeResponse('You have a name, no?');
+        }
 
-		$beta_user 			= new Beta;
-		$beta_user->email 	= Input::get('email');
-		$beta_user->status 	= 0;
-		$beta_user->save(); 
+        if (!User::find(Auth::id())) {
+            return $this->setStatusCode(404)->makeResponse('User not found');
+        }
 
-		// Send the beta confirmation email
-		sendBetaFollowUpMail(Input::get('email'));
-		
-		return Redirect::back()->with('success', "You are all set, your invitation will arrive soon.");
-	}
+        $input = Input::all();
+        unset($input['_method']);
+
+        User::find(Auth::id())->update($input);
+
+        return $this->setStatusCode(200)->makeResponse('Your changes have been saved');
+    }
+
+    // Delete the users account
+    public function deleteUser()
+    {
+        Task::where('user_id', Auth::id())->delete();
+        Credential::where('user_id', Auth::id())->delete();
+        Project::where('user_id', Auth::id())->delete();
+        Client::where('user_id', Auth::id())->delete();
+        User::where('id', Auth::id())->delete();
+    }
 
 }
