@@ -7,7 +7,20 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Project extends Model {
-	protected $fillable = [];
+	protected $fillable = [
+			'user_id',
+			'client_id',
+			'name',
+			'description',
+			'production',
+			'stage',
+			'dev',
+			'github'
+		];
+	protected $hidden = [
+			'created_at',
+			'updated_at'
+	];
 
 	public function tasks(){
 		return $this->hasMany('App\Task', 'project_id');
@@ -36,7 +49,6 @@ class Project extends Model {
 	 * @return bool
 	 */
 	public function isOwner(){
-
 		if($this->user_id != Auth::id()){
 			return false;
 		}
@@ -61,4 +73,8 @@ class Project extends Model {
 		return true;
 	}
 
+	// Get the toal weight of the given project
+	public function totalWeight(){
+		return $this->tasks()->where('state','!=','complete')->sum('weight');
+	}
 }

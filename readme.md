@@ -1,8 +1,11 @@
 # Ribbbon
 
-V 1.5
+V 2.0
 
-Ribbbon is a project management system built on Laravel 5.1.*
+
+[Ribbbon.com](https://ribbbon.com)
+
+Ribbbon is a project management system built on Laravel 5.1.* & Vue.js :)
 
 # Features
   - User / account creation
@@ -10,14 +13,10 @@ Ribbbon is a project management system built on Laravel 5.1.*
   - Project creation
   - Task creation 
   - Assigning weights to tasks
-  - file uploads
-  - project sharing
+  - Api Driven
 
 # Get involved
-Thank you for being interested in Ribbbon. 
-  - Slack: https://ribbbon.slack.com 
-  - Tweet me @canvasowl of you'd like an invite to Slack
-  - Clone or fork the project. Once you have changes do a pull request to the develop branch.
+> Clone or fork the project. Once you have changes do a pull request to the develop branch.
 
 #Installation
 -   Clone the repo
@@ -25,4 +24,5 @@ Thank you for being interested in Ribbbon.
 -   Run php artisan migrate
 -   Run php artisan db:seed
 -   Start developing!
+
 

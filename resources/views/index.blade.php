@@ -1,95 +1,134 @@
-@extends('templates.master')
-
+@extends('templates.outs.home')
 
 @section('content')
-
-<div class="container container-index">
-
-{{-- featured --}}
-<div class="hug hug-h-featured">
-	<div class="row">
-	    <div class="col col-sm-12">
-	        <h2 class="">So what's <span class="site-name">Ribbbon</span>?</h2>
-	        <p class="">Ribbbon is web based project management system for web artisans. It helps you
-	        manage your projects and more importantly yourself and others.</p>
-
-            <div class="scroll-box">
-                <div class="diamond">
-                    <i class="fa fa-angle-double-down fa-5x"></i>
+    {{-- HEADER--}}
+	<div class="hug hug-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="/" class="pull-left"><img src="{{ \App\Helpers\Helpers::logoUrl() }}" alt="Ribbbon"></a>
+                    <a href="/login" class="btn btn-primary btn-line pull-right login">Login</a>
+                    <a href="/register" class="btn btn-primary btn-line pull-right register">Register</a>
+                    <div class="clearfix"></div>
                 </div>
             </div>
-	    </div>
+        </div>
 	</div>
-</div>
 
-{{-- weight --}}
-<div class="hug hug-h-weight">
-	<div class="row">
-	    <div class="col col-sm-8">
-	        <img src="{{ asset('assets/img/tasks.png') }}">
-	    </div>
-	    <div class="col col-sm-4">
-	        <h2>Weight</h2>
-	        <p>Keep track on how your project is doing with weights. Each task has
-	        a weight which in turn helps create an overall project weight.</p>
-	    </div>
-	</div>
-</div>
+    {{-- HEREO SECTION --}}
+    <div class="hug hug-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="left-side">
+                        <h1>Introducing Ribbbon 2.0</h1>
+                        <h2>An open source project management system.</h2>
+                        <a href="/register" class="btn btn-special">GET STARTED</a>
+                    </div>
+                    <div class="right-side">
+                        <img class="mascot" src="{{ asset('assets/img/mascot_left.png')  }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-{{-- sharing --}}
-{{--<div class="hug hug-h-sharing">--}}
-	{{--<div class="row">--}}
-	    {{--<div class="col col-sm-12">--}}
-	        {{--<h2>Sharing</h2>--}}
-	        {{--Work on projects with others easily by sharing your project to--}}
-            {{--one or multiple users.--}}
-	    {{--</div>--}}
-	{{--</div>--}}
-{{--</div>--}}
+    {{-- SKYLINE --}}
+    <div class="hug hug-skyline">
+        <div class="skyline"></div>
+    </div>
 
-{{-- credentials --}}
-<div class="hug hug-h-credentials">
-	<div class="row">
-	    <div class="col col-sm-12">
-	        <h2>Credentials</h2>
-	        <p>A Ribbbon project has a special place for all your various project credentials.
-	        Finding that Wordpress username & password has never been easier.</p>
+    {{-- FEATURES --}}
+    <div class="hug hug-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="text-center">Ribbbon comes full of delightful features!</h2>
+                </div>
+                <div class="col-xs-12 col-md-3 feature">
+                    <i class="ion-ios-person-outline"></i>
+                    <h3>clients</h3>
+                    <p>Manage unlimited amount of clients. Add additional information for each client
+                        such as, contact person, email, and phone number.</p>
+                </div>
+                <div class="col-xs-12 col-md-3 feature">
+                    <i class="ion-ios-box-outline"></i>
+                    <h3>projects</h3>
+                    <p>Create projects that are connected to clients. Projects are displayed
+                        in an agile format and have special sections to store project based
+                        credentials.</p>
+                </div>
+                <div class="col-xs-12 col-md-3 feature">
+                    <i class="ion-ios-checkmark-outline"></i>
+                    <h3>tasks</h3>
+                    <p>Create an unlimited amount of tasks for any project. Push them across
+                        the scrum board and assign weights and priority per task.</p>
+                </div>
+                <div class="col-xs-12 col-md-3 feature">
+                    <i class="ion-ios-gear-outline"></i>
+                    <h3>weights</h3>
+                    <p>Each task has a weight number, the bigger the weight the harder the task
+                        is to complete. This allows you to keep track on how big a project really is. Pretty handy stuff.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <ul class="list-inline">
-                <li><i class="fa fa-github fa-2x"></i></li>
-                <li><i class="fa fa-wordpress fa-2x"></i></li>
-                <li><i class="fa fa-facebook-square fa-2x"></i></li>
-                <li><i class="fa fa-android fa-2x"></i></li>
-                <li><i class="fa fa-database fa-2x"></i></li>
-            </ul>
-	    </div>
-	</div>
-</div>
+    {{-- INFO --}}
+    <div class="hug hug-info text-center">
+        <img class="arrow" src="{{ asset('assets/img/arrows.png')  }}" alt="Arrows">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>We Are Powered by</h2>
+                    <h3>Laravel & Vue.js</h3>
 
-{{-- files --}}
-<div class="hug hug-h-files">
-	<div class="row">
-	    <div class="col col-sm-4">
-	        <h2>Files</h2>
-	        <p>Upload files per project, .pdf, .doc, .psd, .ai and many more file types supported.</p>
-	    </div>
-	    <div class="col col-sm-8">
-	        <img src="{{ asset('assets/img/files.png') }}">
-	    </div>
-	</div>
-</div>
+                    <img src="{{ asset('assets/img/laravel.png')  }}" alt="Laravel">
+                    <img src="{{ asset('assets/img/vue.png')  }}" alt="Vue.js">
+                </div>
+            </div>
+        </div>
+    </div>
 
-{{-- signup --}}
-<div class="hug hug-h-register">
-	<div class="row">
-	    <div class="col col-sm-12">
-	        <a href="/register" class="btn btn-primary">Register For Free</a>
-	        <p>Ribbbon is free so why not take it for spin and start managing your projects more organized.</p>
-	    </div>
-	</div>
-</div>
+    {{-- UI --}}
+    <div class="hug hug-ui text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="text-bucket">
+                        <h2>Did we mention it looks good too?</h2>
+                        <h3>Less fuzz while still having all the info you need at a glance.</h3>
+                    </div>
+                    <img src="{{ asset('assets/img/project_screenshot.png')  }}" alt="Project Page">
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
+    {{-- exit --}}
+    <div class="hug hug-exit">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="img">
+                        <h2>"Free, sexy, and open source. I think it's time for you to take the dive."</h2>
+                        <a href="/register" class="btn btn-special">GET STARTED</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
+    {{-- footer --}}
+    <div class="hug hug-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Current Version <span class="color-primary">2.0</span> | <a class="color-primary" href="https://github.com/canvasowl/ribbbon" target="_blank">Go To Project</a></h3>
+                    <hr class="special">
+                    <p class="text-center last-line">Copyright {{ date("Y") }} &copy;  <a href="https://twitter.com/canvasowl" target="_blank">Jefry Cruz</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 @stop

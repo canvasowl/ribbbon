@@ -12,149 +12,55 @@ use App\Task;
 
 class TasksController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /tasks
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$pTitle		=	"Tasks";
+    // Return all tasks that are not completed for the given user
+    public function getAllUserOpenTasks(){
+        $tasks = Task::where('user_id',Auth::id())->where('state', '!=', 'complete')->get();
+        return $this->setStatusCode(200)->makeResponse('Tasks retrieved successfully',$tasks->toArray());
+    }
 
-		$user 		= 	User::find(Auth::id());		
-		$tasks 		= 	$user->tasks()->whereState("incomplete")->get();
-		$counter	=	0;
+    // Insert a new task into the database
+    public function storeTask($client_id, $project_id){
+        if (!Input::all()) {
+            return $this->setStatusCode(406)->makeResponse('No information provided to create task');
+        }
 
-		return View::make('tasks.index', compact(['tasks','counter','pTitle']));
-	}
+        if (!Input::get('name')) {
+            return $this->setStatusCode(406)->makeResponse('The name seems to be empty');
+        }
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /tasks/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{	
-		// Rules
-		$rules	= array(
-				'weight' 	=> 'integer|between:1,5',
-				'name' => 'required'
-		);
+        Input::merge(array('user_id' => Auth::id(), 'client_id' => $client_id, 'project_id' => $project_id));
 
-		// Custom messages
-		$messages = array(		
-		    	'between' => 'The :attribute must be between :min - :max.',
-		    	'integer' => ':attribute must be a number'		     
-		);
+        Task::create(Input::all());
+        $id = \DB::getPdo()->lastInsertId();
 
-		// Create validation 
-		$validator = Validator::make( Input::all(), $rules, $messages );
+        return $this->setStatusCode(200)->makeResponse('Task created successfully', Task::find($id));
+    }
 
-		// Check validation
-		if ( $validator->fails() ) 
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+    // Update the given task
+    public function updateTask($id){
+        if (!Task::find($id)) {
+            return $this->setStatusCode(400)->makeResponse('Could not find the task');
+        }
 
-		// Insert the task to database
-		$task 				= new Task;
-		$task->project_id 	= Input::get('projectId');
-		$task->user_id 		= Auth::id();
-		$task->name 		= Input::get('name');
-		$task->weight		= Input::get('weight');
-		if (!Input::get('weight')) {
-			$task->weight		= 1;
-		}		
-		$task->state		= "incomplete";
-		$task->save();
+        if ( Input::get('name') === "") {
+            return $this->setStatusCode(406)->makeResponse('The task needs a name');
+        }
 
-		// Increase the users overall task count
-		$user = User::find(Auth::id());
-		$user->tasks_created = $user->tasks_created + 1;
-		$user->save(); 
+        $input = Input::all();
+        unset($input['_method']);
 
-		return Redirect::back()->with('success', Input::get('name') ." has been created.");
-	}
+        Task::find($id)->update($input);
+        return $this->setStatusCode(200)->makeResponse('The task has been updated');
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /tasks
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    // Remove the given task from the database
+    public function removeTask($id){
+        if (!Task::find($id)) {
+            return $this->setStatusCode(400)->makeResponse('Could not find the task');
+        }
 
-	/**
-	 * Display the specified resource.
-	 * GET /tasks/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /tasks/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /tasks/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-			$task = Task::find(Input::get('task'));
-			$user = User::find(Auth::id());
-
-			if ($task->state == 'complete') {
-				$task->state = 'incomplete';
-				$task->save();
-
-				$user->tasks_completed = $user->tasks_completed - 1;
-				$user->save();				
-			}else{
-				$task->state = 'complete';
-				$task->save();
-
-				$user->tasks_completed = $user->tasks_completed + 1;
-				$user->save();								
-			}
-
-			return Redirect::back();
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /tasks/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		$task = Task::find(Input::get('id'));
-		$task->delete();
-
-		return Redirect::back();
-	}
+        Task::find($id)->delete();
+        return $this->setStatusCode(200)->makeResponse('Task deleted successfully');
+    }
 
 }
