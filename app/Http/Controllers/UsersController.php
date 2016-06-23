@@ -91,10 +91,10 @@ class UsersController extends BaseController {
 
 		$user->save();	
 
-//		if ( Auth::attempt(array('email' => $email, 'password' => $password)) ) {
+		if ( Auth::attempt(array('email' => $email, 'password' => $password)) ) {
 //			Helpers::sendWelcomeMail();
-//			return Redirect::to('hud');
-//		}
+			return Redirect::to('hud');
+		}
 
 		return Redirect::back()->withErrors($validator);
 	}	
