@@ -11,9 +11,11 @@
       <hr>
     {!! Form::open(array('action' => 'UsersController@login')) !!}
         <div class="form-group">
+            <label for="email" class="color-primary">Email:</label>
             {!! Form::text( 'email', null, array('class' => 'form-control', "placeholder" => "Email","autofocus" => "true" )) !!}
         </div>
         <div class="form-group">
+            <label for="password" class="color-primary">Password:</label>
             {!! Form::password( 'password', array('class' => 'form-control', "placeholder" => "Password" )) !!}
         </div>
         <div class="form-group">
