@@ -264,8 +264,10 @@ img {
 .btn-special {
   background-color: #f81280;
   color: #fff;
-  font-size: 2.5em;
-  padding: 10px 80px;
+  font-size: 1.5em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  padding: 20px 130px;
   margin-top: 40px; }
 
 .btn-special:hover {
@@ -688,11 +690,12 @@ img {
   padding: 10px 0; }
 
 .hug-header .btn {
-  font-size: 1.5em;
-  margin-top: 35px; }
+  font-size: 1.2em;
+  margin-top: 35px;
+  min-width: 130px; }
 
 .hug-header .btn.register {
-  margin-right: 40px; }
+  margin-right: 20px; }
 
 .hug-hero .left-side,
 .hug-hero .right-side {
@@ -734,7 +737,8 @@ img {
   font-family: 'Lobster', cursive;
   font-size: 3em;
   margin-bottom: 50px;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  letter-spacing: 2px; }
 
 .hug-features i {
   font-size: 6em;
@@ -743,11 +747,14 @@ img {
 .hug-features h3 {
   margin-top: 0;
   color: #26b2ad;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 1.4em;
+  letter-spacing: 1px; }
 
 .hug-features p {
   color: #fff;
-  line-height: 2; }
+  line-height: 2;
+  letter-spacing: .2px; }
 
 .hug-info {
   color: #26b2ad;
@@ -774,7 +781,9 @@ img {
 
 .hug-info .arrow {
   position: relative;
-  top: -90px; }
+  top: -60px;
+  max-width: 120px;
+  margin-bottom: 50px; }
 
 .hug-ui {
   background-color: #26b2ad;
@@ -817,7 +826,9 @@ img {
   display: block;
   margin: 0 auto;
   font-weight: bold;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-weight: lighter;
+  line-height: 1.3; }
 
 .hug-exit .img h2,
 .hug-exit .img a {
@@ -833,6 +844,9 @@ img {
   height: 1px;
   margin-bottom: 10px;
   background-color: rgba(200, 200, 200, 0.5); }
+
+.hug-footer h3 {
+  font-size: 1.5em; }
 
 .hug-footer hr.special {
   background-color: #26b2ad; }
