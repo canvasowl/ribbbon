@@ -664,7 +664,7 @@ $side-nav-padding: 20px;
 
 // Login and register
 .special-form{
-	width: 500px;
+	max-width: 500px;
 	margin: 5% auto 0;
 	background-color: #393d4e;
 	padding: 10px;
@@ -931,7 +931,26 @@ $side-nav-padding: 20px;
 }
 
 @media screen and (max-width: 600px) {
+  .hug-header .pull-left{
+      float: none !important;
+  }
+  .hug-header img{
+	  display: block;
+	  margin: 0 auto;
+  }
+  .hug-header .btn.register{
+    margin-right: 0;
+  }
+  .hug-header .btn{
+    width: 40%;
+    margin: 10px 6.6%;
+  }
+
   .hug-hero h1{
     font-size: 4em !important;
+  }
+
+  .btn-special{
+    padding: 20px 20%;
   }
 }
