@@ -33,7 +33,8 @@ a:hover{
 
 // Inputs
 input.form-control{
-    padding: 19px 12px
+    padding: 10px 12px;
+	height: auto;
 }
 input.form-control:focus,
 textarea.form-control:focus{
@@ -682,7 +683,7 @@ $side-nav-padding: 20px;
 	opacity: .1;
 }
 .special-form input{
-  padding: 25px;
+  padding: 15px 25px;
 }
 .special-form .btn{
   padding: 20px;
