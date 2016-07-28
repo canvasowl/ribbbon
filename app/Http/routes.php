@@ -21,7 +21,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::delete('clients/{id}', 'ClientsController@destroy');
     Route::resource('projects', 'ProjectsController', array('only' => array('show')));
 
-//    Route::post('projects/{id}/invite', array('uses' => 'ProjectsController@invite', 'as' => 'projects.invite' ));
+
 //	Route::delete('projects/{id}/remove', array('uses' => 'ProjectsController@remove', 'as' => 'projects.remove') );
 //    Route::get('projects/{id}/files', array('uses' => 'ProjectsController@files', 'as' => 'projects.files' ));
 //    Route::post('projects/{id}/files', array('uses' => 'FilesController@store', 'as' => 'files.store' ));
@@ -45,8 +45,12 @@ Route::group(['prefix' => '/api/'], function()
 	// PROJECT
     Route::get('projects/', 'ProjectsController@getAllUserProjects');
     Route::get('projects/{id}','ProjectsController@getProject');
+    Route::get('projects/{id}/owner','ProjectsController@getOwner');
+    Route::get('projects/{id}/members','ProjectsController@getMembers');
 	Route::post('projects', 'ProjectsController@storeProject');
     Route::put('projects/{id}', 'ProjectsController@updateProject');
+    Route::post('projects/{id}/{email}/invite', 'ProjectsController@invite');
+    Route::delete('projects/{id}/{member_id}/remove', 'ProjectsController@removeMember' );
 
 	// TASK
     Route::get('tasks', 'TasksController@getAllUserOpenTasks');

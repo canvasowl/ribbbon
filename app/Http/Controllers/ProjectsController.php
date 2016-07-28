@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Projectuser;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Project;
 use App\Task;
 use App\Credential;
+use App\Helpers\Helpers;
 
 class ProjectsController extends BaseController {
 
@@ -87,48 +89,60 @@ class ProjectsController extends BaseController {
 		return $this->setStatusCode(200)->makeResponse('The project has been updated');
 	}
 
+    public function getOwner($id){
+        $owner_id = Project::whereId($id)->pluck('user_id');
+        $owner = User::whereId($owner_id)->get();
+
+        return $owner[0];
+    }
+
+    public function getMembers($id){
+
+    }
     // Invites a user to the given project.
-	public function invite($id){
-		//		// Validation
-		//		$rules = ['email' => 'required|email|exists:users,email'];
-		//		$messages = [ 'exists' => 'That email is not currently associated with a user.',];
-		//
-		//		$validator = Validator::make(Input::all(), $rules, $messages);
-		//
-		//        if ($validator->fails())
-		//		{
-		//			return Redirect::back()->withErrors($validator)->withInput();
-		//		}
-		//
-		//		// Get the id of the user being sent the invite
-		//		$user_id = DB::table('users')->whereEmail(Input::get('email'))->pluck('id');
-		//
-		//		if( count(Projectuser::whereUserId($user_id)->whereProjectId($id)->get()) != 0 )
-		//		{
-		//			$validator->getMessageBag()->add('email', 'A user with that email has already been invited.');
-		//			return Redirect::back()->withErrors($validator)->withInput();
-		//		}
-		//
-		//		// Save the relationship between user and project.
-		//		$pu				= new Projectuser;
-		//		$pu->project_id	=	$id;
-		//		$pu->user_id	=	$user_id;
-		//		$pu->save();
-		//
-		//		// Prepare email invitation & send it
-		//		$project_name	= Project::find($id)->pluck('name');
-		//		$project_url 	= url() . '/projects/'.$id;
-		//		sendProjectInviteMail(Input::get('email'), $project_name, $project_url);
-		//
-		//		return Redirect::back()->with('success', "A new member has been added to this project.");
+	public function invite($project_id, $email){
+        if(trim(strlen($email)) == 0){
+            return $this->setStatusCode(406)->makeResponse('The email field is required!');
+        }
+
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return $this->setStatusCode(406)->makeResponse('Please enter a valid email!');
+        }
+
+        $project_name	= Project::find($project_id)->pluck('name');
+        $project_url 	= url() . '/projects/'.$project_id;
+        $invited_user = User::whereEmail($email)->get();
+
+        if( count($invited_user) == 0 ){
+            return $this->setStatusCode(406)->makeResponse('That user does not have an account.');
+        }
+        $invited_user = $invited_user[0];
+
+        if( count(Projectuser::whereUserId($invited_user->id)->whereProjectId($project_id)->get()) != 0 ){
+			return $this->setStatusCode(406)->makeResponse('A user with that email has already been invited.');
+		}
+
+		// Save the relationship between user and project.
+		$pu				= 	new Projectuser();
+		$pu->project_id	=	$project_id;
+		$pu->user_id	=	$invited_user->id;
+		$pu->save();
+
+		Helpers::sendProjectInviteMail($email, $project_name, $project_url);
+		return $this->setStatusCode(200)->makeResponse('A new member has been added to this project.', $invited_user);
 	}
 
     // Removes a member from a given project
-	public function remove($id){
-		//		$project = Project::find($id);
-		//		$project->members()->detach(Input::get('member_id'));
-		//
-		//		return Redirect::back();
+	public function removeMember($project_id, $member_id){
+		if( count(Projectuser::whereUserId($member_id)->whereProjectId($project_id)->get()) == 0 )
+		{
+			return $this->setStatusCode(406)->makeResponse('That user is not in this project.');
+		}
+
+		$project = Project::find($project_id);
+		$project->members()->detach($member_id);
+
+		return $this->setStatusCode(200)->makeResponse('Member has been removed from this project.');
 	}
 
 }

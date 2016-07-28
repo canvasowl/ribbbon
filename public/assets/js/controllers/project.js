@@ -7,7 +7,10 @@ var project = new Vue({
         currentTask: {name: null, weight: null, state: null, priority: null, description: null},
         newCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
         currentCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
-        msg: {success: null, error: null}
+        msg: {success: null, error: null},
+        owner: null,
+        members: null,
+        invited: {email: null}
     },
     ready: function(){
         this.setupProject();
@@ -326,6 +329,40 @@ var project = new Vue({
                     project.msg.error = null;
                 }
             });
+        },
+        geOwner: function(){
+          console.log("Get project owner");
+        },
+        getMembers: function(){
+            console.log("Get Members");
+        },
+        inviteUser: function(project_id){
+            if(this.invited.email == ""){
+                this.invited.email = "";
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: "/api/projects/"+ project_id +"/"+this.invited.email+"/invite",
+                data: project.currentCredential,
+                error: function(e) {
+                    var response = jQuery.parseJSON(e.responseText);
+
+                    project.msg.success = null;
+                    project.msg.error = response.message;
+
+                    return false;
+                },
+                success: function(result){
+                    project.msg.success = result.message;
+                    project.msg.error = null;
+                }
+            });
+            event.preventDefault();
+            console.log("Invite user")
+        },
+        removeUser: function(){
+            console.log("Remove User");
         }
     }
 
