@@ -17,15 +17,25 @@
         </footer>
     </div>
     <div class="col-xs-12 col-md-6">
+        <h3>Members</h3>
+        <hr>
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Progress</th>
             </tr>
             </thead>
             <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="">@{{ owner.full_name }}</a></td>
+            </tr>
+            <tr v-for="member in members ">
+                <td>@{{ $index + 2 }}</td>
+                <td><a href="">@{{ member.full_name }}</a></td>
+            </tr>
+
             {{--<tr v-for="project in projects">--}}
                 {{--<td>@{{ $index + 1 }}</td>--}}
                 {{--<td><a href="/projects/@{{ project.id }}">@{{ project.name }}</a></td>--}}

@@ -93,11 +93,19 @@ class ProjectsController extends BaseController {
         $owner_id = Project::whereId($id)->pluck('user_id');
         $owner = User::whereId($owner_id)->get();
 
-        return $owner[0];
+        return $this->setStatusCode(200)->makeResponse('ok.', $owner[0]);
     }
 
     public function getMembers($id){
+        $members_id = Projectuser::where('project_id', $id)->lists('user_id');
+        $members = [];
 
+        foreach($members_id as $id){
+            $member = User::whereId($id)->get();
+            array_push($members, $member[0]);
+        }
+
+        return $this->setStatusCode(200)->makeResponse('ok.', $members);
     }
     // Invites a user to the given project.
 	public function invite($project_id, $email){

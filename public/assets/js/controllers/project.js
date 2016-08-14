@@ -1,15 +1,15 @@
 var project = new Vue({
     el: '#project',
     data: {
-        project: { name : null, weight : null, production : null, dev : null, github: null, description: null},
+        project: { id: null, name : null, weight : null, production : null, dev : null, github: null, description: null},
         newProject: {name: null, project_id: null},
         newTask: {name: null, weight: null, state: null, priority: null, description: null},
         currentTask: {name: null, weight: null, state: null, priority: null, description: null},
         newCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
         currentCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
         msg: {success: null, error: null},
-        owner: null,
-        members: null,
+        owner: {id: null},
+        members: [],
         invited: {email: null}
     },
     ready: function(){
@@ -108,6 +108,8 @@ var project = new Vue({
     },
     methods: {
         setupProject: function(){
+            this.getOwner();
+            this.getMembers();
             var url = window.location.href,
                 project_id  = url.split('projects/')[1];
 
@@ -330,11 +332,32 @@ var project = new Vue({
                 }
             });
         },
-        geOwner: function(){
-          console.log("Get project owner");
+        getOwner: function(){
+            var url = window.location.href,
+                project_id  = url.split('projects/')[1];
+
+            $.get( "/api/projects/"+project_id+"/owner", function( results ) {
+                project.owner = results.data;
+                Vue.nextTick(function () {
+                    megaMenuInit();
+                })
+            }).fail(function(e){
+                console.log( "error "+ e );
+            });
         },
         getMembers: function(){
-            console.log("Get Members");
+            var url = window.location.href,
+                project_id  = url.split('projects/')[1];
+
+            $.get( "/api/projects/"+project_id+"/members", function( results ) {
+                project.members = results.data;
+                console.log(project.members);
+                Vue.nextTick(function () {
+                    megaMenuInit();
+                })
+            }).fail(function(e){
+                console.log( "error "+ e );
+            });
         },
         inviteUser: function(project_id){
             if(this.invited.email == ""){
