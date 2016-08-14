@@ -111,7 +111,7 @@ var client = new Vue({
         makePrompt(
             "Are you sure you want to delete the client: "+currentClient.name+"?",
             "By deleting this client you will loose all data associated with any project under this client",
-            "No now", "Yes");
+            "Not now", "Yes");
 
         $("#cancel-btn").click(function(){
             closePrompt();
