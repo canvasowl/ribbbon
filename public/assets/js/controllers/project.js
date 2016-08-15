@@ -384,8 +384,28 @@ var project = new Vue({
             event.preventDefault();
             console.log("Invite user")
         },
-        removeUser: function(){
-            console.log("Remove User");
+        removeMember: function(project_id, member){
+            showSheet();
+            makePrompt("Are you sure you want to remove this member from this project?","","Not now", "Yes");
+
+            $("#cancel-btn").click(function(){
+                closePrompt();
+            });
+
+            $("#confirm-btn").click(function(){
+                $.ajax({
+                    type: "POST",
+                    url: "/api/projects/"+project_id+"/"+member.id+"/remove",
+                    data: {_method: "delete"},
+                    success: function(){
+                        project.members.$remove(member);
+                        closePrompt();
+                    },
+                    error: function(e){
+                        closePrompt();
+                    }
+                });
+            });
         }
     }
 

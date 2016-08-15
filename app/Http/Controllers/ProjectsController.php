@@ -142,8 +142,7 @@ class ProjectsController extends BaseController {
 
     // Removes a member from a given project
 	public function removeMember($project_id, $member_id){
-		if( count(Projectuser::whereUserId($member_id)->whereProjectId($project_id)->get()) == 0 )
-		{
+		if( count(Projectuser::whereUserId($member_id)->whereProjectId($project_id)->get()) == 0 ){
 			return $this->setStatusCode(406)->makeResponse('That user is not in this project.');
 		}
 

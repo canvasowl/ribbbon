@@ -24,28 +24,22 @@
             <tr>
                 <th>#</th>
                 <th>Name</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>1</td>
-                <td><a href="">@{{ owner.full_name }}</a></td>
+                <td>@{{ owner.full_name }}</td>
+                <td><i class="ion-flag"></i></td>
             </tr>
             <tr v-for="member in members ">
                 <td>@{{ $index + 2 }}</td>
                 <td><a href="">@{{ member.full_name }}</a></td>
+                <td style="font-size: 1.5em">
+                    <a title="Delete" v-on:click="removeMember(project.id, member)"><i class="ion-ios-close-outline"></i></a>
+                </td>
             </tr>
-
-            {{--<tr v-for="project in projects">--}}
-                {{--<td>@{{ $index + 1 }}</td>--}}
-                {{--<td><a href="/projects/@{{ project.id }}">@{{ project.name }}</a></td>--}}
-                {{--<td>--}}
-                    {{--<div class="progress">--}}
-                        {{--<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:@{{ project.completedWeight / project.totalWeight * 100 }}%;">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</td>--}}
-            {{--</tr>--}}
             </tbody>
         </table>
     </div>
