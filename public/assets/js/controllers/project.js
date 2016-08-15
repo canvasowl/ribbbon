@@ -377,12 +377,12 @@ var project = new Vue({
                     return false;
                 },
                 success: function(result){
+                    project.members.push(result.data);
                     project.msg.success = result.message;
                     project.msg.error = null;
                 }
             });
             event.preventDefault();
-            console.log("Invite user")
         },
         removeMember: function(project_id, member){
             showSheet();
