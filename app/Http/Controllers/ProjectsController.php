@@ -46,6 +46,29 @@ class ProjectsController extends BaseController {
 		return $this->setStatusCode(200)->makeResponse('Projects retrieved successfully',$projects->toArray());
 	}
 
+    // Get all projects that the Auth user is a member of
+	public function getAllMemberProjects(){
+        $sharedProjects = Projectuser::where('user_id', Auth::id())->select('project_id')->get();
+        $project_ids = [];
+
+        foreach($sharedProjects as $project){
+            $project_ids[] = $project->project_id;
+        }
+
+        $sharedProjects = Project::whereIn('id', $project_ids)->get();
+
+        if($sharedProjects) {
+            foreach ($sharedProjects as $project) {
+                $completedWeight = Project::find($project->id)->tasks()->where('state','=','complete')->sum('weight');
+                $totalWeight = Project::find($project->id)->tasks()->sum('weight');
+
+                $project["completedWeight"] = $completedWeight;
+                $project["totalWeight"] = $totalWeight;
+            }
+        }
+        return $this->setStatusCode(200)->makeResponse('Projects retrieved successfully',$sharedProjects);
+    }
+
 	//	Return the given project
 	public function getProject($id){
 		if (!Project::find($id)) {

@@ -31,7 +31,7 @@
         <template v-if="projects.length > 0">
             <div class="col-xs-12">
                 <hr>
-                <h4>Projects</h4>
+                <h4>My Projects</h4>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -56,12 +56,41 @@
             </div>
         </template>
 
+
         <template v-if="projects.length == 0">
             <div class="clearfix"></div>
             <p class="alert alert-warning">
                 Your projects will be listed here once you create some.
                 Create a new project within the <a href="/clients">clients</a> page.
             </p>
+        </template>
+
+        <template v-if="sharedProjects.length > 0">
+            <div class="col-xs-12">
+                <hr>
+                <h4>Projects Shared With Me</h4>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Progress</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="project in sharedProjects">
+                        <td>@{{ $index + 1 }}</td>
+                        <td><a href="/projects/@{{ project.id }}">@{{ project.name }}</a></td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:@{{ project.completedWeight / project.totalWeight * 100 }}%;">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </template>
 
     </div>

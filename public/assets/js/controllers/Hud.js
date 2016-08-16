@@ -3,11 +3,13 @@ var hud = new Vue({
     data: {
         clients: 0,
         projects: [],
+        sharedProjects: [],
         tasks: 0
     },
     ready: function () {
         this.getClients();
         this.getProjects();
+        this.getSharedProjects();
         this.getTasks();
     },
     computed: {},
@@ -22,6 +24,13 @@ var hud = new Vue({
         getProjects: function(){
             $.get( "/api/projects", function( results ) {
                 hud.projects = results.data;
+            }).fail(function(e){
+                console.log( "error "+ e );
+            });
+        },
+        getSharedProjects: function(){
+            $.get( "/api/projects/shared", function( results ) {
+                hud.sharedProjects = results.data;
             }).fail(function(e){
                 console.log( "error "+ e );
             });

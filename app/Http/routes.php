@@ -44,6 +44,7 @@ Route::group(['prefix' => '/api/'], function()
 
 	// PROJECT
     Route::get('projects/', 'ProjectsController@getAllUserProjects');
+    Route::get('projects/shared', 'ProjectsController@getAllMemberProjects');
     Route::get('projects/{id}','ProjectsController@getProject');
     Route::get('projects/{id}/owner','ProjectsController@getOwner');
     Route::get('projects/{id}/members','ProjectsController@getMembers');
