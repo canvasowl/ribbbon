@@ -173,7 +173,7 @@ $side-nav-padding: 20px;
 	border-radius: 0;
     border: none;
     background-color: rgba(150,150,150,.2);
-    padding: $side-nav-padding;	
+    padding: 10px 20px;
     color: #fff;
 }
 .side-nav .search input:focus{
@@ -885,7 +885,11 @@ $side-nav-padding: 20px;
   padding: 50px 0;
 }
 
-
+.project-list-container{
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 4px;
+}
 
 // MEDIA QUERIES
 @media screen and (max-width: 991px) {

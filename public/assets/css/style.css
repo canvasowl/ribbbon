@@ -168,7 +168,7 @@ img {
   border-radius: 0;
   border: none;
   background-color: rgba(150, 150, 150, 0.2);
-  padding: 20px;
+  padding: 10px 20px;
   color: #fff; }
 
 .side-nav .search input:focus {
@@ -860,6 +860,11 @@ img {
 
 .hug-footer .last-line {
   padding: 50px 0; }
+
+.project-list-container {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px; }
 
 @media screen and (max-width: 991px) {
   .hug-hero {
