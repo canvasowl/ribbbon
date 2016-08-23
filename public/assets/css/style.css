@@ -638,7 +638,7 @@ img {
 
 .progress {
   background-color: #CECECE;
-  border-radius: 30px; }
+  border-radius: 0; }
 
 .progress-bar {
   background-color: #26b2ad;
@@ -651,6 +651,14 @@ img {
 
 .credential-form .form-group.type-0 {
   display: none; }
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border-top: none; }
 
 .special-form {
   max-width: 500px;
