@@ -32,7 +32,7 @@
             <div class="project-list-container">
                 <template v-if="projects.length > 0">
                     <h4>My Projects</h4>
-                    <input type="text" class="form-control" v-model="my_project_text">
+                    <input placeholder="Search projects" type="text" class="form-control" v-model="my_project_text">
                     <hr>
                     <table class="table table-striped">
                         <thead>
@@ -70,7 +70,7 @@
             <div class="project-list-container">
                 <template v-if="sharedProjects.length > 0">
                     <h4>Projects Shared With Me</h4>
-                    <input type="text" class="form-control" v-model="my_sproject_text">
+                    <input placeholder="Search projects" type="text" class="form-control" v-model="my_sproject_text">
                     <hr>
                     <table class="table table-striped">
                         <thead>

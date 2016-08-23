@@ -17,7 +17,7 @@
         </footer>
     </div>
     <div class="col-xs-12 col-md-6">
-        <h3>Members</h3>
+        <label>Members</label>
         <hr>
         <table class="table table-striped">
             <thead>
