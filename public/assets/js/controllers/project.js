@@ -1,13 +1,16 @@
 var project = new Vue({
     el: '#project',
     data: {
-        project: { name : null, weight : null, production : null, dev : null, github: null, description: null},
+        project: { id: null, name : null, weight : null, production : null, dev : null, github: null, description: null},
         newProject: {name: null, project_id: null},
         newTask: {name: null, weight: null, state: null, priority: null, description: null},
         currentTask: {name: null, weight: null, state: null, priority: null, description: null},
         newCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
         currentCredential: {type: null, name: null, hostname: null, username: null, password: null, port: null},
-        msg: {success: null, error: null}
+        msg: {success: null, error: null},
+        owner: {id: null},
+        members: [],
+        invited: {email: null}
     },
     ready: function(){
         this.setupProject();
@@ -105,6 +108,8 @@ var project = new Vue({
     },
     methods: {
         setupProject: function(){
+            this.getOwner();
+            this.getMembers();
             var url = window.location.href,
                 project_id  = url.split('projects/')[1];
 
@@ -325,6 +330,81 @@ var project = new Vue({
                     project.msg.success = result.message;
                     project.msg.error = null;
                 }
+            });
+        },
+        getOwner: function(){
+            var url = window.location.href,
+                project_id  = url.split('projects/')[1];
+
+            $.get( "/api/projects/"+project_id+"/owner", function( results ) {
+                project.owner = results.data;
+                Vue.nextTick(function () {
+                    megaMenuInit();
+                })
+            }).fail(function(e){
+                console.log( "error "+ e );
+            });
+        },
+        getMembers: function(){
+            var url = window.location.href,
+                project_id  = url.split('projects/')[1];
+
+            $.get( "/api/projects/"+project_id+"/members", function( results ) {
+                project.members = results.data;
+                console.log(project.members);
+                Vue.nextTick(function () {
+                    megaMenuInit();
+                })
+            }).fail(function(e){
+                console.log( "error "+ e );
+            });
+        },
+        inviteUser: function(project_id){
+            if(this.invited.email == ""){
+                this.invited.email = "";
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: "/api/projects/"+ project_id +"/"+this.invited.email+"/invite",
+                data: project.currentCredential,
+                error: function(e) {
+                    var response = jQuery.parseJSON(e.responseText);
+
+                    project.msg.success = null;
+                    project.msg.error = response.message;
+
+                    return false;
+                },
+                success: function(result){
+                    project.members.push(result.data);
+                    project.msg.success = result.message;
+                    project.msg.error = null;
+                }
+            });
+            event.preventDefault();
+        },
+        removeMember: function(project_id, member){
+            showSheet();
+            makePrompt("Are you sure you want to remove this member from this project?","","Not now", "Yes");
+
+            $("#cancel-btn").click(function(){
+                closePrompt();
+            });
+
+            $("#confirm-btn").click(function(){
+                $.ajax({
+                    type: "POST",
+                    url: "/api/projects/"+project_id+"/"+member.id+"/remove",
+                    data: {_method: "delete"},
+                    success: function(){
+                        project.members.$remove(member);
+                        closePrompt();
+                    },
+                    error: function(e){
+                        closePrompt();
+                    }
+                });
             });
         }
     }

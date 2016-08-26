@@ -173,7 +173,7 @@ $side-nav-padding: 20px;
 	border-radius: 0;
     border: none;
     background-color: rgba(150,150,150,.2);
-    padding: $side-nav-padding;	
+    padding: 10px 20px;
     color: #fff;
 }
 .side-nav .search input:focus{
@@ -646,7 +646,7 @@ $side-nav-padding: 20px;
 }
 .progress{
   background-color: #CECECE;
-  border-radius: 30px;
+  border-radius: 0;
 }
 .progress-bar{
   background-color: $color-primary-light;
@@ -661,6 +661,16 @@ $side-nav-padding: 20px;
 
 .credential-form .form-group.type-0{
   display: none;
+}
+
+// Table
+.table>thead>tr>th, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>tbody>tr>td, 
+.table>tfoot>tr>td{
+  border-top: none;
 }
 
 // Login and register
@@ -771,12 +781,19 @@ $side-nav-padding: 20px;
   font-size: 1.4em;
   letter-spacing: 1px;
 }
+.hug-features h3 .new{
+  color: #ffde00;
+}
 .hug-features p{
   color: #fff;
   line-height: 2;
   letter-spacing: .2px;
 }
-
+.hug-features .feature.centered{
+  text-align: center;
+  float: none;
+  margin: 0 auto;
+}
 .hug-info{
   color: $color-primary-light;
   padding-bottom: 290px;
@@ -885,7 +902,11 @@ $side-nav-padding: 20px;
   padding: 50px 0;
 }
 
-
+.project-list-container{
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 4px;
+}
 
 // MEDIA QUERIES
 @media screen and (max-width: 991px) {

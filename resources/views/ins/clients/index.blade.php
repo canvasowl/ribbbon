@@ -69,7 +69,7 @@
         <div class="clearfix"></div>
         <p class="alert alert-warning">
             Your clients will be listed here once you create some.
-            Create a new project client <a v-on:click="showCreateForm()" href="">now</a>.
+            Create a new client <a v-on:click="showCreateForm()" href="">now</a>.
         </p>
     </template>
 

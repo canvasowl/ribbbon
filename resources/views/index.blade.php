@@ -70,6 +70,13 @@
                     <p>Each task has a weight number, the bigger the weight the harder the task
                         is to complete. This allows you to keep track on how big a project really is. Pretty handy stuff.</p>
                 </div>
+                <div>
+                    <div class="col-xs-12 col-md-3 feature centered">
+                        <i class="ion-ios-people-outline"></i>
+                        <h3>project sharing <span class="new">new!</span></h3>
+                        <p>Share your projects with multiples users and collaborate together on your projects.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -124,7 +131,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h3>Current Version <span class="color-primary">2.0</span> | <a class="color-primary" href="https://github.com/canvasowl/ribbbon" target="_blank">Go To Project</a></h3>
+                    <h3>Current Version <span class="color-primary">2.2</span> | <a class="color-primary" href="https://github.com/canvasowl/ribbbon" target="_blank">Go To Project</a></h3>
                     <hr class="special">
                     <p class="text-center last-line">Copyright {{ date("Y") }} &copy;  <a href="https://twitter.com/canvasowl" target="_blank">Jefry Cruz</a></p>
                 </div>
