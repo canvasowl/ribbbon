@@ -781,12 +781,19 @@ $side-nav-padding: 20px;
   font-size: 1.4em;
   letter-spacing: 1px;
 }
+.hug-features h3 .new{
+  color: #ffde00;
+}
 .hug-features p{
   color: #fff;
   line-height: 2;
   letter-spacing: .2px;
 }
-
+.hug-features .feature.centered{
+  text-align: center;
+  float: none;
+  margin: 0 auto;
+}
 .hug-info{
   color: $color-primary-light;
   padding-bottom: 290px;
