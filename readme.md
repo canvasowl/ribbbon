@@ -18,7 +18,8 @@ Ribbbon is a project management system built on Laravel 5.1.* & Vue.js :)
 
 # Get involved
   - Clone or fork the project. 
-  - Once you have changes do a pull request to the develop branch.
+  - Create feature branches off develop branch.
+  - Once your changes are ready create a pull request into the master branch.
    
 # Installation
  - Clone the repo
