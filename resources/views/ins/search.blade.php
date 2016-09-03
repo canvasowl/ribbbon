@@ -64,10 +64,9 @@
 				  		</a>
 				  	@endforeach			  			  	
 				@else
-				    <section class="info">
-						<i class="fa fa-lightbulb-o"></i>
-						Once you start creating tasks for projects, your latest ones will show up here.
-				    </section>
+					  <section class="info">
+						  <p class="dimmed">Sorry I couldn't find nothing....</p>
+					  </section>
 			  	@endif
 			  </div>
 			</div>			
