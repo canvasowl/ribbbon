@@ -129,7 +129,7 @@ var project = new Vue({
             $(".popup-form.update-project .first").focus();
         },
         updateProject: function(){
-            event.preventDefault();
+
             var updatedProject = this.project;
 
             delete updatedProject.tasks;
@@ -185,7 +185,7 @@ var project = new Vue({
             $(".popup-form.new-task .first").focus();
         },
         createTask: function(client_id, project_id){
-            event.preventDefault();
+
 
             $.ajax({
                 type: 'POST',
@@ -225,7 +225,7 @@ var project = new Vue({
             $(".popup-form.update-task .first").focus();
         },
         updateTask: function(taskId){
-            event.preventDefault();
+
 
             this.currentTask._method = "put";
 
@@ -248,7 +248,7 @@ var project = new Vue({
             });
         },
         createCredential: function(user_id, project_id){
-            event.preventDefault();
+
 
             var credential = this.newCredential;
             credential.user_id = user_id;
@@ -311,7 +311,7 @@ var project = new Vue({
             $(".popup-form.update-credential .first").focus();
         },
         updateCredential: function(credentialId){
-            event.preventDefault();
+
             this.currentCredential._method = "put";
 
             $.ajax({
@@ -382,7 +382,6 @@ var project = new Vue({
                     project.msg.error = null;
                 }
             });
-            event.preventDefault();
         },
         removeMember: function(project_id, member){
             showSheet();
