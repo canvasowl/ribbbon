@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class AddDescriptionAndWishColumnsToTasks extends Migration
 {
@@ -13,7 +13,7 @@ class AddDescriptionAndWishColumnsToTasks extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->string('description');            
+            $table->string('description');
             $table->boolean('wish');
         });
     }
@@ -26,7 +26,7 @@ class AddDescriptionAndWishColumnsToTasks extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn(array('description', 'wish'));
+            $table->dropColumn(['description', 'wish']);
         });
     }
 }

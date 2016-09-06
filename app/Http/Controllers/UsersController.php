@@ -2,167 +2,175 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Validator;
-use App\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use App\Helpers\Helpers;
-use Illuminate\Support\Facades\View;
 use App\Client;
+use App\Credential;
+use App\Helpers\Helpers;
 use App\Project;
 use App\Task;
-use App\Credential;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
 
-class UsersController extends BaseController {
+class UsersController extends BaseController
+{
+    // Go to user settings page
+    public function index()
+    {
+        return View::make('ins/settings')->with('pTitle', Auth::user()->full_name);
+    }
 
-	// Go to user settings page
-	public function index()
-	{
-		return View::make('ins/settings')->with('pTitle', Auth::user()->full_name);
-	}
+    // Logout the user
+    public function logout()
+    {
+        Auth::logout();
 
-	// Logout the user
-	public function logout(){
-		Auth::logout();
-		return Redirect::to('/');
-	}
+        return Redirect::to('/');
+    }
 
-	// Login the user
-	public function login()
-	{				
-		$email 		=	Input::get('email');
-		$password	=	Input::get('password');
+    // Login the user
+    public function login()
+    {
+        $email = Input::get('email');
+        $password = Input::get('password');
 
-		// lets validate the users input
-		$validator = Validator::make(
-			array(
-					'email' 	=>	$email,
-					'password' 	=> 	$password
-			),
-			array(
-					'email'		=> 	'required|email',
-					'password'	=>	'required'
-			)
-		);
+        // lets validate the users input
+        $validator = Validator::make(
+            [
+                    'email'       => $email,
+                    'password'    => $password,
+            ],
+            [
+                    'email'        => 'required|email',
+                    'password'     => 'required',
+            ]
+        );
 
-		if ($validator->fails()){
-		    return Redirect::back()->withErrors($validator)->withInput();
-		}else{
-			if( Auth::attempt(array('email' => $email, 'password' => $password)) ){				
-				return Redirect::to('hud');
-			}else{				
-				$validator->getMessageBag()->add('input', 'Incorrect email or password');
-				return Redirect::back()->withErrors($validator)->withInput();;
-			}			
-		}
-	}	
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->withInput();
+        } else {
+            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+                return Redirect::to('hud');
+            } else {
+                $validator->getMessageBag()->add('input', 'Incorrect email or password');
 
-	// Register the user and start a new session
-	public function register()
-	{	
-		$fullName	=	Input::get('fullName');
-		$email 		=	Input::get('email');
-		$password	=	Input::get('password');	
+                return Redirect::back()->withErrors($validator)->withInput();
+            }
+        }
+    }
 
-		// lets validate the users input
-		$validator = Validator::make(
-			array(
-					'fullName' 	=> 	$fullName,
-					'email' 	=>	$email,
-					'password' 	=> 	$password
-			),
-			array(
-					'fullName' 	=> 	'required',
-					'email'		=> 	'required|email|unique:users',
-					'password'	=>	'required|min:8'
-			)
-		);
+    // Register the user and start a new session
+    public function register()
+    {
+        $fullName = Input::get('fullName');
+        $email = Input::get('email');
+        $password = Input::get('password');
 
-		if ($validator->fails()){
-		    return Redirect::back()->withErrors($validator)->withInput();
-		}
+        // lets validate the users input
+        $validator = Validator::make(
+            [
+                    'fullName'    => $fullName,
+                    'email'       => $email,
+                    'password'    => $password,
+            ],
+            [
+                    'fullName'     => 'required',
+                    'email'        => 'required|email|unique:users',
+                    'password'     => 'required|min:8',
+            ]
+        );
 
-		$user 				=	new User;
-		$user->full_name 	=	$fullName;
-		$user->email 		=	$email;
-		$user->password 	=	Hash::make($password);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
 
-		$user->save();	
+        $user = new User();
+        $user->full_name = $fullName;
+        $user->email = $email;
+        $user->password = Hash::make($password);
 
-		if ( Auth::attempt(array('email' => $email, 'password' => $password)) ) {
-			Helpers::sendWelcomeMail();
-			return Redirect::to('hud');
-		}
+        $user->save();
 
-		return Redirect::back()->withErrors($validator);
-	}	
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            Helpers::sendWelcomeMail();
 
-	// Reset the user password
-	public function resetPassword($id)
-	{		
-		// ----------------------------------------
-		$user = User::find(Auth::id());
-		$created = $user->tasks_created;
-		$completed = $user->tasks_completed;
+            return Redirect::to('hud');
+        }
 
-		if ($created == "") {
-			$created = 0;
-		}
+        return Redirect::back()->withErrors($validator);
+    }
 
-		if ($completed == "") {
-			$completed = 0;
-		}
-		// ----------------------------------------
+    // Reset the user password
+    public function resetPassword($id)
+    {
+        // ----------------------------------------
+        $user = User::find(Auth::id());
+        $created = $user->tasks_created;
+        $completed = $user->tasks_completed;
 
-		$current_pwd	=	Input::get('current_pwd');
-		$new_pwd		=	Input::get('new_pwd');
+        if ($created == '') {
+            $created = 0;
+        }
 
-		// lets validate the users input
-		$validator = Validator::make(
-			array(
-					'current_pwd' 	=>	$current_pwd,
-					'new_pwd' 		=> 	$new_pwd
-			),
-			array(
-					'current_pwd'	=> 	'required',
-					'new_pwd'		=>	'required'
-			)
-		);
+        if ($completed == '') {
+            $completed = 0;
+        }
+        // ----------------------------------------
 
-		if ($validator->fails()){
-		    return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);
-		}
+        $current_pwd = Input::get('current_pwd');
+        $new_pwd = Input::get('new_pwd');
 
-		if ( !Auth::validate(array('email' => $user->email, 'password' => $current_pwd)) ) {
-			$validator->getMessageBag()->add('password', 'That password is incorrect');
-			return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);	
-		}
+        // lets validate the users input
+        $validator = Validator::make(
+            [
+                    'current_pwd'    => $current_pwd,
+                    'new_pwd'        => $new_pwd,
+            ],
+            [
+                    'current_pwd'    => 'required',
+                    'new_pwd'        => 'required',
+            ]
+        );
 
-		// Store the new password and redirect;
-		$user->password = Hash::make($new_pwd);
-		$user->save();
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);
+        }
 
-		return Redirect::back()
-								->with('user', $user)
-								->with('created', $created)->with('completed', $completed)
-								->with('success', "Your password has been updated!");
+        if (!Auth::validate(['email' => $user->email, 'password' => $current_pwd])) {
+            $validator->getMessageBag()->add('password', 'That password is incorrect');
 
-	}
+            return Redirect::back()->withErrors($validator)->with('user', $user)->with('created', $created)->with('completed', $completed);
+        }
+
+        // Store the new password and redirect;
+        $user->password = Hash::make($new_pwd);
+        $user->save();
+
+        return Redirect::back()
+                                ->with('user', $user)
+                                ->with('created', $created)->with('completed', $completed)
+                                ->with('success', 'Your password has been updated!');
+    }
 
     // Get the current user
-    public function getUser(){
+    public function getUser()
+    {
         $user = User::find(Auth::id());
+
         return $user;
     }
+
     // Update the given user
-    public function updateUser($id){
+    public function updateUser($id)
+    {
         if (strlen(trim(Input::get('email'))) === 0) {
             return $this->setStatusCode(200)->makeResponse('You need to provide an email.');
         }
 
-        if( strlen(trim(Input::get('full_name'))) === 0 ){
+        if (strlen(trim(Input::get('full_name'))) === 0) {
             return $this->setStatusCode(200)->makeResponse('You have a name, no?');
         }
 
@@ -187,5 +195,4 @@ class UsersController extends BaseController {
         Client::where('user_id', Auth::id())->delete();
         User::where('id', Auth::id())->delete();
     }
-
 }

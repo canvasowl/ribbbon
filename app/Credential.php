@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Credential extends Model {
-	protected $fillable = [
+class Credential extends Model
+{
+    protected $fillable = [
         'user_id',
         'project_id',
         'name',
@@ -13,8 +14,8 @@ class Credential extends Model {
         'hostname',
         'username',
         'password',
-        'port'
+        'port',
     ];
 
-    protected $hidden = ['created_at','updated_at'];
+    protected $hidden = ['created_at', 'updated_at'];
 }

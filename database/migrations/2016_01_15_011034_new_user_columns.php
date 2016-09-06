@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class NewUserColumns extends Migration
 {
@@ -30,7 +30,7 @@ class NewUserColumns extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['title','bio','link','twitter','facebook','linkedin']);
+            $table->dropColumn(['title', 'bio', 'link', 'twitter', 'facebook', 'linkedin']);
         });
     }
 }

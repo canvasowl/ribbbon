@@ -4,15 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Upload extends Model {
-	protected $fillable = [];
+class Upload extends Model
+{
+    protected $fillable = [];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\User');
     }
 
-    public function project(){
+    public function project()
+    {
         return $this->belongsTo('App\Project');
     }
-
 }

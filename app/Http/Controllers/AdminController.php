@@ -2,6 +2,6 @@
 
 namespace App\Http\Controllers;
 
-class AdminController extends BaseController {
-
+class AdminController extends BaseController
+{
 }

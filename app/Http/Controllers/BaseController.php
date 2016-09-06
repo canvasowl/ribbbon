@@ -1,18 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Response;
 
-class BaseController extends Controller {
-	private $statusCode = 200;
+class BaseController extends Controller
+{
+    private $statusCode = 200;
 
     // Set the status code
-	public function setStatusCode($statusCode)
-	{
-		$this->statusCode = $statusCode;
+    public function setStatusCode($statusCode)
+    {
+        $this->statusCode = $statusCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
     // Return the response status code
     public function getStatusCode()
@@ -25,18 +27,16 @@ class BaseController extends Controller {
     {
         return Response::json([
             'status_code' => $this->getStatusCode(),
-            'message' => $message,
-            'data' => $data
+            'message'     => $message,
+            'data'        => $data,
         ], $this->getStatusCode());
     }
 
     // Setup the layout used by the controller.
-	protected function setupLayout()
-	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = View::make($this->layout);
-		}
-	}
-
+    protected function setupLayout()
+    {
+        if (!is_null($this->layout)) {
+            $this->layout = View::make($this->layout);
+        }
+    }
 }
