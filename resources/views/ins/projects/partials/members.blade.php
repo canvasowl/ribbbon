@@ -12,7 +12,7 @@
             </form>
         </section>
         <footer>
-            <a v-on:click="inviteUser(project.id)" href="" class="btn btn-primary pull-right">Send Invite</a>
+            <a v-on:click="inviteUser(project.id)" class="btn btn-primary pull-right">Send Invite</a>
             <div class="clearfix"></div>
         </footer>
     </div>

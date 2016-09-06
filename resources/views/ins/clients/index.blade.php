@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-xs-12 page-title-section">
             <h1 class="pull-left">Clients</h1>
-            <a v-on:click="showCreateForm()" href="" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
+            <a v-on:click="showCreateForm()" class="btn btn-primary pull-right" title="Create new client">+ New Client</a>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -69,7 +69,7 @@
         <div class="clearfix"></div>
         <p class="alert alert-warning">
             Your clients will be listed here once you create some.
-            Create a new client <a v-on:click="showCreateForm()" href="">now</a>.
+            Create a new client <a v-on:click="showCreateForm()">now</a>.
         </p>
     </template>
 
@@ -94,7 +94,7 @@
 			</form>
 		</section>
 		<footer>
-			<a v-on:click="create(client,true)" href="" class="btn btn-primary pull-right">Save</a>
+			<a v-on:click="create(client,true)" class="btn btn-primary pull-right">Save</a>
 			<div class="clearfix"></div>
 		</footer>
 	</div>
@@ -115,7 +115,7 @@
 			</form>
 		</section>
 		<footer>
-			<a v-on:click="createProject(true)" href="" class="btn btn-primary pull-right">Save</a>
+			<a v-on:click="createProject(true)" class="btn btn-primary pull-right">Save</a>
 			<div class="clearfix"></div>
 		</footer>
 	</div>
@@ -140,7 +140,7 @@
             </form>
         </section>
         <footer>
-            <a v-on:click="updateClient()" href="" class="btn btn-primary pull-right">Update</a>
+            <a v-on:click="updateClient()" class="btn btn-primary pull-right">Update</a>
             <div class="clearfix"></div>
         </footer>
 	</div>
