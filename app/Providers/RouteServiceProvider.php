@@ -2,13 +2,12 @@
 
 namespace App\Providers;
 
-use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Session\TokenMismatchException;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Response;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -24,47 +23,40 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param  \Illuminate\Routing\Router  $router
+     * @param \Illuminate\Routing\Router $router
+     *
      * @return void
      */
     public function boot(Router $router)
     {
-        $router->filter('auth', function()
-        {
-        	if (Auth::guest())
-        	{
-        		if (Request::ajax())
-        		{
-        			return Response::make('Unauthorized', 401);
-        		}
-        		else
-        		{
-        			return Redirect::guest('/');
-        		}
-        	}
+        $router->filter('auth', function () {
+            if (Auth::guest()) {
+                if (Request::ajax()) {
+                    return Response::make('Unauthorized', 401);
+                } else {
+                    return Redirect::guest('/');
+                }
+            }
         });
 
-        $router->filter('auth.basic', function()
-        {
-        	return Auth::basic();
+        $router->filter('auth.basic', function () {
+            return Auth::basic();
         });
 
-        $router->filter('guest', function()
-        {
-        	if (Auth::check()) return Redirect::to('/');
+        $router->filter('guest', function () {
+            if (Auth::check()) {
+                return Redirect::to('/');
+            }
         });
 
-        $router->filter('admin', function()
-        {
-        	if (Auth::check())
-        	{
-        		if (Auth::user()->email != "ceesco53@gmail.com")
-        		{
-        			return Redirect::to('/');
-        		}
-        	}else{
-        		return Redirect::to('/');
-        	}
+        $router->filter('admin', function () {
+            if (Auth::check()) {
+                if (Auth::user()->email != 'ceesco53@gmail.com') {
+                    return Redirect::to('/');
+                }
+            } else {
+                return Redirect::to('/');
+            }
         });
 
         parent::boot($router);
@@ -73,7 +65,8 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define the routes for the application.
      *
-     * @param  \Illuminate\Routing\Router  $router
+     * @param \Illuminate\Routing\Router $router
+     *
      * @return void
      */
     public function map(Router $router)
