@@ -27,15 +27,13 @@ var client = new Vue({
         });
   	},
     showCreateForm: function(){
-          event.preventDefault();
-
           this.msg.success = null;
           this.msg.error = null;
           $(".new-client").show();
           $(".new-client .first").focus();
       },
   	create: function(new_client, update){
-		event.preventDefault();
+
 		update = update || false;
 
 		$.ajax({
@@ -83,7 +81,7 @@ var client = new Vue({
         $(".popup-form.update-client").find('input[type=text],textarea,select').filter(':visible:first').focus();
     },
     updateClient: function(){
-        event.preventDefault();
+
         var data = this.currentClient;
         var id = data.id;
         data._method = "put";
@@ -141,7 +139,7 @@ var client = new Vue({
         });
     },
     showNewProjectForm: function(clientId, clientIndex){
-        event.preventDefault();
+
         this.msg.success = null;
         this.msg.error = null;
         this.newProject.client_id = clientId;
@@ -151,7 +149,6 @@ var client = new Vue({
         $(".popup-form.new-project .first").focus();
     },
   	createProject: function(){
-		event.preventDefault();
 
 		 $.ajax({
 		   type: 'POST',

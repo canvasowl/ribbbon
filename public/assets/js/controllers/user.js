@@ -16,8 +16,11 @@ var userObj = new Vue({
                 userObj.user = result;
             });
         },
-        update: function(){
-            event.preventDefault();
+        update: function(event){
+            if(event !== undefined) {
+                event.preventDefault();
+            }
+
             var data = this.user;
 
             $.ajax({
