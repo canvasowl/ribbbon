@@ -30,7 +30,7 @@ class AddUrlsToProjectsTable extends Migration {
 	{
 		Schema::table('projects', function(Blueprint $table)
 		{
-			//
+			$table->dropColumn(['production','stage','dev','github']);
 		});
 	}
 
