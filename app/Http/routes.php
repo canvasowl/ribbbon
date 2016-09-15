@@ -67,3 +67,4 @@ Route::group(['prefix' => '/api/'], function()
 });
 
 //----------------- Admin routes
+Route::get('admin','AdminController@index');
