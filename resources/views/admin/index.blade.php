@@ -5,7 +5,11 @@
     <div class="row">
         <div class="col-xs-12">
             <h1>Admin</h1>
-            <p>Number of users: <span class="badge">{{ $n  }}</span></p>
+            <p>Number of users: <span class="badge">{{ $n_users  }}</span></p>
+            <p>Number of clients: <span class="badge">{{ $n_clients  }}</span></p>
+            <p>Number of projects: <span class="badge">{{ $n_projects  }}</span></p>
+            <p>Number of tasks: <span class="badge">{{ $n_tasks  }}</span></p>
+
             <table class="table table-striped">
                 <thead>
                 <tr>
