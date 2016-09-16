@@ -45,7 +45,7 @@
                         <tbody>
                         <tr v-for="project in projects | filterBy my_project_text">
                             <td>@{{ $index + 1 }}</td>
-                            <td><a href="/projects/@{{ project.id }}">@{{ project.name }}</a></td>
+                            <td><a href="{{ route('projects.show', ['id' => '']) }}/@{{ project.id }}">@{{ project.name }}</a></td>
                             <td>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:@{{ project.completedWeight / project.totalWeight * 100 }}%;">
@@ -60,7 +60,7 @@
                 <template v-if="projects.length == 0">
                     <p class="alert alert-warning">
                         Your projects will be listed here once you create some.
-                        Create a new project within the <a href="/clients">clients</a> page.
+                        Create a new project within the <a href="{{ route('clients') }}">clients</a> page.
                     </p>
                 </template>
             </div>
@@ -83,7 +83,7 @@
                         <tbody>
                         <tr v-for="project in sharedProjects | filterBy my_sproject_text">
                             <td>@{{ $index + 1 }}</td>
-                            <td><a href="/projects/@{{ project.id }}">@{{ project.name }}</a></td>
+                            <td><a href="{{ route('projects.show', ['id' => '']) }}/@{{ project.id }}">@{{ project.name }}</a></td>
                             <td>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:@{{ project.completedWeight / project.totalWeight * 100 }}%;">

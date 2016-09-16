@@ -6,9 +6,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <a href="/" class="pull-left"><img src="{{ \App\Helpers\Helpers::logoUrl() }}" alt="Ribbbon"></a>
-                    <a href="/login" class="btn btn-primary btn-line pull-right login">Login</a>
-                    <a href="/register" class="btn btn-primary btn-line pull-right register">Register</a>
+                    <a href="{{ route('home') }}" class="pull-left"><img src="{{ \App\Helpers\Helpers::logoUrl() }}" alt="Ribbbon"></a>
+                    <a href="{{ route('login') }}" class="btn btn-primary btn-line pull-right login">Login</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary btn-line pull-right register">Register</a>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <div class="left-side">
                         <h1>Introducing Ribbbon 2.0</h1>
                         <h2>An open source project management system.</h2>
-                        <a href="/register" class="btn btn-special">GET STARTED</a>
+                        <a href="{{ route('register') }}" class="btn btn-special">GET STARTED</a>
                     </div>
                     <div class="right-side">
                         <img class="mascot" src="{{ asset('assets/img/mascot_left.png')  }}" alt="">
@@ -119,7 +119,7 @@
                 <div class="col-xs-12">
                     <div class="img">
                         <h2>"Free, sexy, and open source. I think it's time for you to take the dive."</h2>
-                        <a href="/register" class="btn btn-special">GET STARTED</a>
+                        <a href="{{ route('register') }}" class="btn btn-special">GET STARTED</a>
                     </div>
                 </div>
             </div>

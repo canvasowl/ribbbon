@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="special-form">
-        <a href="/"><img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt=""></a>
+        <a href="{{ route('home') }}"><img src="{{ \App\Helpers\Helpers::logoUrl()  }}" alt=""></a>
         <h3 class="text-center">REGISTER</h3>
         @if ($errors->first())
             <span class="status-msg error-msg">{{ $errors->first() }}</span>
@@ -26,7 +26,7 @@
             {!! Form::submit('Register', array('class' => 'btn btn-primary btn-wide' )) !!}
         </div>
         {!! Form::close() !!}
-        <p>Have an account? <a href="/login">login</a></p>
+        <p>Have an account? <a href="{{ route('login') }}">login</a></p>
     </div>
 
 @stop
