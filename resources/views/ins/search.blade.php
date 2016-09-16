@@ -21,7 +21,7 @@
 			  <div class="panel-body">
 			  	@if (count($clients) > 0)
 				  	@foreach ($clients as $client)
-				  		<a href="{{ route('clients.show', ['id' => '']) }}/{{ $client->id }}">
+				  		<a href="{{ route('clients', ['id' => $client->id]) }}">
 				  			{{ $client->name }}
 				  		</a>
 				  	@endforeach			  			  	
@@ -39,7 +39,7 @@
 			  <div class="panel-body">
 			  	@if (count($projects) > 0)
 				  	@foreach ($projects as $project)
-				  		<a href="{{ route('projects.show', ['id' => '']) }}/{{ $project->id }}">
+				  		<a href="{{ route('projects.show', ['id' => $project->id]) }}">
 				  			{{ $project->name }}
 				  			<span class="weight pull-right">w.{{ $project->totalWeight()}}</span>
 				  		</a>
@@ -58,7 +58,7 @@
 			  <div class="panel-body">
 			  	@if (count($tasks) > 0)
 				  	@foreach ($tasks as $task)
-				  		<a href="{{ route('projects.show', ['id' => '']) }}/{{ $task->project_id }}">
+				  		<a href="{{ route('projects.show', ['id' => $task->project_id]) }}">
 				  			{{ $task->name }}
 				  			<span class="weight pull-right">w.{{ $task->weight}}</span>
 				  		</a>
