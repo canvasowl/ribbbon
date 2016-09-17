@@ -111,9 +111,9 @@ var project = new Vue({
             this.getOwner();
             this.getMembers();
             var url = window.location.href,
-                project_id  = url.split('projects/')[1];
+                project_id  = url.split('/').splice(-1);
 
-            $.get( "/api/projects/"+project_id, function( results ) {
+            $.get( window.baseurl + "/api/projects/"+project_id, function( results ) {
                 project.project = results.data;
                 Vue.nextTick(function () {
                     megaMenuInit();
@@ -139,7 +139,7 @@ var project = new Vue({
 
             $.ajax({
                 type: 'POST',
-                url: "/api/projects/"+ updatedProject.id,
+                url: window.baseurl + "/api/projects/"+ updatedProject.id,
                 data: updatedProject,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
@@ -166,7 +166,7 @@ var project = new Vue({
             $("#confirm-btn").click(function(){
                 $.ajax({
                     type: "POST",
-                    url: "/api/tasks/"+taskId,
+                    url: window.baseurl + "/api/tasks/"+taskId,
                     data: {_method: "delete"},
                     success: function(){
                         $(".task-"+taskId).hide();
@@ -189,7 +189,7 @@ var project = new Vue({
 
             $.ajax({
                 type: 'POST',
-                url: "/api/tasks/"+ client_id +"/"+ project_id,
+                url: window.baseurl + "/api/tasks/"+ client_id +"/"+ project_id,
                 data: project.newTask,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
@@ -231,7 +231,7 @@ var project = new Vue({
 
             $.ajax({
                 type: 'POST',
-                url: "/api/tasks/"+ taskId,
+                url: window.baseurl + "/api/tasks/"+ taskId,
                 data: project.currentTask,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
@@ -256,7 +256,7 @@ var project = new Vue({
 
             $.ajax({
                 type: 'POST',
-                url: "/api/credentials",
+                url: window.baseurl + "/api/credentials",
                 data: credential,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
@@ -291,7 +291,7 @@ var project = new Vue({
             $("#confirm-btn").click(function(){
                 $.ajax({
                     type: "POST",
-                    url: "/api/credentials/"+credential.id,
+                    url: window.baseurl + "/api/credentials/"+credential.id,
                     data: {_method: "delete"},
                     success: function(){
                         project.project.credentials.$remove(credential);
@@ -316,7 +316,7 @@ var project = new Vue({
 
             $.ajax({
                 type: 'POST',
-                url: "/api/credentials/"+ credentialId,
+                url: window.baseurl + "/api/credentials/"+ credentialId,
                 data: project.currentCredential,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
@@ -334,9 +334,9 @@ var project = new Vue({
         },
         getOwner: function(){
             var url = window.location.href,
-                project_id  = url.split('projects/')[1];
+                project_id  = url.split('/').splice(-1);
 
-            $.get( "/api/projects/"+project_id+"/owner", function( results ) {
+            $.get( window.baseurl + "/api/projects/"+project_id+"/owner", function( results ) {
                 project.owner = results.data;
                 Vue.nextTick(function () {
                     megaMenuInit();
@@ -347,9 +347,9 @@ var project = new Vue({
         },
         getMembers: function(){
             var url = window.location.href,
-                project_id  = url.split('projects/')[1];
+                project_id  = url.split('/').splice(-1);
 
-            $.get( "/api/projects/"+project_id+"/members", function( results ) {
+            $.get( window.baseurl + "/api/projects/"+project_id+"/members", function( results ) {
                 project.members = results.data;
                 console.log(project.members);
                 Vue.nextTick(function () {
@@ -366,7 +366,7 @@ var project = new Vue({
 
             $.ajax({
                 type: 'POST',
-                url: "/api/projects/"+ project_id +"/"+this.invited.email+"/invite",
+                url: window.baseurl + "/api/projects/"+ project_id +"/"+this.invited.email+"/invite",
                 data: project.currentCredential,
                 error: function(e) {
                     var response = jQuery.parseJSON(e.responseText);
@@ -394,7 +394,7 @@ var project = new Vue({
             $("#confirm-btn").click(function(){
                 $.ajax({
                     type: "POST",
-                    url: "/api/projects/"+project_id+"/"+member.id+"/remove",
+                    url: window.baseurl + "/api/projects/"+project_id+"/"+member.id+"/remove",
                     data: {_method: "delete"},
                     success: function(){
                         project.members.$remove(member);

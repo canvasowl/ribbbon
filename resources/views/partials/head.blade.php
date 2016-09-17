@@ -22,6 +22,9 @@
 </head>
 <body>
 @include('analyticstracking')
+<script>
+	window.baseurl = '{{ route('home') }}'
+</script>
 
 <div id="sheet" class="animated"></div>
 <div id="pop-up-prompt" class="animated">

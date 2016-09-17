@@ -15,28 +15,28 @@ var hud = new Vue({
     computed: {},
     methods: {
         getClients: function(){
-            $.get( "/api/clients/true", function( results ) {
+            $.get( window.baseurl + "/api/clients/true", function( results ) {
                 hud.clients = results.data.length;
             }).fail(function(e){
                 console.log( "error "+ e );
             });
         },
         getProjects: function(){
-            $.get( "/api/projects", function( results ) {
+            $.get( window.baseurl + "/api/projects", function( results ) {
                 hud.projects = results.data;
             }).fail(function(e){
                 console.log( "error "+ e );
             });
         },
         getSharedProjects: function(){
-            $.get( "/api/projects/shared", function( results ) {
+            $.get( window.baseurl + "/api/projects/shared", function( results ) {
                 hud.sharedProjects = results.data;
             }).fail(function(e){
                 console.log( "error "+ e );
             });
         },
         getTasks: function(){
-            $.get( "/api/tasks", function( results ) {
+            $.get( window.baseurl + "/api/tasks", function( results ) {
                 hud.tasks = results.data.length;
             }).fail(function(e){
                 console.log( "error "+ e );

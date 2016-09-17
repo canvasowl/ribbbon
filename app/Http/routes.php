@@ -1,23 +1,23 @@
 <?php
-Route::get('/', 'HomeController@index');
-Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); });
-Route::get('login', function(){ return View::make('login')->with('pTitle', "Login"); });
-Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); });
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); })->name('register');
+Route::get('login', function(){ return View::make('login')->with('pTitle', "Login"); })->name('login');
+Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); })->name('faq');
 
 //----------------- User routes
 Route::resource('users', 'UsersController', array('only' => array('show')));
 Route::post('login', 'UsersController@login');
 Route::post('make', 'UsersController@register');
-Route::get('logout', 'UsersController@logout');
+Route::get('logout', 'UsersController@logout')->name('logout');
 Route::post('resetPassword/{id}','UsersController@resetPassword');
 
 //----------------- Auth routes
 Route::group(array('before' => 'auth'), function()
-{	
-	Route::get('hud', 'HomeController@index');
-	Route::get('search', 'HomeController@search');	
-	Route::get('profile', 'UsersController@index');
-	Route::get('clients', 'ClientsController@index');
+{
+	Route::get('hud', 'HomeController@index')->name('hud');
+	Route::get('search', 'HomeController@search')->name('search');
+	Route::get('profile', 'UsersController@index')->name('profile');
+	Route::get('clients', 'ClientsController@index')->name('clients');
 	Route::delete('clients/{id}', 'ClientsController@destroy');
     Route::resource('projects', 'ProjectsController', array('only' => array('show')));
 

@@ -47,7 +47,7 @@
                                     <tbody>
                                     <tr v-for="project in client.projects">
                                         <td>@{{ $index + 1 }}</td>
-                                        <td><a href="/projects/@{{ project.id }}">@{{ project.name }}</a></td>
+                                        <td><a href="{{ route('projects.show', ['id' => '']) }}/@{{ project.id }}">@{{ project.name }}</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
