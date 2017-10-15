@@ -23,7 +23,10 @@ Ribbbon is a project management system built on Laravel 5.1.* & Vue.js :)
    
 # Installation
  - Clone the repo
+ - Copy .env.example to .env
+ - Set values in .env file
  - Run composer install
+ - Run php artisan key:generate
  - Run php artisan migrate
  - Run php artisan db:seed
  - Start developing!
